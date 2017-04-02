@@ -1,0 +1,1169 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AB49C8D51AF4540F381685E /* Pods_SlowEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */; };
+		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
+		24440F751DF48E270001C37D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24440F741DF48E270001C37D /* Constants.swift */; };
+		24440F761DF48E270001C37D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24440F741DF48E270001C37D /* Constants.swift */; };
+		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
+		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
+		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
+		EA4A57811D81F7ED006935A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577F1D81F7ED006935A9 /* LaunchScreen.storyboard */; };
+		EA4A579C1D81F7ED006935A9 /* SlowEat.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EA4A579B1D81F7ED006935A9 /* SlowEat.app */; };
+		EA4A57A21D81F7ED006935A9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A57A01D81F7ED006935A9 /* Interface.storyboard */; };
+		EA4A57A41D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A57A31D81F7ED006935A9 /* Assets.xcassets */; };
+		EA4A57AB1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA4A57AA1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57B11D81F7ED006935A9 /* MealController.swift */; };
+		EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57B31D81F7ED006935A9 /* ExtensionDelegate.swift */; };
+		EA4A57B61D81F7ED006935A9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57B51D81F7ED006935A9 /* NotificationController.swift */; };
+		EA4A57B81D81F7ED006935A9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57B71D81F7ED006935A9 /* ComplicationController.swift */; };
+		EA4A57BA1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A57B91D81F7ED006935A9 /* Assets.xcassets */; };
+		EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57DE1D81FFF0006935A9 /* MotionManager.swift */; };
+		EA4A57E21D82002E006935A9 /* RunningBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57E11D82002E006935A9 /* RunningBuffer.swift */; };
+		EA51A1101DC2638300542924 /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51A10F1DC2638300542924 /* InitialController.swift */; };
+		EA51A1141DC2643100542924 /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51A1131DC2643100542924 /* Motivation.swift */; };
+		EA8F48741DE9E14C00776EDC /* MovementDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F48731DE9E14C00776EDC /* MovementDelegate.swift */; };
+		EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F487C1DE9EF7B00776EDC /* InstructionsViewController.swift */; };
+		EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F48801DE9F40500776EDC /* TableViewCell.swift */; };
+		EA8F48831DE9F40500776EDC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8F48811DE9F40500776EDC /* TableViewCell.xib */; };
+		EA8F48851DEA0A6500776EDC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8F48841DEA0A6500776EDC /* Storyboard.storyboard */; };
+		EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F48881DEA0C5B00776EDC /* TipsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA4A57881D81F7ED006935A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA4A576B1D81F7ED006935A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4A57721D81F7ED006935A9;
+			remoteInfo = SlowEat;
+		};
+		EA4A57931D81F7ED006935A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA4A576B1D81F7ED006935A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4A57721D81F7ED006935A9;
+			remoteInfo = SlowEat;
+		};
+		EA4A579D1D81F7ED006935A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA4A576B1D81F7ED006935A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4A579A1D81F7ED006935A9;
+			remoteInfo = "SlowEat WatchKit App";
+		};
+		EA4A57AC1D81F7ED006935A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA4A576B1D81F7ED006935A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4A57A91D81F7ED006935A9;
+			remoteInfo = "SlowEat WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA4A57C11D81F7ED006935A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EA4A57AB1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57C51D81F7ED006935A9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				EA4A579C1D81F7ED006935A9 /* SlowEat.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01482643ADCC2713AFB09B41 /* Pods-SlowEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.release.xcconfig"; sourceTree = "<group>"; };
+		118416861194FF20A95D40CA /* Pods-SlowEatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		24440F741DF48E270001C37D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		24B571971DFC79B7009EA6D1 /* SlowEat WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlowEat WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		24B5719A1DFC7A0C009EA6D1 /* SlowEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlowEat.entitlements; sourceTree = "<group>"; };
+		24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlowEat-Bridging-Header.h"; sourceTree = "<group>"; };
+		24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		24F2E9A61E0405750080ABD9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig"; sourceTree = "<group>"; };
+		E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A57731D81F7ED006935A9 /* SlowEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlowEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A57761D81F7ED006935A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA4A577D1D81F7ED006935A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA4A57801D81F7ED006935A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA4A57821D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A57871D81F7ED006935A9 /* SlowEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A578D1D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A57921D81F7ED006935A9 /* SlowEatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowEatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A57981D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A579B1D81F7ED006935A9 /* SlowEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlowEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A57A11D81F7ED006935A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		EA4A57A31D81F7ED006935A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA4A57A51D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A57AA1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SlowEat WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A57B11D81F7ED006935A9 /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
+		EA4A57B31D81F7ED006935A9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		EA4A57B51D81F7ED006935A9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EA4A57B71D81F7ED006935A9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		EA4A57B91D81F7ED006935A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA4A57BB1D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A57DE1D81FFF0006935A9 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		EA4A57E11D82002E006935A9 /* RunningBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningBuffer.swift; sourceTree = "<group>"; };
+		EA4C9C56B9F96335C1E3C9F7 /* Pods-SlowEatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA51A10F1DC2638300542924 /* InitialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
+		EA51A1131DC2643100542924 /* Motivation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
+		EA8F48731DE9E14C00776EDC /* MovementDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementDelegate.swift; sourceTree = "<group>"; };
+		EA8F487C1DE9EF7B00776EDC /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		EA8F48801DE9F40500776EDC /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EA8F48811DE9F40500776EDC /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		EA8F48841DEA0A6500776EDC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		EA8F48881DEA0C5B00776EDC /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1FEC353C439EAB5D8715029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57701D81F7ED006935A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AB49C8D51AF4540F381685E /* Pods_SlowEat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57841D81F7ED006935A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A578F1D81F7ED006935A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57A71D81F7ED006935A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		247C37621E8FD17A0003F10C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57981D81F7ED006935A9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		247C37631E8FD1860003F10C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A578D1D81F7ED006935A9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24CB68421DF49E78000009D1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				24440F741DF48E270001C37D /* Constants.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		9083F2373A6B807ADF31AEFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */,
+				01482643ADCC2713AFB09B41 /* Pods-SlowEat.release.xcconfig */,
+				EA4C9C56B9F96335C1E3C9F7 /* Pods-SlowEatTests.debug.xcconfig */,
+				9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */,
+				24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */,
+				118416861194FF20A95D40CA /* Pods-SlowEatUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA4A576A1D81F7ED006935A9 = {
+			isa = PBXGroup;
+			children = (
+				24CB68421DF49E78000009D1 /* Common */,
+				EA4A57751D81F7ED006935A9 /* SlowEat */,
+				EA4A578A1D81F7ED006935A9 /* SlowEatTests */,
+				EA4A57951D81F7ED006935A9 /* SlowEatUITests */,
+				EA4A579F1D81F7ED006935A9 /* SlowEat WatchKit App */,
+				EA4A57AE1D81F7ED006935A9 /* SlowEat WatchKit Extension */,
+				EA4A57741D81F7ED006935A9 /* Products */,
+				EA51A10C1DC2613000542924 /* Frameworks */,
+				9083F2373A6B807ADF31AEFC /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EA4A57741D81F7ED006935A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57731D81F7ED006935A9 /* SlowEat.app */,
+				EA4A57871D81F7ED006935A9 /* SlowEatTests.xctest */,
+				EA4A57921D81F7ED006935A9 /* SlowEatUITests.xctest */,
+				EA4A579B1D81F7ED006935A9 /* SlowEat.app */,
+				EA4A57AA1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA4A57751D81F7ED006935A9 /* SlowEat */ = {
+			isa = PBXGroup;
+			children = (
+				24B5719A1DFC7A0C009EA6D1 /* SlowEat.entitlements */,
+				EA8F48841DEA0A6500776EDC /* Storyboard.storyboard */,
+				EA8F487C1DE9EF7B00776EDC /* InstructionsViewController.swift */,
+				EA8F48881DEA0C5B00776EDC /* TipsViewController.swift */,
+				241137731DF46D0C0085A6F9 /* SettingsViewController.swift */,
+				EA8F48871DEA0B4300776EDC /* TableViewCell */,
+				EA8F48861DEA0B3800776EDC /* Supporting Files */,
+			);
+			path = SlowEat;
+			sourceTree = "<group>";
+		};
+		EA4A578A1D81F7ED006935A9 /* SlowEatTests */ = {
+			isa = PBXGroup;
+			children = (
+				247C37631E8FD1860003F10C /* Supporting Files */,
+			);
+			path = SlowEatTests;
+			sourceTree = "<group>";
+		};
+		EA4A57951D81F7ED006935A9 /* SlowEatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				247C37621E8FD17A0003F10C /* Supporting Files */,
+			);
+			path = SlowEatUITests;
+			sourceTree = "<group>";
+		};
+		EA4A579F1D81F7ED006935A9 /* SlowEat WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57A01D81F7ED006935A9 /* Interface.storyboard */,
+				EA4A57DB1D81FF15006935A9 /* Supporting Files */,
+			);
+			path = "SlowEat WatchKit App";
+			sourceTree = "<group>";
+		};
+		EA4A57AE1D81F7ED006935A9 /* SlowEat WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				24B571971DFC79B7009EA6D1 /* SlowEat WatchKit Extension.entitlements */,
+				EA51A10F1DC2638300542924 /* InitialController.swift */,
+				EA4A57B11D81F7ED006935A9 /* MealController.swift */,
+				EA4A57E31D820CC1006935A9 /* Motion */,
+				EA4A57AF1D81F7ED006935A9 /* Supporting Files */,
+				EA51A1131DC2643100542924 /* Motivation.swift */,
+			);
+			path = "SlowEat WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		EA4A57AF1D81F7ED006935A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57B31D81F7ED006935A9 /* ExtensionDelegate.swift */,
+				EA4A57B51D81F7ED006935A9 /* NotificationController.swift */,
+				EA4A57B71D81F7ED006935A9 /* ComplicationController.swift */,
+				EA4A57B91D81F7ED006935A9 /* Assets.xcassets */,
+				EA4A57BB1D81F7ED006935A9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA4A57DB1D81FF15006935A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57A31D81F7ED006935A9 /* Assets.xcassets */,
+				EA4A57A51D81F7ED006935A9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA4A57E31D820CC1006935A9 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57DE1D81FFF0006935A9 /* MotionManager.swift */,
+				EA4A57E11D82002E006935A9 /* RunningBuffer.swift */,
+				EA8F48731DE9E14C00776EDC /* MovementDelegate.swift */,
+			);
+			name = Motion;
+			sourceTree = "<group>";
+		};
+		EA51A10C1DC2613000542924 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24F2E9A61E0405750080ABD9 /* HealthKit.framework */,
+				E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA8F48861DEA0B3800776EDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A57761D81F7ED006935A9 /* AppDelegate.swift */,
+				EA4A577D1D81F7ED006935A9 /* Assets.xcassets */,
+				EA4A577F1D81F7ED006935A9 /* LaunchScreen.storyboard */,
+				EA4A57821D81F7ED006935A9 /* Info.plist */,
+				24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA8F48871DEA0B4300776EDC /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F48801DE9F40500776EDC /* TableViewCell.swift */,
+				EA8F48811DE9F40500776EDC /* TableViewCell.xib */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA4A57721D81F7ED006935A9 /* SlowEat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A57C61D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat" */;
+			buildPhases = (
+				481F3CE8F537E103995E87BB /* [CP] Check Pods Manifest.lock */,
+				EA4A576F1D81F7ED006935A9 /* Sources */,
+				EA4A57701D81F7ED006935A9 /* Frameworks */,
+				EA4A57711D81F7ED006935A9 /* Resources */,
+				EA4A57C51D81F7ED006935A9 /* Embed Watch Content */,
+				F7472063E0509FB52438ECBD /* [CP] Embed Pods Frameworks */,
+				5F183444A2B6713A9A5EE647 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4A579E1D81F7ED006935A9 /* PBXTargetDependency */,
+			);
+			name = SlowEat;
+			productName = SlowEat;
+			productReference = EA4A57731D81F7ED006935A9 /* SlowEat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA4A57861D81F7ED006935A9 /* SlowEatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A57C91D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEatTests" */;
+			buildPhases = (
+				8000CB288BAD1C71DA75CEC9 /* [CP] Check Pods Manifest.lock */,
+				EA4A57831D81F7ED006935A9 /* Sources */,
+				EA4A57841D81F7ED006935A9 /* Frameworks */,
+				EA4A57851D81F7ED006935A9 /* Resources */,
+				E1652D566F417614FFF41B80 /* [CP] Embed Pods Frameworks */,
+				FA15553E97ED982F4F1A34E6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4A57891D81F7ED006935A9 /* PBXTargetDependency */,
+			);
+			name = SlowEatTests;
+			productName = SlowEatTests;
+			productReference = EA4A57871D81F7ED006935A9 /* SlowEatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA4A57911D81F7ED006935A9 /* SlowEatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A57CC1D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEatUITests" */;
+			buildPhases = (
+				ECB03F8FF24C923E976F4895 /* [CP] Check Pods Manifest.lock */,
+				EA4A578E1D81F7ED006935A9 /* Sources */,
+				EA4A578F1D81F7ED006935A9 /* Frameworks */,
+				EA4A57901D81F7ED006935A9 /* Resources */,
+				31A75335086FE3EA9578A0FB /* [CP] Embed Pods Frameworks */,
+				442119B921829635E90AE5BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4A57941D81F7ED006935A9 /* PBXTargetDependency */,
+			);
+			name = SlowEatUITests;
+			productName = SlowEatUITests;
+			productReference = EA4A57921D81F7ED006935A9 /* SlowEatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		EA4A579A1D81F7ED006935A9 /* SlowEat WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A57C21D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat WatchKit App" */;
+			buildPhases = (
+				EA4A57991D81F7ED006935A9 /* Resources */,
+				EA4A57C11D81F7ED006935A9 /* Embed App Extensions */,
+				A1FEC353C439EAB5D8715029 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4A57AD1D81F7ED006935A9 /* PBXTargetDependency */,
+			);
+			name = "SlowEat WatchKit App";
+			productName = "SlowEat WatchKit App";
+			productReference = EA4A579B1D81F7ED006935A9 /* SlowEat.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		EA4A57A91D81F7ED006935A9 /* SlowEat WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A57BE1D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat WatchKit Extension" */;
+			buildPhases = (
+				EA4A57A61D81F7ED006935A9 /* Sources */,
+				EA4A57A71D81F7ED006935A9 /* Frameworks */,
+				EA4A57A81D81F7ED006935A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SlowEat WatchKit Extension";
+			productName = "SlowEat WatchKit Extension";
+			productReference = EA4A57AA1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA4A576B1D81F7ED006935A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = tm;
+				TargetAttributes = {
+					EA4A57721D81F7ED006935A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4C34FT6ABU;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
+					};
+					EA4A57861D81F7ED006935A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4C34FT6ABU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EA4A57721D81F7ED006935A9;
+					};
+					EA4A57911D81F7ED006935A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4C34FT6ABU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EA4A57721D81F7ED006935A9;
+					};
+					EA4A579A1D81F7ED006935A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4C34FT6ABU;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.app = {
+								enabled = 0;
+							};
+						};
+					};
+					EA4A57A91D81F7ED006935A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4C34FT6ABU;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = EA4A576E1D81F7ED006935A9 /* Build configuration list for PBXProject "SlowEat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA4A576A1D81F7ED006935A9;
+			productRefGroup = EA4A57741D81F7ED006935A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA4A57721D81F7ED006935A9 /* SlowEat */,
+				EA4A57861D81F7ED006935A9 /* SlowEatTests */,
+				EA4A57911D81F7ED006935A9 /* SlowEatUITests */,
+				EA4A579A1D81F7ED006935A9 /* SlowEat WatchKit App */,
+				EA4A57A91D81F7ED006935A9 /* SlowEat WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA4A57711D81F7ED006935A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A57811D81F7ED006935A9 /* LaunchScreen.storyboard in Resources */,
+				EA8F48831DE9F40500776EDC /* TableViewCell.xib in Resources */,
+				EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */,
+				EA8F48851DEA0A6500776EDC /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57851D81F7ED006935A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57901D81F7ED006935A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57991D81F7ED006935A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A57A41D81F7ED006935A9 /* Assets.xcassets in Resources */,
+				EA4A57A21D81F7ED006935A9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57A81D81F7ED006935A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A57BA1D81F7ED006935A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31A75335086FE3EA9578A0FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		442119B921829635E90AE5BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		481F3CE8F537E103995E87BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F183444A2B6713A9A5EE647 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8000CB288BAD1C71DA75CEC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1652D566F417614FFF41B80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECB03F8FF24C923E976F4895 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7472063E0509FB52438ECBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA15553E97ED982F4F1A34E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA4A576F1D81F7ED006935A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
+				EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */,
+				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
+				241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */,
+				EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */,
+				24440F751DF48E270001C37D /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57831D81F7ED006935A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A578E1D81F7ED006935A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A57A61D81F7ED006935A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A57B61D81F7ED006935A9 /* NotificationController.swift in Sources */,
+				EA4A57E21D82002E006935A9 /* RunningBuffer.swift in Sources */,
+				EA51A1141DC2643100542924 /* Motivation.swift in Sources */,
+				EA8F48741DE9E14C00776EDC /* MovementDelegate.swift in Sources */,
+				EA4A57B81D81F7ED006935A9 /* ComplicationController.swift in Sources */,
+				EA51A1101DC2638300542924 /* InitialController.swift in Sources */,
+				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
+				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
+				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
+				24440F761DF48E270001C37D /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA4A57891D81F7ED006935A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4A57721D81F7ED006935A9 /* SlowEat */;
+			targetProxy = EA4A57881D81F7ED006935A9 /* PBXContainerItemProxy */;
+		};
+		EA4A57941D81F7ED006935A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4A57721D81F7ED006935A9 /* SlowEat */;
+			targetProxy = EA4A57931D81F7ED006935A9 /* PBXContainerItemProxy */;
+		};
+		EA4A579E1D81F7ED006935A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4A579A1D81F7ED006935A9 /* SlowEat WatchKit App */;
+			targetProxy = EA4A579D1D81F7ED006935A9 /* PBXContainerItemProxy */;
+		};
+		EA4A57AD1D81F7ED006935A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4A57A91D81F7ED006935A9 /* SlowEat WatchKit Extension */;
+			targetProxy = EA4A57AC1D81F7ED006935A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA4A577F1D81F7ED006935A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA4A57801D81F7ED006935A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EA4A57A01D81F7ED006935A9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA4A57A11D81F7ED006935A9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA4A57BC1D81F7ED006935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA4A57BD1D81F7ED006935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA4A57BF1D81F7ED006935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "SlowEat WatchKit Extension/SlowEat WatchKit Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = "SlowEat WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elit.SlowEat.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		EA4A57C01D81F7ED006935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "SlowEat WatchKit Extension/SlowEat WatchKit Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = "SlowEat WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elit.SlowEat.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		EA4A57C31D81F7ED006935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				IBSC_MODULE = SlowEat_WatchKit_Extension;
+				INFOPLIST_FILE = "SlowEat WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elit.SlowEat.watchkitapp;
+				PRODUCT_NAME = SlowEat;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		EA4A57C41D81F7ED006935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				IBSC_MODULE = SlowEat_WatchKit_Extension;
+				INFOPLIST_FILE = "SlowEat WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elit.SlowEat.watchkitapp;
+				PRODUCT_NAME = SlowEat;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		EA4A57C71D81F7ED006935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = SlowEat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elit.SlowEat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SlowEat/SlowEat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EA4A57C81D81F7ED006935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01482643ADCC2713AFB09B41 /* Pods-SlowEat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = SlowEat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elit.SlowEat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SlowEat/SlowEat-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EA4A57CA1D81F7ED006935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA4C9C56B9F96335C1E3C9F7 /* Pods-SlowEatTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = SlowEatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tm.SlowEatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlowEat.app/SlowEat";
+			};
+			name = Debug;
+		};
+		EA4A57CB1D81F7ED006935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = SlowEatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tm.SlowEatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlowEat.app/SlowEat";
+			};
+			name = Release;
+		};
+		EA4A57CD1D81F7ED006935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = SlowEatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tm.SlowEatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SlowEat;
+			};
+			name = Debug;
+		};
+		EA4A57CE1D81F7ED006935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118416861194FF20A95D40CA /* Pods-SlowEatUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4C34FT6ABU;
+				INFOPLIST_FILE = SlowEatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tm.SlowEatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SlowEat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA4A576E1D81F7ED006935A9 /* Build configuration list for PBXProject "SlowEat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A57BC1D81F7ED006935A9 /* Debug */,
+				EA4A57BD1D81F7ED006935A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A57BE1D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A57BF1D81F7ED006935A9 /* Debug */,
+				EA4A57C01D81F7ED006935A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A57C21D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A57C31D81F7ED006935A9 /* Debug */,
+				EA4A57C41D81F7ED006935A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A57C61D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A57C71D81F7ED006935A9 /* Debug */,
+				EA4A57C81D81F7ED006935A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A57C91D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A57CA1D81F7ED006935A9 /* Debug */,
+				EA4A57CB1D81F7ED006935A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A57CC1D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A57CD1D81F7ED006935A9 /* Debug */,
+				EA4A57CE1D81F7ED006935A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA4A576B1D81F7ED006935A9 /* Project object */;
+}

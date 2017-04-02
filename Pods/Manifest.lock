@@ -1,0 +1,17 @@
+PODS:
+  - Instabug (6.1.1)
+  - Mixpanel (3.0.6):
+    - Mixpanel/Mixpanel (= 3.0.6)
+  - Mixpanel/Mixpanel (3.0.6)
+
+DEPENDENCIES:
+  - Instabug
+  - Mixpanel
+
+SPEC CHECKSUMS:
+  Instabug: a4b69f65058a159f2fb01e7932c4cbc93c4c83eb
+  Mixpanel: c462992e6fe84d74a8d0408c0b25852ddd067e4b
+
+PODFILE CHECKSUM: 063e8828fcf0920a7b317d9e2158ebc42cb4fe54
+
+COCOAPODS: 1.1.1

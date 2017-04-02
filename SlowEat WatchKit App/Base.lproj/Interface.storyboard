@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tzF-vI-bGl">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--SlowEat-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="SlowEat" id="AgC-eL-Hgc" customClass="MealController" customModule="SlowEat_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="5" id="EHz-bB-N29">
+                            <items>
+                                <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="RV2-ZC-pua">
+                                    <items>
+                                        <group width="1" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" spacing="20" id="4Y2-NZ-w4l">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="01:23.77" textAlignment="right" id="gcA-D2-My4">
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" verticalAlignment="center" spacing="8" id="Qjo-yZ-A9e">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="23" textAlignment="right" minimumScaleFactor="0.5" id="EEC-fN-6hZ">
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
+                                                </label>
+                                                <label height="1" alignment="left" verticalAlignment="center" alpha="0.5" text="BPM" textAlignment="right" baselineAdjustment="alignCenters" id="a56-Af-Wvh">
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" verticalAlignment="center" spacing="8" id="s5I-nR-lpc">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="1234" textAlignment="right" minimumScaleFactor="0.5" id="9bl-qo-Ix6">
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
+                                                </label>
+                                                <label height="1" alignment="left" verticalAlignment="center" alpha="0.5" text="B" textAlignment="right" baselineAdjustment="alignCenters" id="kbX-UJ-AwE">
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="hR8-T5-ZvV" kind="relationship" relationship="nextPage" id="Ros-Dg-dMh"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="188" y="344"/>
+        </scene>
+        <!--SlowEat-->
+        <scene sceneID="l04-i5-ERv">
+            <objects>
+                <controller title="SlowEat" id="hR8-T5-ZvV">
+                    <items>
+                        <button width="1" height="60" alignment="left" verticalAlignment="center" title="END" id="8bp-fI-2WM">
+                            <color key="titleColor" red="0.98039215690000003" green="0.066666666669999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="479" y="344"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="206" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="SlowEat" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="643"/>
+        </scene>
+        <!--SlowEat-->
+        <scene sceneID="w9i-vF-Kdo">
+            <objects>
+                <controller title="SlowEat" id="tzF-vI-bGl" customClass="InitialController" customModule="SlowEat_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="75D-hf-XsO">
+                            <items>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="START" id="63M-gk-6sE">
+                                    <color key="titleColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                    <connections>
+                                        <segue destination="AgC-eL-Hgc" kind="modal" id="av4-kx-aEg"/>
+                                    </connections>
+                                </button>
+                                <label width="1" height="110" alignment="center" verticalAlignment="center" text="Learning to eat slower is a simple yet powerful concept to improve your overall health" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="YW9-wS-An5">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="motivationLabel" destination="YW9-wS-An5" id="5VA-Ub-bmv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-83" y="344"/>
+        </scene>
+    </scenes>
+</document>
