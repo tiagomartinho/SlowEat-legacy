@@ -11,6 +11,18 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(expected, tracker.startDate!)
     }
+
+    func testStopTrackerToSaveEndDate() {
+        let staticDateProvider = StaticDateProvider()
+        let expected = Date(timeIntervalSince1970: 100)
+        let tracker = MealTracker(dateProvider: staticDateProvider)
+        tracker.start()
+        staticDateProvider.currentDate = expected
+
+        tracker.stop()
+
+        XCTAssertEqual(expected, tracker.endDate!)
+    }
 }
 
 class MealTracker {
@@ -18,6 +30,7 @@ class MealTracker {
     let dateProvider: DateProvider
 
     var startDate: Date?
+    var endDate: Date?
 
     init(dateProvider: DateProvider) {
         self.dateProvider = dateProvider
@@ -25,6 +38,10 @@ class MealTracker {
 
     func start() {
         startDate = dateProvider.currentDate
+    }
+
+    func stop() {
+        endDate = dateProvider.currentDate
     }
 }
 
