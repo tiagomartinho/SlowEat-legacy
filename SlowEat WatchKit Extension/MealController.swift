@@ -9,15 +9,6 @@ class MealController: WKInterfaceController {
     private var motionUpdatesInProgress = false
     private var session: WCSession?
 
-    @IBAction func endMeal() {
-        let endAction = WKAlertAction(title: "End", style: .destructive) { _ in
-            self.session?.sendMessage(["end":""], replyHandler: nil, errorHandler: nil)
-            self.dismiss()
-        }
-        let cancelAction = WKAlertAction(title: "Cancel", style: .cancel) { _ in }
-        presentAlert(withTitle: "Do you want to end the meal?", message: nil, preferredStyle: .alert, actions: [cancelAction, endAction])
-    }
-
     deinit {
         print("deinit")
         motionManager.stopUpdates()

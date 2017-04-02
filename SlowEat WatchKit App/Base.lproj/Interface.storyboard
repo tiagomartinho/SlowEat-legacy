@@ -59,11 +59,14 @@
         <!--SlowEat-->
         <scene sceneID="l04-i5-ERv">
             <objects>
-                <controller title="SlowEat" id="hR8-T5-ZvV">
+                <controller title="SlowEat" id="hR8-T5-ZvV" customClass="EndMealController" customModule="SlowEat_WatchKit_Extension">
                     <items>
                         <button width="1" height="60" alignment="left" verticalAlignment="center" title="END" id="8bp-fI-2WM">
                             <color key="titleColor" red="0.98039215690000003" green="0.066666666669999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                            <connections>
+                                <action selector="endMeal" destination="hR8-T5-ZvV" id="hyq-2r-keI"/>
+                            </connections>
                         </button>
                     </items>
                 </controller>
