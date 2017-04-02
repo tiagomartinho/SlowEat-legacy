@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1AB49C8D51AF4540F381685E /* Pods_SlowEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */; };
 		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
-		24440F751DF48E270001C37D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24440F741DF48E270001C37D /* Constants.swift */; };
-		24440F761DF48E270001C37D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24440F741DF48E270001C37D /* Constants.swift */; };
 		2455BB241E912AF20038C541 /* EndMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB231E912AF20038C541 /* EndMealController.swift */; };
 		2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB251E912CEC0038C541 /* MealTrackerTest.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
@@ -98,7 +96,6 @@
 		01482643ADCC2713AFB09B41 /* Pods-SlowEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.release.xcconfig"; sourceTree = "<group>"; };
 		118416861194FF20A95D40CA /* Pods-SlowEatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		24440F741DF48E270001C37D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2455BB231E912AF20038C541 /* EndMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndMealController.swift; sourceTree = "<group>"; };
 		2455BB251E912CEC0038C541 /* MealTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTrackerTest.swift; sourceTree = "<group>"; };
 		24B571971DFC79B7009EA6D1 /* SlowEat WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlowEat WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -202,7 +199,6 @@
 		24CB68421DF49E78000009D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				24440F741DF48E270001C37D /* Constants.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -741,7 +737,6 @@
 				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
 				241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */,
 				EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */,
-				24440F751DF48E270001C37D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,7 +768,6 @@
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
 				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
-				24440F761DF48E270001C37D /* Constants.swift in Sources */,
 				2455BB241E912AF20038C541 /* EndMealController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

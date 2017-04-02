@@ -37,10 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {}
 
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let userSeconds = message["userSeconds"] as? Double {
-            let defaults = UserDefaults.standard
-            defaults.set(userSeconds, forKey: Constants.seconds)
-        }
         if let _ = message["vibrate"] {
 //            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
