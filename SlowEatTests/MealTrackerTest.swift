@@ -1,4 +1,5 @@
 import XCTest
+@testable import SlowEat
 
 class MealTrackerTest: XCTestCase {
 
@@ -28,32 +29,4 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(expected, tracker.endDate!)
     }
-}
-
-class MealTracker {
-
-    let dateProvider: DateProvider
-
-    var startDate: Date?
-    var endDate: Date?
-
-    init(dateProvider: DateProvider) {
-        self.dateProvider = dateProvider
-    }
-
-    func start() {
-        startDate = dateProvider.currentDate
-    }
-
-    func stop() {
-        endDate = dateProvider.currentDate
-    }
-}
-
-protocol DateProvider {
-    var currentDate: Date { get }
-}
-
-class StaticDateProvider: DateProvider {
-    var currentDate = Date(timeIntervalSince1970: 0)
 }

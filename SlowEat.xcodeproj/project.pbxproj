@@ -11,6 +11,11 @@
 		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
 		2455BB241E912AF20038C541 /* EndMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB231E912AF20038C541 /* EndMealController.swift */; };
 		2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB251E912CEC0038C541 /* MealTrackerTest.swift */; };
+		2455BB281E91315C0038C541 /* MealTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB271E91315C0038C541 /* MealTracker.swift */; };
+		2455BB291E91315C0038C541 /* MealTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB271E91315C0038C541 /* MealTracker.swift */; };
+		2455BB2B1E9131720038C541 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB2A1E9131720038C541 /* DateProvider.swift */; };
+		2455BB2C1E9131720038C541 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB2A1E9131720038C541 /* DateProvider.swift */; };
+		2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB2D1E9131950038C541 /* StaticDateProvider.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
 		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
@@ -98,6 +103,9 @@
 		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2455BB231E912AF20038C541 /* EndMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndMealController.swift; sourceTree = "<group>"; };
 		2455BB251E912CEC0038C541 /* MealTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTrackerTest.swift; sourceTree = "<group>"; };
+		2455BB271E91315C0038C541 /* MealTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTracker.swift; sourceTree = "<group>"; };
+		2455BB2A1E9131720038C541 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
+		2455BB2D1E9131950038C541 /* StaticDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDateProvider.swift; sourceTree = "<group>"; };
 		24B571971DFC79B7009EA6D1 /* SlowEat WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlowEat WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		24B5719A1DFC7A0C009EA6D1 /* SlowEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlowEat.entitlements; sourceTree = "<group>"; };
 		24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlowEat-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -199,6 +207,8 @@
 		24CB68421DF49E78000009D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2455BB271E91315C0038C541 /* MealTracker.swift */,
+				2455BB2A1E9131720038C541 /* DateProvider.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -262,6 +272,7 @@
 			children = (
 				247C37631E8FD1860003F10C /* Supporting Files */,
 				2455BB251E912CEC0038C541 /* MealTrackerTest.swift */,
+				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 			);
 			path = SlowEatTests;
 			sourceTree = "<group>";
@@ -732,9 +743,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2455BB2B1E9131720038C541 /* DateProvider.swift in Sources */,
 				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
 				EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */,
 				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
+				2455BB281E91315C0038C541 /* MealTracker.swift in Sources */,
 				241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */,
 				EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */,
 			);
@@ -744,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */,
 				2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +773,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2455BB291E91315C0038C541 /* MealTracker.swift in Sources */,
 				EA4A57B61D81F7ED006935A9 /* NotificationController.swift in Sources */,
 				EA4A57E21D82002E006935A9 /* RunningBuffer.swift in Sources */,
 				EA51A1141DC2643100542924 /* Motivation.swift in Sources */,
@@ -768,6 +783,7 @@
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
 				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
+				2455BB2C1E9131720038C541 /* DateProvider.swift in Sources */,
 				2455BB241E912AF20038C541 /* EndMealController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
