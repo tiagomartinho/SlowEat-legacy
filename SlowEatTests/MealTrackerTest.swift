@@ -2,10 +2,17 @@ import XCTest
 
 class MealTrackerTest: XCTestCase {
 
+    var staticDateProvider: StaticDateProvider!
+    var tracker: MealTracker!
+
+    override func setUp() {
+        super.setUp()
+        staticDateProvider = StaticDateProvider()
+        tracker = MealTracker(dateProvider: staticDateProvider)
+    }
+
     func testStartTrackerToSaveStartDate() {
-        let staticDateProvider = StaticDateProvider()
         let expected = staticDateProvider.currentDate
-        let tracker = MealTracker(dateProvider: staticDateProvider)
 
         tracker.start()
 
@@ -13,9 +20,7 @@ class MealTrackerTest: XCTestCase {
     }
 
     func testStopTrackerToSaveEndDate() {
-        let staticDateProvider = StaticDateProvider()
         let expected = Date(timeIntervalSince1970: 100)
-        let tracker = MealTracker(dateProvider: staticDateProvider)
         tracker.start()
         staticDateProvider.currentDate = expected
 
