@@ -29,4 +29,15 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(expected, tracker.endDate!)
     }
+
+    func testTrackerHasMealTime() {
+        let currentDate = Date(timeIntervalSince1970: 100)
+        let expected = currentDate.timeIntervalSince(staticDateProvider.currentDate)
+        tracker.start()
+        staticDateProvider.currentDate = currentDate
+
+        let date = tracker.mealTime
+
+        XCTAssertEqual(expected, date)
+    }
 }

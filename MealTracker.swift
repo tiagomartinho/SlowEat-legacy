@@ -7,6 +7,11 @@ class MealTracker {
     var startDate: Date?
     var endDate: Date?
 
+    var mealTime: TimeInterval? {
+        guard let startDate = startDate else { return nil }
+        return dateProvider.currentDate.timeIntervalSince(startDate)
+    }
+
     init(dateProvider: DateProvider) {
         self.dateProvider = dateProvider
     }
