@@ -1,15 +1,15 @@
 import XCTest
 @testable import SlowEat
 
-class TimeTrackerTest: XCTestCase {
+class FoundationTimeTrackerTest: XCTestCase {
 
     var staticDateProvider: StaticDateProvider!
-    var tracker: TimeTracker!
+    var tracker: FoundationTimeTracker!
 
     override func setUp() {
         super.setUp()
         staticDateProvider = StaticDateProvider()
-        tracker = TimeTracker(dateProvider: staticDateProvider)
+        tracker = FoundationTimeTracker(dateProvider: staticDateProvider)
     }
 
     func testStartTrackerToSaveStartDate() {
