@@ -6,9 +6,10 @@ import UserNotifications
 class MealController: WKInterfaceController {
 
     @IBOutlet var mealTimeLabel: WKInterfaceLabel!
+    @IBOutlet var biteCountLabel: WKInterfaceLabel!
 
     private let motionManager = MotionManager()
-    private let mealTracker = MealTracker(timeTracker: FoundationTimeTracker(dateProvider: FoundationDateProvider()))
+    fileprivate let mealTracker = MealTracker(timeTracker: FoundationTimeTracker(dateProvider: FoundationDateProvider()))
     private var timer: Timer?
     private var motionUpdatesInProgress = false
     private var session: WCSession?
@@ -45,6 +46,7 @@ class MealController: WKInterfaceController {
             let mealTimeFormatted = TimeFormatter.format(mealTime)
             mealTimeLabel.setText(mealTimeFormatted)
         }
+        biteCountLabel.setText("\(mealTracker.biteCount)")
     }
 
     private func startTimer() {
@@ -59,10 +61,10 @@ class MealController: WKInterfaceController {
 
 extension MealController: MovementDelegate {
     func waiting() {
-        print("waiting")
+        mealTracker.waiting()
     }
 
     func moving() {
-        print("moving")
+        mealTracker.moving()
     }
 }
