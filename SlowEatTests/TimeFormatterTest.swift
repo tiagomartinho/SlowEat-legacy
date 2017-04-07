@@ -1,4 +1,5 @@
 import XCTest
+@testable import SlowEat
 
 class TimeFormatterTest: XCTestCase {
 
@@ -20,14 +21,5 @@ class TimeFormatterTest: XCTestCase {
         let time = formatter.format(timeInterval)
 
         XCTAssertEqual(expected, time)
-    }
-
-    class TimeFormatter {
-        func format(_ timeInterval: TimeInterval) -> String {
-            let time = Int(timeInterval)
-            let minutes = time / 60 % 60
-            let seconds = time % 60
-            return String(format:"%02i:%02i", minutes, seconds)
-        }
     }
 }
