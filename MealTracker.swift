@@ -7,7 +7,8 @@ class MealTracker {
     var startDate: Date?
     var endDate: Date?
 
-    let biteCount = 0
+    var biteCount = 0
+    private var isWaiting = false
 
     var mealTime: TimeInterval? {
         guard let startDate = startDate else { return nil }
@@ -27,8 +28,12 @@ class MealTracker {
     }
 
     func waiting() {
+        isWaiting = true
     }
 
     func moving() {
+        if isWaiting {
+            biteCount += 1
+        }
     }
 }
