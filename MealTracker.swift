@@ -2,28 +2,33 @@ import Foundation
 
 class MealTracker {
 
-    var startDate: Date?
-    var endDate: Date?
     var biteCount = 0
 
-    private let dateProvider: DateProvider
+    private let timeTracker: TimeTracker
     private var isWaiting = false
 
     var mealTime: TimeInterval? {
-        guard let startDate = startDate else { return nil }
-        return dateProvider.currentDate.timeIntervalSince(startDate)
+        return timeTracker.currentTime
     }
 
-    init(dateProvider: DateProvider) {
-        self.dateProvider = dateProvider
+    var startDate: Date? {
+        return timeTracker.startDate
+    }
+
+    var endDate: Date? {
+        return timeTracker.endDate
+    }
+
+    init(timeTracker: TimeTracker) {
+        self.timeTracker = timeTracker
     }
 
     func start() {
-        startDate = dateProvider.currentDate
+        timeTracker.start()
     }
 
     func stop() {
-        endDate = dateProvider.currentDate
+        timeTracker.stop()
     }
 
     func waiting() {

@@ -3,42 +3,33 @@ import XCTest
 
 class MealTrackerTest: XCTestCase {
 
-    var staticDateProvider: StaticDateProvider!
+    var timeTracker: SpyTimeTracker!
     var tracker: MealTracker!
 
     override func setUp() {
         super.setUp()
-        staticDateProvider = StaticDateProvider()
-        tracker = MealTracker(dateProvider: staticDateProvider)
+        timeTracker = SpyTimeTracker()
+        tracker = MealTracker(timeTracker: timeTracker)
     }
 
-    func testStartTrackerToSaveStartDate() {
-        let expected = staticDateProvider.currentDate
-
+    func testStartTrackerDelegatesTimeTracking() {
         tracker.start()
 
-        XCTAssertEqual(expected, tracker.startDate!)
+        XCTAssert(timeTracker.startCalled)
     }
 
-    func testStopTrackerToSaveEndDate() {
-        let expected = Date(timeIntervalSince1970: 100)
-        tracker.start()
-        staticDateProvider.currentDate = expected
-
+    func testStopTrackerDelegatesTimeTracking() {
         tracker.stop()
 
-        XCTAssertEqual(expected, tracker.endDate!)
+        XCTAssert(timeTracker.stopCalled)
     }
 
-    func testTrackerHasMealTime() {
-        let currentDate = Date(timeIntervalSince1970: 100)
-        let expected = currentDate.timeIntervalSince(staticDateProvider.currentDate)
+    func testTimeTrackingIsTimeTrackerResponsability() {
         tracker.start()
-        staticDateProvider.currentDate = currentDate
 
         let date = tracker.mealTime
 
-        XCTAssertEqual(expected, date)
+        XCTAssertEqual(timeTracker.currentTime, date)
     }
 
     func testIfUserIsWaitingTheBiteCountDoesNotIncrease() {

@@ -14,6 +14,7 @@
 		2453AE0C1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */; };
 		2453AE0E1E979F1D0069C7C3 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */; };
 		2453AE0F1E979F1D0069C7C3 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */; };
+		2453AE111E97A2030069C7C3 /* SpyTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */; };
 		2455BB241E912AF20038C541 /* EndMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB231E912AF20038C541 /* EndMealController.swift */; };
 		2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB251E912CEC0038C541 /* MealTrackerTest.swift */; };
 		2455BB281E91315C0038C541 /* MealTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB271E91315C0038C541 /* MealTracker.swift */; };
@@ -114,6 +115,7 @@
 		2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTrackerTest.swift; sourceTree = "<group>"; };
 		2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationTimeTracker.swift; sourceTree = "<group>"; };
 		2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
+		2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyTimeTracker.swift; sourceTree = "<group>"; };
 		2455BB231E912AF20038C541 /* EndMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndMealController.swift; sourceTree = "<group>"; };
 		2455BB251E912CEC0038C541 /* MealTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTrackerTest.swift; sourceTree = "<group>"; };
 		2455BB271E91315C0038C541 /* MealTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTracker.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				247C37631E8FD1860003F10C /* Supporting Files */,
 				2455BB251E912CEC0038C541 /* MealTrackerTest.swift */,
+				2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */,
 				2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */,
 				24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */,
 				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
@@ -787,6 +790,7 @@
 				24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */,
 				2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */,
 				2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */,
+				2453AE111E97A2030069C7C3 /* SpyTimeTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

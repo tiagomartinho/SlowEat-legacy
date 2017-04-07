@@ -8,7 +8,7 @@ class MealController: WKInterfaceController {
     @IBOutlet var mealTimeLabel: WKInterfaceLabel!
 
     private let motionManager = MotionManager()
-    private let mealTracker = MealTracker(dateProvider: FoundationDateProvider())
+    private let mealTracker = MealTracker(timeTracker: FoundationTimeTracker(dateProvider: FoundationDateProvider()))
     private var timer: Timer?
     private var motionUpdatesInProgress = false
     private var session: WCSession?
