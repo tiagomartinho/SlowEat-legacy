@@ -7,6 +7,8 @@ class MealTracker {
     var startDate: Date?
     var endDate: Date?
 
+    let biteCount = 0
+
     var mealTime: TimeInterval? {
         guard let startDate = startDate else { return nil }
         return dateProvider.currentDate.timeIntervalSince(startDate)
@@ -22,5 +24,8 @@ class MealTracker {
 
     func stop() {
         endDate = dateProvider.currentDate
+    }
+
+    func waiting() {
     }
 }
