@@ -50,7 +50,8 @@ class MealController: WKInterfaceController {
     }
 
     private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+        timer?.tolerance = 0.5
     }
 
     private func stopTimer() {
