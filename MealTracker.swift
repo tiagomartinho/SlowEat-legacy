@@ -42,3 +42,11 @@ class MealTracker {
         }
     }
 }
+
+extension MealTracker {
+    static func build() -> MealTracker {
+        let dateProvider = FoundationDateProvider()
+        let timeTracker = FoundationTimeTracker(dateProvider: dateProvider)
+        return MealTracker(timeTracker: timeTracker)
+    }
+}
