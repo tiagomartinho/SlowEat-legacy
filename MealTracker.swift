@@ -28,4 +28,7 @@ class MealTracker {
 
     func waiting() {
     }
+
+    func moving() {
+    }
 }

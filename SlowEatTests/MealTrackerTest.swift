@@ -48,4 +48,12 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(0, tracker.biteCount)
     }
+
+    func testIfUserIsMovingTheBitesCountDoesNotIncrease() {
+        tracker.start()
+
+        for _ in 1...100 { tracker.moving() }
+
+        XCTAssertEqual(0, tracker.biteCount)
+    }
 }
