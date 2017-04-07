@@ -12,6 +12,8 @@
 		2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */; };
 		2453AE0B1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */; };
 		2453AE0C1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */; };
+		2453AE0E1E979F1D0069C7C3 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */; };
+		2453AE0F1E979F1D0069C7C3 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */; };
 		2455BB241E912AF20038C541 /* EndMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB231E912AF20038C541 /* EndMealController.swift */; };
 		2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB251E912CEC0038C541 /* MealTrackerTest.swift */; };
 		2455BB281E91315C0038C541 /* MealTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB271E91315C0038C541 /* MealTracker.swift */; };
@@ -111,6 +113,7 @@
 		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTrackerTest.swift; sourceTree = "<group>"; };
 		2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationTimeTracker.swift; sourceTree = "<group>"; };
+		2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
 		2455BB231E912AF20038C541 /* EndMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndMealController.swift; sourceTree = "<group>"; };
 		2455BB251E912CEC0038C541 /* MealTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTrackerTest.swift; sourceTree = "<group>"; };
 		2455BB271E91315C0038C541 /* MealTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTracker.swift; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				2455BB271E91315C0038C541 /* MealTracker.swift */,
+				2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */,
 				2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */,
 				2455BB2A1E9131720038C541 /* DateProvider.swift */,
 				24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */,
@@ -766,6 +770,7 @@
 				24D36EB81E97941E00B0B439 /* TimeFormatter.swift in Sources */,
 				2453AE0B1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */,
 				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
+				2453AE0E1E979F1D0069C7C3 /* TimeTracker.swift in Sources */,
 				EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */,
 				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
 				2455BB281E91315C0038C541 /* MealTracker.swift in Sources */,
@@ -803,6 +808,7 @@
 				EA8F48741DE9E14C00776EDC /* MovementDelegate.swift in Sources */,
 				EA4A57B81D81F7ED006935A9 /* ComplicationController.swift in Sources */,
 				EA51A1101DC2638300542924 /* InitialController.swift in Sources */,
+				2453AE0F1E979F1D0069C7C3 /* TimeTracker.swift in Sources */,
 				24D36EB91E97942700B0B439 /* TimeFormatter.swift in Sources */,
 				2453AE0C1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */,
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,

@@ -1,6 +1,6 @@
 import Foundation
 
-class FoundationTimeTracker {
+class FoundationTimeTracker: TimeTracker {
 
     var startDate: Date?
     var endDate: Date?
