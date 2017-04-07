@@ -19,6 +19,8 @@
 		24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */; };
 		24D36EB81E97941E00B0B439 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB71E97941E00B0B439 /* TimeFormatter.swift */; };
 		24D36EB91E97942700B0B439 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB71E97941E00B0B439 /* TimeFormatter.swift */; };
+		24D36EBB1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */; };
+		24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
 		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
@@ -114,6 +116,7 @@
 		24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlowEat-Bridging-Header.h"; sourceTree = "<group>"; };
 		24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTest.swift; sourceTree = "<group>"; };
 		24D36EB71E97941E00B0B439 /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationDateProvider.swift; sourceTree = "<group>"; };
 		24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24F2E9A61E0405750080ABD9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 			children = (
 				2455BB271E91315C0038C541 /* MealTracker.swift */,
 				2455BB2A1E9131720038C541 /* DateProvider.swift */,
+				24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */,
 				24D36EB71E97941E00B0B439 /* TimeFormatter.swift */,
 			);
 			name = Common;
@@ -750,6 +754,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D36EBB1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */,
 				2455BB2B1E9131720038C541 /* DateProvider.swift in Sources */,
 				24D36EB81E97941E00B0B439 /* TimeFormatter.swift in Sources */,
 				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
@@ -793,6 +798,7 @@
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
 				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
+				24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */,
 				2455BB2C1E9131720038C541 /* DateProvider.swift in Sources */,
 				2455BB241E912AF20038C541 /* EndMealController.swift in Sources */,
 			);
