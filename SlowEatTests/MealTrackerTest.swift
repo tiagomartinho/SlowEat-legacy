@@ -65,4 +65,13 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(1, tracker.biteCount)
     }
+
+    func testIfUserIsWaitingAndThenIsMovingTheBiteCountIncreasesOnce() {
+        tracker.start()
+        for _ in 1...100 { tracker.waiting() }
+
+        for _ in 1...100 { tracker.moving() }
+
+        XCTAssertEqual(1, tracker.biteCount)
+    }
 }

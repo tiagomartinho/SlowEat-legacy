@@ -33,6 +33,7 @@ class MealTracker {
     func moving() {
         if isWaiting {
             biteCount += 1
+            isWaiting = false
         }
     }
 }
