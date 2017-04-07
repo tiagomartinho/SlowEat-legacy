@@ -5,18 +5,21 @@ import UserNotifications
 
 class MealController: WKInterfaceController {
 
+    @IBOutlet var mealTimeLabel: WKInterfaceLabel!
+
     private let motionManager = MotionManager()
+    private let mealTracker = MealTracker(dateProvider: FoundationDateProvider())
+    private var timer: Timer?
     private var motionUpdatesInProgress = false
     private var session: WCSession?
 
     deinit {
-        print("deinit")
         motionManager.stopUpdates()
     }
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        print("awakeWithContext")
+        mealTracker.start()
         session = WCSession.default()
         session?.activate()
         motionManager.delegate = self
@@ -24,7 +27,7 @@ class MealController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
-        print("willActivate")
+        startTimer()
         if !motionUpdatesInProgress {
             motionManager.startUpdates()
             motionUpdatesInProgress = true
@@ -32,19 +35,25 @@ class MealController: WKInterfaceController {
         }
     }
 
-    override func didAppear() {
-        super.didAppear()
-        print("didAppear")
-    }
-
-    override func willDisappear() {
-        super.willDisappear()
-        print("willDisappear")
-    }
-
     override func didDeactivate() {
         super.didDeactivate()
-        print("didDeactivate")
+        stopTimer()
+    }
+
+    func updateUI() {
+        if let mealTime = mealTracker.mealTime {
+            let mealTimeFormatted = TimeFormatter.format(mealTime)
+            mealTimeLabel.setText(mealTimeFormatted)
+        }
+    }
+
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+    }
+
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
 }
 

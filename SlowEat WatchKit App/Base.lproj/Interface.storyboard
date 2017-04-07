@@ -19,7 +19,7 @@
                                     <items>
                                         <group width="1" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" spacing="20" id="4Y2-NZ-w4l">
                                             <items>
-                                                <label alignment="left" verticalAlignment="center" text="01:23.77" textAlignment="right" id="gcA-D2-My4">
+                                                <label alignment="left" verticalAlignment="center" text="00:00" textAlignment="right" id="gcA-D2-My4">
                                                     <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
                                                 </label>
                                             </items>
@@ -50,6 +50,7 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="mealTimeLabel" destination="gcA-D2-My4" id="jYd-rP-Nmn"/>
                         <segue destination="hR8-T5-ZvV" kind="relationship" relationship="nextPage" id="Ros-Dg-dMh"/>
                     </connections>
                 </controller>
