@@ -2,12 +2,11 @@ import Foundation
 
 class MealTracker {
 
-    let dateProvider: DateProvider
-
     var startDate: Date?
     var endDate: Date?
-
     var biteCount = 0
+
+    private let dateProvider: DateProvider
     private var isWaiting = false
 
     var mealTime: TimeInterval? {
