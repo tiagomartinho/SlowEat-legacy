@@ -60,13 +60,6 @@
 			remoteGlobalIDString = EA4A57721D81F7ED006935A9;
 			remoteInfo = SlowEat;
 		};
-		EA4A57931D81F7ED006935A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA4A576B1D81F7ED006935A9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EA4A57721D81F7ED006935A9;
-			remoteInfo = SlowEat;
-		};
 		EA4A579D1D81F7ED006935A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA4A576B1D81F7ED006935A9 /* Project object */;
@@ -139,8 +132,6 @@
 		EA4A57821D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4A57871D81F7ED006935A9 /* SlowEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A578D1D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA4A57921D81F7ED006935A9 /* SlowEatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowEatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA4A57981D81F7ED006935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4A579B1D81F7ED006935A9 /* SlowEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlowEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A57A11D81F7ED006935A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		EA4A57A31D81F7ED006935A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,13 +179,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA4A578F1D81F7ED006935A9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EA4A57A71D81F7ED006935A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,14 +190,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		247C37621E8FD17A0003F10C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA4A57981D81F7ED006935A9 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		247C37631E8FD1860003F10C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +230,6 @@
 				24CB68421DF49E78000009D1 /* Common */,
 				EA4A57751D81F7ED006935A9 /* SlowEat */,
 				EA4A578A1D81F7ED006935A9 /* SlowEatTests */,
-				EA4A57951D81F7ED006935A9 /* SlowEatUITests */,
 				EA4A579F1D81F7ED006935A9 /* SlowEat WatchKit App */,
 				EA4A57AE1D81F7ED006935A9 /* SlowEat WatchKit Extension */,
 				EA4A57741D81F7ED006935A9 /* Products */,
@@ -268,7 +243,6 @@
 			children = (
 				EA4A57731D81F7ED006935A9 /* SlowEat.app */,
 				EA4A57871D81F7ED006935A9 /* SlowEatTests.xctest */,
-				EA4A57921D81F7ED006935A9 /* SlowEatUITests.xctest */,
 				EA4A579B1D81F7ED006935A9 /* SlowEat.app */,
 				EA4A57AA1D81F7ED006935A9 /* SlowEat WatchKit Extension.appex */,
 			);
@@ -300,14 +274,6 @@
 				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 			);
 			path = SlowEatTests;
-			sourceTree = "<group>";
-		};
-		EA4A57951D81F7ED006935A9 /* SlowEatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				247C37621E8FD17A0003F10C /* Supporting Files */,
-			);
-			path = SlowEatUITests;
 			sourceTree = "<group>";
 		};
 		EA4A579F1D81F7ED006935A9 /* SlowEat WatchKit App */ = {
@@ -440,27 +406,6 @@
 			productReference = EA4A57871D81F7ED006935A9 /* SlowEatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EA4A57911D81F7ED006935A9 /* SlowEatUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EA4A57CC1D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEatUITests" */;
-			buildPhases = (
-				ECB03F8FF24C923E976F4895 /* [CP] Check Pods Manifest.lock */,
-				EA4A578E1D81F7ED006935A9 /* Sources */,
-				EA4A578F1D81F7ED006935A9 /* Frameworks */,
-				EA4A57901D81F7ED006935A9 /* Resources */,
-				31A75335086FE3EA9578A0FB /* [CP] Embed Pods Frameworks */,
-				442119B921829635E90AE5BF /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EA4A57941D81F7ED006935A9 /* PBXTargetDependency */,
-			);
-			name = SlowEatUITests;
-			productName = SlowEatUITests;
-			productReference = EA4A57921D81F7ED006935A9 /* SlowEatUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		EA4A579A1D81F7ED006935A9 /* SlowEat WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA4A57C21D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEat WatchKit App" */;
@@ -527,12 +472,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = EA4A57721D81F7ED006935A9;
 					};
-					EA4A57911D81F7ED006935A9 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4C34FT6ABU;
-						ProvisioningStyle = Automatic;
-						TestTargetID = EA4A57721D81F7ED006935A9;
-					};
 					EA4A579A1D81F7ED006935A9 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4C34FT6ABU;
@@ -573,7 +512,6 @@
 			targets = (
 				EA4A57721D81F7ED006935A9 /* SlowEat */,
 				EA4A57861D81F7ED006935A9 /* SlowEatTests */,
-				EA4A57911D81F7ED006935A9 /* SlowEatUITests */,
 				EA4A579A1D81F7ED006935A9 /* SlowEat WatchKit App */,
 				EA4A57A91D81F7ED006935A9 /* SlowEat WatchKit Extension */,
 			);
@@ -593,13 +531,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA4A57851D81F7ED006935A9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA4A57901D81F7ED006935A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -626,36 +557,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31A75335086FE3EA9578A0FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		442119B921829635E90AE5BF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		481F3CE8F537E103995E87BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -714,21 +615,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECB03F8FF24C923E976F4895 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F7472063E0509FB52438ECBD /* [CP] Embed Pods Frameworks */ = {
@@ -794,13 +680,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA4A578E1D81F7ED006935A9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EA4A57A61D81F7ED006935A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -831,11 +710,6 @@
 			isa = PBXTargetDependency;
 			target = EA4A57721D81F7ED006935A9 /* SlowEat */;
 			targetProxy = EA4A57881D81F7ED006935A9 /* PBXContainerItemProxy */;
-		};
-		EA4A57941D81F7ED006935A9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EA4A57721D81F7ED006935A9 /* SlowEat */;
-			targetProxy = EA4A57931D81F7ED006935A9 /* PBXContainerItemProxy */;
 		};
 		EA4A579E1D81F7ED006935A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1128,42 +1002,6 @@
 			};
 			name = Release;
 		};
-		EA4A57CD1D81F7ED006935A9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4C34FT6ABU;
-				INFOPLIST_FILE = SlowEatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tm.SlowEatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = SlowEat;
-			};
-			name = Debug;
-		};
-		EA4A57CE1D81F7ED006935A9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 118416861194FF20A95D40CA /* Pods-SlowEatUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4C34FT6ABU;
-				INFOPLIST_FILE = SlowEatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tm.SlowEatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = SlowEat;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1208,15 +1046,6 @@
 			buildConfigurations = (
 				EA4A57CA1D81F7ED006935A9 /* Debug */,
 				EA4A57CB1D81F7ED006935A9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EA4A57CC1D81F7ED006935A9 /* Build configuration list for PBXNativeTarget "SlowEatUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EA4A57CD1D81F7ED006935A9 /* Debug */,
-				EA4A57CE1D81F7ED006935A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
