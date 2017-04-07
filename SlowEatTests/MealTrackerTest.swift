@@ -65,4 +65,12 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(1, tracker.biteCount)
     }
+
+    func testAlternateMoveAndWaitTracksCorrectBiteCount() {
+        tracker.start()
+
+        for _ in 1...100 { tracker.waiting(); tracker.moving() }
+
+        XCTAssertEqual(100, tracker.biteCount)
+    }
 }
