@@ -1,7 +1,7 @@
 import Foundation
 
 class TimeFormatter {
-    func format(_ timeInterval: TimeInterval) -> String {
+    static func format(_ timeInterval: TimeInterval) -> String {
         let time = Int(timeInterval)
         let minutes = time / 60 % 60
         let seconds = time % 60
