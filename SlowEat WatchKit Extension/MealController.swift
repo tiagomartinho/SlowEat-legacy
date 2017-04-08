@@ -7,6 +7,7 @@ class MealController: WKInterfaceController {
 
     @IBOutlet var mealTimeLabel: WKInterfaceLabel!
     @IBOutlet var biteCountLabel: WKInterfaceLabel!
+    @IBOutlet var bitesPerMinuteLabel: WKInterfaceLabel!
 
     private let motionManager = MotionManager()
     fileprivate let mealTracker = MealTracker.build()
@@ -47,6 +48,7 @@ class MealController: WKInterfaceController {
             mealTimeLabel.setText(mealTimeFormatted)
         }
         biteCountLabel.setText("\(mealTracker.biteCount)")
+        bitesPerMinuteLabel.setText("\(mealTracker.bitesPerMinute)")
     }
 
     private func startTimer() {

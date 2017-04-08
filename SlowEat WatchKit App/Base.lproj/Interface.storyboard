@@ -26,7 +26,7 @@
                                         </group>
                                         <group width="1" alignment="left" verticalAlignment="center" spacing="8" id="Qjo-yZ-A9e">
                                             <items>
-                                                <label alignment="left" verticalAlignment="center" text="23" textAlignment="right" minimumScaleFactor="0.5" id="EEC-fN-6hZ">
+                                                <label alignment="left" verticalAlignment="center" text="0" textAlignment="right" minimumScaleFactor="0.5" id="EEC-fN-6hZ">
                                                     <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
                                                 </label>
                                                 <label height="1" alignment="left" verticalAlignment="center" alpha="0.5" text="BPM" textAlignment="right" baselineAdjustment="alignCenters" id="a56-Af-Wvh">
@@ -51,6 +51,7 @@
                     </items>
                     <connections>
                         <outlet property="biteCountLabel" destination="9bl-qo-Ix6" id="a8y-n9-ffD"/>
+                        <outlet property="bitesPerMinuteLabel" destination="EEC-fN-6hZ" id="BgG-Cv-BXh"/>
                         <outlet property="mealTimeLabel" destination="gcA-D2-My4" id="jYd-rP-Nmn"/>
                         <segue destination="hR8-T5-ZvV" kind="relationship" relationship="nextPage" id="Ros-Dg-dMh"/>
                     </connections>
