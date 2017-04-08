@@ -12,6 +12,8 @@ class MealTrackerTest: XCTestCase {
         tracker = MealTracker(timeTracker: timeTracker)
     }
 
+    // MARK: Time Tracking
+
     func testStartTrackerDelegatesTimeTracking() {
         tracker.start()
 
@@ -31,6 +33,8 @@ class MealTrackerTest: XCTestCase {
 
         XCTAssertEqual(timeTracker.currentTime, date)
     }
+
+    // MARK: Bite Count Tracking
 
     func testIfUserIsWaitingTheBiteCountDoesNotIncrease() {
         tracker.start()
@@ -72,5 +76,19 @@ class MealTrackerTest: XCTestCase {
         for _ in 1...100 { tracker.waiting(); tracker.moving() }
 
         XCTAssertEqual(100, tracker.biteCount)
+    }
+
+    // MARK: Bites Per Minute
+
+    func testCalculateBitePerMinute() {
+        timeTracker = SpyTimeTracker()
+        timeTracker.trackerCurrentTime = 95
+        tracker = MealTracker(timeTracker: timeTracker)
+        tracker.start()
+        tracker.biteCount = 100
+
+        let bitesPerMinute = tracker.bitesPerMinute
+
+        XCTAssertEqual(63, bitesPerMinute)
     }
 }

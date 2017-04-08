@@ -7,10 +7,10 @@ class SpyTimeTracker: TimeTracker {
 
     var startCalled = false
     var stopCalled = false
-    let someTimeInterval: TimeInterval = 123
+    var trackerCurrentTime: TimeInterval = 123
 
     var currentTime: TimeInterval? {
-        return someTimeInterval
+        return trackerCurrentTime
     }
 
     func start() {
