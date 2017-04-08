@@ -1,5 +1,7 @@
 # SlowEat
 
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58e76ec21f1b7e000113bd74&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/58e76ec21f1b7e000113bd74/build/latest?branch=master)
+
 Improve your eating habits using this Apple Watch Application.
 
 How it works? Imagine having a personal nutritionist always with you.
