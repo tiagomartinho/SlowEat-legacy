@@ -4,9 +4,6 @@ class MealTracker {
 
     var biteCount = 0
 
-    private let timeTracker: TimeTracker
-    private var isWaiting = false
-
     var bitesPerMinute: Int {
         guard let time = mealTime else { return 0 }
         let minutes = time / 60
@@ -17,6 +14,9 @@ class MealTracker {
     var mealTime: TimeInterval? {
         return timeTracker.currentTime
     }
+
+    private let timeTracker: TimeTracker
+    private var isWaiting = false
 
     init(timeTracker: TimeTracker) {
         self.timeTracker = timeTracker
