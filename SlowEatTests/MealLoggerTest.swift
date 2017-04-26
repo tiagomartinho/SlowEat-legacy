@@ -13,7 +13,7 @@ class MealLoggerTest: XCTestCase {
     }
 
     func testLoggingOneEvent() {
-        logger.log(event: .waiting)
+        logger.log(type: .waiting)
 
         XCTAssertEqual(1, logger.events.count)
     }

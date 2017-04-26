@@ -1,4 +1,4 @@
 struct Event {
-    let event: MealEvent
+    let type: EventType
     let date: Date
 }

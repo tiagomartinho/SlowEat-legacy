@@ -39,7 +39,7 @@
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
 		24F51B551EB0EC3600DBC300 /* MealLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B541EB0EC3600DBC300 /* MealLogger.swift */; };
 		24F51B571EB0EC5000DBC300 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B561EB0EC5000DBC300 /* Event.swift */; };
-		24F51B591EB0EC6400DBC300 /* MealEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B581EB0EC6400DBC300 /* MealEvent.swift */; };
+		24F51B591EB0EC6400DBC300 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B581EB0EC6400DBC300 /* EventType.swift */; };
 		24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
 		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
@@ -143,7 +143,7 @@
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
 		24F51B541EB0EC3600DBC300 /* MealLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLogger.swift; sourceTree = "<group>"; };
 		24F51B561EB0EC5000DBC300 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		24F51B581EB0EC6400DBC300 /* MealEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEvent.swift; sourceTree = "<group>"; };
+		24F51B581EB0EC6400DBC300 /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPresenterTest.swift; sourceTree = "<group>"; };
 		9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 				24EDD2321EB0F41000724646 /* Logger.swift */,
 				24F51B541EB0EC3600DBC300 /* MealLogger.swift */,
 				24F51B561EB0EC5000DBC300 /* Event.swift */,
-				24F51B581EB0EC6400DBC300 /* MealEvent.swift */,
+				24F51B581EB0EC6400DBC300 /* EventType.swift */,
 				24F51B5A1EB0ED5C00DBC300 /* Time */,
 			);
 			name = Common;
@@ -719,7 +719,7 @@
 				EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */,
 				245B83871EB0EEDB000DDB04 /* Tracker.swift in Sources */,
 				24F51B571EB0EC5000DBC300 /* Event.swift in Sources */,
-				24F51B591EB0EC6400DBC300 /* MealEvent.swift in Sources */,
+				24F51B591EB0EC6400DBC300 /* EventType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

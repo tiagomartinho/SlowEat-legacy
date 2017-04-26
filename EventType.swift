@@ -1,3 +1,3 @@
-enum MealEvent {
+enum EventType {
     case waiting, moving
 }
