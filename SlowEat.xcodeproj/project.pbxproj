@@ -212,16 +212,33 @@
 			isa = PBXGroup;
 			children = (
 				2455BB271E91315C0038C541 /* MealTracker.swift */,
+				24F51B541EB0EC3600DBC300 /* MealLogger.swift */,
+				24F51B5A1EB0ED5C00DBC300 /* Time */,
+				24F51B561EB0EC5000DBC300 /* Event.swift */,
+				24F51B581EB0EC6400DBC300 /* MealEvent.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		24F51B5A1EB0ED5C00DBC300 /* Time */ = {
+			isa = PBXGroup;
+			children = (
 				2453AE0D1E979F1D0069C7C3 /* TimeTracker.swift */,
 				2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */,
 				2455BB2A1E9131720038C541 /* DateProvider.swift */,
 				24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */,
 				24D36EB71E97941E00B0B439 /* TimeFormatter.swift */,
-				24F51B541EB0EC3600DBC300 /* MealLogger.swift */,
-				24F51B561EB0EC5000DBC300 /* Event.swift */,
-				24F51B581EB0EC6400DBC300 /* MealEvent.swift */,
 			);
-			name = Common;
+			name = Time;
+			sourceTree = "<group>";
+		};
+		24F51B5B1EB0ED6600DBC300 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */,
+				24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */,
+			);
+			name = Time;
 			sourceTree = "<group>";
 		};
 		9083F2373A6B807ADF31AEFC /* Pods */ = {
@@ -282,8 +299,7 @@
 				247C37631E8FD1860003F10C /* Supporting Files */,
 				2455BB251E912CEC0038C541 /* MealTrackerTest.swift */,
 				24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */,
-				2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */,
-				24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */,
+				24F51B5B1EB0ED6600DBC300 /* Time */,
 			);
 			path = SlowEatTests;
 			sourceTree = "<group>";
