@@ -216,11 +216,11 @@
 		247C37631E8FD1860003F10C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24EDD2381EB0F5A600724646 /* SpyTracker.swift */,
+				24EDD23A1EB0F5C300724646 /* SpyLogger.swift */,
 				2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */,
 				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 				EA4A578D1D81F7ED006935A9 /* Info.plist */,
-				24EDD2381EB0F5A600724646 /* SpyTracker.swift */,
-				24EDD23A1EB0F5C300724646 /* SpyLogger.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
