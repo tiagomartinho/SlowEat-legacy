@@ -18,14 +18,6 @@ class MealTracker {
         return timeTracker.currentTime
     }
 
-    var startDate: Date? {
-        return timeTracker.startDate
-    }
-
-    var endDate: Date? {
-        return timeTracker.endDate
-    }
-
     init(timeTracker: TimeTracker) {
         self.timeTracker = timeTracker
     }
