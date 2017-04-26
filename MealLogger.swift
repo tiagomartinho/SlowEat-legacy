@@ -15,7 +15,7 @@ class MealLogger: Logger {
     }
 
     func log(type: EventType) {
-        let event = Event(type: type, date: Date())
+        let event = Event(type: type, date: timeTracker.currentDate)
         events.append(event)
     }
 

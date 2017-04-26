@@ -4,6 +4,7 @@ class SpyTimeTracker: TimeTracker {
 
     var startDate: Date?
     var endDate: Date?
+    var currentDate = Date()
 
     var startCalled = false
     var stopCalled = false

@@ -18,6 +18,15 @@ class MealLoggerTest: XCTestCase {
         XCTAssertEqual(1, logger.events.count)
     }
 
+    func testLoggingSavesTimeTrackerCurrentTime() {
+        let date = Date(timeIntervalSince1970: 123)
+        timeTracker.currentDate = date
+
+        logger.log(type: .waiting)
+
+        XCTAssertEqual(date, logger.events.first!.date)
+    }
+
     func testStartTrackerDelegatesTimeTracking() {
         logger.start()
 
