@@ -201,6 +201,8 @@
 		247C37631E8FD1860003F10C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */,
+				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 				EA4A578D1D81F7ED006935A9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -280,10 +282,8 @@
 				247C37631E8FD1860003F10C /* Supporting Files */,
 				2455BB251E912CEC0038C541 /* MealTrackerTest.swift */,
 				24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */,
-				2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */,
 				2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */,
 				24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */,
-				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 			);
 			path = SlowEatTests;
 			sourceTree = "<group>";
