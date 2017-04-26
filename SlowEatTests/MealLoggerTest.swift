@@ -3,27 +3,31 @@ import XCTest
 
 class MealLoggerTest: XCTestCase {
 
+    var timeTracker: SpyTimeTracker!
+    var logger: MealLogger!
+
+    override func setUp() {
+        super.setUp()
+        timeTracker = SpyTimeTracker()
+        logger = MealLogger(timeTracker: timeTracker)
+    }
+
     func testLoggingOneEvent() {
         let date = Date()
-        let logger = MealLogger()
 
         logger.log(event: .waiting, at: date)
 
         XCTAssertEqual(1, logger.events.count)
     }
 
-    func testStartLoggingSavesStartDate() {
-        let date = Date()
-        let logger = MealLogger()
+    func testStartTrackerDelegatesTimeTracking() {
+        logger.start()
 
-        logger.start(at: date)
-
-        XCTAssertEqual(date, logger.startDate)
+        XCTAssert(timeTracker.startCalled)
     }
 
     func testStopLoggingSavesEndDate() {
         let date = Date()
-        let logger = MealLogger()
 
         logger.stop(at: date)
 

@@ -1,12 +1,17 @@
-class MealLogger {
+class MealLogger: Logger {
 
     var startDate: Date?
     var endDate: Date?
-
     var events = [Event]()
 
-    func start(at date: Date) {
-        startDate = date
+    private let timeTracker: TimeTracker
+
+    init(timeTracker: TimeTracker) {
+        self.timeTracker = timeTracker
+    }
+
+    func start() {
+        timeTracker.start()
     }
 
     func log(event: MealEvent, at date: Date) {
