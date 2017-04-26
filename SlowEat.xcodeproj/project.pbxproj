@@ -31,6 +31,10 @@
 		24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */; };
 		24EDD2331EB0F41000724646 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2321EB0F41000724646 /* Logger.swift */; };
 		24EDD2341EB0F41300724646 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2321EB0F41000724646 /* Logger.swift */; };
+		24EDD2361EB0F58600724646 /* MealPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2351EB0F58600724646 /* MealPresenter.swift */; };
+		24EDD2371EB0F58600724646 /* MealPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2351EB0F58600724646 /* MealPresenter.swift */; };
+		24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2381EB0F5A600724646 /* SpyTracker.swift */; };
+		24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD23A1EB0F5C300724646 /* SpyLogger.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
 		24F51B551EB0EC3600DBC300 /* MealLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B541EB0EC3600DBC300 /* MealLogger.swift */; };
@@ -131,6 +135,9 @@
 		24D36EB71E97941E00B0B439 /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationDateProvider.swift; sourceTree = "<group>"; };
 		24EDD2321EB0F41000724646 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		24EDD2351EB0F58600724646 /* MealPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPresenter.swift; sourceTree = "<group>"; };
+		24EDD2381EB0F5A600724646 /* SpyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyTracker.swift; sourceTree = "<group>"; };
+		24EDD23A1EB0F5C300724646 /* SpyLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyLogger.swift; sourceTree = "<group>"; };
 		24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24F2E9A61E0405750080ABD9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
@@ -212,6 +219,8 @@
 				2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */,
 				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 				EA4A578D1D81F7ED006935A9 /* Info.plist */,
+				24EDD2381EB0F5A600724646 /* SpyTracker.swift */,
+				24EDD23A1EB0F5C300724646 /* SpyLogger.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 		24CB68421DF49E78000009D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				24EDD2351EB0F58600724646 /* MealPresenter.swift */,
 				245B83861EB0EEDB000DDB04 /* Tracker.swift */,
 				2455BB271E91315C0038C541 /* MealTracker.swift */,
 				24EDD2321EB0F41000724646 /* Logger.swift */,
@@ -698,6 +708,7 @@
 				24D36EB81E97941E00B0B439 /* TimeFormatter.swift in Sources */,
 				2453AE0B1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */,
 				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
+				24EDD2361EB0F58600724646 /* MealPresenter.swift in Sources */,
 				2453AE0E1E979F1D0069C7C3 /* TimeTracker.swift in Sources */,
 				EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */,
 				24EDD2331EB0F41000724646 /* Logger.swift in Sources */,
@@ -719,6 +730,8 @@
 				2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */,
 				24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */,
 				24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */,
+				24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */,
+				24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */,
 				24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */,
 				2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */,
 				2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */,
@@ -732,6 +745,7 @@
 			files = (
 				245B83881EB0EEEB000DDB04 /* Tracker.swift in Sources */,
 				2455BB291E91315C0038C541 /* MealTracker.swift in Sources */,
+				24EDD2371EB0F58600724646 /* MealPresenter.swift in Sources */,
 				EA4A57B61D81F7ED006935A9 /* NotificationController.swift in Sources */,
 				EA4A57E21D82002E006935A9 /* RunningBuffer.swift in Sources */,
 				EA51A1141DC2643100542924 /* Motivation.swift in Sources */,

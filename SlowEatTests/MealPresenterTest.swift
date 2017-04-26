@@ -25,38 +25,4 @@ class MealPresenterTest: XCTestCase {
 
         XCTAssert(logger.startCalled)
     }
-
-    class MealPresenter {
-
-        let tracker: Tracker
-        let logger: Logger
-
-        init(tracker: Tracker, logger: Logger) {
-            self.tracker = tracker
-            self.logger = logger
-        }
-
-        func startMeal() {
-            tracker.start()
-            logger.start()
-        }
-    }
-
-    class SpyTracker: Tracker {
-
-        var startCalled = false
-
-        func start() {
-            startCalled = true
-        }
-    }
-
-    class SpyLogger: Logger {
-
-        var startCalled = false
-
-        func start() {
-            startCalled = true
-        }
-    }
 }
