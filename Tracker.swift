@@ -1,0 +1,3 @@
+protocol Tracker {
+    func start()
+}

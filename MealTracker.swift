@@ -1,6 +1,6 @@
 import Foundation
 
-class MealTracker {
+class MealTracker: Tracker {
 
     var biteCount = 0
 
