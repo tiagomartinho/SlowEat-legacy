@@ -26,6 +26,14 @@ class MealLoggerTest: XCTestCase {
         XCTAssert(timeTracker.startCalled)
     }
 
+    func testTimeTrackingIsTimeTrackerResponsability() {
+        let date = Date()
+
+        timeTracker.startDate = date
+
+        XCTAssertEqual(date, logger.startDate)
+    }
+
     func testStopLoggingSavesEndDate() {
         let date = Date()
 

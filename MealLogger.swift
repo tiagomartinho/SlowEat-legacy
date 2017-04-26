@@ -1,6 +1,6 @@
 class MealLogger: Logger {
 
-    var startDate: Date?
+    var startDate: Date? { return timeTracker.startDate }
     var endDate: Date?
     var events = [Event]()
 
