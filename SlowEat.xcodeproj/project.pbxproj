@@ -29,6 +29,9 @@
 		24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
+		24F51B551EB0EC3600DBC300 /* MealLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B541EB0EC3600DBC300 /* MealLogger.swift */; };
+		24F51B571EB0EC5000DBC300 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B561EB0EC5000DBC300 /* Event.swift */; };
+		24F51B591EB0EC6400DBC300 /* MealEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B581EB0EC6400DBC300 /* MealEvent.swift */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
 		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
 		EA4A57811D81F7ED006935A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577F1D81F7ED006935A9 /* LaunchScreen.storyboard */; };
@@ -124,6 +127,9 @@
 		24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24F2E9A61E0405750080ABD9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
+		24F51B541EB0EC3600DBC300 /* MealLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLogger.swift; sourceTree = "<group>"; };
+		24F51B561EB0EC5000DBC300 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		24F51B581EB0EC6400DBC300 /* MealEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEvent.swift; sourceTree = "<group>"; };
 		9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig"; sourceTree = "<group>"; };
 		E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +215,9 @@
 				2455BB2A1E9131720038C541 /* DateProvider.swift */,
 				24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */,
 				24D36EB71E97941E00B0B439 /* TimeFormatter.swift */,
+				24F51B541EB0EC3600DBC300 /* MealLogger.swift */,
+				24F51B561EB0EC5000DBC300 /* Event.swift */,
+				24F51B581EB0EC6400DBC300 /* MealEvent.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -667,7 +676,10 @@
 				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
 				2455BB281E91315C0038C541 /* MealTracker.swift in Sources */,
 				241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */,
+				24F51B551EB0EC3600DBC300 /* MealLogger.swift in Sources */,
 				EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */,
+				24F51B571EB0EC5000DBC300 /* Event.swift in Sources */,
+				24F51B591EB0EC6400DBC300 /* MealEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
