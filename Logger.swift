@@ -1,0 +1,3 @@
+protocol Logger {
+    func start()
+}

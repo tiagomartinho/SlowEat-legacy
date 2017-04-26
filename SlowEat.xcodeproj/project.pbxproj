@@ -29,6 +29,8 @@
 		24D36EB91E97942700B0B439 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB71E97941E00B0B439 /* TimeFormatter.swift */; };
 		24D36EBB1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */; };
 		24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */; };
+		24EDD2331EB0F41000724646 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2321EB0F41000724646 /* Logger.swift */; };
+		24EDD2341EB0F41300724646 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2321EB0F41000724646 /* Logger.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
 		24F51B551EB0EC3600DBC300 /* MealLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B541EB0EC3600DBC300 /* MealLogger.swift */; };
@@ -128,6 +130,7 @@
 		24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTest.swift; sourceTree = "<group>"; };
 		24D36EB71E97941E00B0B439 /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		24D36EBA1E97951F00B0B439 /* FoundationDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationDateProvider.swift; sourceTree = "<group>"; };
+		24EDD2321EB0F41000724646 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		24EEE3643D0E177D23AED438 /* Pods-SlowEatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24F2E9A61E0405750080ABD9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 			children = (
 				245B83861EB0EEDB000DDB04 /* Tracker.swift */,
 				2455BB271E91315C0038C541 /* MealTracker.swift */,
+				24EDD2321EB0F41000724646 /* Logger.swift */,
 				24F51B541EB0EC3600DBC300 /* MealLogger.swift */,
 				24F51B561EB0EC5000DBC300 /* Event.swift */,
 				24F51B581EB0EC6400DBC300 /* MealEvent.swift */,
@@ -696,6 +700,7 @@
 				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
 				2453AE0E1E979F1D0069C7C3 /* TimeTracker.swift in Sources */,
 				EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */,
+				24EDD2331EB0F41000724646 /* Logger.swift in Sources */,
 				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
 				2455BB281E91315C0038C541 /* MealTracker.swift in Sources */,
 				241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */,
@@ -738,6 +743,7 @@
 				2453AE0C1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */,
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
 				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
+				24EDD2341EB0F41300724646 /* Logger.swift in Sources */,
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
 				24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */,
 				2455BB2C1E9131720038C541 /* DateProvider.swift in Sources */,
