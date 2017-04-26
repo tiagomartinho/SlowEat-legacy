@@ -12,9 +12,24 @@ class MealLoggerTest: XCTestCase {
         XCTAssertEqual(1, logger.events.count)
     }
 
+    func testStartLoggingSavesStartDate() {
+        let date = Date()
+        let logger = MealLogger()
+
+        logger.start(at: date)
+
+        XCTAssertEqual(date, logger.startDate)
+    }
+
     class MealLogger {
 
+        var startDate: Date?
+
         var events = [Event]()
+
+        func start(at date: Date) {
+            startDate = date
+        }
 
         func log(event: MealEvent, at date: Date) {
             let event = Event(event: event, date: date)
