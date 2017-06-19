@@ -43,8 +43,9 @@ class MealLoggerTest: XCTestCase {
 
     func testStopLoggingSavesEndDate() {
         let date = Date()
+        timeTracker.currentDate = date
 
-        logger.stop(at: date)
+        logger.stop()
 
         XCTAssertEqual(date, logger.endDate)
     }

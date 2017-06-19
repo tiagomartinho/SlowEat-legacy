@@ -25,4 +25,10 @@ class MealPresenterTest: XCTestCase {
 
         XCTAssert(logger.startCalled)
     }
+
+    func testStopMealStopsTracker() {
+        presenter.stopMeal()
+
+        XCTAssert(logger.stopCalled)
+    }
 }

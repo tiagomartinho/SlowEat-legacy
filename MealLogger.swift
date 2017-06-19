@@ -19,7 +19,8 @@ class MealLogger: Logger {
         events.append(event)
     }
 
-    func stop(at date: Date) {
-        endDate = date
+    func stop() {
+        endDate = timeTracker.currentDate
+        timeTracker.stop()
     }
 }
