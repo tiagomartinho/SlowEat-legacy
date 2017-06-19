@@ -14,6 +14,7 @@ class MealPresenter {
     }
 
     func stopMeal() {
+        tracker.stop()
         logger.stop()
     }
 }
