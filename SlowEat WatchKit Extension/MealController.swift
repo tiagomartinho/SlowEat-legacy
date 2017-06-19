@@ -1,7 +1,4 @@
 import WatchKit
-import Foundation
-import WatchConnectivity
-import UserNotifications
 
 class MealController: WKInterfaceController {
 
@@ -9,11 +6,10 @@ class MealController: WKInterfaceController {
     @IBOutlet var biteCountLabel: WKInterfaceLabel!
     @IBOutlet var bitesPerMinuteLabel: WKInterfaceLabel!
 
-    private let motionManager = MotionManager()
     fileprivate let mealTracker = MealTracker.build()
+    private let motionManager = MotionManager()
     private var timer: Timer?
     private var motionUpdatesInProgress = false
-    private var session: WCSession?
     private var presenter: MealPresenter!
 
     deinit {
@@ -24,8 +20,6 @@ class MealController: WKInterfaceController {
         super.awake(withContext: context)
         presenter = MealPresenter(tracker: mealTracker, logger: MealLogger.build())
         presenter.startMeal()
-        session = WCSession.default()
-        session?.activate()
         motionManager.delegate = self
     }
 
@@ -35,16 +29,15 @@ class MealController: WKInterfaceController {
         if !motionUpdatesInProgress {
             motionManager.startUpdates()
             motionUpdatesInProgress = true
-            session?.sendMessage(["start":""], replyHandler: nil, errorHandler: nil)
         }
     }
 
-    override func didDeactivate() {
-        super.didDeactivate()
-        stopTimer()
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+        timer?.tolerance = 0.5
     }
 
-    func updateUI() {
+    @objc private func updateUI() {
         if let mealTime = mealTracker.mealTime {
             let mealTimeFormatted = TimeFormatter.format(mealTime)
             mealTimeLabel.setText(mealTimeFormatted)
@@ -53,9 +46,9 @@ class MealController: WKInterfaceController {
         bitesPerMinuteLabel.setText("\(mealTracker.bitesPerMinute)")
     }
 
-    private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
-        timer?.tolerance = 0.5
+    override func didDeactivate() {
+        super.didDeactivate()
+        stopTimer()
     }
 
     private func stopTimer() {
@@ -65,6 +58,7 @@ class MealController: WKInterfaceController {
 }
 
 extension MealController: MovementDelegate {
+
     func waiting() {
         mealTracker.waiting()
     }
