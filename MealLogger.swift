@@ -1,3 +1,5 @@
+import Foundation
+
 class MealLogger: Logger {
 
     var startDate: Date? { return timeTracker.startDate }
