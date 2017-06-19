@@ -14,6 +14,7 @@ class MealController: WKInterfaceController {
     private var timer: Timer?
     private var motionUpdatesInProgress = false
     private var session: WCSession?
+    private var presenter: MealPresenter!
 
     deinit {
         motionManager.stopUpdates()
@@ -21,7 +22,8 @@ class MealController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        mealTracker.start()
+        presenter = MealPresenter(tracker: mealTracker, logger: MealLogger.build())
+        presenter.startMeal()
         session = WCSession.default()
         session?.activate()
         motionManager.delegate = self
