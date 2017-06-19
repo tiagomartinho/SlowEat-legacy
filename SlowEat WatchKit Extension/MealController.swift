@@ -6,11 +6,12 @@ class MealController: WKInterfaceController {
     @IBOutlet var biteCountLabel: WKInterfaceLabel!
     @IBOutlet var bitesPerMinuteLabel: WKInterfaceLabel!
 
-    fileprivate let mealTracker = MealTracker.build()
+    fileprivate var presenter: MealPresenter!
+
+    private let mealTracker = MealTracker.build()
     private let motionManager = MotionManager()
     private var timer: Timer?
     private var motionUpdatesInProgress = false
-    private var presenter: MealPresenter!
 
     deinit {
         motionManager.stopUpdates()
@@ -60,10 +61,10 @@ class MealController: WKInterfaceController {
 extension MealController: MovementDelegate {
 
     func waiting() {
-        mealTracker.waiting()
+        presenter.waiting()
     }
 
     func moving() {
-        mealTracker.moving()
+        presenter.moving()
     }
 }
