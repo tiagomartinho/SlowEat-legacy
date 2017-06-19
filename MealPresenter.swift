@@ -17,4 +17,8 @@ class MealPresenter {
         tracker.stop()
         logger.stop()
     }
+
+    func waiting() {
+        tracker.waiting()
+    }
 }
