@@ -20,9 +20,11 @@ class MealPresenter {
 
     func waiting() {
         tracker.waiting()
+        logger.log(type: .waiting)
     }
 
     func moving() {
         tracker.moving()
+        logger.log(type: .moving)
     }
 }

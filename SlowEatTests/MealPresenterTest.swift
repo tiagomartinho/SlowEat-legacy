@@ -44,6 +44,18 @@ class MealPresenterTest: XCTestCase {
         XCTAssert(logger.startCalled)
     }
 
+    func testWaitingEventNotifiesLogger() {
+        presenter.waiting()
+
+        XCTAssertEqual(.waiting, logger.lastLoggedEvent)
+    }
+
+    func testMovingEventNotifiesLogger() {
+        presenter.moving()
+
+        XCTAssertEqual(.moving, logger.lastLoggedEvent)
+    }
+
     func testStopMealStopsLogger() {
         presenter.stopMeal()
 
