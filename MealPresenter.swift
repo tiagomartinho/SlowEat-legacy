@@ -21,4 +21,8 @@ class MealPresenter {
     func waiting() {
         tracker.waiting()
     }
+
+    func moving() {
+        tracker.moving()
+    }
 }

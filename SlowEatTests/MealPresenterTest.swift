@@ -26,6 +26,12 @@ class MealPresenterTest: XCTestCase {
         XCTAssert(tracker.waitingCalled)
     }
 
+    func testMovingEventNotifiesTracker() {
+        presenter.moving()
+
+        XCTAssert(tracker.movingCalled)
+    }
+
     func testStopMealStopsTracker() {
         presenter.stopMeal()
 

@@ -5,6 +5,7 @@ class SpyTracker: Tracker {
     var startCalled = false
     var stopCalled = false
     var waitingCalled = false
+    var movingCalled = false
 
     func start() {
         startCalled = true
@@ -16,5 +17,9 @@ class SpyTracker: Tracker {
 
     func waiting() {
         waitingCalled = true
+    }
+
+    func moving() {
+        movingCalled = true
     }
 }
