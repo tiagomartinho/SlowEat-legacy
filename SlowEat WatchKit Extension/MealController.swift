@@ -14,6 +14,7 @@ class MealController: WKInterfaceController {
     private var motionUpdatesInProgress = false
 
     deinit {
+        presenter.stopMeal()
         motionManager.stopUpdates()
     }
 
