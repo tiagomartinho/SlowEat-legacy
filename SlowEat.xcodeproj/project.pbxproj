@@ -24,6 +24,9 @@
 		2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB2D1E9131950038C541 /* StaticDateProvider.swift */; };
 		245B83871EB0EEDB000DDB04 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B83861EB0EEDB000DDB04 /* Tracker.swift */; };
 		245B83881EB0EEEB000DDB04 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B83861EB0EEDB000DDB04 /* Tracker.swift */; };
+		249665821EF864BF0001FDC3 /* MealLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B541EB0EC3600DBC300 /* MealLogger.swift */; };
+		249665831EF864BF0001FDC3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B561EB0EC5000DBC300 /* Event.swift */; };
+		249665841EF864BF0001FDC3 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B581EB0EC6400DBC300 /* EventType.swift */; };
 		24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */; };
 		24D36EB81E97941E00B0B439 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB71E97941E00B0B439 /* TimeFormatter.swift */; };
 		24D36EB91E97942700B0B439 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB71E97941E00B0B439 /* TimeFormatter.swift */; };
@@ -749,6 +752,7 @@
 				EA4A57B61D81F7ED006935A9 /* NotificationController.swift in Sources */,
 				EA4A57E21D82002E006935A9 /* RunningBuffer.swift in Sources */,
 				EA51A1141DC2643100542924 /* Motivation.swift in Sources */,
+				249665821EF864BF0001FDC3 /* MealLogger.swift in Sources */,
 				EA8F48741DE9E14C00776EDC /* MovementDelegate.swift in Sources */,
 				EA4A57B81D81F7ED006935A9 /* ComplicationController.swift in Sources */,
 				EA51A1101DC2638300542924 /* InitialController.swift in Sources */,
@@ -756,11 +760,13 @@
 				24D36EB91E97942700B0B439 /* TimeFormatter.swift in Sources */,
 				2453AE0C1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */,
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
+				249665841EF864BF0001FDC3 /* EventType.swift in Sources */,
 				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
 				24EDD2341EB0F41300724646 /* Logger.swift in Sources */,
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
 				24D36EBC1E97951F00B0B439 /* FoundationDateProvider.swift in Sources */,
 				2455BB2C1E9131720038C541 /* DateProvider.swift in Sources */,
+				249665831EF864BF0001FDC3 /* Event.swift in Sources */,
 				2455BB241E912AF20038C541 /* EndMealController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

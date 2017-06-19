@@ -24,3 +24,11 @@ class MealLogger: Logger {
         timeTracker.stop()
     }
 }
+
+extension MealLogger {
+    static func build() -> MealLogger {
+        let dateProvider = FoundationDateProvider()
+        let timeTracker = FoundationTimeTracker(dateProvider: dateProvider)
+        return MealLogger(timeTracker: timeTracker)
+    }
+}
