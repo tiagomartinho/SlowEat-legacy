@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1AB49C8D51AF4540F381685E /* Pods_SlowEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */; };
+		240013C51EF9B0AB00CCA87C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240013C41EF9B0AB00CCA87C /* CloudKit.framework */; };
+		240013C71EF9B0B700CCA87C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240013C61EF9B0B700CCA87C /* CloudKit.framework */; };
 		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
 		2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */; };
 		2453AE0B1E979DF90069C7C3 /* FoundationTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */; };
@@ -120,6 +122,8 @@
 /* Begin PBXFileReference section */
 		01482643ADCC2713AFB09B41 /* Pods-SlowEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.release.xcconfig"; sourceTree = "<group>"; };
 		118416861194FF20A95D40CA /* Pods-SlowEatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatUITests/Pods-SlowEatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		240013C41EF9B0AB00CCA87C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		240013C61EF9B0B700CCA87C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTrackerTest.swift; sourceTree = "<group>"; };
 		2453AE0A1E979DF90069C7C3 /* FoundationTimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationTimeTracker.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB49C8D51AF4540F381685E /* Pods_SlowEat.framework in Frameworks */,
+				240013C51EF9B0AB00CCA87C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */,
+				240013C71EF9B0B700CCA87C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +391,8 @@
 		EA51A10C1DC2613000542924 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				240013C61EF9B0B700CCA87C /* CloudKit.framework */,
+				240013C41EF9B0AB00CCA87C /* CloudKit.framework */,
 				24F2E9A61E0405750080ABD9 /* HealthKit.framework */,
 				E7E8904409864EB28B747A37 /* Pods_SlowEat.framework */,
 			);
@@ -515,6 +523,12 @@
 							com.apple.HealthKit = {
 								enabled = 0;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					EA4A57861D81F7ED006935A9 = {
@@ -543,6 +557,12 @@
 								enabled = 1;
 							};
 							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -998,6 +1018,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SlowEat/SlowEat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
 				INFOPLIST_FILE = SlowEat/Info.plist;
@@ -1019,6 +1040,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SlowEat/SlowEat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
 				INFOPLIST_FILE = SlowEat/Info.plist;
