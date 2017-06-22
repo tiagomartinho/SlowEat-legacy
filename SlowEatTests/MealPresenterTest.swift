@@ -5,13 +5,15 @@ class MealPresenterTest: XCTestCase {
 
     var tracker: SpyTracker!
     var logger: SpyLogger!
+    var repository: SpyMealRepository!
     var presenter: MealPresenter!
 
     override func setUp() {
         super.setUp()
         tracker = SpyTracker()
         logger = SpyLogger()
-        presenter = MealPresenter(tracker: tracker, logger: logger)
+        repository = SpyMealRepository()
+        presenter = MealPresenter(tracker: tracker, logger: logger, repository: repository)
     }
 
     func testStartMealStartsTracker() {
@@ -60,5 +62,21 @@ class MealPresenterTest: XCTestCase {
         presenter.stopMeal()
 
         XCTAssert(logger.stopCalled)
+    }
+
+    func testStopMealSavesMeal() {
+        var events = [Event]()
+        for _ in 1...50 {
+            events.append(Event(type: .moving, date: Date()))
+            presenter.moving()
+            events.append(Event(type: .waiting, date: Date()))
+            presenter.waiting()
+        }
+        let meal = Meal(events: events)
+
+        presenter.stopMeal()
+
+        XCTAssert(repository.saveCalled)
+        XCTAssertEqual(meal.events.map { $0.type }, repository.savedMeal.events.map { $0.type })
     }
 }

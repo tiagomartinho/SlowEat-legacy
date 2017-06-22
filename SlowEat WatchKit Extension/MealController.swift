@@ -20,7 +20,7 @@ class MealController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        presenter = MealPresenter(tracker: mealTracker, logger: MealLogger.build())
+        presenter = MealPresenter(tracker: mealTracker, logger: MealLogger.build(), repository: CKMealRepository())
         presenter.startMeal()
         motionManager.delegate = self
     }
