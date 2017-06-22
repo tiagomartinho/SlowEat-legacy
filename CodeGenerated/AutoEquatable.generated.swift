@@ -26,13 +26,6 @@ return true
 
 
 // MARK: - AutoEquatable for classes, protocols, structs
-// MARK: - Event AutoEquatable
-extension Event: Equatable {} 
-internal func == (lhs: Event, rhs: Event) -> Bool {
-guard lhs.type == rhs.type else { return false }
-guard lhs.date == rhs.date else { return false }
-return true
-}
 // MARK: - Meal AutoEquatable
 extension Meal: Equatable {} 
 internal func == (lhs: Meal, rhs: Meal) -> Bool {

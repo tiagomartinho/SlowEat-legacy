@@ -9,4 +9,7 @@ class SpyMealRepository: MealRepository {
         saveCalled = true
         savedMeal = meal
     }
+
+    func load(completionHandler: @escaping ([Meal]) -> (Void)) {
+    }
 }

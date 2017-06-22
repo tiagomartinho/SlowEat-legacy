@@ -1,3 +1,3 @@
-enum EventType {
+enum EventType: String {
     case waiting, moving
 }

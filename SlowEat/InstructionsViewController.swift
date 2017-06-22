@@ -1,6 +1,5 @@
 import UIKit
 import Mixpanel
-import CloudKit
 
 class InstructionsViewController: UIViewController, UITableViewDataSource {
 
@@ -18,14 +17,7 @@ class InstructionsViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let container = CKContainer(identifier: "iCloud.com.elit.SlowEat")
-        let database = container.privateCloudDatabase
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Meal", predicate: predicate)
-        database.perform(query, inZoneWith: nil) { (records, error) in
-            print(records)
-            print(error)
-        }
+
         let mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("Instructions View", properties: nil)
         

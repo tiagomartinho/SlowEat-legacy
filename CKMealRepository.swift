@@ -1,15 +1,38 @@
 import CloudKit
 
 class CKMealRepository: MealRepository {
+
+    let database = CKContainer(identifier: "iCloud.com.elit.SlowEat").privateCloudDatabase
+
     func save(meal: Meal) {
-        let container = CKContainer(identifier: "iCloud.com.elit.SlowEat")
-        let database = container.privateCloudDatabase
         let id = CKRecordID(recordName: UUID().uuidString)
-        let meal = CKRecord(recordType: "Meal", recordID: id)
-        meal["title"] = "17" as NSString
-        meal["artist"] = "18" as NSString
-        meal["address"] = "19" as NSString
-        database.save(meal) { record, error in
+        let record = CKRecord(recordType: "Meal", recordID: id)
+        NSKeyedArchiver.setClassName("Event", for: Event.self)
+        let data = NSKeyedArchiver.archivedData(withRootObject: meal.events)
+        record["events"] = data as CKRecordValue
+        database.save(record) { _ in }
+    }
+
+    func load(completionHandler: @escaping ([Meal]) -> (Void)) {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Meal", predicate: predicate)
+        database.perform(query, inZoneWith: nil) { (records, error) in
+            var meals = [Meal]()
+            if let records = records {
+                for record in records {
+                    if let events = record["events"],
+                        let data = events as? Data {
+                        let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+                        unarchiver.setClass(Event.self, forClassName: "Event")
+                        if let events = try? unarchiver.decodeTopLevelObject(forKey: "root") as? [Event] {
+                            if let events = events {
+                                meals.append(Meal(events: events))
+                            }
+                        }
+                    }
+                }
+            }
+            completionHandler(meals)
         }
     }
 }
