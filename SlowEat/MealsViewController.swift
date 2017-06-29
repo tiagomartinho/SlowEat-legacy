@@ -9,8 +9,8 @@ class MealsViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = CGSize(width: 15, height: 400)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.register(MealEventCell.self, forCellWithReuseIdentifier: MealEventCell.identifier)
         collectionView.dataSource = self
@@ -30,7 +30,7 @@ class MealsViewController: UIViewController {
 extension MealsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 300
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -52,10 +52,22 @@ class MealEventCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        let trailing = UIView()
+        trailing.layer.cornerRadius = 5
+        trailing.backgroundColor = UIColor.white.withAlphaComponent(0.15)
+        contentView.addSubview(trailing)
+        trailing.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.height.equalToSuperview()
+            make.width.equalTo(1)
+        }
+
         let view = UIView()
         view.layer.cornerRadius = 5
         contentView.addSubview(view)
-        let n = Int(arc4random_uniform(8) + 2)
+        let n = Int(arc4random_uniform(12) + 2)
         let height: Int
         switch n {
         case 2:
@@ -73,8 +85,8 @@ class MealEventCell: UICollectionViewCell {
         view.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(Double(height)/6.0)
-            make.trailingMargin.equalToSuperview()
-            make.leadingMargin.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
         }
     }
 
