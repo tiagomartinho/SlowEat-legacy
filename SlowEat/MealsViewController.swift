@@ -9,8 +9,8 @@ class MealsViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = CGSize(width: 15, height: 400)
-        layout.minimumInteritemSpacing = 30
-        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.register(MealEventCell.self, forCellWithReuseIdentifier: MealEventCell.identifier)
         collectionView.dataSource = self
@@ -55,17 +55,19 @@ class MealEventCell: UICollectionViewCell {
         let view = UIView()
         view.layer.cornerRadius = 5
         contentView.addSubview(view)
-        let n = Int(arc4random_uniform(3) + 2)
+        let n = Int(arc4random_uniform(8) + 2)
         let height: Int
         switch n {
         case 2:
-            view.backgroundColor = #colorLiteral(red: 0.9273005296, green: 0.09212184876, blue: 0.1360091693, alpha: 1)
+            view.backgroundColor = #colorLiteral(red: 0.9137254902, green: 0.2705882353, blue: 0.5058823529, alpha: 1)
             height = 4
         case 3:
-            view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.7411764706, blue: 0.2509803922, alpha: 1)
+            view.backgroundColor = #colorLiteral(red: 0.6711956859, green: 0.988876164, blue: 0.008240561932, alpha: 1)
             height = 2
+        case 4:
+            view.backgroundColor = #colorLiteral(red: 0.006976122037, green: 0.93988657, blue: 0.8289572001, alpha: 1)
+            height = 1
         default:
-            view.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.6823529412, blue: 0.1960784314, alpha: 1)
             height = 1
         }
         view.snp.makeConstraints { make in
