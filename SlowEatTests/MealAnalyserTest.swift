@@ -14,12 +14,23 @@ class MealAnalyserTest: XCTestCase {
 
         let mealAnalysed = analyser.analyse(meal: meal)
 
-        XCTAssertEqual(meal, mealAnalysed)
+        XCTAssertEqual(meal.events.count, mealAnalysed.events.count)
+        XCTAssertEqual(6, mealAnalysed.events.filter { $0.type == .moving }.count)
+        XCTAssertEqual(.moving, mealAnalysed.events[23].type)
+        XCTAssertEqual(.waiting, mealAnalysed.events[24].type)
+        XCTAssertEqual(.moving, mealAnalysed.events[54].type)
+        XCTAssertEqual(.waiting, mealAnalysed.events[55].type)
     }
 
     class MealAnalyser {
         func analyse(meal: Meal) -> Meal {
-            return Meal(events: meal.events)
+            var isMoving = false
+            let processedEvents = meal.events.map { event -> Event in
+                let processedEvent = isMoving ? Event(type: .waiting, date: event.date) : event
+                isMoving = (event.type == .moving)
+                return processedEvent
+            }
+            return Meal(events: processedEvents)
         }
     }
 }
