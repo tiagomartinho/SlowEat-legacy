@@ -11,6 +11,7 @@
 		240013C51EF9B0AB00CCA87C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240013C41EF9B0AB00CCA87C /* CloudKit.framework */; };
 		240013C71EF9B0B700CCA87C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240013C61EF9B0B700CCA87C /* CloudKit.framework */; };
 		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
+		24309D9B1F06980C00E32E6C /* SampleMeal in Resources */ = {isa = PBXBuildFile; fileRef = 24309D9A1F06980C00E32E6C /* SampleMeal */; };
 		244CF5711EFC022100CF35C9 /* SpyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5701EFC022100CF35C9 /* SpyRepository.swift */; };
 		244CF5781EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
 		244CF5791EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
@@ -144,6 +145,7 @@
 		240013C41EF9B0AB00CCA87C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		240013C61EF9B0B700CCA87C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		24309D9A1F06980C00E32E6C /* SampleMeal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleMeal; sourceTree = "<group>"; };
 		244CF5701EFC022100CF35C9 /* SpyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyRepository.swift; sourceTree = "<group>"; };
 		244CF5771EFC031A00CF35C9 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
 		244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = CodeGenerated/AutoEquatable.generated.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */,
 				24F51B5B1EB0ED6600DBC300 /* Time */,
 				247C37631E8FD1860003F10C /* Supporting Files */,
+				24309D9A1F06980C00E32E6C /* SampleMeal */,
 			);
 			path = SlowEatTests;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24309D9B1F06980C00E32E6C /* SampleMeal in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
