@@ -35,4 +35,16 @@ class CKMealRepository: MealRepository {
             completionHandler(meals)
         }
     }
+
+    func deleteAll() {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Meal", predicate: predicate)
+        database.perform(query, inZoneWith: nil) { (records, error) in
+            if let records = records {
+                for record in records {
+                    self.database.delete(withRecordID: record.recordID) { _ in }
+                }
+            }
+        }
+    }
 }
