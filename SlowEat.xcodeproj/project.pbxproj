@@ -57,6 +57,8 @@
 		2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB251E912CEC0038C541 /* MealTrackerTest.swift */; };
 		2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB2D1E9131950038C541 /* StaticDateProvider.swift */; };
 		249F60601F05988F000914F2 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F605F1F05988F000914F2 /* MealsViewController.swift */; };
+		24A8A3D11FFCB496003203BB /* MealAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A8A3D01FFCB496003203BB /* MealAnalyser.swift */; };
+		24A8A3D21FFCB49E003203BB /* MealAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A8A3D01FFCB496003203BB /* MealAnalyser.swift */; };
 		24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */; };
 		24DE10321EFC06D900D4A599 /* CKMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE10311EFC06D900D4A599 /* CKMealRepository.swift */; };
 		24DE10331EFC06D900D4A599 /* CKMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE10311EFC06D900D4A599 /* CKMealRepository.swift */; };
@@ -172,6 +174,7 @@
 		2455BB251E912CEC0038C541 /* MealTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTrackerTest.swift; sourceTree = "<group>"; };
 		2455BB2D1E9131950038C541 /* StaticDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDateProvider.swift; sourceTree = "<group>"; };
 		249F605F1F05988F000914F2 /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
+		24A8A3D01FFCB496003203BB /* MealAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAnalyser.swift; sourceTree = "<group>"; };
 		24B571971DFC79B7009EA6D1 /* SlowEat WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlowEat WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		24B5719A1DFC7A0C009EA6D1 /* SlowEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlowEat.entitlements; sourceTree = "<group>"; };
 		24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlowEat-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 				244CF58E1EFC04A600CF35C9 /* EventType.swift */,
 				24F51B5A1EB0ED5C00DBC300 /* Time */,
 				24DE10311EFC06D900D4A599 /* CKMealRepository.swift */,
+				24A8A3D01FFCB496003203BB /* MealAnalyser.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -815,6 +819,7 @@
 				EA8F48821DE9F40500776EDC /* TableViewCell.swift in Sources */,
 				244CF5A31EFC04C600CF35C9 /* MealLogger.swift in Sources */,
 				244CF5A11EFC04C600CF35C9 /* Logger.swift in Sources */,
+				24A8A3D11FFCB496003203BB /* MealAnalyser.swift in Sources */,
 				EA8F487E1DE9EF7B00776EDC /* InstructionsViewController.swift in Sources */,
 				EA8F48891DEA0C5B00776EDC /* TipsViewController.swift in Sources */,
 				244CF5991EFC04BD00CF35C9 /* TimeTracker.swift in Sources */,
@@ -867,6 +872,7 @@
 				244CF5B01EFC04DB00CF35C9 /* EventType.swift in Sources */,
 				EA51A1141DC2643100542924 /* Motivation.swift in Sources */,
 				244CF5AB1EFC04DB00CF35C9 /* MealPresenter.swift in Sources */,
+				24A8A3D21FFCB49E003203BB /* MealAnalyser.swift in Sources */,
 				244CF5B41EFC04E100CF35C9 /* FoundationDateProvider.swift in Sources */,
 				EA8F48741DE9E14C00776EDC /* MovementDelegate.swift in Sources */,
 				EA4A57B81D81F7ED006935A9 /* ComplicationController.swift in Sources */,
