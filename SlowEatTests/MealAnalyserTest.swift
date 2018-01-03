@@ -21,9 +21,13 @@ class MealAnalyserTest: XCTestCase {
 
         let mealAnalysed = analyser.analyse(meal: nonStopMeal)
 
+        for event in mealAnalysed.events {
+            print(event.type)
+        }
+
         XCTAssertEqual(nonStopMeal.events.count, mealAnalysed.events.count)
         XCTAssertEqual(3, mealAnalysed.events.filter { $0.type == .moving }.count)
-        XCTAssertEqual(.moving, mealAnalysed.events[10].type)
+        XCTAssertEqual(.moving, mealAnalysed.events[9].type)
         XCTAssertEqual(.waiting, mealAnalysed.events[12].type)
     }
 

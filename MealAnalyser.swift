@@ -1,11 +1,15 @@
 class MealAnalyser {
     func analyse(meal: Meal) -> Meal {
-        var movingCount = 0
+        let timeInterval = 4.0
+        var lastMovingEvent = meal.events.first!
         let processedEvents = meal.events.map { event -> Event in
-            let shouldGroupMovingEvent = movingCount > 0 && movingCount < 10
+            let delta = event.date.timeIntervalSince1970 - lastMovingEvent.date.timeIntervalSince1970
+            let shouldGroupMovingEvent = delta < timeInterval && delta != 0.0
             let processedEvent = shouldGroupMovingEvent ? Event(type: .waiting, date: event.date) : event
             let isMoving = (event.type == .moving)
-            movingCount = isMoving ? (movingCount + 1) % 10 : 0
+            if isMoving && delta > timeInterval {
+                lastMovingEvent = event
+            }
             return processedEvent
         }
         return Meal(events: processedEvents)
