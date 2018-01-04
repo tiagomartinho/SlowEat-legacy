@@ -13,6 +13,7 @@
 		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
 		242507ED1FFE033A002FB11B /* FilterMoving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242507EC1FFE033A002FB11B /* FilterMoving.swift */; };
 		242507EE1FFE03BD002FB11B /* FilterMoving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242507EC1FFE033A002FB11B /* FilterMoving.swift */; };
+		242507F01FFE03FD002FB11B /* MealGraderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242507EF1FFE03FD002FB11B /* MealGraderTest.swift */; };
 		24309D9D1F06A0B700E32E6C /* FilterMovingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */; };
 		244CF5711EFC022100CF35C9 /* SpyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5701EFC022100CF35C9 /* SpyRepository.swift */; };
 		244CF5781EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
@@ -150,6 +151,7 @@
 		240013C61EF9B0B700CCA87C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		241137731DF46D0C0085A6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242507EC1FFE033A002FB11B /* FilterMoving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMoving.swift; sourceTree = "<group>"; };
+		242507EF1FFE03FD002FB11B /* MealGraderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealGraderTest.swift; sourceTree = "<group>"; };
 		24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterMovingTest.swift; sourceTree = "<group>"; };
 		244CF5701EFC022100CF35C9 /* SpyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyRepository.swift; sourceTree = "<group>"; };
 		244CF5771EFC031A00CF35C9 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				2455BB251E912CEC0038C541 /* MealTrackerTest.swift */,
 				24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */,
 				24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */,
+				242507EF1FFE03FD002FB11B /* MealGraderTest.swift */,
 				24F51B5B1EB0ED6600DBC300 /* Time */,
 				247C37631E8FD1860003F10C /* Supporting Files */,
 			);
@@ -849,6 +852,7 @@
 				2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */,
 				24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */,
 				24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */,
+				242507F01FFE03FD002FB11B /* MealGraderTest.swift in Sources */,
 				24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */,
 				24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */,
 				24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */,

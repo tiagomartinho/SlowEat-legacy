@@ -11,3 +11,4 @@ Buffer of 25 samples
 2) Extract MovingFilter from MealAnalyser to group moving events
 3) Grade the movings with new object MovingGrader
 4) Make MealAnalyser use MovingFilter & MovingGrader
+5) Convert to swift 4
