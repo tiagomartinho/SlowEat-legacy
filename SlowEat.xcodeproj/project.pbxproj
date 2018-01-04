@@ -12,6 +12,7 @@
 		240013C71EF9B0B700CCA87C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240013C61EF9B0B700CCA87C /* CloudKit.framework */; };
 		241137741DF46D0C0085A6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241137731DF46D0C0085A6F9 /* SettingsViewController.swift */; };
 		242507ED1FFE033A002FB11B /* FilterMoving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242507EC1FFE033A002FB11B /* FilterMoving.swift */; };
+		242507EE1FFE03BD002FB11B /* FilterMoving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242507EC1FFE033A002FB11B /* FilterMoving.swift */; };
 		24309D9D1F06A0B700E32E6C /* FilterMovingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */; };
 		244CF5711EFC022100CF35C9 /* SpyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5701EFC022100CF35C9 /* SpyRepository.swift */; };
 		244CF5781EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
@@ -891,6 +892,7 @@
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
 				244CF5871EFC044A00CF35C9 /* AutoEquatable.generated.swift in Sources */,
 				2455BB241E912AF20038C541 /* EndMealController.swift in Sources */,
+				242507EE1FFE03BD002FB11B /* FilterMoving.swift in Sources */,
 				244CF5B31EFC04E100CF35C9 /* DateProvider.swift in Sources */,
 				244CF5B21EFC04E100CF35C9 /* TimeTracker.swift in Sources */,
 			);
