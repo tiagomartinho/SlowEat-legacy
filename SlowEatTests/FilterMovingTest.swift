@@ -1,12 +1,12 @@
 import XCTest
 @testable import SlowEat
 
-class MealAnalyserTest: XCTestCase {
+class FilterMovingTest: XCTestCase {
 
     func testGroupNearMovingEvents() {
-        let analyser = MealAnalyser()
+        let filter = FilterMoving()
 
-        let mealAnalysed = analyser.analyse(meal: fiveSecondPaceMeal)
+        let mealAnalysed = filter.filter(meal: fiveSecondPaceMeal)
 
         XCTAssertEqual(fiveSecondPaceMeal.events.count, mealAnalysed.events.count)
         XCTAssertEqual(6, mealAnalysed.events.filter { $0.type == .moving }.count)
@@ -17,13 +17,9 @@ class MealAnalyserTest: XCTestCase {
     }
 
     func testLeaveSpaceBetweenMovingEventsIfUserIsAlwaysMoving() {
-        let analyser = MealAnalyser()
+        let filter = FilterMoving()
 
-        let mealAnalysed = analyser.analyse(meal: nonStopMeal)
-
-        for event in mealAnalysed.events {
-            print(event.type)
-        }
+        let mealAnalysed = filter.filter(meal: nonStopMeal)
 
         XCTAssertEqual(nonStopMeal.events.count, mealAnalysed.events.count)
         XCTAssertEqual(3, mealAnalysed.events.filter { $0.type == .moving }.count)
@@ -47,4 +43,3 @@ class MealAnalyserTest: XCTestCase {
         return meal
     }
 }
-
