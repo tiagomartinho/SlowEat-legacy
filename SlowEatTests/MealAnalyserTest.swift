@@ -16,7 +16,7 @@ class MealAnalyserTest: XCTestCase {
         XCTAssertEqual(.waiting, mealAnalysed.events[55].type)
     }
 
-    func testDoNotGroupNearMovingEventsIfUserDoesNotMoving() {
+    func testLeaveSpaceBetweenMovingEventsIfUserIsAlwaysMoving() {
         let analyser = MealAnalyser()
 
         let mealAnalysed = analyser.analyse(meal: nonStopMeal)
