@@ -1,8 +1,8 @@
 enum Grade: String {
 
-    case good, bad, worst
+    case good, bad, worst, empty
 
-    init?(delta: Double) {
+    init(delta: Double) {
         switch delta {
         case Grade.worst.range:
             self = .worst
@@ -11,7 +11,7 @@ enum Grade: String {
         case Grade.good.range:
             self = .good
         default:
-            return nil
+            self = .empty
         }
     }
 
@@ -23,6 +23,8 @@ enum Grade: String {
             return 5.0..<10.0
         case .good:
             return 10.0..<Double.greatestFiniteMagnitude
+        case .empty:
+            return -Double.greatestFiniteMagnitude..<0.0
         }
     }
 }

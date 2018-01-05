@@ -5,10 +5,10 @@ class MealGrader {
         for event in meal.events {
             if event.type == .moving {
                 let delta = event.date.timeIntervalSince1970 - lastWaitingEvent.date.timeIntervalSince1970
-                if let grade = Grade(delta: delta) {
-                    grades.append(grade)
-                }
+                grades.append(Grade(delta: delta))
                 lastWaitingEvent = Event(type: .waiting, date: event.date)
+            } else {
+                grades.append(.empty)
             }
         }
         return GradedMeal(events: meal.events, grades: grades)

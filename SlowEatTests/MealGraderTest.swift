@@ -3,14 +3,13 @@ import XCTest
 
 class MealGraderTest: XCTestCase {
 
-    func testGroupNearMovingEvents() {
+    func testGradeEvents() {
         let grader = MealGrader()
 
         let gradedMeal = grader.grade(meal: meal)
 
         XCTAssertEqual(gradedMeal.events.count, meal.events.count)
-        XCTAssertEqual(gradedMeal.grades.count, meal.events.filter { $0.type == .moving }.count)
-        XCTAssertEqual(gradedMeal.grades, [.good, .worst, .bad])
+        XCTAssertEqual(gradedMeal.grades, [.empty, .good, .empty, .worst, .empty, .bad])
     }
 
     var meal: Meal {
