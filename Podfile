@@ -5,12 +5,12 @@ target 'SlowEat' do
     pod 'Instabug'
     pod 'Mixpanel'
     pod 'Sourcery'
-    pod 'SnapKit', '~> 3.2.0'
+    pod 'SnapKit'
 end
 
 target 'SlowEatTests' do
     pod 'Instabug'
     pod 'Mixpanel'
     pod 'Sourcery'
-    pod 'SnapKit', '~> 3.2.0'
+    pod 'SnapKit'
 end
