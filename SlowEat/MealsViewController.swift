@@ -26,8 +26,16 @@ class MealsViewController: UIViewController {
         view.addSubview(collectionView)
 
         collectionView.snp.makeConstraints { make in
-            make.bottomMargin.equalToSuperview()
-            make.topMargin.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            } else {
+                make.bottom.equalToSuperview()
+            }
+            if #available(iOS 11.0, *) {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            } else {
+                make.top.equalToSuperview()
+            }
             make.trailingMargin.equalToSuperview()
             make.leadingMargin.equalToSuperview()
         }
