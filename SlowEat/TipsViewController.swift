@@ -18,7 +18,7 @@ class TipsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         let mixpanel = Mixpanel.sharedInstance()
-        mixpanel.track("Tips View", properties: nil)
+        mixpanel?.track("Tips View", properties: nil)
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "CellFromNib")
         tableView.rowHeight = UITableViewAutomaticDimension

@@ -19,7 +19,7 @@ class InstructionsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 
         let mixpanel = Mixpanel.sharedInstance()
-        mixpanel.track("Instructions View", properties: nil)
+        mixpanel?.track("Instructions View", properties: nil)
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "CellFromNib")
         tableView.rowHeight = UITableViewAutomaticDimension
