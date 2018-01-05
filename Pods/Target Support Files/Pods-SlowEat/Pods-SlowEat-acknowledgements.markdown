@@ -3,12 +3,9 @@ This application makes use of the following third party libraries:
 
 ## Instabug
 
-            Copyright (C) 2014 Instabug
-
-            Permission is hereby granted to use this framework as is, modification are not allowed.
-
-            All rights reserved.
-
+Copyright (C) 2014 Instabug Permission is hereby granted to use this framework as is, modification are not allowed.
+All rights reserved.
+        
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

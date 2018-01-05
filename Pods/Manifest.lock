@@ -1,23 +1,26 @@
 PODS:
-  - Instabug (6.1.1)
-  - Mixpanel (3.0.6):
-    - Mixpanel/Mixpanel (= 3.0.6)
-  - Mixpanel/Mixpanel (3.0.6)
-  - SnapKit (3.2.0)
-  - Sourcery (0.7.2)
+  - Instabug (7.6.1):
+    - Instabug/Instabug (= 7.6.1)
+    - Instabug/InstabugCore (= 7.6.1)
+  - Instabug/Instabug (7.6.1):
+    - Instabug/InstabugCore
+  - Instabug/InstabugCore (7.6.1)
+  - Mixpanel (3.2.5)
+  - SnapKit (4.0.0)
+  - Sourcery (0.10.1)
 
 DEPENDENCIES:
   - Instabug
   - Mixpanel
-  - SnapKit (~> 3.2.0)
+  - SnapKit
   - Sourcery
 
 SPEC CHECKSUMS:
-  Instabug: a4b69f65058a159f2fb01e7932c4cbc93c4c83eb
-  Mixpanel: c462992e6fe84d74a8d0408c0b25852ddd067e4b
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  Sourcery: abd498f5fd7dd74a85af911013bd521c1dfbb6ff
+  Instabug: 9ba5409001df078fd5282702bc5b5e4e92877506
+  Mixpanel: 7445c8e19c00df6d792ea8dda1b4d32f5acd4ac2
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
 
-PODFILE CHECKSUM: ac6352520a1ae3cfb926c5ae3eb414feeca6fde7
+PODFILE CHECKSUM: e57931644918e0d2594d1e77d6f03413be4c1b09
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

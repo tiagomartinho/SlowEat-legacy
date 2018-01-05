@@ -12,7 +12,7 @@
 #import "MixpanelPrivate.h"
 #import "MPLogger.h"
 
-#if defined(MIXPANEL_WATCH_EXTENSION)
+#if defined(MIXPANEL_WATCHOS)
 #import "MixpanelWatchProperties.h"
 #endif
 
@@ -35,8 +35,10 @@
 }
 
 - (NSString *)deviceSystemVersion {
-#if defined(MIXPANEL_WATCH_EXTENSION)
+#if defined(MIXPANEL_WATCHOS)
     return [MixpanelWatchProperties systemVersion];
+#elif defined(MIXPANEL_MACOS)
+    return [NSProcessInfo processInfo].operatingSystemVersionString;
 #else
     return [UIDevice currentDevice].systemVersion;
 #endif
@@ -60,10 +62,13 @@
     if (deviceModel) {
         p[@"$ios_device_model"] = deviceModel;
     }
+
+#if !defined(MIXPANEL_MACOS)
     NSString *ifa = [strongMixpanel IFA];
     if (ifa) {
         p[@"$ios_ifa"] = ifa;
     }
+#endif
     return [p copy];
 }
 
@@ -101,10 +106,12 @@
 
             if (self.distinctId) {
                 r[@"$distinct_id"] = self.distinctId;
-                MPLogInfo(@"%@ queueing people record: %@", self.mixpanel, r);
-                [strongMixpanel.peopleQueue addObject:r];
-                if (strongMixpanel.peopleQueue.count > 500) {
-                    [strongMixpanel.peopleQueue removeObjectAtIndex:0];
+                MPLogInfo(@"%@ queueing people record: %@", strongMixpanel, r);
+                @synchronized (strongMixpanel) {
+                    [strongMixpanel.peopleQueue addObject:r];
+                    if (strongMixpanel.peopleQueue.count > 500) {
+                        [strongMixpanel.peopleQueue removeObjectAtIndex:0];
+                    }
                 }
             } else {
                 MPLogInfo(@"%@ queueing unidentified people record: %@", self.mixpanel, r);
@@ -118,6 +125,10 @@
         });
 #if MIXPANEL_FLUSH_IMMEDIATELY
         [strongMixpanel flush];
+#else
+        if ([Mixpanel isAppExtension]) {
+            [strongMixpanel flush];
+        }
 #endif
     }
 }
@@ -139,8 +150,11 @@
 
 - (void)addPushDeviceToken:(NSData *)deviceToken
 {
-    NSDictionary *properties = @{@"$ios_devices": @[[MixpanelPeople pushDeviceTokenToString:deviceToken]]};
-    [self addPeopleRecordToQueueWithAction:@"$union" andProperties:properties];
+    NSString *tokenString = [MixpanelPeople pushDeviceTokenToString:deviceToken];
+    if (tokenString) {
+        NSDictionary *properties = @{@"$ios_devices": @[tokenString]};
+        [self addPeopleRecordToQueueWithAction:@"$union" andProperties:properties];
+    }
 }
 
 - (void)removeAllPushDeviceTokens
