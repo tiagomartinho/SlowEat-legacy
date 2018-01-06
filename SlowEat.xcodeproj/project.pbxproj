@@ -522,6 +522,7 @@
 				F7472063E0509FB52438ECBD /* [CP] Embed Pods Frameworks */,
 				5F183444A2B6713A9A5EE647 /* [CP] Copy Pods Resources */,
 				244CF5761EFC030300CF35C9 /* sourcery */,
+				24C65FBE2000BAB100550D7F /* swiftlint */,
 			);
 			buildRules = (
 			);
@@ -734,6 +735,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/Sourcery/bin/sourcery --sources \"${SRCROOT}/SlowEat\" --templates \"${SRCROOT}/Templates\" --output \"${SRCROOT}/CodeGenerated\"";
+		};
+		24C65FBE2000BAB100550D7F /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		481F3CE8F537E103995E87BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

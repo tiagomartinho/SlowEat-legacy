@@ -1,9 +1,6 @@
 // Generated using Sourcery 0.10.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
-// swiftlint:disable file_length
-// swiftlint:disable vertical_whitespace
-// swiftlint:disable trailing_whitespace
 fileprivate func compareOptionals<T>(lhs: T?, rhs: T?, compare: (_ lhs: T, _ rhs: T) -> Bool) -> Bool {
 switch (lhs, rhs) {
 case let (lValue?, rValue?):
@@ -27,12 +24,10 @@ return true
 
 // MARK: - AutoEquatable for classes, protocols, structs
 // MARK: - Meal AutoEquatable
-extension Meal: Equatable {} 
+extension Meal: Equatable {}
 internal func == (lhs: Meal, rhs: Meal) -> Bool {
 guard lhs.events == rhs.events else { return false }
 return true
 }
 
 // MARK: - AutoEquatable for Enums
-
-// MARK: -

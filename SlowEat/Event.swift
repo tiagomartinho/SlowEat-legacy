@@ -11,18 +11,18 @@ class Event: NSObject, NSCoding {
     }
 
     public required init?(coder aDecoder: NSCoder) {
-        type = EventType(rawValue: aDecoder.decodeObject(forKey: CoderKeys.TypeKey.rawValue) as? String ?? "") ?? EventType.moving
-        date = aDecoder.decodeObject(forKey: CoderKeys.DateKey.rawValue) as? Date ?? Date()
+        type = EventType(rawValue: aDecoder.decodeObject(forKey: CoderKeys.typeKey.rawValue) as? String ?? "") ?? EventType.moving
+        date = aDecoder.decodeObject(forKey: CoderKeys.dateKey.rawValue) as? Date ?? Date()
     }
 
     open func encode(with aCoder: NSCoder) {
-        aCoder.encode(type.rawValue, forKey: CoderKeys.TypeKey.rawValue)
-        aCoder.encode(date, forKey: CoderKeys.DateKey.rawValue)
+        aCoder.encode(type.rawValue, forKey: CoderKeys.typeKey.rawValue)
+        aCoder.encode(date, forKey: CoderKeys.dateKey.rawValue)
     }
 
     enum CoderKeys: String {
-        case TypeKey = "TypeKey"
-        case DateKey = "DateKey"
+        case typeKey = "TypeKey"
+        case dateKey = "DateKey"
     }
 
     override open func isEqual(_ object: Any?) -> Bool {

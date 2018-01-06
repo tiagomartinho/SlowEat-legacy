@@ -1,2 +1,7 @@
-Show meal informations
--> Number of bites, BPM, Total time, Start & End Date, Percentage of each grade and final grade
+- Calculate and show meal informations
+  - BPM
+  - Total time
+  - Start & End time
+  - Date
+  - Percentage of each grade
+  - Final grade
