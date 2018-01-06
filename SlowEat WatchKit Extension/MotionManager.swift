@@ -57,8 +57,12 @@ class MotionManager {
     }
 
     func processDeviceMotion(_ deviceMotion: CMDeviceMotion) {
-        let rotation = abs(deviceMotion.rotationRate.x) + abs(deviceMotion.rotationRate.y) + abs(deviceMotion.rotationRate.z)
-        let acceleration = abs(deviceMotion.userAcceleration.x) + abs(deviceMotion.userAcceleration.y) + abs(deviceMotion.userAcceleration.z)
+        let rotation = abs(deviceMotion.rotationRate.x) +
+            abs(deviceMotion.rotationRate.y) +
+            abs(deviceMotion.rotationRate.z)
+        let acceleration = abs(deviceMotion.userAcceleration.x) +
+            abs(deviceMotion.userAcceleration.y) +
+            abs(deviceMotion.userAcceleration.z)
 
         let everything = rotation + acceleration
         buffer.addSample(everything)

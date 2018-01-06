@@ -1,6 +1,7 @@
 // Generated using Sourcery 0.10.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
+// swiftlint:disable vertical_whitespace
 private func compareOptionals<T>(lhs: T?, rhs: T?, compare: (_ lhs: T, _ rhs: T) -> Bool) -> Bool {
 switch (lhs, rhs) {
 case let (lValue?, rValue?):

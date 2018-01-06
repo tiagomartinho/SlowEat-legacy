@@ -8,7 +8,7 @@ class TipsViewController: UIViewController, UITableViewDataSource {
         ("To keep the screen active longer go to the Apple \"Watch\" application", #imageLiteral(resourceName: "SpringBoard")),
         ("Open \"General\" Settings", #imageLiteral(resourceName: "MyWatch")),
         ("Select the \"Wake Screen\" Settings", #imageLiteral(resourceName: "General")),
-        ("Set the option \"Always\" on screen wake show last app and \"Wake for 70 Seconds\" on tap", #imageLiteral(resourceName: "Wake")),
+        ("Set the option \"Always\" on screen wake show last app and \"Wake for 70 Seconds\" on tap", #imageLiteral(resourceName: "Wake"))
     ]
 
     @IBOutlet var tableView: UITableView! {

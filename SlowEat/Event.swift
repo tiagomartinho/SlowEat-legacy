@@ -11,7 +11,8 @@ class Event: NSObject, NSCoding {
     }
 
     public required init?(coder aDecoder: NSCoder) {
-        type = EventType(rawValue: aDecoder.decodeObject(forKey: CoderKeys.typeKey.rawValue) as? String ?? "") ?? EventType.moving
+        let rawValue = aDecoder.decodeObject(forKey: CoderKeys.typeKey.rawValue) as? String ?? ""
+        type = EventType(rawValue: rawValue) ?? EventType.moving
         date = aDecoder.decodeObject(forKey: CoderKeys.dateKey.rawValue) as? Date ?? Date()
     }
 

@@ -7,6 +7,9 @@ class EndMealController: WKInterfaceController {
             self.dismiss()
         }
         let cancelAction = WKAlertAction(title: "Cancel", style: .cancel) {}
-        presentAlert(withTitle: "Do you want to end the meal?", message: nil, preferredStyle: .alert, actions: [cancelAction, endAction])
+        presentAlert(withTitle: "Do you want to end the meal?",
+                     message: nil,
+                     preferredStyle: .alert,
+                     actions: [cancelAction, endAction])
     }
 }

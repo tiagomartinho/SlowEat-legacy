@@ -31,7 +31,7 @@ class Motivation {
         "Eating slowly can decrease hunger and lead to higher levels of satiety",
         "Fast eaters gain more weight over time",
         "Try achieving a minimum number of chews per bite",
-        "Reserve this time to just eat",
+        "Reserve this time to just eat"
     ]
 
     var randomQuote: String {
