@@ -1,7 +1,7 @@
 import SnapKit
 import UIKit
 
-class MealsViewController: UIViewController {
+class MealGraphViewController: UIViewController {
 
     // swiftlint:disable line_length
     var meal: GradedMeal {
@@ -43,7 +43,7 @@ class MealsViewController: UIViewController {
     }
 }
 
-extension MealsViewController: UICollectionViewDataSource {
+extension MealGraphViewController: UICollectionViewDataSource {
 
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return meal.events.count
@@ -71,7 +71,7 @@ extension MealsViewController: UICollectionViewDataSource {
     }
 }
 
-extension MealsViewController: UICollectionViewDelegateFlowLayout {
+extension MealGraphViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         return CGSize(width: 10, height: collectionView.frame.size.height * 0.9)

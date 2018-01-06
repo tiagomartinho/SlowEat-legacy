@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MealsViewController()
+        window?.rootViewController = MealGraphViewController()
         window?.makeKeyAndVisible()
     }
 }
