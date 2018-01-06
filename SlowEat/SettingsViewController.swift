@@ -1,6 +1,6 @@
-import UIKit
 import Instabug
 import Mixpanel
+import UIKit
 
 class SettingsViewController: UIViewController {
 
@@ -10,7 +10,7 @@ class SettingsViewController: UIViewController {
         mixpanel?.track("Settings View", properties: nil)
     }
 
-    @IBAction func feedback(_ sender: Any) {
+    @IBAction func feedback(_: Any) {
         Instabug.invoke()
     }
 }

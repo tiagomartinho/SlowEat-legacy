@@ -18,13 +18,13 @@ enum Grade: String {
     private var range: Range<Double> {
         switch self {
         case .worst:
-            return 0.0..<5.0
+            return 0.0 ..< 5.0
         case .bad:
-            return 5.0..<10.0
+            return 5.0 ..< 10.0
         case .good:
-            return 10.0..<Double.greatestFiniteMagnitude
+            return 10.0 ..< Double.greatestFiniteMagnitude
         case .empty:
-            return -Double.greatestFiniteMagnitude..<0.0
+            return -Double.greatestFiniteMagnitude ..< 0.0
         }
     }
 }

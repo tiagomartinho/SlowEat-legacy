@@ -10,13 +10,13 @@ class CKMealRepository: MealRepository {
         NSKeyedArchiver.setClassName("Event", for: Event.self)
         let data = NSKeyedArchiver.archivedData(withRootObject: meal.events)
         record["events"] = data as CKRecordValue
-        database.save(record) { _, _  in }
+        database.save(record) { _, _ in }
     }
 
     func load(completionHandler: @escaping ([Meal]) -> Void) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Meal", predicate: predicate)
-        database.perform(query, inZoneWith: nil) { (records, error) in
+        database.perform(query, inZoneWith: nil) { records, _ in
             var meals = [Meal]()
             if let records = records {
                 for record in records {
@@ -39,10 +39,10 @@ class CKMealRepository: MealRepository {
     func deleteAll() {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Meal", predicate: predicate)
-        database.perform(query, inZoneWith: nil) { (records, error) in
+        database.perform(query, inZoneWith: nil) { records, _ in
             if let records = records {
                 for record in records {
-                    self.database.delete(withRecordID: record.recordID) { _, _  in }
+                    self.database.delete(withRecordID: record.recordID) { _, _ in }
                 }
             }
         }

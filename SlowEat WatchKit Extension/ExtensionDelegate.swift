@@ -1,6 +1,6 @@
-import WatchKit
-import WatchConnectivity
 import UserNotifications
+import WatchConnectivity
+import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 }

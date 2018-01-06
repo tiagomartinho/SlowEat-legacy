@@ -5,6 +5,7 @@ struct GradedMeal {
     var bites: Int {
         return events.filter { $0.type == .moving }.count
     }
+
 //    Number of bites
 //    BPM
 //    Total time

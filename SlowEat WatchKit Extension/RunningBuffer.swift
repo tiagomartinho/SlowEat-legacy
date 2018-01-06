@@ -7,11 +7,11 @@ class RunningBuffer {
 
     init(size: Int) {
         self.size = size
-        self.buffer = [Double](repeating: 0.0, count: self.size)
+        buffer = [Double](repeating: 0.0, count: self.size)
     }
 
     func addSample(_ sample: Double) {
-        buffer.insert(sample, at:0)
+        buffer.insert(sample, at: 0)
         if buffer.count > size {
             buffer.removeLast()
         }
@@ -46,11 +46,11 @@ class RunningBuffer {
     }
 
     func recentMean() -> Double {
-        let recentCount = self.size / 2
+        let recentCount = size / 2
         var mean = 0.0
 
-        if (buffer.count >= recentCount) {
-            let recentBuffer = buffer[0..<recentCount]
+        if buffer.count >= recentCount {
+            let recentBuffer = buffer[0 ..< recentCount]
             mean = recentBuffer.reduce(0.0, +) / Double(recentBuffer.count)
         }
 

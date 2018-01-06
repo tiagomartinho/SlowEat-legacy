@@ -1,5 +1,5 @@
-import XCTest
 @testable import SlowEat
+import XCTest
 
 class MealPresenterTest: XCTestCase {
 
@@ -66,7 +66,7 @@ class MealPresenterTest: XCTestCase {
 
     func testStopMealSavesMeal() {
         var events = [Event]()
-        for _ in 1...50 {
+        for _ in 1 ... 50 {
             events.append(Event(type: .moving, date: Date()))
             presenter.moving()
             events.append(Event(type: .waiting, date: Date()))

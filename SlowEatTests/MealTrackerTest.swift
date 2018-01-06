@@ -1,5 +1,5 @@
-import XCTest
 @testable import SlowEat
+import XCTest
 
 class MealTrackerTest: XCTestCase {
 
@@ -39,7 +39,7 @@ class MealTrackerTest: XCTestCase {
     func testIfUserIsWaitingTheBiteCountDoesNotIncrease() {
         tracker.start()
 
-        for _ in 1...100 { tracker.waiting() }
+        for _ in 1 ... 100 { tracker.waiting() }
 
         XCTAssertEqual(0, tracker.biteCount)
     }
@@ -47,14 +47,14 @@ class MealTrackerTest: XCTestCase {
     func testIfUserIsMovingTheBiteCountDoesNotIncrease() {
         tracker.start()
 
-        for _ in 1...100 { tracker.moving() }
+        for _ in 1 ... 100 { tracker.moving() }
 
         XCTAssertEqual(0, tracker.biteCount)
     }
 
     func testIfUserIsWaitingAndThenMovesTheBiteCountIncreases() {
         tracker.start()
-        for _ in 1...100 { tracker.waiting() }
+        for _ in 1 ... 100 { tracker.waiting() }
 
         tracker.moving()
 
@@ -63,9 +63,9 @@ class MealTrackerTest: XCTestCase {
 
     func testIfUserIsWaitingAndThenIsMovingTheBiteCountIncreasesOnce() {
         tracker.start()
-        for _ in 1...100 { tracker.waiting() }
+        for _ in 1 ... 100 { tracker.waiting() }
 
-        for _ in 1...100 { tracker.moving() }
+        for _ in 1 ... 100 { tracker.moving() }
 
         XCTAssertEqual(1, tracker.biteCount)
     }
@@ -73,7 +73,7 @@ class MealTrackerTest: XCTestCase {
     func testAlternateMoveAndWaitTracksCorrectBiteCount() {
         tracker.start()
 
-        for _ in 1...100 { tracker.waiting(); tracker.moving() }
+        for _ in 1 ... 100 { tracker.waiting(); tracker.moving() }
 
         XCTAssertEqual(100, tracker.biteCount)
     }

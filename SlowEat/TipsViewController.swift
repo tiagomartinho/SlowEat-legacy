@@ -1,15 +1,17 @@
-import UIKit
 import Mixpanel
+import UIKit
 
 class TipsViewController: UIViewController, UITableViewDataSource {
 
-    let data = [("Keep the screen active to receive visual and audible feedback", #imageLiteral(resourceName: "Screen")),
-                ("To keep the screen active longer go to the Apple \"Watch\" application", #imageLiteral(resourceName: "SpringBoard")),
-                ("Open \"General\" Settings", #imageLiteral(resourceName: "MyWatch")),
-                ("Select the \"Wake Screen\" Settings", #imageLiteral(resourceName: "General")),
-                ("Set the option \"Always\" on screen wake show last app and \"Wake for 70 Seconds\" on tap", #imageLiteral(resourceName: "Wake"))]
+    let data = [
+        ("Keep the screen active to receive visual and audible feedback", #imageLiteral(resourceName: "Screen")),
+        ("To keep the screen active longer go to the Apple \"Watch\" application", #imageLiteral(resourceName: "SpringBoard")),
+        ("Open \"General\" Settings", #imageLiteral(resourceName: "MyWatch")),
+        ("Select the \"Wake Screen\" Settings", #imageLiteral(resourceName: "General")),
+        ("Set the option \"Always\" on screen wake show last app and \"Wake for 70 Seconds\" on tap", #imageLiteral(resourceName: "Wake")),
+    ]
 
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
         }
@@ -23,7 +25,6 @@ class TipsViewController: UIViewController, UITableViewDataSource {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "CellFromNib")
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,7 +36,7 @@ class TipsViewController: UIViewController, UITableViewDataSource {
         return UITableViewCell()
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return data.count
     }
 }

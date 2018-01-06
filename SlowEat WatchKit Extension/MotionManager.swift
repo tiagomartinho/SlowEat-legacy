@@ -1,5 +1,5 @@
-import Foundation
 import CoreMotion
+import Foundation
 import WatchKit
 
 class MotionManager {
@@ -33,7 +33,7 @@ class MotionManager {
         resetAllState()
 
         motionManager.deviceMotionUpdateInterval = MotionManager.sampleInterval
-        motionManager.startDeviceMotionUpdates(to: queue) { (deviceMotion, error) in
+        motionManager.startDeviceMotionUpdates(to: queue) { deviceMotion, error in
             if error != nil {
                 print("Encountered error: \(error!)")
             }

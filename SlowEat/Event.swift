@@ -25,9 +25,9 @@ class Event: NSObject, NSCoding {
         case dateKey = "DateKey"
     }
 
-    override open func isEqual(_ object: Any?) -> Bool {
+    open override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? Event {
-            return self.type == object.type && self.date == object.date
+            return type == object.type && date == object.date
         }
         return false
     }
