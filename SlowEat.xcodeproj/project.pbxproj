@@ -68,6 +68,7 @@
 		24B76B9D1FFF4BF30053466C /* GradedMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B971FFF4BB50053466C /* GradedMeal.swift */; };
 		24B76B9E1FFF4BF30053466C /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B991FFF4BC90053466C /* Grade.swift */; };
 		24B76B9F1FFF4BF30053466C /* MealGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B9B1FFF4BE00053466C /* MealGrader.swift */; };
+		24B76BA11FFF59040053466C /* MealAnalyserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76BA01FFF59040053466C /* MealAnalyserTest.swift */; };
 		24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */; };
 		24DE10321EFC06D900D4A599 /* CKMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE10311EFC06D900D4A599 /* CKMealRepository.swift */; };
 		24DE10331EFC06D900D4A599 /* CKMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE10311EFC06D900D4A599 /* CKMealRepository.swift */; };
@@ -191,6 +192,7 @@
 		24B76B971FFF4BB50053466C /* GradedMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradedMeal.swift; sourceTree = "<group>"; };
 		24B76B991FFF4BC90053466C /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		24B76B9B1FFF4BE00053466C /* MealGrader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealGrader.swift; sourceTree = "<group>"; };
+		24B76BA01FFF59040053466C /* MealAnalyserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAnalyserTest.swift; sourceTree = "<group>"; };
 		24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlowEat-Bridging-Header.h"; sourceTree = "<group>"; };
 		24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTest.swift; sourceTree = "<group>"; };
 		24DE10311EFC06D900D4A599 /* CKMealRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKMealRepository.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */,
 				24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */,
 				242507EF1FFE03FD002FB11B /* MealGraderTest.swift */,
+				24B76BA01FFF59040053466C /* MealAnalyserTest.swift */,
 				24F51B5B1EB0ED6600DBC300 /* Time */,
 				247C37631E8FD1860003F10C /* Supporting Files */,
 			);
@@ -901,6 +904,7 @@
 				2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */,
 				24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */,
 				24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */,
+				24B76BA11FFF59040053466C /* MealAnalyserTest.swift in Sources */,
 				242507F01FFE03FD002FB11B /* MealGraderTest.swift in Sources */,
 				24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */,
 				24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */,

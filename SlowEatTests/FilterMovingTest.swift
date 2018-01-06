@@ -6,25 +6,37 @@ class FilterMovingTest: XCTestCase {
     func testGroupNearMovingEvents() {
         let filter = FilterMoving()
 
-        let mealAnalysed = filter.filter(meal: fiveSecondPaceMeal)
+        let filteredMeal = filter.filter(meal: fiveSecondPaceMeal)
 
-        XCTAssertEqual(fiveSecondPaceMeal.events.count, mealAnalysed.events.count)
-        XCTAssertEqual(6, mealAnalysed.events.filter { $0.type == .moving }.count)
-        XCTAssertEqual(.moving, mealAnalysed.events[23].type)
-        XCTAssertEqual(.waiting, mealAnalysed.events[24].type)
-        XCTAssertEqual(.moving, mealAnalysed.events[54].type)
-        XCTAssertEqual(.waiting, mealAnalysed.events[55].type)
+        XCTAssertEqual(fiveSecondPaceMeal.events.count, filteredMeal.events.count)
+        XCTAssertEqual(6, filteredMeal.events.filter { $0.type == .moving }.count)
+        XCTAssertEqual(.moving, filteredMeal.events[23].type)
+        XCTAssertEqual(.waiting, filteredMeal.events[24].type)
+        XCTAssertEqual(.moving, filteredMeal.events[54].type)
+        XCTAssertEqual(.waiting, filteredMeal.events[55].type)
     }
 
     func testLeaveSpaceBetweenMovingEventsIfUserIsAlwaysMoving() {
         let filter = FilterMoving()
 
-        let mealAnalysed = filter.filter(meal: nonStopMeal)
+        let filteredMeal = filter.filter(meal: nonStopMeal)
 
-        XCTAssertEqual(nonStopMeal.events.count, mealAnalysed.events.count)
-        XCTAssertEqual(3, mealAnalysed.events.filter { $0.type == .moving }.count)
-        XCTAssertEqual(.moving, mealAnalysed.events[9].type)
-        XCTAssertEqual(.waiting, mealAnalysed.events[12].type)
+        XCTAssertEqual(nonStopMeal.events.count, filteredMeal.events.count)
+        XCTAssertEqual(3, filteredMeal.events.filter { $0.type == .moving }.count)
+        XCTAssertEqual(.moving, filteredMeal.events[9].type)
+        XCTAssertEqual(.waiting, filteredMeal.events[12].type)
+    }
+
+    func testFiltersCloseMovingEvents() {
+        let filter = FilterMoving()
+
+        let filteredMeal = filter.filter(meal: meal)
+
+        XCTAssertEqual(meal.events.count, filteredMeal.events.count)
+        let movingEventsCount = filteredMeal.events.filter { $0.type == .moving }.count
+        XCTAssertEqual(3, movingEventsCount)
+        let waitingEventsCount = filteredMeal.events.filter { $0.type == .waiting }.count
+        XCTAssertEqual(filteredMeal.events.count - 3, waitingEventsCount)
     }
 
     var fiveSecondPaceMeal: Meal {
@@ -38,6 +50,14 @@ class FilterMovingTest: XCTestCase {
     var nonStopMeal: Meal {
         let eventsType: [EventType] = [.moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .moving, .waiting, .waiting, .waiting, .waiting, .waiting, .waiting, .waiting, .waiting, .waiting]
         let times: [TimeInterval] = [6.79, 7.28, 7.77, 8.26, 8.74, 9.22, 9.71, 10.20, 10.68, 11.17, 11.65, 12.14, 12.63, 13.11, 13.60, 14.09, 14.57, 15.06, 15.54, 16.03, 16.52, 17.00, 17.49, 18.05, 18.47, 18.96, 19.44, 19.94, 20.43, 20.92, 21.41, 21.90, 22.39, 22.88]
+        let events = eventsType.enumerated().map { Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset])) }
+        let meal = Meal(events: events)
+        return meal
+    }
+
+    var meal: Meal {
+        let eventsType: [EventType] = [.waiting, .moving, .waiting, .moving, .waiting, .moving, .waiting, .moving]
+        let times: [TimeInterval] =  [0.0, 12.0, 13.0, 18.0, 20.0, 23.0, 24.0, 25.0]
         let events = eventsType.enumerated().map { Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset])) }
         let meal = Meal(events: events)
         return meal
