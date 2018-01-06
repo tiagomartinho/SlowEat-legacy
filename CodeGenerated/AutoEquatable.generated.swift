@@ -3,32 +3,33 @@
 
 // swiftlint:disable vertical_whitespace
 private func compareOptionals<T>(lhs: T?, rhs: T?, compare: (_ lhs: T, _ rhs: T) -> Bool) -> Bool {
-switch (lhs, rhs) {
-case let (lValue?, rValue?):
-return compare(lValue, rValue)
-case (nil, nil):
-return true
-default:
-return false
-}
+    switch (lhs, rhs) {
+    case let (lValue?, rValue?):
+        return compare(lValue, rValue)
+    case (nil, nil):
+        return true
+    default:
+        return false
+    }
 }
 
 private func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs: T) -> Bool) -> Bool {
-guard lhs.count == rhs.count else { return false }
-for (idx, lhsItem) in lhs.enumerated() {
-guard compare(lhsItem, rhs[idx]) else { return false }
-}
+    guard lhs.count == rhs.count else { return false }
+    for (idx, lhsItem) in lhs.enumerated() {
+        guard compare(lhsItem, rhs[idx]) else { return false }
+    }
 
-return true
+    return true
 }
-
 
 // MARK: - AutoEquatable for classes, protocols, structs
+
 // MARK: - Meal AutoEquatable
+
 extension Meal: Equatable {}
 internal func == (lhs: Meal, rhs: Meal) -> Bool {
-guard lhs.events == rhs.events else { return false }
-return true
+    guard lhs.events == rhs.events else { return false }
+    return true
 }
 
 // MARK: - AutoEquatable for Enums

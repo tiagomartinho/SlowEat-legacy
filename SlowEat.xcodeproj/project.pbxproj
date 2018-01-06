@@ -519,6 +519,8 @@
 				5F183444A2B6713A9A5EE647 /* [CP] Copy Pods Resources */,
 				244CF5761EFC030300CF35C9 /* sourcery */,
 				24C65FBE2000BAB100550D7F /* swiftlint */,
+				24C65FC02000BEF300550D7F /* swiftformat */,
+				24C65FBF2000BEB800550D7F /* swiftlint autocorrect */,
 			);
 			buildRules = (
 			);
@@ -745,6 +747,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		24C65FBF2000BEB800550D7F /* swiftlint autocorrect */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "swiftlint autocorrect";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		24C65FC02000BEF300550D7F /* swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftformat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat .\nelse\necho \"warning: swiftformat not installed\"\nfi";
 		};
 		481F3CE8F537E103995E87BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -6,7 +6,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getSupportedTimeTravelDirections(for _: CLKComplication,
                                           withHandler
-        handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
+                                          handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
         handler([.forward, .backward])
     }
 
