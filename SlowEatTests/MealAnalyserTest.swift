@@ -19,4 +19,3 @@ class MealAnalyserTest: XCTestCase {
         return meal
     }
 }
-

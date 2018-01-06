@@ -47,7 +47,7 @@ class MotionManager {
 
     func stopUpdates() {
         print("stopUpdates")
-        
+
         if motionManager.isDeviceMotionAvailable {
             motionManager.stopDeviceMotionUpdates()
             print("stoppedUpdates")

@@ -32,7 +32,7 @@ class Motivation {
                   "Try achieving a minimum number of chews per bite",
                   "Reserve this time to just eat"
     ]
-    
+
     var randomQuote: String {
         let randomIndex = Int(arc4random_uniform(UInt32(quotes.count)))
         return quotes[randomIndex]

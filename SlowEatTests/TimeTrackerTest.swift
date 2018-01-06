@@ -37,7 +37,7 @@ class FoundationTimeTrackerTest: XCTestCase {
         staticDateProvider.currentDate = currentDate
 
         let date = tracker.currentTime
-        
+
         XCTAssertEqual(expected, date)
     }
 }

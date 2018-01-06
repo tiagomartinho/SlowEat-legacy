@@ -12,7 +12,7 @@ class RunningBuffer {
 
     func addSample(_ sample: Double) {
         buffer.insert(sample, at:0)
-        if buffer.count > size  {
+        if buffer.count > size {
             buffer.removeLast()
         }
     }
@@ -53,7 +53,7 @@ class RunningBuffer {
             let recentBuffer = buffer[0..<recentCount]
             mean = recentBuffer.reduce(0.0, +) / Double(recentBuffer.count)
         }
-        
+
         return mean
     }
 }
