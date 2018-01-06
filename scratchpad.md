@@ -1,3 +1,4 @@
+- Refactoring / Think about the architecture
 - Separate presentation from model (grade and number of bites from Meal object)
 - Calculate and show meal informations
   - BPM
