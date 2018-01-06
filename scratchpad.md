@@ -1,3 +1,4 @@
+- Separate presentation from model (grade and number of bites from Meal object)
 - Calculate and show meal informations
   - BPM
   - Total time
@@ -5,3 +6,4 @@
   - Date
   - Percentage of each grade
   - Final grade
+- Present meal info view
