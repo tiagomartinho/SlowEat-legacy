@@ -41,6 +41,10 @@ class MealTableViewCell: TableViewCell {
 
     private func initBpmLabel() {
         bpmLabel = UILabel()
+        bpmView = UIView()
+    }
+
+    func set(bpm: String) {
         let size = UIFont.preferredFont(forTextStyle: .title3).pointSize
         let attributesValue = [
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: size),
@@ -50,7 +54,7 @@ class MealTableViewCell: TableViewCell {
             NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .title3),
             NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)
         ]
-        let value = NSMutableAttributedString(string: "18")
+        let value = NSMutableAttributedString(string: bpm)
         let label = NSMutableAttributedString(string: " bpm")
         let rangeValue = NSRange(location: 0, length: value.length)
         let rangeLabel = NSRange(location: value.length, length: label.length)
@@ -58,8 +62,11 @@ class MealTableViewCell: TableViewCell {
         value.setAttributes(attributesValue, range: rangeValue)
         value.setAttributes(attributesLabel, range: rangeLabel)
         bpmLabel.attributedText = value
+    }
 
-        bpmView = UIView()
+    func set(percentage: String, color: UIColor) {
+        percentageLabel.text = percentage
+        percentageView.backgroundColor = color
     }
 
     private func addBpmLabel() {
@@ -80,14 +87,10 @@ class MealTableViewCell: TableViewCell {
 
     private func initPercentageLabel() {
         percentageLabel = UILabel()
-        percentageLabel.text = "- 12 bpm (4.5%)"
         percentageLabel.textColor = .white
         percentageLabel.font = UIFont.preferredFont(forTextStyle: .title3)
 
         percentageView = UIView()
-        let red = UIColor(red: 232.0 / 255.0, green: 76.0 / 255.0, blue: 62.0 / 255.0, alpha: 1)
-        let green = UIColor(red: 121.0 / 255.0, green: 213.0 / 255.0, blue: 113.0 / 255.0, alpha: 1)
-        percentageView.backgroundColor = green
         percentageView.layer.cornerRadius = 8.0
         percentageView.layer.masksToBounds = true
     }
