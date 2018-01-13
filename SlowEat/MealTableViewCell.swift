@@ -20,29 +20,44 @@ class MealTableViewCell: TableViewCell {
     private func initDateLabel() {
         dateLabel = UILabel()
         dateLabel.text = "13:13, 17/12/2017"
-        dateLabel.textColor = .white
+        dateLabel.textColor = UIColor.white.withAlphaComponent(0.5)
     }
 
     private func addDateLabel() {
         addSubview(dateLabel)
         constrain(dateLabel, with: [
-            equal(\.leadingAnchor),
-            equal(\.topAnchor)
+            equal(\.leadingAnchor, constant: -8.0),
+            equal(\.topAnchor, constant: -8.0)
         ])
     }
 
     private func initBpmLabel() {
         bpmLabel = UILabel()
-        bpmLabel.text = "18 bpm"
-        bpmLabel.textColor = .white
+        let size = UIFont.preferredFont(forTextStyle: .title1).pointSize
+        let attributesValue = [
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: size),
+            NSAttributedStringKey.foregroundColor: UIColor.white
+        ]
+        let attributesLabel = [
+            NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .title1),
+            NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.8)
+        ]
+        let value = NSMutableAttributedString(string: "18")
+        let label = NSMutableAttributedString(string: " bpm")
+        let rangeValue = NSRange(location: 0, length: value.length)
+        let rangeLabel = NSRange(location: value.length, length: label.length)
+        value.append(label)
+        value.setAttributes(attributesValue, range: rangeValue)
+        value.setAttributes(attributesLabel, range: rangeLabel)
+        bpmLabel.attributedText = value
     }
 
     private func addBpmLabel() {
         addSubview(bpmLabel)
         constrain(bpmLabel, with: [
-            equal(\.leadingAnchor),
-            equal(\.bottomAnchor)
+            equal(\.leadingAnchor, constant: -8.0),
+            equal(\.bottomAnchor, constant: +8.0)
         ])
-        bpmLabel.constrain(dateLabel, with: [equal(\.topAnchor, \.bottomAnchor)])
+        bpmLabel.constrain(dateLabel, with: [equal(\.topAnchor, \.bottomAnchor, constant: 16.0)])
     }
 }
