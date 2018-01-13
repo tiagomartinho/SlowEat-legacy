@@ -9,7 +9,7 @@ class MealTableViewCell: TableViewCell {
     private var percentageLabel: UILabel!
     private var percentageView: UIView!
 
-    private let defaultMargin = 8.0
+    private let defaultMargin = 12.0
 
     override func initView() {
         setViewBackground()
@@ -85,8 +85,10 @@ class MealTableViewCell: TableViewCell {
         percentageLabel.font = UIFont.preferredFont(forTextStyle: .title3)
 
         percentageView = UIView()
-        percentageView.backgroundColor = .green
-        percentageView.layer.cornerRadius = 5.0
+        let red = UIColor(red: 232.0 / 255.0, green: 76.0 / 255.0, blue: 62.0 / 255.0, alpha: 1)
+        let green = UIColor(red: 121.0 / 255.0, green: 213.0 / 255.0, blue: 113.0 / 255.0, alpha: 1)
+        percentageView.backgroundColor = green
+        percentageView.layer.cornerRadius = 8.0
         percentageView.layer.masksToBounds = true
     }
 
