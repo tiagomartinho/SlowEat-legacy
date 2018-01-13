@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tzF-vI-bGl">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tzF-vI-bGl">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
         <!--SlowEat-->
@@ -17,13 +17,6 @@
                             <items>
                                 <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="RV2-ZC-pua">
                                     <items>
-                                        <group width="1" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" spacing="20" id="4Y2-NZ-w4l">
-                                            <items>
-                                                <label alignment="left" verticalAlignment="center" text="00:00" textAlignment="right" id="gcA-D2-My4">
-                                                    <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
-                                                </label>
-                                            </items>
-                                        </group>
                                         <group width="1" alignment="left" verticalAlignment="center" spacing="8" id="Qjo-yZ-A9e">
                                             <items>
                                                 <label alignment="left" verticalAlignment="center" text="0" textAlignment="right" minimumScaleFactor="0.5" id="EEC-fN-6hZ">
@@ -41,6 +34,14 @@
                                                 </label>
                                                 <label height="1" alignment="left" verticalAlignment="center" alpha="0.5" text="B" textAlignment="right" baselineAdjustment="alignCenters" id="kbX-UJ-AwE">
                                                     <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" spacing="20" id="4Y2-NZ-w4l">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="00:00" textAlignment="right" id="gcA-D2-My4">
+                                                    <color key="textColor" red="0.50196784734725952" green="0.50194811820983887" blue="0.50196152925491333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
                                                 </label>
                                             </items>
                                         </group>

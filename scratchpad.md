@@ -1,3 +1,4 @@
+- go back to first principles, the data you are gathering and how you can visualize it and save it
 - Refactoring / Think about the architecture
 - Separate presentation from model (grade and number of bites from Meal object)
 - Calculate and show meal informations
