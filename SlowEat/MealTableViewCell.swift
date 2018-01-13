@@ -27,7 +27,7 @@ class MealTableViewCell: TableViewCell {
         addSubview(dateLabel)
         constrain(dateLabel, with: [
             equal(\.leadingAnchor),
-            equal(\.topAnchor, \.safeAreaLayoutGuide.topAnchor)
+            equal(\.topAnchor)
         ])
     }
 
@@ -41,8 +41,8 @@ class MealTableViewCell: TableViewCell {
         addSubview(bpmLabel)
         constrain(bpmLabel, with: [
             equal(\.leadingAnchor),
-            equal(\.bottomAnchor, \.safeAreaLayoutGuide.bottomAnchor)
+            equal(\.bottomAnchor)
         ])
-        bpmLabel.constrain(dateLabel, with: [equal(\.bottomAnchor, \.topAnchor)])
+        bpmLabel.constrain(dateLabel, with: [equal(\.topAnchor, \.bottomAnchor)])
     }
 }
