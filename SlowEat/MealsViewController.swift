@@ -4,6 +4,7 @@ class MealsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = .black
         tableView.register(MealTableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
     }
 

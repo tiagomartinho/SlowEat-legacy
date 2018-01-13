@@ -6,7 +6,6 @@ target 'SlowEat' do
     pod 'Instabug'
     pod 'Mixpanel'
     pod 'Sourcery'
-    pod 'SnapKit'
 
     target 'SlowEatTests' do
         inherit! :search_paths
