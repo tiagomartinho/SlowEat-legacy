@@ -4,10 +4,18 @@ class MealsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initTableView()
+        title = "Meals"
+    }
+
+    private func initTableView() {
         tableView.backgroundColor = .black
         tableView.separatorColor = .darkGray
         tableView.allowsSelection = false
         tableView.register(MealTableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
+        if #available(iOS 11.0, *) {
+            tableView.insetsContentViewsToSafeArea = true
+        }
     }
 
     override func numberOfSections(in _: UITableView) -> Int {
