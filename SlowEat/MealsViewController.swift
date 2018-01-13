@@ -5,6 +5,8 @@ class MealsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .black
+        tableView.separatorColor = .darkGray
+        tableView.allowsSelection = false
         tableView.register(MealTableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
     }
 

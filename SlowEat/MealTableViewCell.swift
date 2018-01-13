@@ -29,8 +29,8 @@ class MealTableViewCell: TableViewCell {
     private func addDateLabel() {
         addSubview(dateLabel)
         constrain(dateLabel, with: [
-            equal(\.leadingAnchor, constant: -8.0),
-            equal(\.topAnchor, constant: -8.0)
+            equal(\.leadingAnchor, constant: -12.0),
+            equal(\.topAnchor, constant: -12.0)
         ])
     }
 
@@ -58,8 +58,8 @@ class MealTableViewCell: TableViewCell {
     private func addBpmLabel() {
         addSubview(bpmLabel)
         constrain(bpmLabel, with: [
-            equal(\.leadingAnchor, constant: -8.0),
-            equal(\.bottomAnchor, constant: +8.0)
+            equal(\.leadingAnchor, constant: -12.0),
+            equal(\.bottomAnchor, constant: +12.0)
         ])
         bpmLabel.constrain(dateLabel, with: [equal(\.topAnchor, \.bottomAnchor, constant: 16.0)])
     }
@@ -77,8 +77,8 @@ class MealTableViewCell: TableViewCell {
     private func addPercentageLabel() {
         addSubview(percentageLabel)
         constrain(percentageLabel, with: [
-            equal(\.bottomAnchor, constant: +8.0)
+            equal(\.bottomAnchor, constant: +12.0)
         ])
-        percentageLabel.constrain(bpmLabel, with: [equal(\.leadingAnchor, \.trailingAnchor, constant: 8.0)])
+        percentageLabel.constrain(bpmLabel, with: [equal(\.leadingAnchor, \.trailingAnchor, constant: 12.0)])
     }
 }
