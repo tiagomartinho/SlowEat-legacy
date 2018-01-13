@@ -139,6 +139,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/Instabug/InstabugCore.framework"
   install_dsym "${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM"
   install_framework "${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/Instabug/Instabug.framework"
@@ -146,6 +147,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/Instabug/InstabugCore.framework"
   install_dsym "${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM"
   install_framework "${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

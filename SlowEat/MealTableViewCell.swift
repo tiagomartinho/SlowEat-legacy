@@ -1,3 +1,4 @@
+import SnapKit
 import UIKit
 
 class MealTableViewCell: TableViewCell {
@@ -7,6 +8,8 @@ class MealTableViewCell: TableViewCell {
     private var bpmView: UIView!
     private var percentageLabel: UILabel!
     private var percentageView: UIView!
+
+    private let defaultMargin = 8.0
 
     override func initView() {
         setViewBackground()
@@ -30,10 +33,10 @@ class MealTableViewCell: TableViewCell {
 
     private func addDateLabel() {
         addSubview(dateLabel)
-        constrain(dateLabel, with: [
-            equal(\.leadingAnchor, constant: -12.0),
-            equal(\.topAnchor, constant: -12.0)
-        ])
+        dateLabel.snp.makeConstraints { maker in
+            maker.leading.equalToSuperview().inset(defaultMargin)
+            maker.top.equalToSuperview().inset(defaultMargin)
+        }
     }
 
     private func initBpmLabel() {
@@ -61,17 +64,18 @@ class MealTableViewCell: TableViewCell {
 
     private func addBpmLabel() {
         bpmView.addSubview(bpmLabel)
-        bpmView.constrain(bpmLabel, with: [
-            equal(\.leadingAnchor, constant: -12.0),
-            equal(\.bottomAnchor, constant: +8.0),
-            equal(\.topAnchor, constant: -8.0),
-            equal(\.trailingAnchor, constant: +12.0)
-        ])
         addSubview(bpmView)
-        constrain(bpmView, with: [
-            equal(\.leadingAnchor, constant: -4.0),
-            equal(\.bottomAnchor, constant: +12.0)
-        ])
+        bpmLabel.snp.makeConstraints { maker in
+            maker.top.equalToSuperview().inset(defaultMargin)
+            maker.bottom.equalToSuperview().inset(defaultMargin)
+            maker.trailing.equalToSuperview().inset(defaultMargin)
+            maker.leading.equalToSuperview().inset(defaultMargin)
+        }
+        bpmView.snp.makeConstraints { maker in
+            maker.leading.equalToSuperview().inset(defaultMargin)
+            maker.bottom.equalToSuperview().inset(defaultMargin)
+            maker.top.equalTo(dateLabel.snp.bottom).offset(defaultMargin)
+        }
     }
 
     private func initPercentageLabel() {
@@ -88,17 +92,17 @@ class MealTableViewCell: TableViewCell {
 
     private func addPercentageLabel() {
         percentageView.addSubview(percentageLabel)
-        percentageView.constrain(percentageLabel, with: [
-            equal(\.leadingAnchor, constant: +12.0),
-            equal(\.bottomAnchor, constant: +8.0),
-            equal(\.topAnchor, constant: -8.0),
-            equal(\.trailingAnchor, constant: +12.0)
-        ])
         addSubview(percentageView)
-        constrain(percentageView, with: [
-            equal(\.bottomAnchor, constant: +12.0)
-        ])
-        percentageView.constrain(bpmLabel, with: [equal(\.leadingAnchor, \.trailingAnchor, constant: 12.0)])
-        percentageView.constrain(dateLabel, with: [equal(\.topAnchor, \.bottomAnchor, constant: 16.0)])
+        percentageLabel.snp.makeConstraints { maker in
+            maker.top.equalToSuperview().inset(defaultMargin)
+            maker.bottom.equalToSuperview().inset(defaultMargin)
+            maker.trailing.equalToSuperview().inset(defaultMargin)
+            maker.leading.equalToSuperview().inset(defaultMargin)
+        }
+        percentageView.snp.makeConstraints { maker in
+            maker.leading.equalTo(bpmView.snp.trailing).offset(defaultMargin)
+            maker.bottom.equalToSuperview().inset(defaultMargin)
+            maker.top.equalTo(dateLabel.snp.bottom).offset(defaultMargin)
+        }
     }
 }
