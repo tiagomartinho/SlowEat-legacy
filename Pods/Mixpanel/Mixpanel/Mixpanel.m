@@ -28,14 +28,14 @@
 #error The Mixpanel library must be compiled with ARC enabled
 #endif
 
-#define VERSION @"3.2.5"
+#define VERSION @"3.2.6"
 
 @implementation Mixpanel
 
 static NSMutableDictionary *instances;
 static NSString *defaultProjectToken;
 
-+ (Mixpanel *)sharedInstanceWithToken:(NSString *)apiToken launchOptions:(NSDictionary *)launchOptions {
++ (Mixpanel *)sharedInstanceWithToken:(NSString *)apiToken launchOptions:(NSDictionary *)launchOptions trackCrashes:(BOOL)trackCrashes automaticPushTracking:(BOOL)automaticPushTracking {
     if (instances[apiToken]) {
         return instances[apiToken];
     }
@@ -45,8 +45,12 @@ static NSString *defaultProjectToken;
 #else
     const NSUInteger flushInterval = 60;
 #endif
+    
+    return [[self alloc] initWithToken:apiToken launchOptions:launchOptions flushInterval:flushInterval trackCrashes:trackCrashes automaticPushTracking:automaticPushTracking];
+}
 
-    return [[self alloc] initWithToken:apiToken launchOptions:launchOptions andFlushInterval:flushInterval];
++ (Mixpanel *)sharedInstanceWithToken:(NSString *)apiToken launchOptions:(NSDictionary *)launchOptions {
+    return [Mixpanel sharedInstanceWithToken:apiToken launchOptions:launchOptions trackCrashes:YES automaticPushTracking:YES];
 }
 
 + (Mixpanel *)sharedInstanceWithToken:(NSString *)apiToken {

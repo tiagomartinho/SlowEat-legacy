@@ -74,6 +74,7 @@
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
 		24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */; };
+		48553A6CAB2FEB7A2F42121B /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553F678FD73403C89D9A00 /* MealTableViewCell.swift */; };
 		E209700C590A1ED6F9F3DB0C /* Pods_SlowEatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31BFF4E8A24E791A1DF09F3 /* Pods_SlowEatTests.framework */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
 		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
@@ -194,6 +195,7 @@
 		24F2E9A61E0405750080ABD9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
 		24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPresenterTest.swift; sourceTree = "<group>"; };
+		48553F678FD73403C89D9A00 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig"; sourceTree = "<group>"; };
 		B31BFF4E8A24E791A1DF09F3 /* Pods_SlowEatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowEatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,6 +404,7 @@
 				24402C0D200A654100C018B3 /* MealsViewController.swift */,
 				24402C0F200A654B00C018B3 /* Legacy */,
 				EA8F48861DEA0B3800776EDC /* Supporting Files */,
+				48553F678FD73403C89D9A00 /* MealTableViewCell.swift */,
 			);
 			path = SlowEat;
 			sourceTree = "<group>";
@@ -864,20 +867,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-frameworks.sh",
-				"${PODS_ROOT}/Instabug/Instabug.framework",
-				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
-				"${PODS_ROOT}/Instabug/InstabugCore.framework",
-				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,6 +925,7 @@
 				244CF5911EFC04A600CF35C9 /* DateProvider.swift in Sources */,
 				244CF5A51EFC04C600CF35C9 /* MealRepository.swift in Sources */,
 				244CF5921EFC04A600CF35C9 /* Event.swift in Sources */,
+				48553A6CAB2FEB7A2F42121B /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

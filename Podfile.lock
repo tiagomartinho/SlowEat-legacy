@@ -1,11 +1,11 @@
 PODS:
-  - Instabug (7.6.1):
-    - Instabug/Instabug (= 7.6.1)
-    - Instabug/InstabugCore (= 7.6.1)
-  - Instabug/Instabug (7.6.1):
+  - Instabug (7.7.1):
+    - Instabug/Instabug (= 7.7.1)
+    - Instabug/InstabugCore (= 7.7.1)
+  - Instabug/Instabug (7.7.1):
     - Instabug/InstabugCore
-  - Instabug/InstabugCore (7.6.1)
-  - Mixpanel (3.2.5)
+  - Instabug/InstabugCore (7.7.1)
+  - Mixpanel (3.2.6)
   - SnapKit (4.0.0)
   - Sourcery (0.10.1)
 
@@ -16,8 +16,8 @@ DEPENDENCIES:
   - Sourcery
 
 SPEC CHECKSUMS:
-  Instabug: 9ba5409001df078fd5282702bc5b5e4e92877506
-  Mixpanel: 7445c8e19c00df6d792ea8dda1b4d32f5acd4ac2
+  Instabug: a20a64eabc9307f29df0202e86de7fe6dc979577
+  Mixpanel: 2304449c3580927db15c894652a6e135aafae8f5
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
 
