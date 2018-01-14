@@ -9,7 +9,7 @@ class MealTableViewCell: TableViewCell {
     private var percentageLabel: UILabel!
     private var percentageView: UIView!
 
-    private let defaultMargin = 12.0
+    private let defaultMargin = 10.0
 
     override func initView() {
         setViewBackground()
@@ -27,7 +27,6 @@ class MealTableViewCell: TableViewCell {
 
     private func initDateLabel() {
         dateLabel = UILabel()
-        dateLabel.text = "13:13, 17/12/2017"
         dateLabel.textColor = UIColor.white.withAlphaComponent(0.25)
     }
 
@@ -64,6 +63,10 @@ class MealTableViewCell: TableViewCell {
         value.setAttributes(attributesValue, range: rangeValue)
         value.setAttributes(attributesLabel, range: rangeLabel)
         bpmLabel.attributedText = value
+    }
+
+    func set(date: String) {
+        dateLabel.text = date
     }
 
     func set(percentage: String, color: UIColor) {

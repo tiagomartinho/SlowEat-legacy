@@ -33,6 +33,7 @@ class MealsViewController: UITableViewController {
             let green = UIColor(red: 121.0 / 255.0, green: 213.0 / 255.0, blue: 113.0 / 255.0, alpha: 1)
             cell.set(percentage: "- 12 bpm (2.5%)", color: green)
         }
+        cell.set(date: "13:13, 17/12/2017")
         return cell
     }
 }
