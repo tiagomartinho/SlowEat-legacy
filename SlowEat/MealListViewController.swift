@@ -1,6 +1,6 @@
 import UIKit
 
-class MealsViewController: UITableViewController {
+class MealListViewController: UITableViewController {
 
     private var cells = [MealCell]()
 
@@ -44,7 +44,7 @@ class MealsViewController: UITableViewController {
     }
 }
 
-extension MealsViewController: MealsView {
+extension MealListViewController: MealsView {
     func showNoMeals() {
         let label = UILabel()
         label.text = "You have no meals"

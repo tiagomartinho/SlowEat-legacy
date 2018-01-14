@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController(rootViewController: MealsViewController())
+        let navigationController = UINavigationController(rootViewController: MealListViewController())
         navigationController.navigationBar.tintColor = .white
         navigationController.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationController.navigationBar.barTintColor = .black
