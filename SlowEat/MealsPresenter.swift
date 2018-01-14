@@ -13,7 +13,7 @@ class MealsPresenter {
         dateFormatter.timeStyle = .short
         dateFormatter.dateStyle = .short
         let date = dateFormatter.string(from: meal.startDate)
-        let cells = [MealCell(bpm: "12", date: date, change: "- 12 bpm (2.5%)", color: .green)]
+        let cells = [MealCell(bpm: "\(meal.bpm)", date: date, change: "- 12 bpm (2.5%)", color: .green)]
         view.showMeals(cells: cells)
     }
 

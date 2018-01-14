@@ -24,4 +24,14 @@ extension GradedMeal {
     var endDate: Date {
         return events.last?.date ?? Date()
     }
+
+    var timeInterval: Double {
+        return endDate.timeIntervalSince1970 - startDate.timeIntervalSince1970
+    }
+
+    var bpm: Int {
+        let oneMinute = 60
+        let bpm = Double(bites * oneMinute) / timeInterval
+        return Int(bpm.rounded(.up))
+    }
 }
