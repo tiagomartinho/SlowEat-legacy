@@ -41,6 +41,8 @@ class MealTableViewCell: TableViewCell {
 
     private func initBpmLabel() {
         bpmLabel = UILabel()
+        bpmLabel.adjustsFontSizeToFitWidth = true
+        bpmLabel.textAlignment = .right
         bpmView = UIView()
     }
 
@@ -82,13 +84,17 @@ class MealTableViewCell: TableViewCell {
             maker.leading.equalToSuperview().inset(defaultMargin)
             maker.bottom.equalToSuperview().inset(defaultMargin)
             maker.top.equalTo(dateLabel.snp.bottom).offset(defaultMargin)
+            maker.width.equalToSuperview().dividedBy(3).priorityMedium()
+            maker.width.lessThanOrEqualTo(200).priorityHigh()
         }
     }
 
     private func initPercentageLabel() {
         percentageLabel = UILabel()
+        percentageLabel.adjustsFontSizeToFitWidth = true
         percentageLabel.textColor = .white
         percentageLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        percentageLabel.textAlignment = .right
 
         percentageView = UIView()
         percentageView.layer.cornerRadius = 8.0
@@ -108,6 +114,8 @@ class MealTableViewCell: TableViewCell {
             maker.leading.equalTo(bpmView.snp.trailing).offset(defaultMargin)
             maker.bottom.equalToSuperview().inset(defaultMargin)
             maker.top.equalTo(dateLabel.snp.bottom).offset(defaultMargin)
+            maker.width.equalToSuperview().dividedBy(2).priorityMedium()
+            maker.width.lessThanOrEqualTo(200).priorityHigh()
         }
     }
 }
