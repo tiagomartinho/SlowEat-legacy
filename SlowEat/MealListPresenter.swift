@@ -18,17 +18,17 @@ class MealListPresenter {
                 var cells = [MealCell]()
                 for (index, rawMeal) in meals.enumerated() {
                     let meal = MealAnalyser().analyse(meal: rawMeal)
-
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.timeStyle = .short
-                    dateFormatter.dateStyle = .short
-                    let date = dateFormatter.string(from: meal.startDate)
-
                     let isLastMeal = index == (meals.count - 1)
                     if isLastMeal {
-                        cells.append(MealCell(bpm: "\(meal.bpm)", date: date, change: "", color: .clear))
+                        cells.append(MealCell(bpm: "\(meal.bpm)",
+                                              date: meal.startDate.short,
+                                              change: "",
+                                              color: .clear))
                     } else {
-                        cells.append(MealCell(bpm: "\(meal.bpm)", date: date, change: "- 12 bpm (2.5%)", color: .green))
+                        cells.append(MealCell(bpm: "\(meal.bpm)",
+                                              date: meal.startDate.short,
+                                              change: "- 12 bpm (2.5%)",
+                                              color: .green))
                     }
                 }
                 self.view.showMeals(cells: cells)
