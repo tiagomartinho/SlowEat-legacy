@@ -5,7 +5,7 @@ class MealListViewController: UITableViewController {
     private var cells = [MealCell]()
 
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self, repository: InMemoryMealRepository())
+        MealListPresenter(view: self, repository: CKMealRepository())
     }()
 
     override func viewDidLoad() {
@@ -46,18 +46,22 @@ class MealListViewController: UITableViewController {
 
 extension MealListViewController: MealListView {
     func showNoMeals() {
-        let label = UILabel()
-        label.text = "You have no meals"
-        label.textAlignment = .center
-        label.backgroundColor = .black
-        label.textColor = .white
-        tableView.backgroundView = label
-        tableView.separatorColor = .clear
+        DispatchQueue.main.async {
+            let label = UILabel()
+            label.text = "You have no meals"
+            label.textAlignment = .center
+            label.backgroundColor = .black
+            label.textColor = .white
+            self.tableView.backgroundView = label
+            self.tableView.separatorColor = .clear
+        }
     }
 
     func showMeals(cells: [MealCell]) {
-        self.cells = cells
-        tableView.reloadData()
-        tableView.separatorColor = .darkGray
+        DispatchQueue.main.async {
+            self.cells = cells
+            self.tableView.reloadData()
+            self.tableView.separatorColor = .darkGray
+        }
     }
 }

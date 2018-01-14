@@ -18,7 +18,7 @@ class InMemoryMealRepository: MealRepository {
         completionHandler(meals)
     }
 
-    private static func randomMeal() -> Meal {
+    static func randomMeal() -> Meal {
         var eventsType = [EventType]()
         var times = [TimeInterval]()
         var previousTime = 0.0
