@@ -27,6 +27,12 @@ class MealListViewController: UITableViewController {
         if #available(iOS 11.0, *) {
             tableView.insetsContentViewsToSafeArea = true
         }
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+
+    @objc func refresh() {
+        presenter.loadMeals()
     }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -78,6 +84,7 @@ extension MealListViewController: MealListView {
     func hideLoading() {
         DispatchQueue.main.async {
             self.tableView.backgroundView = nil
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
 }
