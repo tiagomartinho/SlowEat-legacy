@@ -5,7 +5,7 @@ class MealListViewController: UITableViewController {
     private var cells = [MealCell]()
 
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self)
+        MealListPresenter(view: self, repository: InMemoryMealRepository())
     }()
 
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class MealListViewController: UITableViewController {
     }
 }
 
-extension MealListViewController: MealsView {
+extension MealListViewController: MealListView {
     func showNoMeals() {
         let label = UILabel()
         label.text = "You have no meals"

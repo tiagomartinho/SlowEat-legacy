@@ -1,6 +1,6 @@
 import Foundation
 
-protocol MealsView {
+protocol MealListView {
     func showNoMeals()
     func showMeals(cells: [MealCell])
 }

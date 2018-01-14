@@ -79,6 +79,7 @@
 		485537BCC4EE796ACE12AB9F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */; };
 		485538A7F3C6A0B517DF51A1 /* MealListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CC207F613506983EBD6 /* MealListPresenter.swift */; };
 		48553B6C198A5432772EC990 /* MealListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */; };
+		48553C004B0647D803F5D23A /* InMemoryMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */; };
 		48553E85D843AB347250F070 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */; };
 		48553EDAEF600052E047C604 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855335B061474CFB2098617 /* MealCell.swift */; };
 		E209700C590A1ED6F9F3DB0C /* Pods_SlowEatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31BFF4E8A24E791A1DF09F3 /* Pods_SlowEatTests.framework */; };
@@ -208,6 +209,7 @@
 		4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		48553CC207F613506983EBD6 /* MealListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListPresenter.swift; sourceTree = "<group>"; };
+		48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryMealRepository.swift; sourceTree = "<group>"; };
 		9FB7C03E7D588A4172FF4CFA /* Pods-SlowEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF3CCFCB51FFDBAD844D010D /* Pods-SlowEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig"; sourceTree = "<group>"; };
 		B31BFF4E8A24E791A1DF09F3 /* Pods_SlowEatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowEatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,6 +424,7 @@
 				4855301EE078722B4C3D7915 /* MealsView.swift */,
 				485537D6777A15235CC95A8E /* Color.swift */,
 				4855335B061474CFB2098617 /* MealCell.swift */,
+				48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */,
 			);
 			path = SlowEat;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				485532CA5B70058EFC7A20E8 /* MealsView.swift in Sources */,
 				4855347F5D0AE7F424798B96 /* Color.swift in Sources */,
 				48553EDAEF600052E047C604 /* MealCell.swift in Sources */,
+				48553C004B0647D803F5D23A /* InMemoryMealRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
