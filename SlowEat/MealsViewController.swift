@@ -2,10 +2,21 @@ import UIKit
 
 class MealsViewController: UITableViewController {
 
+    private var cells = [MealCell]()
+
+    lazy var presenter: MealsPresenter = {
+        MealsPresenter(view: self)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initTableView()
         title = "Meals"
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.loadMeals()
     }
 
     private func initTableView() {
@@ -19,24 +30,34 @@ class MealsViewController: UITableViewController {
     }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 120
+        return cells.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell") as? MealTableViewCell
         else { return UITableViewCell() }
-        cell.set(bpm: "\(indexPath.row)")
-        if indexPath.row % 2 == 0 {
-            let red = UIColor(red: 232.0 / 255.0, green: 76.0 / 255.0, blue: 62.0 / 255.0, alpha: 1)
-            cell.set(percentage: "+ 4 bpm (6.3%)", color: red)
-        } else {
-            let green = UIColor(red: 121.0 / 255.0, green: 213.0 / 255.0, blue: 113.0 / 255.0, alpha: 1)
-            cell.set(percentage: "- 12 bpm (2.5%)", color: green)
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .short
-        dateFormatter.dateStyle = .short
-        cell.set(date: dateFormatter.string(from: Date()))
+        let mealCell = cells[indexPath.row]
+        cell.set(bpm: mealCell.bpm)
+        cell.set(date: mealCell.date)
+        cell.set(percentage: mealCell.change, color: mealCell.color.uiColor)
         return cell
+    }
+}
+
+extension MealsViewController: MealsView {
+    func showNoMeals() {
+        let label = UILabel()
+        label.text = "You have no meals"
+        label.textAlignment = .center
+        label.backgroundColor = .black
+        label.textColor = .white
+        tableView.backgroundView = label
+        tableView.separatorColor = .clear
+    }
+
+    func showMeals(cells: [MealCell]) {
+        self.cells = cells
+        tableView.reloadData()
+        tableView.separatorColor = .darkGray
     }
 }
