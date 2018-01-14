@@ -62,6 +62,22 @@ extension MealListViewController: MealListView {
             self.cells = cells
             self.tableView.reloadData()
             self.tableView.separatorColor = .darkGray
+            self.tableView.backgroundView = nil
+        }
+    }
+
+    func showLoading() {
+        DispatchQueue.main.async {
+            self.tableView.separatorColor = .clear
+            let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+            activityIndicatorView.startAnimating()
+            self.tableView.backgroundView = activityIndicatorView
+        }
+    }
+
+    func hideLoading() {
+        DispatchQueue.main.async {
+            self.tableView.backgroundView = nil
         }
     }
 }

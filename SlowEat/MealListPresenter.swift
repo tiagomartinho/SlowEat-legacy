@@ -11,7 +11,9 @@ class MealListPresenter {
     }
 
     func loadMeals() {
+        view?.showLoading()
         repository.load { meals in
+            self.view?.hideLoading()
             if meals.isEmpty {
                 self.view?.showNoMeals()
             } else {
