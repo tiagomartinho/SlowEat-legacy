@@ -79,6 +79,12 @@ class MealListPresenterTest: XCTestCase {
             showMealsCalled = true
             self.cells = cells
         }
+
+        func showLoading() {
+        }
+
+        func hideLoading() {
+        }
     }
 
     class MockMealRepository: MealRepository {

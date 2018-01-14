@@ -30,7 +30,7 @@ extension GradedMeal {
     }
 
     var bpm: Int {
-        guard timeInterval > 0 else { return 0 }
+        guard Int(timeInterval) != 0 else { return 0 }
         let oneMinute = 60
         let bpm = Double(bites * oneMinute) / timeInterval
         return Int(bpm.rounded(.up))

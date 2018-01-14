@@ -2,6 +2,8 @@ enum Color {
     case red, green, clear, tint
 }
 
+import UIKit
+
 extension Color {
     var uiColor: UIColor {
         switch self {
