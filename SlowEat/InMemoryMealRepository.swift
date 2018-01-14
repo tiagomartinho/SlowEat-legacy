@@ -2,7 +2,13 @@ import Foundation
 
 class InMemoryMealRepository: MealRepository {
 
-    var meals = [Meal]()
+    var meals: [Meal] = {
+        var meals = [Meal]()
+        for _ in 1 ... 100 {
+            meals.append(InMemoryMealRepository.randomMeal())
+        }
+        return meals
+    }()
 
     func save(meal: Meal) {
         meals.append(meal)
@@ -10,5 +16,19 @@ class InMemoryMealRepository: MealRepository {
 
     func load(completionHandler: @escaping ([Meal]) -> Void) {
         completionHandler(meals)
+    }
+
+    private static func randomMeal() -> Meal {
+        var eventsType = [EventType]()
+        var times = [TimeInterval]()
+        for _ in 1 ... 100 {
+            eventsType.append((arc4random_uniform(2) == 0) ? .waiting : .moving)
+            times.append(1.0 + Double(arc4random_uniform(6)))
+        }
+        let events = eventsType.enumerated().map {
+            Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
+        }
+        let meal = Meal(events: events)
+        return meal
     }
 }

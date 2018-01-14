@@ -22,7 +22,13 @@ extension MealCell {
             color = .clear
         } else {
             let delta = "\(String(format: "%+d", deltaBPM)) bpm"
-            let percentage = "(\(abs(Int(100 * (Double(deltaBPM) / Double(previous.bpm)))))%)"
+            let previousBPM = Double(previous.bpm)
+            if previousBPM == 0 {
+                change = ""
+                color = .clear
+                return
+            }
+            let percentage = "(\(abs(Int(100 * (Double(deltaBPM) / previousBPM))))%)"
             change = "\(delta) \(percentage)"
             color = deltaBPM < 0 ? .green : .red
         }
