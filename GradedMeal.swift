@@ -26,7 +26,7 @@ extension GradedMeal {
     }
 
     var timeInterval: Double {
-        return endDate.timeIntervalSince1970 - startDate.timeIntervalSince1970
+        return abs(endDate.timeIntervalSince1970 - startDate.timeIntervalSince1970)
     }
 
     var bpm: Int {

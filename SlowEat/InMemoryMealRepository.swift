@@ -21,9 +21,11 @@ class InMemoryMealRepository: MealRepository {
     private static func randomMeal() -> Meal {
         var eventsType = [EventType]()
         var times = [TimeInterval]()
+        var previousTime = 0.0
         for _ in 1 ... 100 {
             eventsType.append((arc4random_uniform(2) == 0) ? .waiting : .moving)
-            times.append(1.0 + Double(arc4random_uniform(6)))
+            previousTime += 1 + Double(arc4random_uniform(3))
+            times.append(previousTime)
         }
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
