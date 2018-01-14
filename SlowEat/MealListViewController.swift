@@ -12,6 +12,21 @@ class MealListViewController: UITableViewController {
         super.viewDidLoad()
         initTableView()
         title = "Meals"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
+                                                           target: self,
+                                                           action: #selector(deleteMeals))
+    }
+
+    @objc private func deleteMeals() {
+        let alert = UIAlertController(title: "Are you sure you want to delete all meals?",
+                                      message: "Deleted meals cannot be recovered.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_: UIAlertAction!) -> Void in
+            CKMealRepository().deleteAll()
+            self.presenter.loadMeals()
+        }))
+        present(alert, animated: true, completion: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +56,9 @@ class MealListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell") as? MealTableViewCell
-        else { return UITableViewCell() }
+        else {
+            return UITableViewCell()
+        }
         let mealCell = cells[indexPath.row]
         cell.set(bpm: mealCell.bpm)
         cell.set(date: mealCell.date)
@@ -75,6 +92,8 @@ extension MealListViewController: MealListView {
     func showLoading() {
         DispatchQueue.main.async {
             self.tableView.separatorColor = .clear
+            self.cells = []
+            self.tableView.reloadData()
             let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
             activityIndicatorView.startAnimating()
             self.tableView.backgroundView = activityIndicatorView

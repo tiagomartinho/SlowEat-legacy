@@ -49,10 +49,17 @@ class CKMealRepository: MealRepository {
     func deleteAll() {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Meal", predicate: predicate)
-        database.perform(query, inZoneWith: nil) { records, _ in
+        database.perform(query, inZoneWith: nil) { records, error in
+            if let error = error {
+                print("Query to Delete Meals Failed with error: \(error)")
+            }
             if let records = records {
                 for record in records {
-                    self.database.delete(withRecordID: record.recordID) { _, _ in }
+                    self.database.delete(withRecordID: record.recordID) { _, error in
+                        if let error = error {
+                            print("Delete Meals Failed with error: \(error)")
+                        }
+                    }
                 }
             }
         }

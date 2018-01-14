@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setTintColor() {
-        window?.tintColor = #colorLiteral(red: 0, green: 0.8784313725, blue: 0.5176470588, alpha: 1)
+        window?.tintColor = Color.tint.uiColor
     }
 
     private func setRootViewController() {
@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.tintColor = .white
         navigationController.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationController.navigationBar.barTintColor = .black
+        navigationController.navigationBar.tintColor = Color.green.uiColor
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

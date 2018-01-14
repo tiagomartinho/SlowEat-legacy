@@ -1,5 +1,5 @@
 enum Color {
-    case red, green, clear
+    case red, green, clear, tint
 }
 
 extension Color {
@@ -11,6 +11,8 @@ extension Color {
             return UIColor(red: 121.0 / 255.0, green: 213.0 / 255.0, blue: 113.0 / 255.0, alpha: 1)
         case .clear:
             return UIColor.clear
+        case .tint:
+            return #colorLiteral(red: 0, green: 0.8784313725, blue: 0.5176470588, alpha: 1)
         }
     }
 }
