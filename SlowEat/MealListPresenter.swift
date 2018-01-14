@@ -20,10 +20,7 @@ class MealListPresenter {
                     let meal = MealAnalyser().analyse(meal: rawMeal)
                     let isLastMeal = index == (meals.count - 1)
                     if isLastMeal {
-                        cells.append(MealCell(bpm: "\(meal.bpm)",
-                                              date: meal.startDate.short,
-                                              change: "",
-                                              color: .clear))
+                        cells.append(MealCell(gradedMeal: meal))
                     } else {
                         cells.append(MealCell(bpm: "\(meal.bpm)",
                                               date: meal.startDate.short,
