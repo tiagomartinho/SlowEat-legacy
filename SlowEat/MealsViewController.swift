@@ -4,8 +4,8 @@ class MealsViewController: UITableViewController {
 
     private var cells = [MealCell]()
 
-    lazy var presenter: MealsPresenter = {
-        MealsPresenter(view: self)
+    lazy var presenter: MealListPresenter = {
+        MealListPresenter(view: self)
     }()
 
     override func viewDidLoad() {

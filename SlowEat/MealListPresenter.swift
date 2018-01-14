@@ -1,6 +1,6 @@
 import Foundation
 
-class MealsPresenter {
+class MealListPresenter {
 
     let view: MealsView
 
