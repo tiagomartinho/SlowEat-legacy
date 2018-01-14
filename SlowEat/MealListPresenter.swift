@@ -2,7 +2,7 @@ import Foundation
 
 class MealListPresenter {
 
-    let view: MealListView
+    weak var view: MealListView?
     let repository: MealRepository
 
     init(view: MealListView, repository: MealRepository) {
@@ -13,7 +13,7 @@ class MealListPresenter {
     func loadMeals() {
         repository.load { meals in
             if meals.isEmpty {
-                self.view.showNoMeals()
+                self.view?.showNoMeals()
             } else {
                 var cells = [MealCell]()
                 for (index, rawMeal) in meals.enumerated() {
@@ -31,7 +31,7 @@ class MealListPresenter {
                                               color: .green))
                     }
                 }
-                self.view.showMeals(cells: cells)
+                self.view?.showMeals(cells: cells)
             }
         }
     }
