@@ -22,10 +22,8 @@ class MealListPresenter {
                     if isLastMeal {
                         cells.append(MealCell(gradedMeal: meal))
                     } else {
-                        cells.append(MealCell(bpm: "\(meal.bpm)",
-                                              date: meal.startDate.short,
-                                              change: "- 12 bpm (2.5%)",
-                                              color: .green))
+                        let previous = MealAnalyser().analyse(meal: meals[index + 1])
+                        cells.append(MealCell(current: meal, previous: previous))
                     }
                 }
                 self.view?.showMeals(cells: cells)
