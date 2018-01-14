@@ -10,15 +10,16 @@ class MealTableViewCell: TableViewCell {
     private var percentageView: UIView!
 
     private let defaultMargin = 10.0
+    private let textStyle = UIFontTextStyle.title2
 
     func set(bpm: String) {
-        let size = UIFont.preferredFont(forTextStyle: .title3).pointSize
+        let size = UIFont.preferredFont(forTextStyle: textStyle).pointSize
         let attributesValue = [
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: size),
             NSAttributedStringKey.foregroundColor: UIColor.white
         ]
         let attributesLabel = [
-            NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .title3),
+            NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: textStyle),
             NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)
         ]
         let value = NSMutableAttributedString(string: bpm)
@@ -70,7 +71,7 @@ class MealTableViewCell: TableViewCell {
         percentageLabel = UILabel()
         percentageLabel.adjustsFontSizeToFitWidth = true
         percentageLabel.textColor = .white
-        percentageLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        percentageLabel.font = UIFont.preferredFont(forTextStyle: textStyle)
         percentageLabel.textAlignment = .right
 
         percentageView = UIView()
