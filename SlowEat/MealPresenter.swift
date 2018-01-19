@@ -1,6 +1,6 @@
 class MealPresenter {
 
-    let view: MealView
+    weak var view: MealView?
     let tracker: Tracker
     let logger: Logger
     let repository: MealRepository
@@ -18,7 +18,7 @@ class MealPresenter {
                 self.tracker.start()
                 self.logger.start()
             } else {
-                self.view.showNoAccountError()
+                self.view?.showNoAccountError()
             }
         }
     }

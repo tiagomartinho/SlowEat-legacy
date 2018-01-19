@@ -12,6 +12,7 @@ class MealController: WKInterfaceController {
     private let motionManager = MotionManager()
     private var timer: Timer?
     private var motionUpdatesInProgress = false
+    private var shouldShowNoAccountError = false
 
     deinit {
         presenter.stopMeal()
@@ -30,6 +31,26 @@ class MealController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
+
+        if shouldShowNoAccountError {
+            DispatchQueue.main.async {
+                let endAction = WKAlertAction(title: "Ok", style: .cancel) {
+                    print("ok")
+                    self.shouldShowNoAccountError = false
+                    self.dismiss()
+                }
+                let message = """
+                Sign in to your iCloud account to save meals.
+                Launch Settings, tap iCloud, and enter your Apple ID.
+                """
+                self.presentAlert(withTitle: "Sign in to iCloud",
+                                  message: message,
+                                  preferredStyle: .alert,
+                                  actions: [endAction])
+                return
+            }
+        }
+
         startTimer()
         if !motionUpdatesInProgress {
             motionManager.startUpdates()
@@ -79,6 +100,6 @@ extension MealController: MovementDelegate {
 
 extension MealController: MealView {
     func showNoAccountError() {
-        fatalError()
+        shouldShowNoAccountError = true
     }
 }
