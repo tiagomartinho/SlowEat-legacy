@@ -1,18 +1,26 @@
 class MealPresenter {
 
+    let view: MealView
     let tracker: Tracker
     let logger: Logger
     let repository: MealRepository
 
-    init(tracker: Tracker, logger: Logger, repository: MealRepository) {
+    init(view: MealView, tracker: Tracker, logger: Logger, repository: MealRepository) {
+        self.view = view
         self.tracker = tracker
         self.logger = logger
         self.repository = repository
     }
 
     func startMeal() {
-        tracker.start()
-        logger.start()
+        repository.hasValidAccount { validAccount in
+            if validAccount {
+                self.tracker.start()
+                self.logger.start()
+            } else {
+                self.view.showNoAccountError()
+            }
+        }
     }
 
     func stopMeal() {

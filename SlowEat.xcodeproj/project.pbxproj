@@ -15,7 +15,7 @@
 		242507F01FFE03FD002FB11B /* MealGraderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242507EF1FFE03FD002FB11B /* MealGraderTest.swift */; };
 		24309D9D1F06A0B700E32E6C /* FilterMovingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */; };
 		24402C0E200A654100C018B3 /* MealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24402C0D200A654100C018B3 /* MealListViewController.swift */; };
-		244CF5711EFC022100CF35C9 /* SpyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5701EFC022100CF35C9 /* SpyRepository.swift */; };
+		244CF5711EFC022100CF35C9 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5701EFC022100CF35C9 /* MockRepository.swift */; };
 		244CF5781EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
 		244CF5791EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
 		244CF5841EFC042000CF35C9 /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */; };
@@ -74,16 +74,19 @@
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
 		24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */; };
+		485531DACA3B4FEBCBCD2AED /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
 		485532CA5B70058EFC7A20E8 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855301EE078722B4C3D7915 /* MealsView.swift */; };
 		4855347F5D0AE7F424798B96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537D6777A15235CC95A8E /* Color.swift */; };
 		48553634ADC9612EED50E6F1 /* MealCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553D8784BC93CD2DB107EA /* MealCellTest.swift */; };
 		485536E2406B6EEA0AF8875D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855395EBC4FF554A51E85CB /* DateFormatter.swift */; };
 		485537BCC4EE796ACE12AB9F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */; };
 		485538A7F3C6A0B517DF51A1 /* MealListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CC207F613506983EBD6 /* MealListPresenter.swift */; };
+		48553AC1AC8385BB8C38B8D8 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
 		48553B6C198A5432772EC990 /* MealListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */; };
 		48553C004B0647D803F5D23A /* InMemoryMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */; };
 		48553E85D843AB347250F070 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */; };
 		48553EDAEF600052E047C604 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855335B061474CFB2098617 /* MealCell.swift */; };
+		48553FE0C8043A5527C1D020 /* SpyMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855318A870F5802C87ED847 /* SpyMealView.swift */; };
 		E209700C590A1ED6F9F3DB0C /* Pods_SlowEatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31BFF4E8A24E791A1DF09F3 /* Pods_SlowEatTests.framework */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
 		EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A577D1D81F7ED006935A9 /* Assets.xcassets */; };
@@ -163,7 +166,7 @@
 		242507EF1FFE03FD002FB11B /* MealGraderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealGraderTest.swift; sourceTree = "<group>"; };
 		24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterMovingTest.swift; sourceTree = "<group>"; };
 		24402C0D200A654100C018B3 /* MealListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewController.swift; sourceTree = "<group>"; };
-		244CF5701EFC022100CF35C9 /* SpyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyRepository.swift; sourceTree = "<group>"; };
+		244CF5701EFC022100CF35C9 /* MockRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		244CF5771EFC031A00CF35C9 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
 		244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = CodeGenerated/AutoEquatable.generated.swift; sourceTree = "<group>"; };
 		244CF5881EFC049800CF35C9 /* AutoEquatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.swift; path = SlowEat/AutoEquatable.swift; sourceTree = "<group>"; };
@@ -205,8 +208,10 @@
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
 		24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPresenterTest.swift; sourceTree = "<group>"; };
 		4855301EE078722B4C3D7915 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
+		4855318A870F5802C87ED847 /* SpyMealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyMealView.swift; sourceTree = "<group>"; };
 		4855335B061474CFB2098617 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListPresenterTest.swift; sourceTree = "<group>"; };
+		4855361C41E6096EF1C10A9B /* MealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealView.swift; path = "SlowEat WatchKit Extension/MealView.swift"; sourceTree = "<group>"; };
 		485537D6777A15235CC95A8E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4855395EBC4FF554A51E85CB /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -321,7 +326,7 @@
 			children = (
 				24EDD2381EB0F5A600724646 /* SpyTracker.swift */,
 				24EDD23A1EB0F5C300724646 /* SpyLogger.swift */,
-				244CF5701EFC022100CF35C9 /* SpyRepository.swift */,
+				244CF5701EFC022100CF35C9 /* MockRepository.swift */,
 				2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */,
 				2455BB2D1E9131950038C541 /* StaticDateProvider.swift */,
 				EA4A578D1D81F7ED006935A9 /* Info.plist */,
@@ -348,6 +353,7 @@
 				24DE10311EFC06D900D4A599 /* CKMealRepository.swift */,
 				24A8A3D01FFCB496003203BB /* MealAnalyser.swift */,
 				242507EC1FFE033A002FB11B /* FilterMoving.swift */,
+				4855361C41E6096EF1C10A9B /* MealView.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				247C37631E8FD1860003F10C /* Supporting Files */,
 				4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */,
 				48553D8784BC93CD2DB107EA /* MealCellTest.swift */,
+				4855318A870F5802C87ED847 /* SpyMealView.swift */,
 			);
 			path = SlowEatTests;
 			sourceTree = "<group>";
@@ -960,6 +967,7 @@
 				48553EDAEF600052E047C604 /* MealCell.swift in Sources */,
 				48553C004B0647D803F5D23A /* InMemoryMealRepository.swift in Sources */,
 				485536E2406B6EEA0AF8875D /* DateFormatter.swift in Sources */,
+				48553AC1AC8385BB8C38B8D8 /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,11 +985,12 @@
 				24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */,
 				2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */,
 				2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */,
-				244CF5711EFC022100CF35C9 /* SpyRepository.swift in Sources */,
+				244CF5711EFC022100CF35C9 /* MockRepository.swift in Sources */,
 				24309D9D1F06A0B700E32E6C /* FilterMovingTest.swift in Sources */,
 				2453AE111E97A2030069C7C3 /* SpyTimeTracker.swift in Sources */,
 				48553B6C198A5432772EC990 /* MealListPresenterTest.swift in Sources */,
 				48553634ADC9612EED50E6F1 /* MealCellTest.swift in Sources */,
+				48553FE0C8043A5527C1D020 /* SpyMealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,6 +1031,7 @@
 				242507EE1FFE03BD002FB11B /* FilterMoving.swift in Sources */,
 				244CF5B31EFC04E100CF35C9 /* DateProvider.swift in Sources */,
 				244CF5B21EFC04E100CF35C9 /* TimeTracker.swift in Sources */,
+				485531DACA3B4FEBCBCD2AED /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,10 @@ class InMemoryMealRepository: MealRepository {
         return meals
     }()
 
+    func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(true)
+    }
+
     func save(meal: Meal) {
         meals.append(meal)
     }

@@ -91,6 +91,10 @@ class MealListPresenterTest: XCTestCase {
 
         var meals = [Meal]()
 
+        func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
+            completionHandler(true)
+        }
+
         func save(meal _: Meal) {
         }
 

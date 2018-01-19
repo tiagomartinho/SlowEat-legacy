@@ -1,0 +1,3 @@
+protocol MealView {
+    func showNoAccountError()
+}

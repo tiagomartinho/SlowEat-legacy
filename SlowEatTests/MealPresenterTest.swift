@@ -5,15 +5,28 @@ class MealPresenterTest: XCTestCase {
 
     var tracker: SpyTracker!
     var logger: SpyLogger!
-    var repository: SpyMealRepository!
+    var repository: MockMealRepository!
     var presenter: MealPresenter!
+    var view: SpyMealView!
 
     override func setUp() {
         super.setUp()
         tracker = SpyTracker()
         logger = SpyLogger()
-        repository = SpyMealRepository()
-        presenter = MealPresenter(tracker: tracker, logger: logger, repository: repository)
+        repository = MockMealRepository()
+        view = SpyMealView()
+        presenter = MealPresenter(view: view,
+                                  tracker: tracker,
+                                  logger: logger,
+                                  repository: repository)
+    }
+
+    func testIfUserHasNoAccountShowError() {
+        repository.hasValidAccount = false
+
+        presenter.startMeal()
+
+        XCTAssert(view.showNoAccountErrorCalled)
     }
 
     func testStartMealStartsTracker() {

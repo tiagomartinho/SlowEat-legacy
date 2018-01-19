@@ -4,6 +4,10 @@ class CKMealRepository: MealRepository {
 
     let database = CKContainer(identifier: "iCloud.com.elit.SlowEat").privateCloudDatabase
 
+    func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(false)
+    }
+
     func save(meal: Meal) {
         let id = CKRecordID(recordName: UUID().uuidString)
         let record = CKRecord(recordType: "Meal", recordID: id)
