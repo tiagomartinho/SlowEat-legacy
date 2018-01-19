@@ -37,9 +37,9 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <group width="1" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" spacing="20" id="4Y2-NZ-w4l">
+                                        <group width="1" alignment="center" verticalAlignment="center" contentMode="scaleAspectFit" spacing="20" id="4Y2-NZ-w4l">
                                             <items>
-                                                <label alignment="left" verticalAlignment="center" text="00:00" textAlignment="right" id="gcA-D2-My4">
+                                                <label alignment="center" verticalAlignment="center" text="00:00" textAlignment="center" id="gcA-D2-My4">
                                                     <color key="textColor" red="0.50196784734725952" green="0.50194811820983887" blue="0.50196152925491333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="font" type="system" weight="medium" pointSize="35"/>
                                                 </label>
@@ -107,14 +107,14 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="75D-hf-XsO">
                             <items>
-                                <button width="1" alignment="center" verticalAlignment="bottom" title="START" id="63M-gk-6sE">
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Start meal" id="63M-gk-6sE">
                                     <color key="titleColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
                                     <connections>
                                         <segue destination="AgC-eL-Hgc" kind="modal" id="av4-kx-aEg"/>
                                     </connections>
                                 </button>
-                                <label width="1" height="110" alignment="center" verticalAlignment="center" text="Learning to eat slower is a simple yet powerful concept to improve your overall health" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="YW9-wS-An5">
+                                <label width="1" height="110" alignment="center" verticalAlignment="center" alpha="0.84999999999999998" text="Learning to eat slower is a simple yet powerful concept to improve your overall health" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="YW9-wS-An5">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
                                 </label>
