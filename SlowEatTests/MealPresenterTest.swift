@@ -92,4 +92,16 @@ class MealPresenterTest: XCTestCase {
         XCTAssert(repository.saveCalled)
         XCTAssertEqual(meal.events.map { $0.type }, repository.savedMeal.events.map { $0.type })
     }
+
+    func testDoNotSaveMealWithoutBites() {
+        var events = [Event]()
+        for _ in 1 ... 50 {
+            events.append(Event(type: .waiting, date: Date()))
+            presenter.waiting()
+        }
+
+        presenter.stopMeal()
+
+        XCTAssertFalse(repository.saveCalled)
+    }
 }

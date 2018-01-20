@@ -15,6 +15,7 @@ class MealListViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
                                                            target: self,
                                                            action: #selector(deleteMeals))
+        navigationItem.leftBarButtonItem?.isEnabled = false
     }
 
     @objc private func deleteMeals() {

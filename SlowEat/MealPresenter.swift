@@ -24,7 +24,11 @@ class MealPresenter {
     }
 
     func stopMeal() {
-        repository.save(meal: Meal(events: logger.events))
+        let meal = Meal(events: logger.events)
+        let analysedMeal = MealAnalyser().analyse(meal: meal)
+        if analysedMeal.bites > 0 {
+            repository.save(meal: meal)
+        }
         tracker.stop()
         logger.stop()
     }
