@@ -68,16 +68,30 @@ class MealListViewController: UITableViewController {
 }
 
 extension MealListViewController: MealListView {
-    func showNoMeals() {
+
+    private func show(message: String) {
         DispatchQueue.main.async {
             let label = UILabel()
-            label.text = "You have no meals"
+            label.text = message
             label.textAlignment = .center
             label.backgroundColor = .black
             label.textColor = .white
             self.tableView.backgroundView = label
             self.tableView.separatorColor = .clear
+            self.navigationItem.leftBarButtonItem?.isEnabled = false
         }
+    }
+
+    func showNoAccountError() {
+        let message = """
+        Sign in to your iCloud account to save meals.
+        Launch Settings, tap iCloud, and enter your Apple ID.
+        """
+        show(message: message)
+    }
+
+    func showNoMeals() {
+        show(message: "You have no meals")
     }
 
     func showMeals(cells: [MealCell]) {
@@ -86,6 +100,7 @@ extension MealListViewController: MealListView {
             self.tableView.reloadData()
             self.tableView.separatorColor = .darkGray
             self.tableView.backgroundView = nil
+            self.navigationItem.leftBarButtonItem?.isEnabled = true
         }
     }
 

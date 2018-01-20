@@ -5,4 +5,5 @@ protocol MealListView: class {
     func showMeals(cells: [MealCell])
     func showLoading()
     func hideLoading()
+    func showNoAccountError()
 }

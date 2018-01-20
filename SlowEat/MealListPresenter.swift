@@ -12,6 +12,17 @@ class MealListPresenter {
 
     func loadMeals() {
         view?.showLoading()
+        repository.hasValidAccount { hasValidAccount in
+            if hasValidAccount {
+                self.load()
+            } else {
+                self.view?.hideLoading()
+                self.view?.showNoAccountError()
+            }
+        }
+    }
+
+    private func load() {
         repository.load { meals in
             self.view?.hideLoading()
             if meals.isEmpty {

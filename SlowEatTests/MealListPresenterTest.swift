@@ -14,6 +14,16 @@ class MealListPresenterTest: XCTestCase {
         presenter = MealListPresenter(view: view, repository: repository)
     }
 
+    func testIfUserHasNoAccountShowError() {
+        repository.hasValidAccount = false
+
+        presenter.loadMeals()
+
+        XCTAssert(view.showNoAccountErrorCalled)
+        XCTAssertFalse(view.showNoMealsCalled)
+        XCTAssertFalse(view.showMealsCalled)
+    }
+
     func testEmptyRepositoryShowNoMeal() {
         repository.meals = []
 
@@ -70,6 +80,7 @@ class MealListPresenterTest: XCTestCase {
         var cells: [MealCell]!
         var showNoMealsCalled = false
         var showMealsCalled = false
+        var showNoAccountErrorCalled = false
 
         func showNoMeals() {
             showNoMealsCalled = true
@@ -85,14 +96,19 @@ class MealListPresenterTest: XCTestCase {
 
         func hideLoading() {
         }
+
+        func showNoAccountError() {
+            showNoAccountErrorCalled = true
+        }
     }
 
     class MockMealRepository: MealRepository {
 
         var meals = [Meal]()
+        var hasValidAccount = true
 
         func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
-            completionHandler(true)
+            completionHandler(hasValidAccount)
         }
 
         func save(meal _: Meal) {
