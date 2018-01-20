@@ -79,10 +79,15 @@ class MealPresenterTest: XCTestCase {
 
     func testStopMealSavesMeal() {
         var events = [Event]()
-        for _ in 1 ... 50 {
-            events.append(Event(type: .moving, date: Date()))
+        var previousTime = 0.0
+        let currentDate = Date()
+        for _ in 1 ... 100 {
+            previousTime += 1
+            let date = currentDate.addingTimeInterval(previousTime)
+            logger.date = date
+            events.append(Event(type: .moving, date: date))
             presenter.moving()
-            events.append(Event(type: .waiting, date: Date()))
+            events.append(Event(type: .waiting, date: date))
             presenter.waiting()
         }
         let meal = Meal(events: events)
@@ -97,6 +102,25 @@ class MealPresenterTest: XCTestCase {
         var events = [Event]()
         for _ in 1 ... 50 {
             events.append(Event(type: .waiting, date: Date()))
+            presenter.waiting()
+        }
+
+        presenter.stopMeal()
+
+        XCTAssertFalse(repository.saveCalled)
+    }
+
+    func testDoNotSaveMealWithDurationLessThanTenSeconds() {
+        var events = [Event]()
+        var previousTime = 0.0
+        let currentDate = Date()
+        for _ in 1 ... 100 {
+            previousTime += 0.05
+            let date = currentDate.addingTimeInterval(previousTime)
+            logger.date = date
+            events.append(Event(type: .moving, date: date))
+            presenter.moving()
+            events.append(Event(type: .waiting, date: date))
             presenter.waiting()
         }
 

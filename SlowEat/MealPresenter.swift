@@ -26,7 +26,7 @@ class MealPresenter {
     func stopMeal() {
         let meal = Meal(events: logger.events)
         let analysedMeal = MealAnalyser().analyse(meal: meal)
-        if analysedMeal.bites > 0 {
+        if analysedMeal.bites > 0 && analysedMeal.timeInterval > 5.0 {
             repository.save(meal: meal)
         }
         tracker.stop()

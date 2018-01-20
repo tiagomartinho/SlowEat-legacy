@@ -7,6 +7,7 @@ class SpyLogger: Logger {
     var stopCalled = false
     var lastLoggedEvent: EventType!
     var events = [Event]()
+    var date = Date()
 
     func start() {
         startCalled = true
@@ -18,6 +19,6 @@ class SpyLogger: Logger {
 
     func log(type: EventType) {
         lastLoggedEvent = type
-        events.append(Event(type: type, date: Date()))
+        events.append(Event(type: type, date: date))
     }
 }
