@@ -1,7 +1,7 @@
 class MealGrader {
     func grade(meal: Meal) -> GradedMeal {
         var grades = [Grade]()
-        guard let date = meal.events.first?.date else { return GradedMeal(events: meal.events, grades: grades) }
+        guard let date = meal.events.first?.date else { return GradedMeal(id: meal.id, events: meal.events, grades: grades) }
         var lastWaitingEvent = Event(type: .waiting, date: date)
         for event in meal.events {
             if event.type == .moving {
@@ -12,6 +12,6 @@ class MealGrader {
                 grades.append(.empty)
             }
         }
-        return GradedMeal(events: meal.events, grades: grades)
+        return GradedMeal(id: meal.id, events: meal.events, grades: grades)
     }
 }

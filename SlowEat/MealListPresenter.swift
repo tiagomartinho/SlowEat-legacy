@@ -43,4 +43,8 @@ class MealListPresenter {
             }
         }
     }
+
+    func deleteMeal(from cell: MealCell) {
+        repository.delete(with: cell.id)
+    }
 }

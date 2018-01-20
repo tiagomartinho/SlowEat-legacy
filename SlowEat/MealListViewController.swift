@@ -66,6 +66,18 @@ class MealListViewController: UITableViewController {
         cell.set(percentage: mealCell.change, color: mealCell.color.uiColor)
         return cell
     }
+
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cell = cells[indexPath.row]
+            presenter.deleteMeal(from: cell)
+            tableView.reloadData()
+        } else {
+            super.tableView(tableView, commit: editingStyle, forRowAt: indexPath)
+        }
+    }
 }
 
 extension MealListViewController: MealListView {

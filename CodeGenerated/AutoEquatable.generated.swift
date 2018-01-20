@@ -27,6 +27,7 @@ private func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs: T) 
 
 extension Meal: Equatable {}
 internal func == (lhs: Meal, rhs: Meal) -> Bool {
+    guard lhs.id == rhs.id else { return false }
     guard lhs.events == rhs.events else { return false }
     return true
 }

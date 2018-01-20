@@ -90,7 +90,7 @@ class MealPresenterTest: XCTestCase {
             events.append(Event(type: .waiting, date: date))
             presenter.waiting()
         }
-        let meal = Meal(events: events)
+        let meal = Meal(id: "", events: events)
 
         presenter.stopMeal()
 

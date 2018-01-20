@@ -3,17 +3,6 @@ import XCTest
 
 class MealListPresenterTest: XCTestCase {
 
-    var presenter: MealListPresenter!
-    var repository: MockMealRepository!
-    var view: SpyMealListView!
-
-    override func setUp() {
-        super.setUp()
-        view = SpyMealListView()
-        repository = MockMealRepository()
-        presenter = MealListPresenter(view: view, repository: repository)
-    }
-
     func testIfUserHasNoAccountShowError() {
         repository.hasValidAccount = false
 
@@ -34,7 +23,7 @@ class MealListPresenterTest: XCTestCase {
     }
 
     func testWithoutEmptyRepositoryShowMeals() {
-        repository.meals = [Meal(events: [])]
+        repository.meals = [Meal(id: "", events: [])]
 
         presenter.loadMeals()
 
@@ -43,7 +32,7 @@ class MealListPresenterTest: XCTestCase {
     }
 
     func testWithOneMealDoNotShowChange() {
-        repository.meals = [Meal(events: [])]
+        repository.meals = [Meal(id: "", events: [])]
 
         presenter.loadMeals()
 
@@ -73,6 +62,27 @@ class MealListPresenterTest: XCTestCase {
         XCTAssertEqual(Color.green, view.cells[1].color)
         XCTAssertEqual("", view.cells[2].change)
         XCTAssertEqual(Color.clear, view.cells[2].color)
+    }
+
+    func testDeleteMealFromCell() {
+        repository.meals = [slowMeal8BPM, fastMeal10BPM]
+        let gradedMeal = MealAnalyser().analyse(meal: fastMeal10BPM)
+        let cell = MealCell(gradedMeal: gradedMeal)
+
+        presenter.deleteMeal(from: cell)
+
+        XCTAssertEqual(fastMeal10BPM.id, repository.deletedMealId)
+    }
+
+    var presenter: MealListPresenter!
+    var repository: MockMealRepository!
+    var view: SpyMealListView!
+
+    override func setUp() {
+        super.setUp()
+        view = SpyMealListView()
+        repository = MockMealRepository()
+        presenter = MealListPresenter(view: view, repository: repository)
     }
 
     class SpyMealListView: MealListView {
@@ -106,6 +116,9 @@ class MealListPresenterTest: XCTestCase {
 
         var meals = [Meal]()
         var hasValidAccount = true
+        var deletedMealId: String!
+
+        var uniqueID: String { return UUID().uuidString }
 
         func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
             completionHandler(hasValidAccount)
@@ -117,6 +130,13 @@ class MealListPresenterTest: XCTestCase {
         func load(completionHandler: @escaping ([Meal]) -> Void) {
             completionHandler(meals)
         }
+
+        func delete(with id: String) {
+            deletedMealId = id
+        }
+
+        func deleteAll() {
+        }
     }
 
     var slowMeal8BPM: Meal {
@@ -125,7 +145,7 @@ class MealListPresenterTest: XCTestCase {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        return Meal(events: events)
+        return Meal(id: "qwerty", events: events)
     }
 
     var fastMeal10BPM: Meal {
@@ -134,6 +154,6 @@ class MealListPresenterTest: XCTestCase {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        return Meal(events: events)
+        return Meal(id: "ABCDEF", events: events)
     }
 }

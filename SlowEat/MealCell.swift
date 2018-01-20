@@ -1,4 +1,5 @@
 struct MealCell {
+    let id: String
     let bpm: String
     let date: String
     let change: String
@@ -7,6 +8,7 @@ struct MealCell {
 
 extension MealCell {
     init(gradedMeal: GradedMeal) {
+        id = gradedMeal.id
         bpm = "\(gradedMeal.bpm)"
         date = gradedMeal.startDate.short
         change = ""
@@ -14,6 +16,7 @@ extension MealCell {
     }
 
     init(current: GradedMeal, previous: GradedMeal) {
+        id = current.id
         bpm = "\(current.bpm)"
         date = current.startDate.short
         let deltaBPM = current.bpm - previous.bpm

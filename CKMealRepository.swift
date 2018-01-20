@@ -7,6 +7,10 @@ class CKMealRepository: MealRepository {
         return container.privateCloudDatabase
     }
 
+    var uniqueID: String {
+        return UUID().uuidString
+    }
+
     func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
         container.accountStatus { status, error in
             let validAccount: Bool
@@ -51,7 +55,7 @@ class CKMealRepository: MealRepository {
                         unarchiver.setClass(Event.self, forClassName: "Event")
                         if let events = try? unarchiver.decodeTopLevelObject(forKey: "root") as? [Event] {
                             if let events = events {
-                                meals.append(Meal(events: events))
+                                meals.append(Meal(id: "", events: events))
                             }
                         }
                     }
@@ -59,6 +63,9 @@ class CKMealRepository: MealRepository {
             }
             completionHandler(meals)
         }
+    }
+
+    func delete(with _: String) {
     }
 
     func deleteAll() {

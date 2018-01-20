@@ -2,6 +2,8 @@ import Foundation
 
 class InMemoryMealRepository: MealRepository {
 
+    var uniqueID: String { return UUID().uuidString }
+
     var meals: [Meal] = {
         var meals = [Meal]()
         for _ in 1 ... 100 {
@@ -22,7 +24,15 @@ class InMemoryMealRepository: MealRepository {
         completionHandler(meals)
     }
 
-    static func randomMeal() -> Meal {
+    func delete(with _: String) {
+        fatalError("Delete not implemented")
+    }
+
+    func deleteAll() {
+        meals = []
+    }
+
+    private static func randomMeal() -> Meal {
         var eventsType = [EventType]()
         var times = [TimeInterval]()
         var previousTime = 0.0
@@ -34,7 +44,7 @@ class InMemoryMealRepository: MealRepository {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        let meal = Meal(events: events)
+        let meal = Meal(id: UUID().uuidString, events: events)
         return meal
     }
 }

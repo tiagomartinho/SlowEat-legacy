@@ -16,7 +16,7 @@ class MealAnalyserTest: XCTestCase {
         let times: [TimeInterval] = [0.0, 12.0, 13.0, 18.0, 20.0, 23.0]
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset])) }
-        let meal = Meal(events: events)
+        let meal = Meal(id: "", events: events)
         return meal
     }
 }
