@@ -2,10 +2,21 @@ import CloudKit
 
 class CKMealRepository: MealRepository {
 
-    let database = CKContainer(identifier: "iCloud.com.elit.SlowEat").privateCloudDatabase
+    private let container = CKContainer(identifier: "iCloud.com.elit.SlowEat")
+    private var database: CKDatabase {
+        return container.privateCloudDatabase
+    }
 
     func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
-        completionHandler(false)
+        container.accountStatus { status, error in
+            let validAccount: Bool
+            if error != nil {
+                validAccount = false
+            } else {
+                validAccount = (status == .available)
+            }
+            completionHandler(validAccount)
+        }
     }
 
     func save(meal: Meal) {
