@@ -54,7 +54,7 @@ extension Realm {
          Creates a `Configuration` which can be used to create new `Realm` instances.
 
          - note: The `fileURL`, `inMemoryIdentifier`, and `syncConfiguration` parameters are mutually exclusive. Only
-                 set one of them, or none if you wish to use the default file URL.
+         set one of them, or none if you wish to use the default file URL.
 
          - parameter fileURL:            The local URL to the Realm file.
          - parameter inMemoryIdentifier: A string used to identify a particular in-memory Realm.
@@ -64,16 +64,16 @@ extension Realm {
          - parameter schemaVersion:      The current schema version.
          - parameter migrationBlock:     The block which migrates the Realm to the current version.
          - parameter deleteRealmIfMigrationNeeded: If `true`, recreate the Realm file with the provided
-                                                   schema if a migration is required.
+         schema if a migration is required.
          - parameter shouldCompactOnLaunch: A block called when opening a Realm for the first time during the
-                                            life of a process to determine if it should be compacted before being
-                                            returned to the user. It is passed the total file size (data + free space)
-                                            and the total bytes used by data in the file.
+         life of a process to determine if it should be compacted before being
+         returned to the user. It is passed the total file size (data + free space)
+         and the total bytes used by data in the file.
 
-                                            Return `true ` to indicate that an attempt to compact the file should be made.
-                                            The compaction will be skipped if another process is accessing it.
+         Return `true ` to indicate that an attempt to compact the file should be made.
+         The compaction will be skipped if another process is accessing it.
          - parameter objectTypes:        The subset of `Object` subclasses persisted in the Realm.
-        */
+         */
         public init(fileURL: URL? = URL(fileURLWithPath: RLMRealmPathForFile("default.realm"), isDirectory: false),
                     inMemoryIdentifier: String? = nil,
                     syncConfiguration: SyncConfiguration? = nil,
@@ -84,20 +84,20 @@ extension Realm {
                     deleteRealmIfMigrationNeeded: Bool = false,
                     shouldCompactOnLaunch: ((Int, Int) -> Bool)? = nil,
                     objectTypes: [Object.Type]? = nil) {
-                self.fileURL = fileURL
-                if let inMemoryIdentifier = inMemoryIdentifier {
-                    self.inMemoryIdentifier = inMemoryIdentifier
-                }
-                if let syncConfiguration = syncConfiguration {
-                    self.syncConfiguration = syncConfiguration
-                }
-                self.encryptionKey = encryptionKey
-                self.readOnly = readOnly
-                self.schemaVersion = schemaVersion
-                self.migrationBlock = migrationBlock
-                self.deleteRealmIfMigrationNeeded = deleteRealmIfMigrationNeeded
-                self.shouldCompactOnLaunch = shouldCompactOnLaunch
-                self.objectTypes = objectTypes
+            self.fileURL = fileURL
+            if let inMemoryIdentifier = inMemoryIdentifier {
+                self.inMemoryIdentifier = inMemoryIdentifier
+            }
+            if let syncConfiguration = syncConfiguration {
+                self.syncConfiguration = syncConfiguration
+            }
+            self.encryptionKey = encryptionKey
+            self.readOnly = readOnly
+            self.schemaVersion = schemaVersion
+            self.migrationBlock = migrationBlock
+            self.deleteRealmIfMigrationNeeded = deleteRealmIfMigrationNeeded
+            self.shouldCompactOnLaunch = shouldCompactOnLaunch
+            self.objectTypes = objectTypes
         }
 
         // MARK: Configuration Properties
@@ -192,10 +192,10 @@ extension Realm {
         /// The classes managed by the Realm.
         public var objectTypes: [Object.Type]? {
             set {
-                self.customSchema = newValue.map { RLMSchema(objectClasses: $0) }
+                customSchema = newValue.map { RLMSchema(objectClasses: $0) }
             }
             get {
-                return self.customSchema.map { $0.objectSchema.map { $0.objectClass as! Object.Type } }
+                return customSchema.map { $0.objectSchema.map { $0.objectClass as! Object.Type } }
             }
         }
 
@@ -218,18 +218,18 @@ extension Realm {
             } else {
                 fatalError("A Realm Configuration must specify a path or an in-memory identifier.")
             }
-            configuration.encryptionKey = self.encryptionKey
-            configuration.readOnly = self.readOnly
-            configuration.schemaVersion = self.schemaVersion
-            configuration.migrationBlock = self.migrationBlock.map { accessorMigrationBlock($0) }
-            configuration.deleteRealmIfMigrationNeeded = self.deleteRealmIfMigrationNeeded
+            configuration.encryptionKey = encryptionKey
+            configuration.readOnly = readOnly
+            configuration.schemaVersion = schemaVersion
+            configuration.migrationBlock = migrationBlock.map { accessorMigrationBlock($0) }
+            configuration.deleteRealmIfMigrationNeeded = deleteRealmIfMigrationNeeded
             if let shouldCompactOnLaunch = self.shouldCompactOnLaunch {
                 configuration.shouldCompactOnLaunch = ObjectiveCSupport.convert(object: shouldCompactOnLaunch)
             } else {
                 configuration.shouldCompactOnLaunch = nil
             }
-            configuration.customSchema = self.customSchema
-            configuration.disableFormatUpgrade = self.disableFormatUpgrade
+            configuration.customSchema = customSchema
+            configuration.disableFormatUpgrade = disableFormatUpgrade
             return configuration
         }
 

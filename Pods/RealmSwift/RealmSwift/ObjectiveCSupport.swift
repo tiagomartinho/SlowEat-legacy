@@ -143,14 +143,14 @@ public final class ObjectiveCSupport {
     /// Convert a `RLMShouldCompactOnLaunchBlock` to a Realm Swift compact block.
     public static func convert(object: @escaping RLMShouldCompactOnLaunchBlock) -> (Int, Int) -> Bool {
         return { totalBytes, usedBytes in
-            return object(UInt(totalBytes), UInt(usedBytes))
+            object(UInt(totalBytes), UInt(usedBytes))
         }
     }
 
     /// Convert a Realm Swift compact block to a `RLMShouldCompactOnLaunchBlock`.
     public static func convert(object: @escaping (Int, Int) -> Bool) -> RLMShouldCompactOnLaunchBlock {
         return { totalBytes, usedBytes in
-            return object(Int(totalBytes), Int(usedBytes))
+            object(Int(totalBytes), Int(usedBytes))
         }
     }
 

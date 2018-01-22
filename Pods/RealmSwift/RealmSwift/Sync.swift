@@ -16,8 +16,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm
 import Foundation
+import Realm
 
 /**
  An object representing a Realm Object Server user.
@@ -110,9 +110,9 @@ extension SyncError {
      on disk will be saved once the client reset occurs.
 
      - warning: Do not call `SyncSession.immediatelyHandleError(_:)` until you are
-                sure that all references to the Realm and managed objects belonging
-                to the Realm have been nil'ed out, and that all autorelease pools
-                containing these references have been drained.
+     sure that all references to the Realm and managed objects belonging
+     to the Realm have been nil'ed out, and that all autorelease pools
+     containing these references have been drained.
 
      - see: `SyncError.ActionToken`, `SyncSession.immediatelyHandleError(_:)`
      */
@@ -134,9 +134,9 @@ extension SyncError {
      your application attempts to open the Realm again.
 
      - warning: Do not call `SyncSession.immediatelyHandleError(_:)` until you are
-                sure that all references to the Realm and managed objects belonging
-                to the Realm have been nil'ed out, and that all autorelease pools
-                containing these references have been drained.
+     sure that all references to the Realm and managed objects belonging
+     to the Realm have been nil'ed out, and that all autorelease pools
+     containing these references have been drained.
 
      - see: `SyncError.ActionToken`, `SyncSession.immediatelyHandleError(_:)`
      */
@@ -188,7 +188,7 @@ public struct SyncConfiguration {
      The URL of the Realm on the Realm Object Server that this configuration should open.
 
      - warning: The URL must be absolute (e.g. `realms://example.com/~/foo`), and cannot end with
-                `.realm`, `.realm.lock` or `.realm.management`.
+     `.realm`, `.realm.lock` or `.realm.management`.
      */
     public let realmURL: URL
 
@@ -213,11 +213,11 @@ public struct SyncConfiguration {
     public let isPartial: Bool
 
     internal init(config: RLMSyncConfiguration) {
-        self.user = config.user
-        self.realmURL = config.realmURL
-        self.stopPolicy = config.stopPolicy
-        self.enableSSLValidation = config.enableSSLValidation
-        self.isPartial = config.isPartial
+        user = config.user
+        realmURL = config.realmURL
+        stopPolicy = config.stopPolicy
+        enableSSLValidation = config.enableSSLValidation
+        isPartial = config.isPartial
     }
 
     func asConfig() -> RLMSyncConfiguration {
@@ -238,14 +238,14 @@ public struct SyncConfiguration {
      purposes.
 
      - warning: The URL must be absolute (e.g. `realms://example.com/~/foo`), and cannot end with
-                `.realm`, `.realm.lock` or `.realm.management`.
+     `.realm`, `.realm.lock` or `.realm.management`.
 
      - warning: NEVER disable SSL validation for a system running in production.
      */
     public init(user: SyncUser, realmURL: URL, enableSSLValidation: Bool = true, isPartial: Bool = false) {
         self.user = user
         self.realmURL = realmURL
-        self.stopPolicy = .afterChangesUploaded
+        stopPolicy = .afterChangesUploaded
         self.enableSSLValidation = enableSSLValidation
         self.isPartial = isPartial
     }
@@ -270,9 +270,9 @@ public struct SyncCredentials {
     }
 
     internal init(_ credentials: RLMSyncCredentials) {
-        self.token = credentials.token
-        self.provider = credentials.provider
-        self.userInfo = credentials.userInfo
+        token = credentials.token
+        provider = credentials.provider
+        userInfo = credentials.userInfo
     }
 
     /// Initialize new credentials using a Facebook account token.
@@ -369,13 +369,13 @@ extension SyncUser {
     /**
      An optional error handler which can be set to notify the host application when
      the user encounters an error.
-     
+
      - note: Check for `.invalidAccessToken` to see if the user has been remotely logged
-             out because its refresh token expired, or because the third party authentication
-             service providing the user's identity has logged the user out.
+     out because its refresh token expired, or because the third party authentication
+     service providing the user's identity has logged the user out.
 
      - warning: Regardless of whether an error handler is defined, certain user errors
-                will automatically cause the user to enter the logged out state.
+     will automatically cause the user to enter the logged out state.
      */
     @nonobjc public var errorHandler: ((SyncUser, SyncAuthError) -> Void)? {
         get {
@@ -383,7 +383,7 @@ extension SyncUser {
         }
         set {
             if let newValue = newValue {
-                __errorHandler = { (user, error) in
+                __errorHandler = { user, error in
                     newValue(user, error as! SyncAuthError)
                 }
             } else {
@@ -404,10 +404,10 @@ extension SyncUser {
      - warning: Do not pass the `Results` returned by the callback between threads.
 
      - parameter callback: A callback providing either a `Results` containing the
-                           permissions, or an error describing what went wrong.
+     permissions, or an error describing what went wrong.
      */
     public func retrievePermissions(callback: @escaping (SyncPermissionResults?, SyncPermissionError?) -> Void) {
-        self.__retrievePermissions { (results, error) in
+        __retrievePermissions { results, error in
             guard let results = results else {
                 callback(nil, error as! SyncPermissionError?)
                 return
@@ -428,20 +428,20 @@ extension SyncUser {
      using the `SyncUser.acceptOffer(forToken:, callback:)` method.
 
      - parameter url: The URL of the Realm for which the permission offer should pertain. This
-                      may be the URL of any Realm which this user is allowed to manage. If the URL
-                      has a `~` wildcard it will be replaced with this user's user identity.
+     may be the URL of any Realm which this user is allowed to manage. If the URL
+     has a `~` wildcard it will be replaced with this user's user identity.
      - parameter accessLevel: What access level to grant to whoever accepts the token.
      - parameter expiration: Optionally, a date which indicates when the offer expires. If the
-                             recepient attempts to accept the offer after the date it will be rejected.
-                             If nil, the offer will never expire.
+     recepient attempts to accept the offer after the date it will be rejected.
+     If nil, the offer will never expire.
      - parameter callback: A callback indicating whether the operation succeeded or failed. If it
-                           succeeded the token will be passed in as a string.
+     succeeded the token will be passed in as a string.
      */
     public func createOfferForRealm(at url: URL,
                                     accessLevel: SyncAccessLevel,
                                     expiration: Date? = nil,
                                     callback: @escaping (String?, SyncPermissionError?) -> Void) {
-        self.__createOfferForRealm(at: url, accessLevel: accessLevel, expiration: expiration) { (token, error) in
+        __createOfferForRealm(at: url, accessLevel: accessLevel, expiration: expiration) { token, error in
             guard let token = token else {
                 callback(nil, error as! SyncPermissionError?)
                 return
@@ -590,9 +590,9 @@ public extension SyncSession {
                                         block: @escaping (Progress) -> Void) -> ProgressNotificationToken? {
         return __addProgressNotification(for: (direction == .upload ? .upload : .download),
                                          mode: (mode == .reportIndefinitely
-                                            ? .reportIndefinitely
-                                            : .forCurrentlyOutstandingWork)) { transferred, transferrable in
-                                                block(Progress(transferred: transferred, transferrable: transferrable))
+                                             ? .reportIndefinitely
+                                             : .forCurrentlyOutstandingWork)) { transferred, transferrable in
+            block(Progress(transferred: transferred, transferrable: transferrable))
         }
     }
 }
@@ -609,7 +609,7 @@ extension Realm {
      */
     public func subscribe<T: Object>(to objects: T.Type, where: String,
                                      completion: @escaping (Results<T>?, Swift.Error?) -> Void) {
-        rlmRealm.subscribe(toObjects: objects, where: `where`) { (results, error) in
+        rlmRealm.subscribe(toObjects: objects, where: `where`) { results, error in
             completion(results.map { Results<T>($0) }, error)
         }
     }
@@ -617,7 +617,7 @@ extension Realm {
 
 // MARK: - Permissions and permission results
 
-extension SyncPermission: RealmCollectionValue { }
+extension SyncPermission: RealmCollectionValue {}
 
 /**
  A `Results` collection containing sync permission results.
@@ -630,8 +630,8 @@ public typealias SyncPermissionResults = Results<SyncPermission>
  manually.
 
  - warning: If building `NSPredicate`s using format strings including these
-            raw values, use `%K` instead of `%@` as the substitution
-            parameter.
+ raw values, use `%K` instead of `%@` as the substitution
+ parameter.
 
  - see: `RLMSyncPermissionSortProperty`
  */
@@ -647,22 +647,22 @@ extension SortDescriptor {
 }
 
 #if swift(>=3.1)
-extension Results where Element == SyncPermission {
-    /**
-     Return a `Results<SyncPermissionValue>` containing the objects represented
-     by the results, but sorted on the specified property.
+    extension Results where Element == SyncPermission {
+        /**
+         Return a `Results<SyncPermissionValue>` containing the objects represented
+         by the results, but sorted on the specified property.
 
-     - see: `sorted(byKeyPath:, ascending:)`
-     */
-    public func sorted(bySortProperty sortProperty: SyncPermissionSortProperty,
-                       ascending: Bool = true) -> Results<Element> {
-        return sorted(by: [SortDescriptor(sortProperty: sortProperty, ascending: ascending)])
+         - see: `sorted(byKeyPath:, ascending:)`
+         */
+        public func sorted(bySortProperty sortProperty: SyncPermissionSortProperty,
+                           ascending: Bool = true) -> Results<Element> {
+            return sorted(by: [SortDescriptor(sortProperty: sortProperty, ascending: ascending)])
+        }
     }
-}
 #endif
 
 // MARK: - Migration assistance
 
 /// :nodoc:
 @available(*, unavailable, renamed: "SyncPermission")
-public final class SyncPermissionValue { }
+public final class SyncPermissionValue {}

@@ -24,7 +24,7 @@ import Realm.Private
  The type of a migration block used to migrate a Realm.
 
  - parameter migration:  A `Migration` object used to perform the migration. The migration object allows you to
-                         enumerate and alter any existing objects which require migration.
+ enumerate and alter any existing objects which require migration.
 
  - parameter oldSchemaVersion: The schema version of the Realm being migrated.
  */
@@ -159,11 +159,11 @@ public struct Migration {
      Renames a property of the given class from `oldName` to `newName`.
 
      - parameter className:  The name of the class whose property should be renamed. This class must be present
-                             in both the old and new Realm schemas.
+     in both the old and new Realm schemas.
      - parameter oldName:    The old name for the property to be renamed. There must not be a property with this name in
-                             the class as defined by the new Realm schema.
+     the class as defined by the new Realm schema.
      - parameter newName:    The new name for the property to be renamed. There must not be a property with this name in
-                             the class as defined by the old Realm schema.
+     the class as defined by the old Realm schema.
      */
     public func renameProperty(onType typeName: String, from oldName: String, to newName: String) {
         rlmMigration.renameProperty(forClass: typeName, oldName: oldName, newName: newName)
@@ -173,7 +173,6 @@ public struct Migration {
         self.rlmMigration = rlmMigration
     }
 }
-
 
 // MARK: Private Helpers
 

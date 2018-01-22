@@ -107,14 +107,14 @@ public final class Realm {
      - parameter configuration: A configuration object to use when opening the Realm.
      - parameter callbackQueue: The dispatch queue on which the callback should be run.
      - parameter callback:      A callback block. If the Realm was successfully opened, an
-                                it will be passed in as an argument.
-                                Otherwise, a `Swift.Error` describing what went wrong will be
-                                passed to the block instead.
+     it will be passed in as an argument.
+     Otherwise, a `Swift.Error` describing what went wrong will be
+     passed to the block instead.
 
      - note: The returned Realm is confined to the thread on which it was created.
-             Because GCD does not guarantee that queues will always use the same
-             thread, accessing the returned Realm outside the callback block (even if
-             accessed from `callbackQueue`) is unsafe.
+     Because GCD does not guarantee that queues will always use the same
+     thread, accessing the returned Realm outside the callback block (even if
+     accessed from `callbackQueue`) is unsafe.
      */
     public static func asyncOpen(configuration: Realm.Configuration = .defaultConfiguration,
                                  callbackQueue: DispatchQueue = .main,
@@ -147,7 +147,7 @@ public final class Realm {
      - parameter block: The block containing actions to perform.
 
      - throws: An `NSError` if the transaction could not be completed successfully.
-               If `block` throws, the function throws the propagated `ErrorType` instead.
+     If `block` throws, the function throws the propagated `ErrorType` instead.
      */
     public func write(_ block: (() throws -> Void)) throws {
         beginWrite()
@@ -208,7 +208,7 @@ public final class Realm {
      - warning: This method may only be called during a write transaction.
 
      - throws: An `NSError` if the transaction could not be written due to
-               running out of disk space or other i/o errors.
+     running out of disk space or other i/o errors.
      */
     public func commitWrite(withoutNotifying tokens: [NotificationToken] = []) throws {
         try rlmRealm.commitWriteTransactionWithoutNotifying(tokens)
@@ -254,8 +254,8 @@ public final class Realm {
      Indicates whether the Realm is currently in a write transaction.
 
      - warning:  Do not simply check this property and then start a write transaction whenever an object needs to be
-                 created, updated, or removed. Doing so might cause a large number of write transactions to be created,
-                 degrading performance. Instead, always prefer performing multiple updates during a single transaction.
+     created, updated, or removed. Doing so might cause a large number of write transactions to be created,
+     degrading performance. Instead, always prefer performing multiple updates during a single transaction.
      */
     public var isInWriteTransaction: Bool {
         return rlmRealm.inWriteTransaction
@@ -278,7 +278,7 @@ public final class Realm {
 
      - parameter object: The object to be added to this Realm.
      - parameter update: If `true`, the Realm will try to find an existing copy of the object (with the same primary
-                         key), and update it. Otherwise, the object will be added.
+     key), and update it. Otherwise, the object will be added.
      */
     public func add(_ object: Object, update: Bool = false) {
         if update && object.objectSchema.primaryKeyProperty == nil {
@@ -334,7 +334,7 @@ public final class Realm {
      - parameter type:   The type of the object to create.
      - parameter value:  The value used to populate the object.
      - parameter update: If `true`, the Realm will try to find an existing copy of the object (with the same primary
-                         key), and update it. Otherwise, the object will be added.
+     key), and update it. Otherwise, the object will be added.
 
      - returns: The newly created object.
      */
@@ -420,8 +420,8 @@ public final class Realm {
      - warning: This method may only be called during a write transaction.
 
      - parameter objects:   The objects to be deleted. This can be a `List<Object>`,
-                            `Results<Object>`, or any other Swift `Sequence` whose
-                            elements are `Object`s (subject to the caveats above).
+     `Results<Object>`, or any other Swift `Sequence` whose
+     elements are `Object`s (subject to the caveats above).
      */
     public func delete<S: Sequence>(_ objects: S) where S.Iterator.Element: Object {
         for obj in objects {
@@ -555,8 +555,8 @@ public final class Realm {
      updates, call `invalidate()` on the token.
 
      - parameter block: A block which is called to process Realm notifications. It receives the following parameters:
-                        `notification`: the incoming notification; `realm`: the Realm for which the notification
-                        occurred.
+     `notification`: the incoming notification; `realm`: the Realm for which the notification
+     occurred.
 
      - returns: A token which must be held for as long as you wish to continue receiving change notifications.
      */

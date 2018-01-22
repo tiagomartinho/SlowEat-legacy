@@ -48,6 +48,7 @@ public class LinkingObjectsBase: NSObject, NSFastEnumeration {
     }
 
     // MARK: Fast Enumeration
+
     public func countByEnumerating(with state: UnsafeMutablePointer<NSFastEnumerationState>,
                                    objects buffer: AutoreleasingUnsafeMutablePointer<AnyObject?>,
                                    count len: Int) -> Int {
@@ -99,7 +100,7 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
      - parameter type:         The type of the object owning the property the linking objects should refer to.
      - parameter propertyName: The property name of the property the linking objects should refer to.
      */
-    public init(fromType type: Element.Type, property propertyName: String) {
+    public init(fromType _: Element.Type, property propertyName: String) {
         let className = (Element.self as Object.Type).className()
         super.init(fromClassName: className, property: propertyName)
     }
@@ -147,10 +148,8 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
      - parameter index: The index.
      */
     public subscript(index: Int) -> Element {
-        get {
-            throwForNegativeIndex(index)
-            return unsafeBitCast(rlmResults[UInt(index)], to: Element.self)
-        }
+        throwForNegativeIndex(index)
+        return unsafeBitCast(rlmResults[UInt(index)], to: Element.self)
     }
 
     /// Returns the first object in the linking objects, or `nil` if the linking objects are empty.
@@ -223,7 +222,7 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
      `students.sorted(byKeyPath: "age", ascending: true)`.
 
      - warning: Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - parameter keyPath:  The key path to sort by.
      - parameter ascending: The direction to sort in.
@@ -236,7 +235,7 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
      Returns a `Results` containing all the linking objects, but sorted.
 
      - warning: Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - see: `sorted(byKeyPath:ascending:)`
 
@@ -244,7 +243,7 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
      */
     public func sorted<S: Sequence>(by sortDescriptors: S) -> Results<Element>
         where S.Iterator.Element == SortDescriptor {
-            return Results(rlmResults.sortedResults(using: sortDescriptors.map { $0.rlmSortDescriptorValue }))
+        return Results(rlmResults.sortedResults(using: sortDescriptors.map { $0.rlmSortDescriptorValue }))
     }
 
     // MARK: Aggregate Operations
@@ -325,22 +324,22 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
      let results = realm.objects(Dog.self)
      print("dogs.count: \(dogs?.count)") // => 0
      let token = dogs.observe { changes in
-         switch changes {
-         case .initial(let dogs):
-             // Will print "dogs.count: 1"
-             print("dogs.count: \(dogs.count)")
-             break
-         case .update:
-             // Will not be hit in this example
-             break
-         case .error:
-             break
-         }
+     switch changes {
+     case .initial(let dogs):
+     // Will print "dogs.count: 1"
+     print("dogs.count: \(dogs.count)")
+     break
+     case .update:
+     // Will not be hit in this example
+     break
+     case .error:
+     break
+     }
      }
      try! realm.write {
-         let dog = Dog()
-         dog.name = "Rex"
-         person.dogs.append(dog)
+     let dog = Dog()
+     dog.name = "Rex"
+     person.dogs.append(dog)
      }
      // end of run loop execution context
      ```
@@ -361,6 +360,7 @@ public final class LinkingObjects<Element: Object>: LinkingObjectsBase {
 }
 
 extension LinkingObjects: RealmCollection {
+
     // MARK: Sequence Support
 
     /// Returns an iterator that yields successive elements in the linking objects.
@@ -380,20 +380,20 @@ extension LinkingObjects: RealmCollection {
     public var endIndex: Int { return count }
 
     public func index(after: Int) -> Int {
-      return after + 1
+        return after + 1
     }
 
     public func index(before: Int) -> Int {
-      return before - 1
+        return before - 1
     }
 
     /// :nodoc:
     public func _observe(_ block: @escaping (RealmCollectionChange<AnyRealmCollection<Element>>) -> Void) ->
         NotificationToken {
-            let anyCollection = AnyRealmCollection(self)
-            return rlmResults.addNotificationBlock { _, change, error in
-                block(RealmCollectionChange.fromObjc(value: anyCollection, change: change, error: error))
-            }
+        let anyCollection = AnyRealmCollection(self)
+        return rlmResults.addNotificationBlock { _, change, error in
+            block(RealmCollectionChange.fromObjc(value: anyCollection, change: change, error: error))
+        }
     }
 }
 
@@ -405,10 +405,10 @@ extension LinkingObjects: AssistedObjectiveCBridgeable {
 
         let swiftValue = LinkingObjects(fromType: Element.self, property: metadata.propertyName)
         switch (objectiveCValue, metadata) {
-        case (let object as RLMObjectBase, .uncached(let property)):
+        case let (object as RLMObjectBase, .uncached(property)):
             swiftValue.object = RLMWeakObjectHandle(object: object)
             swiftValue.property = property
-        case (let results as RLMResults<AnyObject>, .cached):
+        case let (results as RLMResults<AnyObject>, .cached):
             swiftValue.cachedRLMResults = results
         default:
             preconditionFailure()
@@ -433,8 +433,8 @@ internal enum LinkingObjectsBridgingMetadata {
 
     fileprivate var propertyName: String {
         switch self {
-        case .uncached(let property):   return property.name
-        case .cached(let propertyName): return propertyName
+        case let .uncached(property): return property.name
+        case let .cached(propertyName): return propertyName
         }
     }
 }

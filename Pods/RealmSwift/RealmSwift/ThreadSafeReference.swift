@@ -52,11 +52,11 @@ public protocol ThreadConfined {
  `Realm.resolve(_:)`.
 
  - warning: A `ThreadSafeReference` object must be resolved at most once.
-            Failing to resolve a `ThreadSafeReference` will result in the source version of the
-            Realm being pinned until the reference is deallocated.
+ Failing to resolve a `ThreadSafeReference` will result in the source version of the
+ Realm being pinned until the reference is deallocated.
 
  - note: Prefer short-lived `ThreadSafeReference`s as the data for the version of the source Realm
-         will be retained until all references have been resolved or deallocated.
+ will be retained until all references have been resolved or deallocated.
 
  - see: `ThreadConfined`
  - see: `Realm.resolve(_:)`
@@ -78,7 +78,7 @@ public class ThreadSafeReference<Confined: ThreadConfined> {
      - parameter threadConfined: The thread-confined object to create a thread-safe reference to.
 
      - note: You may continue to use and access the thread-confined object after passing it to this
-             constructor.
+     constructor.
      */
     public init(to threadConfined: Confined) {
         let bridged = (threadConfined as! AssistedObjectiveCBridgeable).bridged
@@ -99,12 +99,12 @@ extension Realm {
      deleted after the reference was created.
 
      - parameter reference: The thread-safe reference to the thread-confined object to resolve in
-                            this Realm.
+     this Realm.
 
      - warning: A `ThreadSafeReference` object must be resolved at most once.
-                Failing to resolve a `ThreadSafeReference` will result in the source version of the
-                Realm being pinned until the reference is deallocated.
-                An exception will be thrown if a reference is resolved more than once.
+     Failing to resolve a `ThreadSafeReference` will result in the source version of the
+     Realm being pinned until the reference is deallocated.
+     An exception will be thrown if a reference is resolved more than once.
 
      - warning: Cannot call within a write transaction.
 

@@ -231,7 +231,7 @@ public final class Results<Element: RealmCollectionValue>: NSObject, NSFastEnume
      `students.sorted(byKeyPath: "age", ascending: true)`.
 
      - warning: Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - parameter keyPath:   The key path to sort by.
      - parameter ascending: The direction to sort in.
@@ -244,7 +244,7 @@ public final class Results<Element: RealmCollectionValue>: NSObject, NSFastEnume
      Returns a `Results` containing the objects represented by the results, but sorted.
 
      - warning: Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - see: `sorted(byKeyPath:ascending:)`
 
@@ -252,17 +252,17 @@ public final class Results<Element: RealmCollectionValue>: NSObject, NSFastEnume
      */
     public func sorted<S: Sequence>(by sortDescriptors: S) -> Results<Element>
         where S.Iterator.Element == SortDescriptor {
-            return Results<Element>(rlmResults.sortedResults(using: sortDescriptors.map { $0.rlmSortDescriptorValue }))
+        return Results<Element>(rlmResults.sortedResults(using: sortDescriptors.map { $0.rlmSortDescriptorValue }))
     }
 
     /**
      Returns a `Results` containing distinct objects based on the specified key paths
-     
+
      - parameter keyPaths:  The key paths used produce distinct results
      */
     public func distinct<S: Sequence>(by keyPaths: S) -> Results<Element>
         where S.Iterator.Element == String {
-            return Results<Element>(rlmResults.distinctResults(usingKeyPaths: Array(keyPaths)))
+        return Results<Element>(rlmResults.distinctResults(usingKeyPaths: Array(keyPaths)))
     }
 
     // MARK: Aggregate Operations
@@ -340,22 +340,22 @@ public final class Results<Element: RealmCollectionValue>: NSObject, NSFastEnume
      let results = realm.objects(Dog.self)
      print("dogs.count: \(dogs?.count)") // => 0
      let token = dogs.observe { changes in
-         switch changes {
-         case .initial(let dogs):
-             // Will print "dogs.count: 1"
-             print("dogs.count: \(dogs.count)")
-             break
-         case .update:
-             // Will not be hit in this example
-             break
-         case .error:
-             break
-         }
+     switch changes {
+     case .initial(let dogs):
+     // Will print "dogs.count: 1"
+     print("dogs.count: \(dogs.count)")
+     break
+     case .update:
+     // Will not be hit in this example
+     break
+     case .error:
+     break
+     }
      }
      try! realm.write {
-         let dog = Dog()
-         dog.name = "Rex"
-         person.dogs.append(dog)
+     let dog = Dog()
+     dog.name = "Rex"
+     person.dogs.append(dog)
      }
      // end of run loop execution context
      ```
@@ -376,6 +376,7 @@ public final class Results<Element: RealmCollectionValue>: NSObject, NSFastEnume
 }
 
 extension Results: RealmCollection {
+
     // MARK: Sequence Support
 
     /// Returns a `RLMIterator` that yields successive elements in the results.
@@ -410,7 +411,7 @@ extension Results: RealmCollection {
 // MARK: AssistedObjectiveCBridgeable
 
 extension Results: AssistedObjectiveCBridgeable {
-    static func bridging(from objectiveCValue: Any, with metadata: Any?) -> Results {
+    static func bridging(from objectiveCValue: Any, with _: Any?) -> Results {
         return Results(objectiveCValue as! RLMResults)
     }
 

@@ -28,6 +28,7 @@ public extension RealmOptionalType {
         return ""
     }
 }
+
 extension Int: RealmOptionalType {}
 extension Int8: RealmOptionalType {}
 extension Int16: RealmOptionalType {}

@@ -5,7 +5,7 @@ class MealListViewController: UITableViewController {
     private var cells = [MealCell]()
 
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self, repository: CKMealRepository())
+        MealListPresenter(view: self, repository: RealmMealRepository())
     }()
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class MealListViewController: UITableViewController {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_: UIAlertAction!) -> Void in
-            CKMealRepository().deleteAll()
+            RealmMealRepository().deleteAll()
             self.presenter.loadMeals()
         }))
         present(alert, animated: true, completion: nil)

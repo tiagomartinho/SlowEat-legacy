@@ -28,9 +28,9 @@ import Realm.Private
 
  ```swift
  class Dog: Object {
-     @objc dynamic var name: String = ""
-     @objc dynamic var adopted: Bool = false
-     let siblings = List<Dog>()
+ @objc dynamic var name: String = ""
+ @objc dynamic var adopted: Bool = false
+ let siblings = List<Dog>()
  }
  ```
 
@@ -83,7 +83,7 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
 
      - see: `Realm().add(_:)`
      */
-    public override required init() {
+    public required override init() {
         super.init()
     }
 
@@ -106,7 +106,6 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
         super.init(value: value, schema: .partialPrivateShared())
     }
 
-
     // MARK: Properties
 
     /// The Realm which manages the object, or `nil` if the object is unmanaged.
@@ -126,7 +125,7 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
     ///
     /// An object can no longer be accessed if the object has been deleted from the Realm that manages it, or if
     /// `invalidate()` is called on that Realm.
-    public override final var isInvalidated: Bool { return super.isInvalidated }
+    public final override var isInvalidated: Bool { return super.isInvalidated }
 
     /// A human-readable description of the object.
     open override var description: String { return super.description }
@@ -136,10 +135,9 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
      It is not considered part of the public API.
      :nodoc:
      */
-    public override final class func objectUtilClass(_ isSwift: Bool) -> AnyClass {
+    public final override class func objectUtilClass(_: Bool) -> AnyClass {
         return ObjectUtil.self
     }
-
 
     // MARK: Object Customization
 
@@ -222,7 +220,7 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
      retained by the returned token and not by the object itself.
 
      - warning: This method cannot be called during a write transaction, or when
-                the containing Realm is read-only.
+     the containing Realm is read-only.
 
      - parameter block: The block to call with information about changes to the object.
      - returns: A token which must be held for as long as you want updates to be delivered.
@@ -238,7 +236,7 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
                 return
             }
 
-            block(.change((0..<newValues.count).map { i in
+            block(.change((0 ..< newValues.count).map { i in
                 PropertyChange(name: names[i], oldValue: oldValues?[i], newValue: newValues[i])
             }))
         })
@@ -265,18 +263,19 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
     }
 
     // MARK: Comparison
+
     /**
      Returns whether two Realm objects are the same.
 
      Objects are considered the same if and only if they are both managed by the same
      Realm and point to the same underlying object in the database.
-     
+
      - note: Equality comparison is implemented by `isEqual(_:)`. If the object type
-             is defined with a primary key, `isEqual(_:)` behaves identically to this
-             method. If the object type is not defined with a primary key,
-             `isEqual(_:)` uses the `NSObject` behavior of comparing object identity.
-             This method can be used to compare two objects for database equality
-             whether or not their object type defines a primary key.
+     is defined with a primary key, `isEqual(_:)` behaves identically to this
+     method. If the object type is not defined with a primary key,
+     `isEqual(_:)` uses the `NSObject` behavior of comparing object identity.
+     This method can be used to compare two objects for database equality
+     whether or not their object type defines a primary key.
 
      - parameter object: The object to compare the receiver to.
      */
@@ -289,18 +288,18 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
     // FIXME: None of these functions should be exposed in the public interface.
 
     /**
-    WARNING: This is an internal initializer not intended for public use.
-    :nodoc:
-    */
-    public override required init(realm: RLMRealm, schema: RLMObjectSchema) {
+     WARNING: This is an internal initializer not intended for public use.
+     :nodoc:
+     */
+    public required override init(realm: RLMRealm, schema: RLMObjectSchema) {
         super.init(realm: realm, schema: schema)
     }
 
     /**
-    WARNING: This is an internal initializer not intended for public use.
-    :nodoc:
-    */
-    public override required init(value: Any, schema: RLMSchema) {
+     WARNING: This is an internal initializer not intended for public use.
+     :nodoc:
+     */
+    public required override init(value: Any, schema: RLMSchema) {
         super.init(value: value, schema: schema)
     }
 }
@@ -311,7 +310,7 @@ open class Object: RLMObjectBase, ThreadConfined, RealmCollectionValue {
 public struct PropertyChange {
     /**
      The name of the property which changed.
-    */
+     */
     public let name: String
 
     /**
@@ -324,13 +323,13 @@ public struct PropertyChange {
      had before the changes. This means that `previousValue` may be a deleted
      object, and you will need to check `isInvalidated` before accessing any
      of its properties.
-    */
+     */
     public let oldValue: Any?
 
     /**
      The value of the property after the change occurred. This is not supplied
      for `List` properties and will always be nil.
-    */
+     */
     public let newValue: Any?
 }
 
@@ -409,7 +408,7 @@ public class ObjectUtil: NSObject {
         return nil
     }
 
-    @objc private class func linkingObjectsPropertiesForClass(_ type: AnyClass) -> NSDictionary? {
+    @objc private class func linkingObjectsPropertiesForClass(_: AnyClass) -> NSDictionary? {
         // Not used for Swift. getLinkingObjectsProperties(_:) is used instead.
         return nil
     }
@@ -463,7 +462,7 @@ public class ObjectUtil: NSObject {
 
     // Build optional property metadata for a given property.
     // swiftlint:disable:next cyclomatic_complexity
-    private static func getOptionalPropertyMetadata(for child: Mirror.Child, at index: Int) -> RLMSwiftPropertyMetadata? {
+    private static func getOptionalPropertyMetadata(for child: Mirror.Child, at _: Int) -> RLMSwiftPropertyMetadata? {
         guard let name = child.label else {
             return nil
         }
@@ -530,7 +529,7 @@ private func forceCastToInferred<T, V>(_ x: T) -> V {
 }
 
 extension Object: AssistedObjectiveCBridgeable {
-    static func bridging(from objectiveCValue: Any, with metadata: Any?) -> Self {
+    static func bridging(from objectiveCValue: Any, with _: Any?) -> Self {
         return forceCastToInferred(objectiveCValue)
     }
 
@@ -544,15 +543,15 @@ extension Object: AssistedObjectiveCBridgeable {
 extension Object {
     /// :nodoc:
     @available(*, unavailable, renamed: "observe()")
-    public func addNotificationBlock(_ block: @escaping (ObjectChange) -> Void) -> NotificationToken {
+    public func addNotificationBlock(_: @escaping (ObjectChange) -> Void) -> NotificationToken {
         fatalError()
     }
 
-#if os(OSX)
-#else
-    /// :nodoc:
-    @available(*, unavailable, renamed: "isSameObject(as:)") public func isEqual(to object: Any?) -> Bool {
-        fatalError()
-    }
-#endif
+    #if os(OSX)
+    #else
+        /// :nodoc:
+        @available(*, unavailable, renamed: "isSameObject(as:)") public func isEqual(to _: Any?) -> Bool {
+            fatalError()
+        }
+    #endif
 }

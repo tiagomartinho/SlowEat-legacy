@@ -90,7 +90,7 @@ extension SortDescriptor: ExpressibleByStringLiteral {
      Creates a `SortDescriptor` out of a Unicode scalar literal.
 
      - parameter unicodeScalarLiteral: Property name literal.
-    */
+     */
     public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
         self.init(keyPath: value)
     }
@@ -118,7 +118,7 @@ extension SortDescriptor: ExpressibleByStringLiteral {
 
 extension SortDescriptor {
     @available(*, unavailable, renamed: "init(keyPath:ascending:)")
-    public init(property: String, ascending: Bool = true) { fatalError() }
+    public init(property _: String, ascending _: Bool = true) { fatalError() }
 
     @available(*, unavailable, renamed: "keyPath")
     public var property: String { fatalError() }

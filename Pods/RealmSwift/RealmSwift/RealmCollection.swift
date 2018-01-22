@@ -57,27 +57,27 @@ public struct RLMIterator<Element: RealmCollectionValue>: IteratorProtocol {
 
  ```swift
  self.notificationToken = results.observe { changes in
-     switch changes {
-     case .initial:
-         // Results are now populated and can be accessed without blocking the UI
-         self.tableView.reloadData()
-         break
-     case .update(_, let deletions, let insertions, let modifications):
-         // Query results have changed, so apply them to the TableView
-         self.tableView.beginUpdates()
-         self.tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) },
-            with: .automatic)
-         self.tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) },
-            with: .automatic)
-         self.tableView.reloadRows(at: modifications.map { IndexPath(row: $0, section: 0) },
-            with: .automatic)
-         self.tableView.endUpdates()
-         break
-     case .error(let err):
-         // An error occurred while opening the Realm file on the background worker thread
-         fatalError("\(err)")
-         break
-     }
+ switch changes {
+ case .initial:
+ // Results are now populated and can be accessed without blocking the UI
+ self.tableView.reloadData()
+ break
+ case .update(_, let deletions, let insertions, let modifications):
+ // Query results have changed, so apply them to the TableView
+ self.tableView.beginUpdates()
+ self.tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) },
+ with: .automatic)
+ self.tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) },
+ with: .automatic)
+ self.tableView.reloadRows(at: modifications.map { IndexPath(row: $0, section: 0) },
+ with: .automatic)
+ self.tableView.endUpdates()
+ break
+ case .error(let err):
+ // An error occurred while opening the Realm file on the background worker thread
+ fatalError("\(err)")
+ break
+ }
  }
  ```
  */
@@ -117,15 +117,15 @@ public enum RealmCollectionChange<CollectionType> {
         }
         if let change = change {
             return .update(value,
-                deletions: forceCast(change.deletions, to: [Int].self),
-                insertions: forceCast(change.insertions, to: [Int].self),
-                modifications: forceCast(change.modifications, to: [Int].self))
+                           deletions: forceCast(change.deletions, to: [Int].self),
+                           insertions: forceCast(change.insertions, to: [Int].self),
+                           modifications: forceCast(change.modifications, to: [Int].self))
         }
         return .initial(value)
     }
 }
 
-private func forceCast<A, U>(_ from: A, to type: U.Type) -> U {
+private func forceCast<A, U>(_ from: A, to _: U.Type) -> U {
     return from as! U
 }
 
@@ -151,12 +151,12 @@ extension Optional: RealmCollectionValue {
         switch Wrapped.self {
         case is Int.Type, is Int8.Type, is Int16.Type, is Int32.Type, is Int64.Type:
             return RLMArray(objectType: .int, optional: true)
-        case is Bool.Type:   return RLMArray(objectType: .bool, optional: true)
-        case is Float.Type:  return RLMArray(objectType: .float, optional: true)
+        case is Bool.Type: return RLMArray(objectType: .bool, optional: true)
+        case is Float.Type: return RLMArray(objectType: .float, optional: true)
         case is Double.Type: return RLMArray(objectType: .double, optional: true)
         case is String.Type: return RLMArray(objectType: .string, optional: true)
-        case is Data.Type:   return RLMArray(objectType: .data, optional: true)
-        case is Date.Type:   return RLMArray(objectType: .date, optional: true)
+        case is Data.Type: return RLMArray(objectType: .data, optional: true)
+        case is Date.Type: return RLMArray(objectType: .date, optional: true)
         default: fatalError("Unsupported type for List: \(Wrapped.self)?")
         }
     }
@@ -174,6 +174,7 @@ extension Float: RealmCollectionValue {
         return RLMArray(objectType: .float, optional: false)
     }
 }
+
 extension Double: RealmCollectionValue {
     /// :nodoc:
     // swiftlint:disable:next identifier_name
@@ -181,6 +182,7 @@ extension Double: RealmCollectionValue {
         return RLMArray(objectType: .double, optional: false)
     }
 }
+
 extension Bool: RealmCollectionValue {
     /// :nodoc:
     // swiftlint:disable:next identifier_name
@@ -196,6 +198,7 @@ extension String: RealmCollectionValue {
         return RLMArray(objectType: .string, optional: false)
     }
 }
+
 extension Date: RealmCollectionValue {
     /// :nodoc:
     // swiftlint:disable:next identifier_name
@@ -203,6 +206,7 @@ extension Date: RealmCollectionValue {
         return RLMArray(objectType: .date, optional: false)
     }
 }
+
 extension Data: RealmCollectionValue {
     /// :nodoc:
     // swiftlint:disable:next identifier_name
@@ -212,24 +216,25 @@ extension Data: RealmCollectionValue {
 }
 
 #if swift(>=3.2)
-// FIXME: When we drop support for Swift 3.1, change ElementType to Element
-// throughout the project (this is a non-breaking change). We use ElementType
-// only because of limitations in Swift 3.1's compiler.
-/// :nodoc:
-public protocol RealmCollectionBase: RandomAccessCollection, LazyCollectionProtocol, CustomStringConvertible, ThreadConfined where Element: RealmCollectionValue {
-    typealias ElementType = Element
-}
+    // FIXME: When we drop support for Swift 3.1, change ElementType to Element
+    // throughout the project (this is a non-breaking change). We use ElementType
+    // only because of limitations in Swift 3.1's compiler.
+    /// :nodoc:
+    public protocol RealmCollectionBase: RandomAccessCollection, LazyCollectionProtocol, CustomStringConvertible, ThreadConfined where Element: RealmCollectionValue {
+        typealias ElementType = Element
+    }
+
 #else
-/// :nodoc:
-public protocol RealmCollectionBase: RandomAccessCollection, LazyCollectionProtocol, CustomStringConvertible, ThreadConfined {
-    /// The type of the objects contained in the collection.
-    associatedtype ElementType: RealmCollectionValue
-}
+    /// :nodoc:
+    public protocol RealmCollectionBase: RandomAccessCollection, LazyCollectionProtocol, CustomStringConvertible, ThreadConfined {
+        /// The type of the objects contained in the collection.
+        associatedtype ElementType: RealmCollectionValue
+    }
 #endif
 
 /**
  A homogenous collection of `Object`s which can be retrieved, filtered, sorted, and operated upon.
-*/
+ */
 public protocol RealmCollection: RealmCollectionBase {
     // Must also conform to `AssistedObjectiveCBridgeable`
 
@@ -250,7 +255,6 @@ public protocol RealmCollection: RealmCollectionBase {
 
     /// A human-readable description of the objects contained in the collection.
     var description: String { get }
-
 
     // MARK: Index Retrieval
 
@@ -275,7 +279,6 @@ public protocol RealmCollection: RealmCollectionBase {
      */
     func index(matching predicateFormat: String, _ args: Any...) -> Int?
 
-
     // MARK: Filtering
 
     /**
@@ -292,7 +295,6 @@ public protocol RealmCollection: RealmCollectionBase {
      */
     func filter(_ predicate: NSPredicate) -> Results<ElementType>
 
-
     // MARK: Sorting
 
     /**
@@ -303,7 +305,7 @@ public protocol RealmCollection: RealmCollectionBase {
      `students.sorted(byKeyPath: "age", ascending: true)`.
 
      - warning: Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - parameter keyPath:   The key path to sort by.
      - parameter ascending: The direction to sort in.
@@ -314,7 +316,7 @@ public protocol RealmCollection: RealmCollectionBase {
      Returns a `Results` containing the objects in the collection, but sorted.
 
      - warning: Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - see: `sorted(byKeyPath:ascending:)`
 
@@ -345,12 +347,12 @@ public protocol RealmCollection: RealmCollectionBase {
     func max<T: MinMaxType>(ofProperty property: String) -> T?
 
     /**
-    Returns the sum of the given property for objects in the collection, or `nil` if the collection is empty.
+     Returns the sum of the given property for objects in the collection, or `nil` if the collection is empty.
 
-    - warning: Only names of properties of a type conforming to the `AddableType` protocol can be used.
+     - warning: Only names of properties of a type conforming to the `AddableType` protocol can be used.
 
-    - parameter property: The name of a property conforming to `AddableType` to calculate sum on.
-    */
+     - parameter property: The name of a property conforming to `AddableType` to calculate sum on.
+     */
     func sum<T: AddableType>(ofProperty property: String) -> T
 
     /**
@@ -362,7 +364,6 @@ public protocol RealmCollection: RealmCollectionBase {
      - parameter property: The name of a property whose values should be summed.
      */
     func average(ofProperty property: String) -> Double?
-
 
     // MARK: Key-Value Coding
 
@@ -422,21 +423,21 @@ public protocol RealmCollection: RealmCollectionBase {
      print("dogs.count: \(dogs?.count)") // => 0
      let token = dogs.observe { changes in
      switch changes {
-         case .initial(let dogs):
-             // Will print "dogs.count: 1"
-             print("dogs.count: \(dogs.count)")
-             break
-         case .update:
-             // Will not be hit in this example
-             break
-         case .error:
-             break
-         }
+     case .initial(let dogs):
+     // Will print "dogs.count: 1"
+     print("dogs.count: \(dogs.count)")
+     break
+     case .update:
+     // Will not be hit in this example
+     break
+     case .error:
+     break
+     }
      }
      try! realm.write {
-         let dog = Dog()
-         dog.name = "Rex"
-         person.dogs.append(dog)
+     let dog = Dog()
+     dog.name = "Rex"
+     person.dogs.append(dog)
      }
      // end of run loop execution context
      ```
@@ -469,184 +470,192 @@ extension Optional: OptionalProtocol {
     public func _rlmInferWrappedType() -> Wrapped { return self! }
 }
 
-
 // FIXME: See the declaration of RealmCollectionBase for why this `#if` is required.
 #if swift(>=3.2)
-public extension RealmCollection where Element: MinMaxType {
-    /**
-     Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func min() -> Element? {
-        return min(ofProperty: "self")
-    }
-    /**
-     Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func max() -> Element? {
-        return max(ofProperty: "self")
-    }
-}
+    public extension RealmCollection where Element: MinMaxType {
+        /**
+         Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func min() -> Element? {
+            return min(ofProperty: "self")
+        }
 
-public extension RealmCollection where Element: OptionalProtocol, Element.Wrapped: MinMaxType {
-    /**
-     Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func min() -> Element.Wrapped? {
-        return min(ofProperty: "self")
+        /**
+         Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func max() -> Element? {
+            return max(ofProperty: "self")
+        }
     }
-    /**
-     Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func max() -> Element.Wrapped? {
-        return max(ofProperty: "self")
+
+    public extension RealmCollection where Element: OptionalProtocol, Element.Wrapped: MinMaxType {
+        /**
+         Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func min() -> Element.Wrapped? {
+            return min(ofProperty: "self")
+        }
+
+        /**
+         Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func max() -> Element.Wrapped? {
+            return max(ofProperty: "self")
+        }
     }
-}
 
-public extension RealmCollection where Element: AddableType {
-    /**
-     Returns the sum of the values in the collection, or `nil` if the collection is empty.
-     */
-    public func sum() -> Element {
-        return sum(ofProperty: "self")
+    public extension RealmCollection where Element: AddableType {
+        /**
+         Returns the sum of the values in the collection, or `nil` if the collection is empty.
+         */
+        public func sum() -> Element {
+            return sum(ofProperty: "self")
+        }
+
+        /**
+         Returns the average of all of the values in the collection.
+         */
+        public func average() -> Double? {
+            return average(ofProperty: "self")
+        }
     }
-    /**
-     Returns the average of all of the values in the collection.
-     */
-    public func average() -> Double? {
-        return average(ofProperty: "self")
+
+    public extension RealmCollection where Element: OptionalProtocol, Element.Wrapped: AddableType {
+        /**
+         Returns the sum of the values in the collection, or `nil` if the collection is empty.
+         */
+        public func sum() -> Element.Wrapped {
+            return sum(ofProperty: "self")
+        }
+
+        /**
+         Returns the average of all of the values in the collection.
+         */
+        public func average() -> Double? {
+            return average(ofProperty: "self")
+        }
     }
-}
 
-public extension RealmCollection where Element: OptionalProtocol, Element.Wrapped: AddableType {
-    /**
-     Returns the sum of the values in the collection, or `nil` if the collection is empty.
-     */
-    public func sum() -> Element.Wrapped {
-        return sum(ofProperty: "self")
+    public extension RealmCollection where Element: Comparable {
+        /**
+         Returns a `Results` containing the objects in the collection, but sorted.
+
+         Objects are sorted based on their values. For example, to sort a collection of `Date`s from
+         neweset to oldest based, you might call `dates.sorted(ascending: true)`.
+
+         - parameter ascending: The direction to sort in.
+         */
+        public func sorted(ascending: Bool = true) -> Results<Element> {
+            return sorted(byKeyPath: "self", ascending: ascending)
+        }
     }
-    /**
-     Returns the average of all of the values in the collection.
-     */
-    public func average() -> Double? {
-        return average(ofProperty: "self")
+
+    public extension RealmCollection where Element: OptionalProtocol, Element.Wrapped: Comparable {
+        /**
+         Returns a `Results` containing the objects in the collection, but sorted.
+
+         Objects are sorted based on their values. For example, to sort a collection of `Date`s from
+         neweset to oldest based, you might call `dates.sorted(ascending: true)`.
+
+         - parameter ascending: The direction to sort in.
+         */
+        public func sorted(ascending: Bool = true) -> Results<Element> {
+            return sorted(byKeyPath: "self", ascending: ascending)
+        }
     }
-}
 
-public extension RealmCollection where Element: Comparable {
-    /**
-     Returns a `Results` containing the objects in the collection, but sorted.
-
-     Objects are sorted based on their values. For example, to sort a collection of `Date`s from
-     neweset to oldest based, you might call `dates.sorted(ascending: true)`.
-
-     - parameter ascending: The direction to sort in.
-     */
-    public func sorted(ascending: Bool = true) -> Results<Element> {
-        return sorted(byKeyPath: "self", ascending: ascending)
-    }
-}
-
-public extension RealmCollection where Element: OptionalProtocol, Element.Wrapped: Comparable {
-    /**
-     Returns a `Results` containing the objects in the collection, but sorted.
-
-     Objects are sorted based on their values. For example, to sort a collection of `Date`s from
-     neweset to oldest based, you might call `dates.sorted(ascending: true)`.
-
-     - parameter ascending: The direction to sort in.
-     */
-    public func sorted(ascending: Bool = true) -> Results<Element> {
-        return sorted(byKeyPath: "self", ascending: ascending)
-    }
-}
 #else
-public extension RealmCollection where ElementType: MinMaxType {
-    /**
-     Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func min() -> ElementType? {
-        return min(ofProperty: "self")
-    }
-    /**
-     Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func max() -> ElementType? {
-        return max(ofProperty: "self")
-    }
-}
+    public extension RealmCollection where ElementType: MinMaxType {
+        /**
+         Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func min() -> ElementType? {
+            return min(ofProperty: "self")
+        }
 
-public extension RealmCollection where ElementType: OptionalProtocol, ElementType.Wrapped: MinMaxType {
-    /**
-     Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func min() -> ElementType.Wrapped? {
-        return min(ofProperty: "self")
+        /**
+         Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func max() -> ElementType? {
+            return max(ofProperty: "self")
+        }
     }
-    /**
-     Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
-     */
-    public func max() -> ElementType.Wrapped? {
-        return max(ofProperty: "self")
+
+    public extension RealmCollection where ElementType: OptionalProtocol, ElementType.Wrapped: MinMaxType {
+        /**
+         Returns the minimum (lowest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func min() -> ElementType.Wrapped? {
+            return min(ofProperty: "self")
+        }
+
+        /**
+         Returns the maximum (highest) value of the collection, or `nil` if the collection is empty.
+         */
+        public func max() -> ElementType.Wrapped? {
+            return max(ofProperty: "self")
+        }
     }
-}
 
-public extension RealmCollection where ElementType: AddableType {
-    /**
-     Returns the sum of the values in the collection, or `nil` if the collection is empty.
-     */
-    public func sum() -> ElementType {
-        return sum(ofProperty: "self")
+    public extension RealmCollection where ElementType: AddableType {
+        /**
+         Returns the sum of the values in the collection, or `nil` if the collection is empty.
+         */
+        public func sum() -> ElementType {
+            return sum(ofProperty: "self")
+        }
+
+        /**
+         Returns the average of all of the values in the collection.
+         */
+        public func average() -> Double? {
+            return average(ofProperty: "self")
+        }
     }
-    /**
-     Returns the average of all of the values in the collection.
-     */
-    public func average() -> Double? {
-        return average(ofProperty: "self")
+
+    public extension RealmCollection where ElementType: OptionalProtocol, ElementType.Wrapped: AddableType {
+        /**
+         Returns the sum of the values in the collection, or `nil` if the collection is empty.
+         */
+        public func sum() -> ElementType.Wrapped {
+            return sum(ofProperty: "self")
+        }
+
+        /**
+         Returns the average of all of the values in the collection.
+         */
+        public func average() -> Double? {
+            return average(ofProperty: "self")
+        }
     }
-}
 
-public extension RealmCollection where ElementType: OptionalProtocol, ElementType.Wrapped: AddableType {
-    /**
-     Returns the sum of the values in the collection, or `nil` if the collection is empty.
-     */
-    public func sum() -> ElementType.Wrapped {
-        return sum(ofProperty: "self")
+    public extension RealmCollection where ElementType: Comparable {
+        /**
+         Returns a `Results` containing the objects in the collection, but sorted.
+
+         Objects are sorted based on their values. For example, to sort a collection of `Date`s from
+         neweset to oldest based, you might call `dates.sorted(ascending: true)`.
+
+         - parameter ascending: The direction to sort in.
+         */
+        public func sorted(ascending: Bool = true) -> Results<ElementType> {
+            return sorted(byKeyPath: "self", ascending: ascending)
+        }
     }
-    /**
-     Returns the average of all of the values in the collection.
-     */
-    public func average() -> Double? {
-        return average(ofProperty: "self")
+
+    public extension RealmCollection where ElementType: OptionalProtocol, ElementType.Wrapped: Comparable {
+        /**
+         Returns a `Results` containing the objects in the collection, but sorted.
+
+         Objects are sorted based on their values. For example, to sort a collection of `Date`s from
+         neweset to oldest based, you might call `dates.sorted(ascending: true)`.
+
+         - parameter ascending: The direction to sort in.
+         */
+        public func sorted(ascending: Bool = true) -> Results<ElementType> {
+            return sorted(byKeyPath: "self", ascending: ascending)
+        }
     }
-}
-
-public extension RealmCollection where ElementType: Comparable {
-    /**
-     Returns a `Results` containing the objects in the collection, but sorted.
-
-     Objects are sorted based on their values. For example, to sort a collection of `Date`s from
-     neweset to oldest based, you might call `dates.sorted(ascending: true)`.
-
-     - parameter ascending: The direction to sort in.
-     */
-    public func sorted(ascending: Bool = true) -> Results<ElementType> {
-        return sorted(byKeyPath: "self", ascending: ascending)
-    }
-}
-
-public extension RealmCollection where ElementType: OptionalProtocol, ElementType.Wrapped: Comparable {
-    /**
-     Returns a `Results` containing the objects in the collection, but sorted.
-
-     Objects are sorted based on their values. For example, to sort a collection of `Date`s from
-     neweset to oldest based, you might call `dates.sorted(ascending: true)`.
-
-     - parameter ascending: The direction to sort in.
-     */
-    public func sorted(ascending: Bool = true) -> Results<ElementType> {
-        return sorted(byKeyPath: "self", ascending: ascending)
-    }
-}
 #endif
 
 private class _AnyRealmCollectionBase<T: RealmCollectionValue>: AssistedObjectiveCBridgeable {
@@ -656,29 +665,29 @@ private class _AnyRealmCollectionBase<T: RealmCollectionValue>: AssistedObjectiv
     var isInvalidated: Bool { fatalError() }
     var count: Int { fatalError() }
     var description: String { fatalError() }
-    func index(of object: Element) -> Int? { fatalError() }
-    func index(matching predicate: NSPredicate) -> Int? { fatalError() }
-    func index(matching predicateFormat: String, _ args: Any...) -> Int? { fatalError() }
-    func filter(_ predicateFormat: String, _ args: Any...) -> Results<Element> { fatalError() }
-    func filter(_ predicate: NSPredicate) -> Results<Element> { fatalError() }
-    func sorted(byKeyPath keyPath: String, ascending: Bool) -> Results<Element> { fatalError() }
-    func sorted<S: Sequence>(by sortDescriptors: S) -> Results<Element> where S.Iterator.Element == SortDescriptor {
+    func index(of _: Element) -> Int? { fatalError() }
+    func index(matching _: NSPredicate) -> Int? { fatalError() }
+    func index(matching _: String, _: Any...) -> Int? { fatalError() }
+    func filter(_: String, _: Any...) -> Results<Element> { fatalError() }
+    func filter(_: NSPredicate) -> Results<Element> { fatalError() }
+    func sorted(byKeyPath _: String, ascending _: Bool) -> Results<Element> { fatalError() }
+    func sorted<S: Sequence>(by _: S) -> Results<Element> where S.Iterator.Element == SortDescriptor {
         fatalError()
     }
-    func min<T: MinMaxType>(ofProperty property: String) -> T? { fatalError() }
-    func max<T: MinMaxType>(ofProperty property: String) -> T? { fatalError() }
-    func sum<T: AddableType>(ofProperty property: String) -> T { fatalError() }
-    func average(ofProperty property: String) -> Double? { fatalError() }
-    subscript(position: Int) -> Element { fatalError() }
+    func min<T: MinMaxType>(ofProperty _: String) -> T? { fatalError() }
+    func max<T: MinMaxType>(ofProperty _: String) -> T? { fatalError() }
+    func sum<T: AddableType>(ofProperty _: String) -> T { fatalError() }
+    func average(ofProperty _: String) -> Double? { fatalError() }
+    subscript(_: Int) -> Element { fatalError() }
     func makeIterator() -> RLMIterator<T> { fatalError() }
     var startIndex: Int { fatalError() }
     var endIndex: Int { fatalError() }
-    func value(forKey key: String) -> Any? { fatalError() }
-    func value(forKeyPath keyPath: String) -> Any? { fatalError() }
-    func setValue(_ value: Any?, forKey key: String) { fatalError() }
-    func _observe(_ block: @escaping (RealmCollectionChange<Wrapper>) -> Void)
+    func value(forKey _: String) -> Any? { fatalError() }
+    func value(forKeyPath _: String) -> Any? { fatalError() }
+    func setValue(_: Any?, forKey _: String) { fatalError() }
+    func _observe(_: @escaping (RealmCollectionChange<Wrapper>) -> Void)
         -> NotificationToken { fatalError() }
-    class func bridging(from objectiveCValue: Any, with metadata: Any?) -> Self { fatalError() }
+    class func bridging(from _: Any, with _: Any?) -> Self { fatalError() }
     var bridged: (objectiveCValue: Any, metadata: Any?) { fatalError() }
 }
 
@@ -694,7 +703,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
     override var isInvalidated: Bool { return base.isInvalidated }
     override var count: Int { return base.count }
     override var description: String { return base.description }
-
 
     // MARK: Index Retrieval
 
@@ -721,10 +729,9 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
     }
 
     override func sorted<S: Sequence>
-        (by sortDescriptors: S) -> Results<C.ElementType> where S.Iterator.Element == SortDescriptor {
+    (by sortDescriptors: S) -> Results<C.ElementType> where S.Iterator.Element == SortDescriptor {
         return base.sorted(by: sortDescriptors)
     }
-
 
     // MARK: Aggregate Operations
 
@@ -744,7 +751,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
         return base.average(ofProperty: property)
     }
 
-
     // MARK: Sequence Support
 
     override subscript(position: Int) -> C.ElementType {
@@ -760,7 +766,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
         return base.makeIterator() as! RLMIterator<Element>
     }
 
-
     // MARK: Collection Support
 
     override var startIndex: Int {
@@ -772,7 +777,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
         // FIXME: it should be possible to avoid this force-casting
         return base.endIndex as! Int
     }
-
 
     // MARK: Key-Value Coding
 
@@ -843,7 +847,6 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
     /// A human-readable description of the objects contained in the collection.
     public var description: String { return base.description }
 
-
     // MARK: Index Retrieval
 
     /**
@@ -889,7 +892,6 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
      */
     public func filter(_ predicate: NSPredicate) -> Results<Element> { return base.filter(predicate) }
 
-
     // MARK: Sorting
 
     /**
@@ -900,7 +902,7 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
      `students.sorted(byKeyPath: "age", ascending: true)`.
 
      - warning:  Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                 floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - parameter keyPath:  The key path to sort by.
      - parameter ascending: The direction to sort in.
@@ -913,7 +915,7 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
      Returns a `Results` containing the objects in the collection, but sorted.
 
      - warning:  Collections may only be sorted by properties of boolean, `Date`, `NSDate`, single and double-precision
-                 floating point, integer, and string types.
+     floating point, integer, and string types.
 
      - see: `sorted(byKeyPath:ascending:)`
 
@@ -923,7 +925,6 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
         where S.Iterator.Element == SortDescriptor {
         return base.sorted(by: sortDescriptors)
     }
-
 
     // MARK: Aggregate Operations
 
@@ -970,7 +971,6 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
      */
     public func average(ofProperty property: String) -> Double? { return base.average(ofProperty: property) }
 
-
     // MARK: Sequence Support
 
     /**
@@ -983,7 +983,6 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
     /// Returns a `RLMIterator` that yields successive elements in the collection.
     public func makeIterator() -> RLMIterator<Element> { return base.makeIterator() }
 
-
     // MARK: Collection Support
 
     /// The position of the first element in a non-empty collection.
@@ -994,7 +993,6 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
     /// endIndex is not a valid argument to subscript, and is always reachable from startIndex by
     /// zero or more applications of successor().
     public var endIndex: Int { return base.endIndex }
-
 
     // MARK: Key-Value Coding
 
@@ -1053,22 +1051,22 @@ public final class AnyRealmCollection<Element: RealmCollectionValue>: RealmColle
      let results = realm.objects(Dog.self)
      print("dogs.count: \(dogs?.count)") // => 0
      let token = dogs.observe { changes in
-         switch changes {
-         case .initial(let dogs):
-             // Will print "dogs.count: 1"
-             print("dogs.count: \(dogs.count)")
-             break
-         case .update:
-             // Will not be hit in this example
-             break
-         case .error:
-             break
-         }
+     switch changes {
+     case .initial(let dogs):
+     // Will print "dogs.count: 1"
+     print("dogs.count: \(dogs.count)")
+     break
+     case .update:
+     // Will not be hit in this example
+     break
+     case .error:
+     break
+     }
      }
      try! realm.write {
-         let dog = Dog()
-         dog.name = "Rex"
-         person.dogs.append(dog)
+     let dog = Dog()
+     dog.name = "Rex"
+     person.dogs.append(dog)
      }
      // end of run loop execution context
      ```
@@ -1114,10 +1112,10 @@ extension AnyRealmCollection: AssistedObjectiveCBridgeable {
 
 extension RealmCollection {
     @available(*, unavailable, renamed: "sorted(byKeyPath:ascending:)")
-    func sorted(byProperty property: String, ascending: Bool) -> Results<ElementType> { fatalError() }
+    func sorted(byProperty _: String, ascending _: Bool) -> Results<ElementType> { fatalError() }
 
     @available(*, unavailable, renamed: "observe(_:)")
-    public func addNotificationBlock(_ block: @escaping (RealmCollectionChange<Self>) -> Void) -> NotificationToken {
+    public func addNotificationBlock(_: @escaping (RealmCollectionChange<Self>) -> Void) -> NotificationToken {
         fatalError()
     }
 }

@@ -27,12 +27,12 @@ extension Realm {
      ```swift
      let realm: Realm?
      do {
-         realm = try Realm()
+     realm = try Realm()
      } catch Realm.Error.incompatibleLockFile {
-         print("Realm Browser app may be attached to Realm on device?")
+     print("Realm Browser app may be attached to Realm on device?")
      }
      ```
-    */
+     */
     public struct Error {
         public typealias Code = RLMError.Code
 
@@ -122,7 +122,7 @@ public func == (lhs: Error, rhs: Error) -> Bool {
 /**
  Pattern matching matching for `Realm.Error`, so that the instances can be used with Swift's
  `do { ... } catch { ... }` syntax.
-*/
+ */
 public func ~= (lhs: Realm.Error, rhs: Error) -> Bool {
     return lhs == rhs
 }
