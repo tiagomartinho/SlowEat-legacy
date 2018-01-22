@@ -5,6 +5,7 @@ target 'SlowEat' do
   
     pod 'Sourcery'
     pod 'SnapKit'
+    pod 'RealmSwift'
 
     target 'SlowEatTests' do
         inherit! :search_paths
