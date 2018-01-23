@@ -84,10 +84,13 @@ class MealSync: SessionDelegate {
     }
 
     private func transferFile(message: [String: Any]) {
-        if let lastDateSync = message["LastDateSync"] as? Date,
+        guard let lastDateSync = message["LastDateSync"] as? Date,
             let file = file,
-            let date = date,
-            lastDateSync != date {
+            let date = date else {
+            return
+        }
+
+        if lastDateSync != date {
             session.transfer(file: file)
         }
     }
