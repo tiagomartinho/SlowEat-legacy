@@ -38,6 +38,10 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     func sessionDidDeactivate(_: WCSession) {
         delegate?.sessionUpdate(state: state)
     }
+
+    func send(message: [String: Any]) {
+        session.sendMessage(message, replyHandler: nil)
+    }
 }
 
 protocol SessionDelegate: class {
@@ -49,31 +53,35 @@ protocol Session: class {
     var state: SessionState { get }
     func activate()
     func transfer(file: String)
+    func send(message: [String: Any])
 }
 
 class MealSync: SessionDelegate {
 
     let session: Session
 
-    var file: String?
+    private var file: String?
+    private var date: Date?
 
     init(session: Session) {
         self.session = session
         session.delegate = self
     }
 
-    func sync(file: String) {
+    func sync(file: String, date: Date) {
         self.file = file
+        self.date = date
         if session.state == .active {
-            session.transfer(file: file)
+            session.send(message: ["LastDateSync": date])
+//            session.transfer(file: file)
         } else {
             session.activate()
         }
     }
 
     func sessionUpdate(state _: SessionState) {
-        if session.state == .active, let file = file {
-            sync(file: file)
+        if session.state == .active, let file = file, let date = date {
+            sync(file: file, date: date)
         }
     }
 }
@@ -81,11 +89,12 @@ class MealSync: SessionDelegate {
 class MockSession: Session {
 
     var state = SessionState.inactive
-    var delegate: SessionDelegate?
+    weak var delegate: SessionDelegate?
     var activateWasCalled = false
     var transferFileWasCalled = false
-
+    var sendMessageWasCalled = false
     var fileToTransfer = ""
+    var messageSent: [String: Any] = [:]
 
     func activate() {
         activateWasCalled = true
@@ -94,6 +103,11 @@ class MockSession: Session {
     func transfer(file: String) {
         transferFileWasCalled = true
         fileToTransfer = file
+    }
+
+    func send(message: [String: Any]) {
+        sendMessageWasCalled = true
+        messageSent = message
     }
 }
 
@@ -106,29 +120,33 @@ class MealSyncTest: XCTestCase {
     func testActivateSessionBeforeSync() {
         session.state = .inactive
 
-        sync.sync(file: "")
+        sync.sync(file: "", date: Date())
 
         XCTAssert(session.activateWasCalled)
     }
 
-    func testTransferFileIfSessionIsActive() {
-        session.state = .active
-
-        sync.sync(file: "filename")
-
-        XCTAssert(session.transferFileWasCalled)
-        XCTAssertEqual("filename", session.fileToTransfer)
-    }
-
-    func testWhenStateChangesToActiveSync() {
+    func testWhenStateChangesToActiveAskLastDateSync() {
+        let date = Date(timeIntervalSince1970: 123)
         session.state = .inactive
-        sync.sync(file: "filename")
+        sync.sync(file: "filename", date: date)
 
         session.state = .active
         sync.sessionUpdate(state: .active)
 
-        XCTAssert(session.transferFileWasCalled)
-        XCTAssertEqual("filename", session.fileToTransfer)
+        XCTAssert(session.sendMessageWasCalled)
+        XCTAssertEqual(date, session.messageSent["LastDateSync"] as? Date ?? Date())
+        XCTAssertFalse(session.transferFileWasCalled)
+    }
+
+    func testAskLastDateSyncBeforeTransferFile() {
+        session.state = .active
+        let date = Date(timeIntervalSince1970: 123)
+
+        sync.sync(file: "filename", date: date)
+
+        XCTAssert(session.sendMessageWasCalled)
+        XCTAssertEqual(date, session.messageSent["LastDateSync"] as? Date ?? Date())
+        XCTAssertFalse(session.transferFileWasCalled)
     }
 
     var session: MockSession!
