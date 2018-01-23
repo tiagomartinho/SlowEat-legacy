@@ -39,8 +39,8 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         delegate?.sessionUpdate(state: state)
     }
 
-    func send(message: [String: Any]) {
-        session.sendMessage(message, replyHandler: nil)
+    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
+        session.sendMessage(message, replyHandler: replyHandler, errorHandler: nil)
     }
 }
 
@@ -53,7 +53,7 @@ protocol Session: class {
     var state: SessionState { get }
     func activate()
     func transfer(file: String)
-    func send(message: [String: Any])
+    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void))
 }
 
 class MealSync: SessionDelegate {
@@ -72,8 +72,12 @@ class MealSync: SessionDelegate {
         self.file = file
         self.date = date
         if session.state == .active {
-            session.send(message: ["LastDateSync": date])
-//            session.transfer(file: file)
+            session.send(message: ["LastDateSync": date]) { message in
+                if let lastDateSync = message["LastDateSync"] as? Date,
+                    lastDateSync != date {
+                    self.session.transfer(file: file)
+                }
+            }
         } else {
             session.activate()
         }
@@ -95,6 +99,7 @@ class MockSession: Session {
     var sendMessageWasCalled = false
     var fileToTransfer = ""
     var messageSent: [String: Any] = [:]
+    var lastDateSync: Date!
 
     func activate() {
         activateWasCalled = true
@@ -105,9 +110,10 @@ class MockSession: Session {
         fileToTransfer = file
     }
 
-    func send(message: [String: Any]) {
+    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
         sendMessageWasCalled = true
         messageSent = message
+        replyHandler(["LastDateSync": lastDateSync])
     }
 }
 
@@ -147,6 +153,27 @@ class MealSyncTest: XCTestCase {
         XCTAssert(session.sendMessageWasCalled)
         XCTAssertEqual(date, session.messageSent["LastDateSync"] as? Date ?? Date())
         XCTAssertFalse(session.transferFileWasCalled)
+    }
+
+    func testIfLastDateSyncIsEqualDoNotTransferFile() {
+        session.state = .active
+        let date = Date(timeIntervalSince1970: 123)
+        session.lastDateSync = date
+
+        sync.sync(file: "filename", date: date)
+
+        XCTAssertFalse(session.transferFileWasCalled)
+    }
+
+    func testIfLastDateSyncDiffersTransferFile() {
+        session.state = .active
+        let date = Date(timeIntervalSince1970: 123)
+        session.lastDateSync = Date(timeIntervalSince1970: 0)
+
+        sync.sync(file: "filename", date: date)
+
+        XCTAssert(session.transferFileWasCalled)
+        XCTAssertEqual("filename", session.fileToTransfer)
     }
 
     var session: MockSession!
