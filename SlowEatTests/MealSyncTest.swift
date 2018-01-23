@@ -65,6 +65,7 @@ class MealSync: SessionDelegate {
 
     let session: Session
 
+    private let lastDateSyncKey = "LastDateSync"
     private var file: String?
     private var date: Date?
 
@@ -77,14 +78,14 @@ class MealSync: SessionDelegate {
         self.file = file
         self.date = date
         if session.state == .active && session.isReachable {
-            session.send(message: ["LastDateSync": date], replyHandler: transferFile(message:))
+            session.send(message: [lastDateSyncKey: date], replyHandler: transferFile(message:))
         } else {
             session.activate()
         }
     }
 
     private func transferFile(message: [String: Any]) {
-        guard let lastDateSync = message["LastDateSync"] as? Date,
+        guard let lastDateSync = message[lastDateSyncKey] as? Date,
             let file = file,
             let date = date else {
             return
