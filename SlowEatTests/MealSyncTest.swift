@@ -2,7 +2,9 @@
 import WatchConnectivity
 import XCTest
 
-class WatchKitSession: Session {
+class WatchKitSession: NSObject, Session, WCSessionDelegate {
+
+    weak var delegate: SessionDelegate?
 
     var session: WCSession {
         return WCSession.default
@@ -24,27 +26,54 @@ class WatchKitSession: Session {
             session.transferFile(path, metadata: nil)
         }
     }
+
+    func session(_: WCSession, activationDidCompleteWith _: WCSessionActivationState, error _: Error?) {
+        delegate?.sessionUpdate(state: state)
+    }
+
+    func sessionDidBecomeInactive(_: WCSession) {
+        delegate?.sessionUpdate(state: state)
+    }
+
+    func sessionDidDeactivate(_: WCSession) {
+        delegate?.sessionUpdate(state: state)
+    }
+}
+
+protocol SessionDelegate: class {
+    func sessionUpdate(state: SessionState)
 }
 
 protocol Session: class {
+    weak var delegate: SessionDelegate? { get set }
     var state: SessionState { get }
     func activate()
     func transfer(file: String)
 }
 
-class MealSync {
+class MealSync: SessionDelegate {
 
-    weak var session: Session?
+    let session: Session
+
+    var file: String?
 
     init(session: Session) {
         self.session = session
+        session.delegate = self
     }
 
     func sync(file: String) {
-        if session?.state == .active {
-            session?.transfer(file: file)
+        self.file = file
+        if session.state == .active {
+            session.transfer(file: file)
         } else {
-            session?.activate()
+            session.activate()
+        }
+    }
+
+    func sessionUpdate(state _: SessionState) {
+        if session.state == .active, let file = file {
+            sync(file: file)
         }
     }
 }
@@ -52,7 +81,7 @@ class MealSync {
 class MockSession: Session {
 
     var state = SessionState.inactive
-
+    var delegate: SessionDelegate?
     var activateWasCalled = false
     var transferFileWasCalled = false
 
@@ -86,6 +115,17 @@ class MealSyncTest: XCTestCase {
         session.state = .active
 
         sync.sync(file: "filename")
+
+        XCTAssert(session.transferFileWasCalled)
+        XCTAssertEqual("filename", session.fileToTransfer)
+    }
+
+    func testWhenStateChangesToActiveSync() {
+        session.state = .inactive
+        sync.sync(file: "filename")
+
+        session.state = .active
+        sync.sessionUpdate(state: .active)
 
         XCTAssert(session.transferFileWasCalled)
         XCTAssertEqual("filename", session.fileToTransfer)
