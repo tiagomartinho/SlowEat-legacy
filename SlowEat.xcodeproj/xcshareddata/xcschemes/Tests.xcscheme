@@ -40,6 +40,15 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EA4A57861D81F7ED006935A9"
+            BuildableName = "SlowEatTests.xctest"
+            BlueprintName = "SlowEatTests"
+            ReferencedContainer = "container:SlowEat.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

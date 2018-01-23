@@ -44,7 +44,7 @@ class InMemoryMealRepository: MealRepository {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        let meal = Meal(id: UUID().uuidString, events: events)
+        let meal = Meal(identifier: UUID().uuidString, events: events)
         return meal
     }
 }

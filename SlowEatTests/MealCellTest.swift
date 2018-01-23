@@ -27,7 +27,7 @@ class MealCellTest: XCTestCase {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        let meal = Meal(id: "", events: events)
+        let meal = Meal(identifier: "", events: events)
         return MealAnalyser().analyse(meal: meal)
     }
 
@@ -37,7 +37,7 @@ class MealCellTest: XCTestCase {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        let meal = Meal(id: "", events: events)
+        let meal = Meal(identifier: "", events: events)
         return MealAnalyser().analyse(meal: meal)
     }
 }

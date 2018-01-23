@@ -1,5 +1,5 @@
 struct GradedMeal {
-    let id: String
+    let identifier: String
     let events: [Event]
     let grades: [Grade]
 }

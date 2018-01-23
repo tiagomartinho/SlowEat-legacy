@@ -20,7 +20,7 @@ class MealGraphViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.register(MealEventCell.self, forCellWithReuseIdentifier: MealEventCell.identifier)
+        collectionView.register(MealEventCell.self, forCellWithReuseIdentifier: MealEventCell.identifierentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -51,7 +51,7 @@ extension MealGraphViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MealEventCell.identifier, for: indexPath) as? MealEventCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MealEventCell.identifierentifier, for: indexPath) as? MealEventCell else { return UICollectionViewCell() }
         let event = meal.events[indexPath.row]
         if event.type == .moving {
             switch meal.grades[indexPath.row] {
@@ -80,7 +80,7 @@ extension MealGraphViewController: UICollectionViewDelegateFlowLayout {
 
 class MealEventCell: UICollectionViewCell {
 
-    static let identifier = "CellReuseIdentifier"
+    static let identifierentifier = "CellReuseIdentifier"
 
     var view: UIView?
 

@@ -24,8 +24,8 @@ class CKMealRepository: MealRepository {
     }
 
     func save(meal: Meal) {
-        let id = CKRecordID(recordName: UUID().uuidString)
-        let record = CKRecord(recordType: "Meal", recordID: id)
+        let identifier = CKRecordID(recordName: UUID().uuidString)
+        let record = CKRecord(recordType: "Meal", recordID: identifier)
         NSKeyedArchiver.setClassName("Event", for: Event.self)
         let data = NSKeyedArchiver.archivedData(withRootObject: meal.events)
         record["events"] = data as CKRecordValue
@@ -55,7 +55,7 @@ class CKMealRepository: MealRepository {
                         unarchiver.setClass(Event.self, forClassName: "Event")
                         if let events = try? unarchiver.decodeTopLevelObject(forKey: "root") as? [Event] {
                             if let events = events {
-                                meals.append(Meal(id: "", events: events))
+                                meals.append(Meal(identifier: "", events: events))
                             }
                         }
                     }

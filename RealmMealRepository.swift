@@ -27,8 +27,8 @@ class RealmMealRepository: MealRepository {
         completionHandler(meals)
     }
 
-    func delete(with id: String) {
-        let predicate = NSPredicate(format: "id = %@", id)
+    func delete(with identifier: String) {
+        let predicate = NSPredicate(format: "id = %@", identifier)
         if let mealToDelete = realm?.objects(RealmMeal.self).filter(predicate).first {
             try? realm?.write {
                 realm?.delete(mealToDelete)
@@ -54,11 +54,11 @@ class RealmMealRepository: MealRepository {
 
 class RealmMeal: Object {
 
-    @objc dynamic var id = ""
+    @objc dynamic var identifier = ""
     var events = List<RealmEvent>()
 
     func set(_ meal: Meal) {
-        id = meal.id
+        identifier = meal.identifier
         let realmEvents = meal.events.map { event -> RealmEvent in
             let realmEvent = RealmEvent()
             realmEvent.type = event.type.rawValue
@@ -72,11 +72,11 @@ class RealmMeal: Object {
 
     var meal: Meal {
         let events = Array(self.events.map { Event(type: EventType(rawValue: $0.type) ?? .waiting, date: $0.date) })
-        return Meal(id: id, events: events)
+        return Meal(identifier: identifier, events: events)
     }
 
     override static func primaryKey() -> String? {
-        return "id"
+        return "identifier"
     }
 }
 

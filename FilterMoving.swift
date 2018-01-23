@@ -1,7 +1,7 @@
 class FilterMoving {
     func filter(meal: Meal) -> Meal {
         let timeInterval = 4.0
-        guard var lastMovingEvent = meal.events.first else { return Meal(id: meal.id, events: []) }
+        guard var lastMovingEvent = meal.events.first else { return Meal(identifier: meal.identifier, events: []) }
         let processedEvents = meal.events.map { event -> Event in
             let delta = event.date.timeIntervalSince1970 - lastMovingEvent.date.timeIntervalSince1970
             let shouldGroupMovingEvent = delta < timeInterval && delta != 0.0
@@ -12,6 +12,6 @@ class FilterMoving {
             }
             return processedEvent
         }
-        return Meal(id: meal.id, events: processedEvents)
+        return Meal(identifier: meal.identifier, events: processedEvents)
     }
 }

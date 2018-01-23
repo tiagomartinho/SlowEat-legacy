@@ -2,7 +2,7 @@ class MealGrader {
     func grade(meal: Meal) -> GradedMeal {
         var grades = [Grade]()
         guard let date = meal.events.first?.date else {
-            return GradedMeal(id: meal.id, events: meal.events, grades: grades)
+            return GradedMeal(identifier: meal.identifier, events: meal.events, grades: grades)
         }
         var lastWaitingEvent = Event(type: .waiting, date: date)
         for event in meal.events {
@@ -14,6 +14,6 @@ class MealGrader {
                 grades.append(.empty)
             }
         }
-        return GradedMeal(id: meal.id, events: meal.events, grades: grades)
+        return GradedMeal(identifier: meal.identifier, events: meal.events, grades: grades)
     }
 }

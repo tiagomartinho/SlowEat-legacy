@@ -23,7 +23,7 @@ class MealListPresenterTest: XCTestCase {
     }
 
     func testWithoutEmptyRepositoryShowMeals() {
-        repository.meals = [Meal(id: "", events: [])]
+        repository.meals = [Meal(identifier: "", events: [])]
 
         presenter.loadMeals()
 
@@ -32,7 +32,7 @@ class MealListPresenterTest: XCTestCase {
     }
 
     func testWithOneMealDoNotShowChange() {
-        repository.meals = [Meal(id: "", events: [])]
+        repository.meals = [Meal(identifier: "", events: [])]
 
         presenter.loadMeals()
 
@@ -71,7 +71,7 @@ class MealListPresenterTest: XCTestCase {
 
         presenter.deleteMeal(from: cell)
 
-        XCTAssertEqual(fastMeal10BPM.id, repository.deletedMealId)
+        XCTAssertEqual(fastMeal10BPM.identifier, repository.deletedMealId)
     }
 
     var presenter: MealListPresenter!
@@ -131,8 +131,8 @@ class MealListPresenterTest: XCTestCase {
             completionHandler(meals)
         }
 
-        func delete(with id: String) {
-            deletedMealId = id
+        func delete(with identifier: String) {
+            deletedMealId = identifier
         }
 
         func deleteAll() {
@@ -145,7 +145,7 @@ class MealListPresenterTest: XCTestCase {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        return Meal(id: "qwerty", events: events)
+        return Meal(identifier: "qwerty", events: events)
     }
 
     var fastMeal10BPM: Meal {
@@ -154,6 +154,6 @@ class MealListPresenterTest: XCTestCase {
         let events = eventsType.enumerated().map {
             Event(type: $0.element, date: Date(timeIntervalSinceReferenceDate: times[$0.offset]))
         }
-        return Meal(id: "ABCDEF", events: events)
+        return Meal(identifier: "ABCDEF", events: events)
     }
 }

@@ -1,4 +1,4 @@
 struct Meal {
-    let id: String
+    let identifier: String
     let events: [Event]
 }
