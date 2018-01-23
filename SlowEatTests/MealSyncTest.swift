@@ -15,6 +15,10 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         return isActive ? .active : .inactive
     }
 
+    var isReachable: Bool {
+        return session.isReachable
+    }
+
     func activate() {
         if WCSession.isSupported() {
             session.activate()
@@ -51,6 +55,7 @@ protocol SessionDelegate: class {
 protocol Session: class {
     weak var delegate: SessionDelegate? { get set }
     var state: SessionState { get }
+    var isReachable: Bool { get }
     func activate()
     func transfer(file: String)
     func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void))
@@ -71,7 +76,7 @@ class MealSync: SessionDelegate {
     func sync(file: String, date: Date) {
         self.file = file
         self.date = date
-        if session.state == .active {
+        if session.state == .active && session.isReachable {
             session.send(message: ["LastDateSync": date]) { message in
                 if let lastDateSync = message["LastDateSync"] as? Date,
                     lastDateSync != date {
@@ -93,6 +98,7 @@ class MealSync: SessionDelegate {
 class MockSession: Session {
 
     var state = SessionState.inactive
+    var isReachable = false
     weak var delegate: SessionDelegate?
     var activateWasCalled = false
     var transferFileWasCalled = false
@@ -137,6 +143,7 @@ class MealSyncTest: XCTestCase {
         sync.sync(file: "filename", date: date)
 
         session.state = .active
+        session.isReachable = true
         sync.sessionUpdate(state: .active)
 
         XCTAssert(session.sendMessageWasCalled)
@@ -146,6 +153,7 @@ class MealSyncTest: XCTestCase {
 
     func testAskLastDateSyncBeforeTransferFile() {
         session.state = .active
+        session.isReachable = true
         let date = Date(timeIntervalSince1970: 123)
 
         sync.sync(file: "filename", date: date)
@@ -157,6 +165,7 @@ class MealSyncTest: XCTestCase {
 
     func testIfLastDateSyncIsEqualDoNotTransferFile() {
         session.state = .active
+        session.isReachable = true
         let date = Date(timeIntervalSince1970: 123)
         session.lastDateSync = date
 
@@ -167,6 +176,7 @@ class MealSyncTest: XCTestCase {
 
     func testIfLastDateSyncDiffersTransferFile() {
         session.state = .active
+        session.isReachable = true
         let date = Date(timeIntervalSince1970: 123)
         session.lastDateSync = Date(timeIntervalSince1970: 0)
 
@@ -174,6 +184,15 @@ class MealSyncTest: XCTestCase {
 
         XCTAssert(session.transferFileWasCalled)
         XCTAssertEqual("filename", session.fileToTransfer)
+    }
+
+    func testDoNotSendMessageIfNotReachable() {
+        session.state = .active
+        session.isReachable = false
+
+        sync.sync(file: "filename", date: Date())
+
+        XCTAssertFalse(session.sendMessageWasCalled)
     }
 
     var session: MockSession!
