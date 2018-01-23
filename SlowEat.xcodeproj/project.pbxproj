@@ -68,8 +68,6 @@
 		24B76B9F1FFF4BF30053466C /* MealGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B9B1FFF4BE00053466C /* MealGrader.swift */; };
 		24B76BA11FFF59040053466C /* MealAnalyserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76BA01FFF59040053466C /* MealAnalyserTest.swift */; };
 		24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */; };
-		24DE10321EFC06D900D4A599 /* CKMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE10311EFC06D900D4A599 /* CKMealRepository.swift */; };
-		24DE10331EFC06D900D4A599 /* CKMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE10311EFC06D900D4A599 /* CKMealRepository.swift */; };
 		24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2381EB0F5A600724646 /* SpyTracker.swift */; };
 		24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD23A1EB0F5C300724646 /* SpyLogger.swift */; };
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
@@ -1015,7 +1013,6 @@
 				244CF5951EFC04A600CF35C9 /* FoundationTimeTracker.swift in Sources */,
 				24402C0E200A654100C018B3 /* MealListViewController.swift in Sources */,
 				244CF5931EFC04A600CF35C9 /* EventType.swift in Sources */,
-				24DE10321EFC06D900D4A599 /* CKMealRepository.swift in Sources */,
 				244CF5941EFC04A600CF35C9 /* FoundationDateProvider.swift in Sources */,
 				24B76B9A1FFF4BC90053466C /* Grade.swift in Sources */,
 				244CF5A31EFC04C600CF35C9 /* MealLogger.swift in Sources */,
@@ -1081,7 +1078,6 @@
 				244CF5AD1EFC04DB00CF35C9 /* MealTracker.swift in Sources */,
 				24B76B9E1FFF4BF30053466C /* Grade.swift in Sources */,
 				244CF5A91EFC04DB00CF35C9 /* Meal.swift in Sources */,
-				24DE10331EFC06D900D4A599 /* CKMealRepository.swift in Sources */,
 				244CF5B01EFC04DB00CF35C9 /* EventType.swift in Sources */,
 				EA51A1141DC2643100542924 /* Motivation.swift in Sources */,
 				244CF5AB1EFC04DB00CF35C9 /* MealPresenter.swift in Sources */,
