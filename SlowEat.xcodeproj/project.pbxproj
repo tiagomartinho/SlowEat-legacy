@@ -58,6 +58,7 @@
 		2455BB241E912AF20038C541 /* EndMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB231E912AF20038C541 /* EndMealController.swift */; };
 		2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB251E912CEC0038C541 /* MealTrackerTest.swift */; };
 		2455BB2E1E9131950038C541 /* StaticDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB2D1E9131950038C541 /* StaticDateProvider.swift */; };
+		24A84E6E2017093D0055F86A /* MealSyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A84E6D2017093D0055F86A /* MealSyncTest.swift */; };
 		24A8A3D11FFCB496003203BB /* MealAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A8A3D01FFCB496003203BB /* MealAnalyser.swift */; };
 		24A8A3D21FFCB49E003203BB /* MealAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A8A3D01FFCB496003203BB /* MealAnalyser.swift */; };
 		24B76B981FFF4BB50053466C /* GradedMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B971FFF4BB50053466C /* GradedMeal.swift */; };
@@ -192,6 +193,7 @@
 		2455BB251E912CEC0038C541 /* MealTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTrackerTest.swift; sourceTree = "<group>"; };
 		2455BB2D1E9131950038C541 /* StaticDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDateProvider.swift; sourceTree = "<group>"; };
 		249F605F1F05988F000914F2 /* MealGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealGraphViewController.swift; sourceTree = "<group>"; };
+		24A84E6D2017093D0055F86A /* MealSyncTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSyncTest.swift; sourceTree = "<group>"; };
 		24A8A3D01FFCB496003203BB /* MealAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAnalyser.swift; sourceTree = "<group>"; };
 		24B571971DFC79B7009EA6D1 /* SlowEat WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlowEat WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		24B5719A1DFC7A0C009EA6D1 /* SlowEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlowEat.entitlements; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 		EA4A578A1D81F7ED006935A9 /* SlowEatTests */ = {
 			isa = PBXGroup;
 			children = (
+				24A84E6D2017093D0055F86A /* MealSyncTest.swift */,
 				24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */,
 				2455BB251E912CEC0038C541 /* MealTrackerTest.swift */,
 				24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */,
@@ -1053,6 +1056,7 @@
 				24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */,
 				24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */,
 				24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */,
+				24A84E6E2017093D0055F86A /* MealSyncTest.swift in Sources */,
 				2455BB261E912CEC0038C541 /* MealTrackerTest.swift in Sources */,
 				2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */,
 				244CF5711EFC022100CF35C9 /* MockRepository.swift in Sources */,
