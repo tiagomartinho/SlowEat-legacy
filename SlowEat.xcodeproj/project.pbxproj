@@ -74,20 +74,30 @@
 		24F2E9A71E0405750080ABD9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2E9A61E0405750080ABD9 /* HealthKit.framework */; };
 		24F51B531EB0E62800DBC300 /* MealLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */; };
 		24F51B5D1EB0ED9600DBC300 /* MealPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */; };
+		4855306137D47C78EDE0AD8B /* WatchFileTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537AAB601CBC53AA9ABDF /* WatchFileTransfer.swift */; };
 		485531DACA3B4FEBCBCD2AED /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
+		485532BCFBA4DAAB6411F7B5 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AF3ADF029D30E4F101B /* SessionDelegate.swift */; };
 		485532CA5B70058EFC7A20E8 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855301EE078722B4C3D7915 /* MealsView.swift */; };
 		485533758146A0EA698582A8 /* RealmMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */; };
 		4855347F5D0AE7F424798B96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537D6777A15235CC95A8E /* Color.swift */; };
+		485534C304C944DF9A49F8A4 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553D98F4DF25CED9C3F787 /* SessionState.swift */; };
 		48553634ADC9612EED50E6F1 /* MealCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553D8784BC93CD2DB107EA /* MealCellTest.swift */; };
+		485536A1F031455A7941D0B4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CB66AA14895D2148B53 /* Session.swift */; };
 		485536E2406B6EEA0AF8875D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855395EBC4FF554A51E85CB /* DateFormatter.swift */; };
+		485536EF60064B730479A8D2 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AF3ADF029D30E4F101B /* SessionDelegate.swift */; };
 		485537BCC4EE796ACE12AB9F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */; };
 		485538A7F3C6A0B517DF51A1 /* MealListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CC207F613506983EBD6 /* MealListPresenter.swift */; };
+		4855398AF3B0774E08F1803F /* WatchKitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855332AD73C251DC9BCB814 /* WatchKitSession.swift */; };
 		48553AC1AC8385BB8C38B8D8 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
 		48553B6C198A5432772EC990 /* MealListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */; };
+		48553B8B0E6B71C59C12B02E /* WatchKitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855332AD73C251DC9BCB814 /* WatchKitSession.swift */; };
 		48553C004B0647D803F5D23A /* InMemoryMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */; };
+		48553C8922652A584FA97F66 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CB66AA14895D2148B53 /* Session.swift */; };
 		48553D6FA9430CCFB9569F92 /* RealmMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */; };
+		48553D8400BF81AB071F1044 /* WatchFileTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537AAB601CBC53AA9ABDF /* WatchFileTransfer.swift */; };
 		48553E85D843AB347250F070 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */; };
 		48553EDAEF600052E047C604 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855335B061474CFB2098617 /* MealCell.swift */; };
+		48553FB6C1A56B5952F06C42 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553D98F4DF25CED9C3F787 /* SessionState.swift */; };
 		48553FE0C8043A5527C1D020 /* SpyMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855318A870F5802C87ED847 /* SpyMealView.swift */; };
 		E209700C590A1ED6F9F3DB0C /* Pods_SlowEatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31BFF4E8A24E791A1DF09F3 /* Pods_SlowEatTests.framework */; };
 		EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A57761D81F7ED006935A9 /* AppDelegate.swift */; };
@@ -212,16 +222,21 @@
 		24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPresenterTest.swift; sourceTree = "<group>"; };
 		4855301EE078722B4C3D7915 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		4855318A870F5802C87ED847 /* SpyMealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyMealView.swift; sourceTree = "<group>"; };
+		4855332AD73C251DC9BCB814 /* WatchKitSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSession.swift; sourceTree = "<group>"; };
 		4855335B061474CFB2098617 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListPresenterTest.swift; sourceTree = "<group>"; };
 		4855361C41E6096EF1C10A9B /* MealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealView.swift; path = "SlowEat WatchKit Extension/MealView.swift"; sourceTree = "<group>"; };
+		485537AAB601CBC53AA9ABDF /* WatchFileTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchFileTransfer.swift; sourceTree = "<group>"; };
 		485537D6777A15235CC95A8E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4855395EBC4FF554A51E85CB /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMealRepository.swift; sourceTree = "<group>"; };
 		48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		48553AF3ADF029D30E4F101B /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		48553CB66AA14895D2148B53 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		48553CC207F613506983EBD6 /* MealListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListPresenter.swift; sourceTree = "<group>"; };
 		48553D8784BC93CD2DB107EA /* MealCellTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCellTest.swift; sourceTree = "<group>"; };
+		48553D98F4DF25CED9C3F787 /* SessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryMealRepository.swift; sourceTree = "<group>"; };
 		56CC9FD322091A0B97A1127A /* Pods_SlowEat_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowEat_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B215E3569C02EC38DA596E7 /* Pods-SlowEat WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowEat WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +378,11 @@
 				242507EC1FFE033A002FB11B /* FilterMoving.swift */,
 				4855361C41E6096EF1C10A9B /* MealView.swift */,
 				485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */,
+				4855332AD73C251DC9BCB814 /* WatchKitSession.swift */,
+				48553AF3ADF029D30E4F101B /* SessionDelegate.swift */,
+				48553CB66AA14895D2148B53 /* Session.swift */,
+				485537AAB601CBC53AA9ABDF /* WatchFileTransfer.swift */,
+				48553D98F4DF25CED9C3F787 /* SessionState.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1041,6 +1061,11 @@
 				485536E2406B6EEA0AF8875D /* DateFormatter.swift in Sources */,
 				48553AC1AC8385BB8C38B8D8 /* MealView.swift in Sources */,
 				485533758146A0EA698582A8 /* RealmMealRepository.swift in Sources */,
+				48553B8B0E6B71C59C12B02E /* WatchKitSession.swift in Sources */,
+				485532BCFBA4DAAB6411F7B5 /* SessionDelegate.swift in Sources */,
+				485536A1F031455A7941D0B4 /* Session.swift in Sources */,
+				48553D8400BF81AB071F1044 /* WatchFileTransfer.swift in Sources */,
+				48553FB6C1A56B5952F06C42 /* SessionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,6 +1131,11 @@
 				244CF5B21EFC04E100CF35C9 /* TimeTracker.swift in Sources */,
 				485531DACA3B4FEBCBCD2AED /* MealView.swift in Sources */,
 				48553D6FA9430CCFB9569F92 /* RealmMealRepository.swift in Sources */,
+				4855398AF3B0774E08F1803F /* WatchKitSession.swift in Sources */,
+				485536EF60064B730479A8D2 /* SessionDelegate.swift in Sources */,
+				48553C8922652A584FA97F66 /* Session.swift in Sources */,
+				4855306137D47C78EDE0AD8B /* WatchFileTransfer.swift in Sources */,
+				485534C304C944DF9A49F8A4 /* SessionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,158 +2,6 @@
 import WatchConnectivity
 import XCTest
 
-class WatchKitSession: NSObject, Session, WCSessionDelegate {
-
-    weak var delegate: SessionDelegate?
-
-    var session: WCSession {
-        return WCSession.default
-    }
-
-    var state: SessionState {
-        let isActive = session.activationState == .activated
-        return isActive ? .active : .inactive
-    }
-
-    var isReachable: Bool {
-        return session.isReachable
-    }
-
-    var outstandingFileTransfers: [String] {
-        return session.outstandingFileTransfers.filter {
-            $0.isTransferring
-        }.map {
-            $0.file.fileURL.absoluteString
-        }
-    }
-
-    func activate() {
-        if WCSession.isSupported() {
-            session.activate()
-        }
-    }
-
-    func transfer(file: String) {
-        if let path = URL(string: file) {
-            session.transferFile(path, metadata: nil)
-        }
-    }
-
-    func session(_: WCSession, activationDidCompleteWith _: WCSessionActivationState, error _: Error?) {
-        delegate?.sessionUpdate(state: state)
-    }
-
-    func sessionDidBecomeInactive(_: WCSession) {
-        delegate?.sessionUpdate(state: state)
-    }
-
-    func sessionDidDeactivate(_: WCSession) {
-        delegate?.sessionUpdate(state: state)
-    }
-
-    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
-        session.sendMessage(message, replyHandler: replyHandler, errorHandler: nil)
-    }
-}
-
-protocol SessionDelegate: class {
-    func sessionUpdate(state: SessionState)
-}
-
-protocol Session: class {
-    weak var delegate: SessionDelegate? { get set }
-    var state: SessionState { get }
-    var isReachable: Bool { get }
-    var outstandingFileTransfers: [String] { get }
-    func activate()
-    func transfer(file: String)
-    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void))
-}
-
-class WatchFileTransfer {
-
-    let session: Session
-
-    private let lastDateSyncKey = "LastDateSync"
-    private var file: String?
-    private var date: Date?
-
-    init(session: Session) {
-        self.session = session
-        session.delegate = self
-    }
-
-    func sync(file: String, date: Date) {
-        self.file = file
-        self.date = date
-        if session.state == .active && session.isReachable {
-            session.send(message: [lastDateSyncKey: date], replyHandler: transferFile(message:))
-        } else {
-            session.activate()
-        }
-    }
-
-    private func transferFile(message: [String: Any]) {
-        guard let lastDateSync = message[lastDateSyncKey] as? Date,
-              let file = file,
-              let date = date else {
-            return
-        }
-
-        let fileDateIsTheSame = lastDateSync == date
-        let alreadyInTransfer = session.outstandingFileTransfers.contains(file)
-        if fileDateIsTheSame || alreadyInTransfer {
-            return
-        }
-
-        session.transfer(file: file)
-    }
-}
-
-extension WatchFileTransfer: SessionDelegate {
-    func sessionUpdate(state _: SessionState) {
-        if session.state == .active, let file = file, let date = date {
-            sync(file: file, date: date)
-        }
-    }
-}
-
-class MockSession: Session {
-
-    var state = SessionState.inactive
-    var isReachable = false
-    weak var delegate: SessionDelegate?
-    var activateWasCalled = false
-    var transferFileWasCalled = false
-    var sendMessageWasCalled = false
-    var fileToTransfer = ""
-    var messageSent: [String: Any] = [:]
-    var lastDateSync: Date!
-    var outstandingFileTransfers: [String] {
-        return mockOutstandingFileTransfers
-    }
-    var mockOutstandingFileTransfers: [String] = []
-
-    func activate() {
-        activateWasCalled = true
-    }
-
-    func transfer(file: String) {
-        transferFileWasCalled = true
-        fileToTransfer = file
-    }
-
-    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
-        sendMessageWasCalled = true
-        messageSent = message
-        replyHandler(["LastDateSync": lastDateSync])
-    }
-}
-
-enum SessionState {
-    case inactive, active
-}
-
 class MealSyncTest: XCTestCase {
 
     func testActivateSessionBeforeSync() {
@@ -240,5 +88,38 @@ class MealSyncTest: XCTestCase {
         super.setUp()
         session = MockSession()
         sync = WatchFileTransfer(session: session)
+    }
+}
+
+class MockSession: Session {
+
+    var state = SessionState.inactive
+    var isReachable = false
+    weak var delegate: SessionDelegate?
+    var activateWasCalled = false
+    var transferFileWasCalled = false
+    var sendMessageWasCalled = false
+    var fileToTransfer = ""
+    var messageSent: [String: Any] = [:]
+    var lastDateSync: Date!
+    var outstandingFileTransfers: [String] {
+        return mockOutstandingFileTransfers
+    }
+
+    var mockOutstandingFileTransfers: [String] = []
+
+    func activate() {
+        activateWasCalled = true
+    }
+
+    func transfer(file: String) {
+        transferFileWasCalled = true
+        fileToTransfer = file
+    }
+
+    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
+        sendMessageWasCalled = true
+        messageSent = message
+        replyHandler(["LastDateSync": lastDateSync])
     }
 }
