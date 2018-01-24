@@ -19,6 +19,10 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         return session.isReachable
     }
 
+    var outstandingFileTransfers: [String] {
+        return session.outstandingFileTransfers.filter { $0.isTransferring }.map { $0.file.fileURL.absoluteString }
+    }
+
     func activate() {
         if WCSession.isSupported() {
             session.activate()
@@ -56,6 +60,7 @@ protocol Session: class {
     weak var delegate: SessionDelegate? { get set }
     var state: SessionState { get }
     var isReachable: Bool { get }
+    var outstandingFileTransfers: [String] { get }
     func activate()
     func transfer(file: String)
     func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void))
@@ -91,9 +96,13 @@ class MealSync: SessionDelegate {
             return
         }
 
-        if lastDateSync != date {
-            session.transfer(file: file)
+        let fileDateIsTheSame = lastDateSync == date
+        let alreadyInTransfer = session.outstandingFileTransfers.contains(file)
+        if fileDateIsTheSame || alreadyInTransfer {
+            return
         }
+
+        session.transfer(file: file)
     }
 
     func sessionUpdate(state _: SessionState) {
@@ -114,6 +123,8 @@ class MockSession: Session {
     var fileToTransfer = ""
     var messageSent: [String: Any] = [:]
     var lastDateSync: Date!
+    var outstandingFileTransfers: [String] { return mockOutstandingFileTransfers }
+    var mockOutstandingFileTransfers: [String] = []
 
     func activate() {
         activateWasCalled = true
@@ -201,6 +212,17 @@ class MealSyncTest: XCTestCase {
         sync.sync(file: "filename", date: Date())
 
         XCTAssertFalse(session.sendMessageWasCalled)
+    }
+
+    func testDoNotTransferFileIfFileIsInTheListOfPendingFiles() {
+        session.lastDateSync = Date(timeIntervalSince1970: 0)
+        session.state = .active
+        session.isReachable = true
+        session.mockOutstandingFileTransfers = ["filename"]
+
+        sync.sync(file: "filename", date: Date())
+
+        XCTAssertFalse(session.transferFileWasCalled)
     }
 
     var session: MockSession!
