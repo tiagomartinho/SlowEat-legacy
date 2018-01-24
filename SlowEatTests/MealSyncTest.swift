@@ -20,7 +20,11 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     }
 
     var outstandingFileTransfers: [String] {
-        return session.outstandingFileTransfers.filter { $0.isTransferring }.map { $0.file.fileURL.absoluteString }
+        return session.outstandingFileTransfers.filter {
+            $0.isTransferring
+        }.map {
+            $0.file.fileURL.absoluteString
+        }
     }
 
     func activate() {
@@ -66,7 +70,7 @@ protocol Session: class {
     func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void))
 }
 
-class MealSync: SessionDelegate {
+class WatchFileTransfer {
 
     let session: Session
 
@@ -91,8 +95,8 @@ class MealSync: SessionDelegate {
 
     private func transferFile(message: [String: Any]) {
         guard let lastDateSync = message[lastDateSyncKey] as? Date,
-            let file = file,
-            let date = date else {
+              let file = file,
+              let date = date else {
             return
         }
 
@@ -104,7 +108,9 @@ class MealSync: SessionDelegate {
 
         session.transfer(file: file)
     }
+}
 
+extension WatchFileTransfer: SessionDelegate {
     func sessionUpdate(state _: SessionState) {
         if session.state == .active, let file = file, let date = date {
             sync(file: file, date: date)
@@ -123,7 +129,9 @@ class MockSession: Session {
     var fileToTransfer = ""
     var messageSent: [String: Any] = [:]
     var lastDateSync: Date!
-    var outstandingFileTransfers: [String] { return mockOutstandingFileTransfers }
+    var outstandingFileTransfers: [String] {
+        return mockOutstandingFileTransfers
+    }
     var mockOutstandingFileTransfers: [String] = []
 
     func activate() {
@@ -226,11 +234,11 @@ class MealSyncTest: XCTestCase {
     }
 
     var session: MockSession!
-    var sync: MealSync!
+    var sync: WatchFileTransfer!
 
     override func setUp() {
         super.setUp()
         session = MockSession()
-        sync = MealSync(session: session)
+        sync = WatchFileTransfer(session: session)
     }
 }
