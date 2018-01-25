@@ -9,7 +9,7 @@ class MockDateRepository: DateRepository {
         self.date = date
     }
 
-    func load() -> Date? {
+    func load() -> Date {
         return date
     }
 }

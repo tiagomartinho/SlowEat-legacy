@@ -26,10 +26,11 @@ class WatchFileTransfer {
     }
 
     private func transferFile() {
-        guard let lastDateSync = repository.load(), let date = date else {
+        guard let date = date else {
             return
         }
 
+        let lastDateSync = repository.load()
         let fileDateIsTheSame = lastDateSync == date
         let alreadyInTransfer = session.outstandingFileTransfers.contains(file)
         if fileDateIsTheSame || alreadyInTransfer {

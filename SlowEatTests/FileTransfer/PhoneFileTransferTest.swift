@@ -14,9 +14,8 @@ class PhoneFileTransfer {
     }
 
     func startSync() {
-        if let date = repository.load() {
-            session.send(message: [lastDateSyncKey: date])
-        }
+        let date = repository.load()
+        session.send(message: [lastDateSyncKey: date])
     }
 }
 
