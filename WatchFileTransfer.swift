@@ -6,17 +6,17 @@ class WatchFileTransfer {
     private let repository: DateRepository
 
     private let lastDateSyncKey = "LastUpdateDate"
-    private var file: String?
+    private let file: String
     private var date: Date?
 
-    init(session: Session, repository: DateRepository) {
+    init(session: Session, repository: DateRepository, file: String) {
         self.session = session
         self.repository = repository
+        self.file = file
         session.delegate = self
     }
 
-    func sync(file: String, date: Date) {
-        self.file = file
+    func sync(date: Date) {
         self.date = date
         if session.state == .active && session.isReachable {
             transferFile()
@@ -26,9 +26,7 @@ class WatchFileTransfer {
     }
 
     private func transferFile() {
-        guard let lastDateSync = repository.load(),
-            let file = file,
-            let date = date else {
+        guard let lastDateSync = repository.load(), let date = date else {
             return
         }
 
@@ -43,9 +41,16 @@ class WatchFileTransfer {
 }
 
 extension WatchFileTransfer: SessionDelegate {
+
     func sessionUpdate(state _: SessionState) {
-        if session.state == .active, let file = file, let date = date {
-            sync(file: file, date: date)
+        if session.state == .active, let date = date {
+            sync(date: date)
+        }
+    }
+
+    func didReceive(message: [String: Any]) {
+        if let date = message[lastDateSyncKey] as? Date {
+            sync(date: date)
         }
     }
 }

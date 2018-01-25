@@ -8,7 +8,7 @@ class WatchFileTransferTest: XCTestCase {
         session.state = .inactive
         session.isReachable = false
 
-        sync.sync(file: "", date: Date())
+        sync.sync(date: Date())
 
         XCTAssert(session.activateWasCalled)
     }
@@ -16,7 +16,7 @@ class WatchFileTransferTest: XCTestCase {
     func testWhenStateChangesToActiveTransferFile() {
         let date = Date(timeIntervalSince1970: 123)
         session.state = .inactive
-        sync.sync(file: "filename", date: date)
+        sync.sync(date: date)
         repository.date = Date(timeIntervalSince1970: 0)
 
         session.state = .active
@@ -32,7 +32,7 @@ class WatchFileTransferTest: XCTestCase {
         let date = Date(timeIntervalSince1970: 123)
         repository.date = date
 
-        sync.sync(file: "filename", date: date)
+        sync.sync(date: date)
 
         XCTAssertFalse(session.transferFileWasCalled)
     }
@@ -43,17 +43,17 @@ class WatchFileTransferTest: XCTestCase {
         let date = Date(timeIntervalSince1970: 123)
         repository.date = Date(timeIntervalSince1970: 0)
 
-        sync.sync(file: "filename", date: date)
+        sync.sync(date: date)
 
         XCTAssert(session.transferFileWasCalled)
-        XCTAssertEqual("filename", session.fileToTransfer)
+        XCTAssertEqual(filename, session.fileToTransfer)
     }
 
     func testDoNotSendMessageIfNotReachable() {
         session.state = .active
         session.isReachable = false
 
-        sync.sync(file: "filename", date: Date())
+        sync.sync(date: Date())
 
         XCTAssertFalse(session.sendMessageWasCalled)
     }
@@ -62,13 +62,25 @@ class WatchFileTransferTest: XCTestCase {
         repository.date = Date(timeIntervalSince1970: 0)
         session.state = .active
         session.isReachable = true
-        session.mockOutstandingFileTransfers = ["filename"]
+        session.mockOutstandingFileTransfers = [filename]
 
-        sync.sync(file: "filename", date: Date())
+        sync.sync(date: Date())
 
         XCTAssertFalse(session.transferFileWasCalled)
     }
 
+    func testWhenReceivingMessageWithLastDateSync() {
+        repository.date = Date(timeIntervalSince1970: 0)
+        session.state = .active
+        session.isReachable = true
+        let message = ["LastUpdateDate": Date()]
+
+        sync.didReceive(message: message)
+
+        XCTAssert(session.transferFileWasCalled)
+    }
+
+    let filename = "filename"
     var session: MockSession!
     var repository: MockDateRepository!
     var sync: WatchFileTransfer!
@@ -77,7 +89,7 @@ class WatchFileTransferTest: XCTestCase {
         super.setUp()
         session = MockSession()
         repository = MockDateRepository()
-        sync = WatchFileTransfer(session: session, repository: repository)
+        sync = WatchFileTransfer(session: session, repository: repository, file: filename)
     }
 }
 
