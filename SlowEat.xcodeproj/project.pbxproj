@@ -83,6 +83,7 @@
 		485537C6CB2628F3AD025AA2 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855319DEA552226A8AF9BAE /* SessionState.swift */; };
 		485538A7F3C6A0B517DF51A1 /* MealListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CC207F613506983EBD6 /* MealListPresenter.swift */; };
 		485539AEBAAD3B908C6A1192 /* WatchKitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553556246C82F6D6AD4B2C /* WatchKitSession.swift */; };
+		48553A0C1B4B84762BD2BFBF /* DateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485531806AAB499D780C7B7E /* DateRepository.swift */; };
 		48553A1A2C44C91E63B0F9E6 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553761BBBB5DC0DEB13FC2 /* SessionDelegate.swift */; };
 		48553AC1AC8385BB8C38B8D8 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
 		48553B37B443779DC88BD342 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553761BBBB5DC0DEB13FC2 /* SessionDelegate.swift */; };
@@ -93,6 +94,7 @@
 		48553CDCA293D7583AA0A175 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553507ABFE1CA4D3E1AED1 /* Session.swift */; };
 		48553D6FA9430CCFB9569F92 /* RealmMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */; };
 		48553D9402AA5974F75413FC /* WatchKitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553556246C82F6D6AD4B2C /* WatchKitSession.swift */; };
+		48553E35E6B9AE1F007198B5 /* DateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485531806AAB499D780C7B7E /* DateRepository.swift */; };
 		48553E85D843AB347250F070 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */; };
 		48553EBFE02E93CE2F94567D /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855319DEA552226A8AF9BAE /* SessionState.swift */; };
 		48553EDAEF600052E047C604 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855335B061474CFB2098617 /* MealCell.swift */; };
@@ -220,6 +222,7 @@
 		24F51B521EB0E62800DBC300 /* MealLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealLoggerTest.swift; sourceTree = "<group>"; };
 		24F51B5C1EB0ED9600DBC300 /* MealPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPresenterTest.swift; sourceTree = "<group>"; };
 		4855301EE078722B4C3D7915 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
+		485531806AAB499D780C7B7E /* DateRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRepository.swift; sourceTree = "<group>"; };
 		4855318A870F5802C87ED847 /* SpyMealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyMealView.swift; sourceTree = "<group>"; };
 		4855319DEA552226A8AF9BAE /* SessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		4855335B061474CFB2098617 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
@@ -412,6 +415,7 @@
 				48553556246C82F6D6AD4B2C /* WatchKitSession.swift */,
 				48553761BBBB5DC0DEB13FC2 /* SessionDelegate.swift */,
 				48553507ABFE1CA4D3E1AED1 /* Session.swift */,
+				485531806AAB499D780C7B7E /* DateRepository.swift */,
 			);
 			name = WatchFileTransfer;
 			sourceTree = "<group>";
@@ -1082,6 +1086,7 @@
 				485539AEBAAD3B908C6A1192 /* WatchKitSession.swift in Sources */,
 				48553A1A2C44C91E63B0F9E6 /* SessionDelegate.swift in Sources */,
 				48553C0516D012A190E2B199 /* Session.swift in Sources */,
+				48553E35E6B9AE1F007198B5 /* DateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1152,6 +1157,7 @@
 				48553D9402AA5974F75413FC /* WatchKitSession.swift in Sources */,
 				48553B37B443779DC88BD342 /* SessionDelegate.swift in Sources */,
 				48553CDCA293D7583AA0A175 /* Session.swift in Sources */,
+				48553A0C1B4B84762BD2BFBF /* DateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

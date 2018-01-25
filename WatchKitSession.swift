@@ -4,9 +4,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
 
     weak var delegate: SessionDelegate?
 
-    var session: WCSession {
-        return WCSession.default
-    }
+    let session = WCSession.default
 
     var state: SessionState {
         let isActive = session.activationState == .activated
@@ -27,7 +25,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
 
     func activate() {
         if WCSession.isSupported() {
-            session = self
+            session.delegate = self
             session.activate()
         }
     }

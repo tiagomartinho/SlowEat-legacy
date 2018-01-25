@@ -2,14 +2,16 @@ import Foundation
 
 class WatchFileTransfer {
 
-    let session: Session
+    private let session: Session
+    private let repository: DateRepository
 
     private let lastDateSyncKey = "LastUpdateDate"
     private var file: String?
     private var date: Date?
 
-    init(session: Session) {
+    init(session: Session, repository: DateRepository) {
         self.session = session
+        self.repository = repository
         session.delegate = self
     }
 
@@ -17,14 +19,14 @@ class WatchFileTransfer {
         self.file = file
         self.date = date
         if session.state == .active && session.isReachable {
-            session.send(message: [lastDateSyncKey: date], replyHandler: transferFile(message:))
+            transferFile()
         } else {
             session.activate()
         }
     }
 
-    private func transferFile(message: [String: Any]) {
-        guard let lastDateSync = message[lastDateSyncKey] as? Date,
+    private func transferFile() {
+        guard let lastDateSync = repository.load(),
             let file = file,
             let date = date else {
             return

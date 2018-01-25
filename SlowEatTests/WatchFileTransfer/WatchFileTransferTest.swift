@@ -2,47 +2,35 @@
 import WatchConnectivity
 import XCTest
 
-class MealSyncTest: XCTestCase {
+class WatchFileTransferTest: XCTestCase {
 
     func testActivateSessionBeforeSync() {
         session.state = .inactive
+        session.isReachable = false
 
         sync.sync(file: "", date: Date())
 
         XCTAssert(session.activateWasCalled)
     }
 
-    func testWhenStateChangesToActiveAskLastDateSync() {
+    func testWhenStateChangesToActiveTransferFile() {
         let date = Date(timeIntervalSince1970: 123)
         session.state = .inactive
         sync.sync(file: "filename", date: date)
+        repository.date = Date(timeIntervalSince1970: 0)
 
         session.state = .active
         session.isReachable = true
         sync.sessionUpdate(state: .active)
 
-        XCTAssert(session.sendMessageWasCalled)
-        XCTAssertEqual(date, session.messageSent["LastDateSync"] as? Date ?? Date())
-        XCTAssertFalse(session.transferFileWasCalled)
-    }
-
-    func testAskLastDateSyncBeforeTransferFile() {
-        session.state = .active
-        session.isReachable = true
-        let date = Date(timeIntervalSince1970: 123)
-
-        sync.sync(file: "filename", date: date)
-
-        XCTAssert(session.sendMessageWasCalled)
-        XCTAssertEqual(date, session.messageSent["LastDateSync"] as? Date ?? Date())
-        XCTAssertFalse(session.transferFileWasCalled)
+        XCTAssert(session.transferFileWasCalled)
     }
 
     func testIfLastDateSyncIsEqualDoNotTransferFile() {
         session.state = .active
         session.isReachable = true
         let date = Date(timeIntervalSince1970: 123)
-        session.lastDateSync = date
+        repository.date = date
 
         sync.sync(file: "filename", date: date)
 
@@ -53,7 +41,7 @@ class MealSyncTest: XCTestCase {
         session.state = .active
         session.isReachable = true
         let date = Date(timeIntervalSince1970: 123)
-        session.lastDateSync = Date(timeIntervalSince1970: 0)
+        repository.date = Date(timeIntervalSince1970: 0)
 
         sync.sync(file: "filename", date: date)
 
@@ -71,7 +59,7 @@ class MealSyncTest: XCTestCase {
     }
 
     func testDoNotTransferFileIfFileIsInTheListOfPendingFiles() {
-        session.lastDateSync = Date(timeIntervalSince1970: 0)
+        repository.date = Date(timeIntervalSince1970: 0)
         session.state = .active
         session.isReachable = true
         session.mockOutstandingFileTransfers = ["filename"]
@@ -82,12 +70,14 @@ class MealSyncTest: XCTestCase {
     }
 
     var session: MockSession!
+    var repository: MockDateRepository!
     var sync: WatchFileTransfer!
 
     override func setUp() {
         super.setUp()
         session = MockSession()
-        sync = WatchFileTransfer(session: session)
+        repository = MockDateRepository()
+        sync = WatchFileTransfer(session: session, repository: repository)
     }
 }
 
@@ -121,5 +111,18 @@ class MockSession: Session {
         sendMessageWasCalled = true
         messageSent = message
         replyHandler(["LastDateSync": lastDateSync])
+    }
+}
+
+class MockDateRepository: DateRepository {
+
+    var date: Date!
+
+    func save(date: Date) {
+        self.date = date
+    }
+
+    func load() -> Date? {
+        return date
     }
 }
