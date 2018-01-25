@@ -2,26 +2,44 @@
 import WatchConnectivity
 import XCTest
 
-class PhoneFileTransferTest: XCTestCase {
+class PhoneFileTransfer {
 
-    func testActivateSessionBeforeSync() {
-        session.state = .inactive
-        session.isReachable = false
+    let session: Session
+    let repository: DateRepository
+    private let lastDateSyncKey = "LastUpdateDate"
 
-//        sync.sync(date: Date())
-
-        XCTAssert(session.activateWasCalled)
+    init(session: Session, repository: DateRepository) {
+        self.session = session
+        self.repository = repository
     }
 
-    let filename = "filename"
+    func startSync() {
+        if let date = repository.load() {
+            session.send(message: [lastDateSyncKey: date])
+        }
+    }
+}
+
+class PhoneFileTransferTest: XCTestCase {
+
+    func testSendMessageWithLastDate() {
+        session.setActive()
+        let date = Date()
+        repository.date = date
+
+        fileTransfer.startSync()
+
+        XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
+    }
+
     var session: MockSession!
     var repository: MockDateRepository!
-    var sync: WatchFileTransfer!
+    var fileTransfer: PhoneFileTransfer!
 
     override func setUp() {
         super.setUp()
         session = MockSession()
         repository = MockDateRepository()
-        sync = WatchFileTransfer(session: session, repository: repository, file: filename)
+        fileTransfer = PhoneFileTransfer(session: session, repository: repository)
     }
 }

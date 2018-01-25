@@ -40,9 +40,8 @@ class MockSession: Session {
         fileToTransfer = file
     }
 
-    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
+    func send(message: [String: Any]) {
         sendMessageWasCalled = true
         messageSent = message
-        replyHandler(["LastDateSync": lastDateSync])
     }
 }

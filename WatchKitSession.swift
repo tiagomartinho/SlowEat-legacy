@@ -40,8 +40,8 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         delegate?.sessionUpdate(state: state)
     }
 
-    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void)) {
-        session.sendMessage(message, replyHandler: replyHandler, errorHandler: nil)
+    func send(message: [String: Any]) {
+        session.sendMessage(message, replyHandler: nil)
     }
 
     func session(_: WCSession, didReceiveMessage message: [String: Any]) {

@@ -5,5 +5,5 @@ protocol Session: class {
     var outstandingFileTransfers: [String] { get }
     func activate()
     func transfer(file: String)
-    func send(message: [String: Any], replyHandler: @escaping (([String: Any]) -> Void))
+    func send(message: [String: Any])
 }
