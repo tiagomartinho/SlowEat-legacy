@@ -14,7 +14,7 @@ class PhoneFileTransfer {
     }
 
     func startSync() {
-        if session.isActive {
+        if session.isActiveAndReachable {
             let date = repository.load()
             session.send(message: [lastDateSyncKey: date])
         } else {
@@ -27,6 +27,16 @@ class PhoneFileTransferTest: XCTestCase {
 
     func testActivateSessionBeforeSendingMessage() {
         session.setInactive()
+
+        fileTransfer.startSync()
+
+        XCTAssert(session.activateWasCalled)
+        XCTAssertFalse(session.sendMessageWasCalled)
+    }
+
+    func testDoNotSendMessageIfNotReachable() {
+        session.state = .active
+        session.isReachable = false
 
         fileTransfer.startSync()
 

@@ -18,7 +18,7 @@ class WatchFileTransfer {
 
     private func sync(date: Date) {
         self.date = date
-        if session.state == .active {
+        if session.isActive {
             transferFile()
         } else {
             session.activate()

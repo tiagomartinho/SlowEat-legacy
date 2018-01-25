@@ -3,6 +3,7 @@ protocol Session: class {
     var state: SessionState { get }
     var isReachable: Bool { get }
     var isActive: Bool { get }
+    var isActiveAndReachable: Bool { get }
     var outstandingFileTransfers: [String] { get }
     func activate()
     func transfer(file: String)
@@ -11,4 +12,5 @@ protocol Session: class {
 
 extension Session {
     var isActive: Bool { return state == .active }
+    var isActiveAndReachable: Bool { return state == .active && isReachable }
 }
