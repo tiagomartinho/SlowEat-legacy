@@ -27,6 +27,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
 
     func activate() {
         if WCSession.isSupported() {
+            session = self
             session.activate()
         }
     }
