@@ -11,6 +11,7 @@ class PhoneFileTransfer {
     init(session: Session, repository: DateRepository) {
         self.session = session
         self.repository = repository
+        session.delegate = self
     }
 
     func startSync() {
@@ -24,6 +25,17 @@ class PhoneFileTransfer {
     private func sendMessage() {
         let date = repository.load()
         session.send(message: [lastDateSyncKey: date])
+    }
+}
+
+extension PhoneFileTransfer: SessionDelegate {
+    func sessionUpdate(state _: SessionState) {
+        if session.isActiveAndReachable {
+            startSync()
+        }
+    }
+
+    func didReceive(message _: [String: Any]) {
     }
 }
 
@@ -49,11 +61,20 @@ class PhoneFileTransferTest: XCTestCase {
     }
 
     func testSendMessageWithLastDate() {
+        let date = Date()
+        repository.date = date
         session.setActive()
+
+        fileTransfer.startSync()
+
+        XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
+    }
+
+    func testWhenStateChangesSendMessage() {
         let date = Date()
         repository.date = date
 
-        fileTransfer.startSync()
+        session.setActive()
 
         XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
     }
