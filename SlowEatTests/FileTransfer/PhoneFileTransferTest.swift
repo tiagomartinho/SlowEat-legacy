@@ -14,12 +14,25 @@ class PhoneFileTransfer {
     }
 
     func startSync() {
-        let date = repository.load()
-        session.send(message: [lastDateSyncKey: date])
+        if session.isActive {
+            let date = repository.load()
+            session.send(message: [lastDateSyncKey: date])
+        } else {
+            session.activate()
+        }
     }
 }
 
 class PhoneFileTransferTest: XCTestCase {
+
+    func testActivateSessionBeforeSendingMessage() {
+        session.setInactive()
+
+        fileTransfer.startSync()
+
+        XCTAssert(session.activateWasCalled)
+        XCTAssertFalse(session.sendMessageWasCalled)
+    }
 
     func testSendMessageWithLastDate() {
         session.setActive()
