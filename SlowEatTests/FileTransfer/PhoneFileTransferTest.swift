@@ -15,11 +15,15 @@ class PhoneFileTransfer {
 
     func startSync() {
         if session.isActiveAndReachable {
-            let date = repository.load()
-            session.send(message: [lastDateSyncKey: date])
+            sendMessage()
         } else {
             session.activate()
         }
+    }
+
+    private func sendMessage() {
+        let date = repository.load()
+        session.send(message: [lastDateSyncKey: date])
     }
 }
 
