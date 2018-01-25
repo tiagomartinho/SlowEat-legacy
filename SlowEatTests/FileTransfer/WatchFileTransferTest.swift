@@ -4,10 +4,10 @@ import XCTest
 
 class WatchFileTransferTest: XCTestCase {
 
-    func testActivateSessionBeforeSync() {
+    func testActivateSessionBeforeTransfer() {
         session.setInactive()
 
-        sync.sync(date: Date())
+        send(with: Date())
 
         XCTAssert(session.activateWasCalled)
         XCTAssertFalse(session.transferFileWasCalled)
@@ -16,7 +16,7 @@ class WatchFileTransferTest: XCTestCase {
     func testWhenStateChangesToActiveTransferFile() {
         session.setInactive()
         repository.date = Date(timeIntervalSince1970: 0)
-        sync.sync(date: Date(timeIntervalSince1970: 123))
+        send(with: Date(timeIntervalSince1970: 123))
 
         session.setActive()
 
@@ -28,7 +28,7 @@ class WatchFileTransferTest: XCTestCase {
         let date = Date(timeIntervalSince1970: 123)
         repository.date = date
 
-        sync.sync(date: date)
+        send(with: date)
 
         XCTAssertFalse(session.transferFileWasCalled)
     }
@@ -37,7 +37,7 @@ class WatchFileTransferTest: XCTestCase {
         session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
 
-        sync.sync(date: Date(timeIntervalSince1970: 123))
+        send(with: Date(timeIntervalSince1970: 123))
 
         XCTAssert(session.transferFileWasCalled)
         XCTAssertEqual(filename, session.fileToTransfer)
@@ -48,39 +48,34 @@ class WatchFileTransferTest: XCTestCase {
         repository.date = Date(timeIntervalSince1970: 0)
         session.mockOutstandingFileTransfers = [filename]
 
-        sync.sync(date: Date(timeIntervalSince1970: 123))
+        send(with: Date(timeIntervalSince1970: 123))
 
         XCTAssertFalse(session.transferFileWasCalled)
-    }
-
-    func testWhenReceivingMessageWithLastDateSyncTransfer() {
-        session.setActive()
-        repository.date = Date(timeIntervalSince1970: 0)
-        let message = ["LastUpdateDate": Date(timeIntervalSince1970: 123)]
-
-        sync.didReceive(message: message)
-
-        XCTAssert(session.transferFileWasCalled)
     }
 
     func testWhenReceivingMessageWithoutLastDateSyncDoNotTransfer() {
         session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
 
-        sync.didReceive(message: [:])
+        fileTransfer.didReceive(message: [:])
 
         XCTAssertFalse(session.transferFileWasCalled)
+    }
+
+    private func send(with date: Date) {
+        let message = ["LastUpdateDate": date]
+        fileTransfer.didReceive(message: message)
     }
 
     let filename = "filename"
     var session: MockSession!
     var repository: MockDateRepository!
-    var sync: WatchFileTransfer!
+    var fileTransfer: WatchFileTransfer!
 
     override func setUp() {
         super.setUp()
         session = MockSession()
         repository = MockDateRepository()
-        sync = WatchFileTransfer(session: session, repository: repository, file: filename)
+        fileTransfer = WatchFileTransfer(session: session, repository: repository, file: filename)
     }
 }

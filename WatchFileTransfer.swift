@@ -16,7 +16,7 @@ class WatchFileTransfer {
         session.delegate = self
     }
 
-    func sync(date: Date) {
+    private func sync(date: Date) {
         self.date = date
         if session.state == .active {
             transferFile()

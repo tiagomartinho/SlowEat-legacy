@@ -8,7 +8,7 @@ class PhoneFileTransferTest: XCTestCase {
         session.state = .inactive
         session.isReachable = false
 
-        sync.sync(date: Date())
+//        sync.sync(date: Date())
 
         XCTAssert(session.activateWasCalled)
     }
