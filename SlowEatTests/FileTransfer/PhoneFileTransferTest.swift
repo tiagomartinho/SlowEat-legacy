@@ -6,11 +6,13 @@ class PhoneFileTransfer {
 
     let session: Session
     let repository: DateRepository
+    weak var delegate: PhoneFileTransferDelegate?
     private let lastDateSyncKey = "LastUpdateDate"
 
-    init(session: Session, repository: DateRepository) {
+    init(session: Session, repository: DateRepository, delegate: PhoneFileTransferDelegate) {
         self.session = session
         self.repository = repository
+        self.delegate = delegate
         session.delegate = self
     }
 
@@ -36,6 +38,25 @@ extension PhoneFileTransfer: SessionDelegate {
     }
 
     func didReceive(message _: [String: Any]) {
+    }
+
+    func didReceive(file: String) {
+        delegate?.didReceive(file: file)
+    }
+}
+
+protocol PhoneFileTransferDelegate: class {
+    func didReceive(file: String)
+}
+
+class SpyPhoneFileTransferDelegate: PhoneFileTransferDelegate {
+
+    var filename: String!
+    var didReceiveFileCalled = false
+
+    func didReceive(file: String) {
+        filename = file
+        didReceiveFileCalled = true
     }
 }
 
@@ -79,14 +100,25 @@ class PhoneFileTransferTest: XCTestCase {
         XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
     }
 
+    func testDelegatesWhenReceivesFile() {
+        let filename = "filename"
+
+        fileTransfer.didReceive(file: filename)
+
+        XCTAssert(delegate.didReceiveFileCalled)
+        XCTAssertEqual(filename, delegate.filename)
+    }
+
     var session: MockSession!
     var repository: MockDateRepository!
+    var delegate: SpyPhoneFileTransferDelegate!
     var fileTransfer: PhoneFileTransfer!
 
     override func setUp() {
         super.setUp()
         session = MockSession()
         repository = MockDateRepository()
-        fileTransfer = PhoneFileTransfer(session: session, repository: repository)
+        delegate = SpyPhoneFileTransferDelegate()
+        fileTransfer = PhoneFileTransfer(session: session, repository: repository, delegate: delegate)
     }
 }

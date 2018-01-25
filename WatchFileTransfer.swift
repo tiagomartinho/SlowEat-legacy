@@ -54,4 +54,7 @@ extension WatchFileTransfer: SessionDelegate {
             sync(date: date)
         }
     }
+
+    func didReceive(file _: String) {
+    }
 }
