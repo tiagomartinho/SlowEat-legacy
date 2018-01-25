@@ -24,8 +24,7 @@ class WatchFileTransferTest: XCTestCase {
     }
 
     func testIfLastDateSyncIsEqualDoNotTransferFile() {
-        session.state = .active
-        session.isReachable = true
+        session.setActive()
         let date = Date(timeIntervalSince1970: 123)
         repository.date = date
 
@@ -35,42 +34,29 @@ class WatchFileTransferTest: XCTestCase {
     }
 
     func testIfLastDateSyncDiffersTransferFile() {
-        session.state = .active
-        session.isReachable = true
-        let date = Date(timeIntervalSince1970: 123)
+        session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
 
-        sync.sync(date: date)
+        sync.sync(date: Date(timeIntervalSince1970: 123))
 
         XCTAssert(session.transferFileWasCalled)
         XCTAssertEqual(filename, session.fileToTransfer)
     }
 
-    func testDoNotSendMessageIfNotReachable() {
-        session.state = .active
-        session.isReachable = false
-
-        sync.sync(date: Date())
-
-        XCTAssertFalse(session.sendMessageWasCalled)
-    }
-
     func testDoNotTransferFileIfFileIsInTheListOfPendingFiles() {
+        session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
-        session.state = .active
-        session.isReachable = true
         session.mockOutstandingFileTransfers = [filename]
 
-        sync.sync(date: Date())
+        sync.sync(date: Date(timeIntervalSince1970: 123))
 
         XCTAssertFalse(session.transferFileWasCalled)
     }
 
     func testWhenReceivingMessageWithLastDateSyncTransfer() {
+        session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
-        session.state = .active
-        session.isReachable = true
-        let message = ["LastUpdateDate": Date()]
+        let message = ["LastUpdateDate": Date(timeIntervalSince1970: 123)]
 
         sync.didReceive(message: message)
 
@@ -78,9 +64,8 @@ class WatchFileTransferTest: XCTestCase {
     }
 
     func testWhenReceivingMessageWithoutLastDateSyncDoNotTransfer() {
+        session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
-        session.state = .active
-        session.isReachable = true
 
         sync.didReceive(message: [:])
 
