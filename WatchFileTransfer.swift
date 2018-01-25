@@ -4,7 +4,7 @@ class WatchFileTransfer {
 
     let session: Session
 
-    private let lastDateSyncKey = "LastDateSync"
+    private let lastDateSyncKey = "LastUpdateDate"
     private var file: String?
     private var date: Date?
 
