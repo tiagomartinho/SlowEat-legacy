@@ -69,7 +69,7 @@ class WatchFileTransferTest: XCTestCase {
         XCTAssertFalse(session.transferFileWasCalled)
     }
 
-    func testWhenReceivingMessageWithLastDateSync() {
+    func testWhenReceivingMessageWithLastDateSyncTransfer() {
         repository.date = Date(timeIntervalSince1970: 0)
         session.state = .active
         session.isReachable = true
@@ -78,6 +78,16 @@ class WatchFileTransferTest: XCTestCase {
         sync.didReceive(message: message)
 
         XCTAssert(session.transferFileWasCalled)
+    }
+
+    func testWhenReceivingMessageWithoutLastDateSyncDoNotTransfer() {
+        repository.date = Date(timeIntervalSince1970: 0)
+        session.state = .active
+        session.isReachable = true
+
+        sync.didReceive(message: [:])
+
+        XCTAssertFalse(session.transferFileWasCalled)
     }
 
     let filename = "filename"
