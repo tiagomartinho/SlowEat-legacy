@@ -8,10 +8,23 @@ class MockSession: Session {
     weak var delegate: SessionDelegate?
     var activateWasCalled = false
     var transferFileWasCalled = false
+
+    func setInactive() {
+        state = .inactive
+        isReachable = false
+    }
+
+    func setActive() {
+        state = .active
+        isReachable = true
+        delegate?.sessionUpdate(state: .active)
+    }
+
     var sendMessageWasCalled = false
     var fileToTransfer = ""
     var messageSent: [String: Any] = [:]
     var lastDateSync: Date!
+
     var outstandingFileTransfers: [String] {
         return mockOutstandingFileTransfers
     }

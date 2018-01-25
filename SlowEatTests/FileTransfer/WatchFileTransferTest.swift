@@ -5,23 +5,20 @@ import XCTest
 class WatchFileTransferTest: XCTestCase {
 
     func testActivateSessionBeforeSync() {
-        session.state = .inactive
-        session.isReachable = false
+        session.setInactive()
 
         sync.sync(date: Date())
 
         XCTAssert(session.activateWasCalled)
+        XCTAssertFalse(session.transferFileWasCalled)
     }
 
     func testWhenStateChangesToActiveTransferFile() {
-        let date = Date(timeIntervalSince1970: 123)
-        session.state = .inactive
-        sync.sync(date: date)
+        session.setInactive()
         repository.date = Date(timeIntervalSince1970: 0)
+        sync.sync(date: Date(timeIntervalSince1970: 123))
 
-        session.state = .active
-        session.isReachable = true
-        sync.sessionUpdate(state: .active)
+        session.setActive()
 
         XCTAssert(session.transferFileWasCalled)
     }
