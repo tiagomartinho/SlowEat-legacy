@@ -48,7 +48,8 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         delegate?.didReceive(message: message)
     }
 
-    func session(_: WCSession, didReceive _: WCSessionFile) {
+    func session(_: WCSession, didReceive file: WCSessionFile) {
+        delegate?.didReceive(file: file.fileURL.absoluteString)
     }
 
     #if os(iOS)
