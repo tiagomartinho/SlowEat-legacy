@@ -2,52 +2,66 @@ import RealmSwift
 
 class RealmMealRepository: MealRepository {
 
-    let realm = try? Realm()
+    private var realm = try? Realm()
 
     var uniqueID: String {
         return UUID().uuidString
     }
 
+    func set(configuration: Realm.Configuration) {
+        realm = try? Realm(configuration: configuration)
+    }
+
     func save(meal: Meal) {
-        try? realm?.write {
-            let realmMeal = RealmMeal()
-            realmMeal.set(meal)
-            realm?.add(realmMeal)
+        DispatchQueue.main.async {
+            try? self.realm?.write {
+                let realmMeal = RealmMeal()
+                realmMeal.set(meal)
+                self.realm?.add(realmMeal)
+            }
         }
     }
 
     func load(completionHandler: @escaping ([Meal]) -> Void) {
-        guard let objects = realm?.objects(RealmMeal.self) else {
-            completionHandler([])
-            return
+        DispatchQueue.main.async {
+            guard let objects = self.realm?.objects(RealmMeal.self) else {
+                completionHandler([])
+                return
+            }
+            let meals = Array(objects).map {
+                $0.meal
+            }
+            completionHandler(meals)
         }
-        let meals = Array(objects).map {
-            $0.meal
-        }
-        completionHandler(meals)
     }
 
     func delete(with identifier: String) {
-        let predicate = NSPredicate(format: "id = %@", identifier)
-        if let mealToDelete = realm?.objects(RealmMeal.self).filter(predicate).first {
-            try? realm?.write {
-                realm?.delete(mealToDelete)
+        DispatchQueue.main.async {
+            let predicate = NSPredicate(format: "id = %@", identifier)
+            if let mealToDelete = self.realm?.objects(RealmMeal.self).filter(predicate).first {
+                try? self.realm?.write {
+                    self.realm?.delete(mealToDelete)
+                }
             }
         }
     }
 
     func deleteAll() {
-        try? realm?.write {
-            realm?.deleteAll()
+        DispatchQueue.main.async {
+            try? self.realm?.write {
+                self.realm?.deleteAll()
+            }
         }
     }
 
     func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
-        do {
-            _ = try Realm()
-            completionHandler(true)
-        } catch {
-            completionHandler(false)
+        DispatchQueue.main.async {
+            do {
+                _ = try Realm()
+                completionHandler(true)
+            } catch {
+                completionHandler(false)
+            }
         }
     }
 }
