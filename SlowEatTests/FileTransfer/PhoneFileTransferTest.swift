@@ -47,21 +47,21 @@ class PhoneFileTransferTest: XCTestCase {
 
         fileTransfer.didReceive(file: filename)
 
-        XCTAssert(delegate.didReceiveFileCalled)
-        XCTAssertEqual(filename, delegate.filename)
+        XCTAssert(spyDelegatee.didReceiveFileCalled)
+        XCTAssertEqual(filename, spyDelegatee.filename)
     }
 
     var session: MockSession!
     var repository: MockDateRepository!
-    var delegate: SpyPhoneFileTransferDelegate!
+    var spyDelegatee: SpyPhoneFileTransferDelegate!
     var fileTransfer: PhoneFileTransfer!
 
     override func setUp() {
         super.setUp()
         session = MockSession()
         repository = MockDateRepository()
-        delegate = SpyPhoneFileTransferDelegate()
-        fileTransfer = PhoneFileTransfer(session: session, repository: repository, delegate: delegate)
+        spyDelegatee = SpyPhoneFileTransferDelegate()
+        fileTransfer = PhoneFileTransfer(session: session, repository: repository, delegate: spyDelegatee)
     }
 }
 
