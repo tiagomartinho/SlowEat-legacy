@@ -16,7 +16,11 @@ class PhoneFileTransfer {
         if session.isActiveAndReachable {
             sendMessage()
         } else {
-            session.activate()
+            if session.isActive {
+                delegate?.notReachable()
+            } else {
+                session.activate()
+            }
         }
     }
 

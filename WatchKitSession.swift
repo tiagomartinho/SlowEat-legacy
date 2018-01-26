@@ -47,7 +47,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
                                 print("replyHandler")
                             },
                             errorHandler: { _ in
-                                print("error")})
+                                print("error") })
     }
 
     func session(_: WCSession, didReceiveMessage message: [String: Any]) {

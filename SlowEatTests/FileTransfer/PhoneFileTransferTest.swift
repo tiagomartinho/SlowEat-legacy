@@ -4,6 +4,16 @@ import XCTest
 
 class PhoneFileTransferTest: XCTestCase {
 
+    func testIfAlreadyActivateButNotReachableNotifyDelegate() {
+        session.state = .active
+        session.isReachable = false
+
+        fileTransfer.sync()
+
+        XCTAssertFalse(session.activateWasCalled)
+        XCTAssert(spyDelegatee.notReachableCalled)
+    }
+
     func testActivateSessionBeforeSendingMessage() {
         session.setInactive()
 
@@ -19,7 +29,6 @@ class PhoneFileTransferTest: XCTestCase {
 
         fileTransfer.sync()
 
-        XCTAssert(session.activateWasCalled)
         XCTAssertFalse(session.sendMessageWasCalled)
     }
 
@@ -69,9 +78,14 @@ class SpyPhoneFileTransferDelegate: PhoneFileTransferDelegate {
 
     var filename: String!
     var didReceiveFileCalled = false
+    var notReachableCalled = false
 
     func didReceive(file: String) {
         filename = file
         didReceiveFileCalled = true
+    }
+
+    func notReachable() {
+        notReachableCalled = true
     }
 }
