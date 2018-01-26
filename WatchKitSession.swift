@@ -31,7 +31,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     }
 
     func transfer(file: String) {
-        if let path = URL(string: file) {
+        if session.activationState == .activated, let path = URL(string: file) {
             session.transferFile(path, metadata: nil)
         }
     }
@@ -41,7 +41,12 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     }
 
     func send(message: [String: Any]) {
-        session.sendMessage(message, replyHandler: nil)
+        guard isReachable else { return }
+        session.sendMessage(message, replyHandler: { _ in
+            print("replyHandler")
+        }) { _ in
+            print("error")
+        }
     }
 
     func session(_: WCSession, didReceiveMessage message: [String: Any]) {
