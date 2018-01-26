@@ -81,6 +81,8 @@
 		485533758146A0EA698582A8 /* RealmMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */; };
 		48553433E6BFE97B63F48C12 /* PhoneFileTransferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485534263F22328018A1F370 /* PhoneFileTransferDelegate.swift */; };
 		4855347F5D0AE7F424798B96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537D6777A15235CC95A8E /* Color.swift */; };
+		485534DE432AEF48795B4BC5 /* DefaultsDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553544871845E322C029D7 /* DefaultsDateRepository.swift */; };
+		485535B5DCCAB7ADE945A7AB /* DefaultsDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553544871845E322C029D7 /* DefaultsDateRepository.swift */; };
 		48553634ADC9612EED50E6F1 /* MealCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553D8784BC93CD2DB107EA /* MealCellTest.swift */; };
 		485536E2406B6EEA0AF8875D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855395EBC4FF554A51E85CB /* DateFormatter.swift */; };
 		485537BCC4EE796ACE12AB9F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */; };
@@ -237,6 +239,7 @@
 		4855335B061474CFB2098617 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		485534263F22328018A1F370 /* PhoneFileTransferDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneFileTransferDelegate.swift; sourceTree = "<group>"; };
 		48553507ABFE1CA4D3E1AED1 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		48553544871845E322C029D7 /* DefaultsDateRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsDateRepository.swift; sourceTree = "<group>"; };
 		4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListPresenterTest.swift; sourceTree = "<group>"; };
 		48553556246C82F6D6AD4B2C /* WatchKitSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchKitSession.swift; sourceTree = "<group>"; };
 		4855361C41E6096EF1C10A9B /* MealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealView.swift; path = "SlowEat WatchKit Extension/MealView.swift"; sourceTree = "<group>"; };
@@ -430,6 +433,7 @@
 				485531806AAB499D780C7B7E /* DateRepository.swift */,
 				4855318F55E07B7EFF1DE26C /* PhoneFileTransfer.swift */,
 				485534263F22328018A1F370 /* PhoneFileTransferDelegate.swift */,
+				48553544871845E322C029D7 /* DefaultsDateRepository.swift */,
 			);
 			name = WatchFileTransfer;
 			sourceTree = "<group>";
@@ -1106,6 +1110,7 @@
 				48553E35E6B9AE1F007198B5 /* DateRepository.swift in Sources */,
 				48553DEDF1C7EF0A4A166683 /* PhoneFileTransfer.swift in Sources */,
 				4855317017AB495785C554A9 /* PhoneFileTransferDelegate.swift in Sources */,
+				485535B5DCCAB7ADE945A7AB /* DefaultsDateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1182,6 +1187,7 @@
 				48553A0C1B4B84762BD2BFBF /* DateRepository.swift in Sources */,
 				48553BCBBB415423E740C10A /* PhoneFileTransfer.swift in Sources */,
 				48553433E6BFE97B63F48C12 /* PhoneFileTransferDelegate.swift in Sources */,
+				485534DE432AEF48795B4BC5 /* DefaultsDateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
