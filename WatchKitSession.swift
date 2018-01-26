@@ -42,11 +42,12 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
 
     func send(message: [String: Any]) {
         guard isReachable else { return }
-        session.sendMessage(message, replyHandler: { _ in
-            print("replyHandler")
-        }) { _ in
-            print("error")
-        }
+        session.sendMessage(message,
+                            replyHandler: { _ in
+                                print("replyHandler")
+                            },
+                            errorHandler: { _ in
+                                print("error")})
     }
 
     func session(_: WCSession, didReceiveMessage message: [String: Any]) {
