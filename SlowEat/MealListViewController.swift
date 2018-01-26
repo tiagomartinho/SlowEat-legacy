@@ -4,6 +4,10 @@ class MealListViewController: UITableViewController {
 
     private var cells = [MealCell]()
 
+    lazy var fileTransfer: PhoneFileTransfer = {
+        PhoneFileTransfer(session: WatchKitSession(), repository: DefaultsDateRepository(), delegate: self)
+    }()
+
     lazy var presenter: MealListPresenter = {
         MealListPresenter(view: self, repository: RealmMealRepository())
     }()
@@ -49,6 +53,7 @@ class MealListViewController: UITableViewController {
 
     @objc func refresh() {
         presenter.loadMeals()
+        fileTransfer.startSync()
     }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -133,5 +138,13 @@ extension MealListViewController: MealListView {
             self.tableView.backgroundView = nil
             self.tableView.refreshControl?.endRefreshing()
         }
+    }
+}
+
+extension MealListViewController: PhoneFileTransferDelegate {
+    func didReceive(file: String) {
+        print("################## didReceiveFile")
+        print(file)
+        print("################## didReceiveFile")
     }
 }
