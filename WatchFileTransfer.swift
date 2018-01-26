@@ -14,6 +14,7 @@ class WatchFileTransfer {
         self.repository = repository
         self.file = file
         session.delegate = self
+        session.activate()
     }
 
     private func sync(date: Date) {

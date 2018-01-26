@@ -4,6 +4,10 @@ import XCTest
 
 class WatchFileTransferTest: XCTestCase {
 
+    func testActivateSessionOnInitialisation() {
+        XCTAssert(session.activateWasCalled)
+    }
+
     func testActivateSessionBeforeTransfer() {
         session.setInactive()
 
