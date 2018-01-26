@@ -37,6 +37,7 @@ class MealListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.loadMeals()
+        fileTransfer.sync()
     }
 
     private func initTableView() {
@@ -52,7 +53,7 @@ class MealListViewController: UITableViewController {
     }
 
     @objc func refresh() {
-        presenter.loadMeals()
+        showLoading()
         fileTransfer.sync()
     }
 
@@ -143,8 +144,6 @@ extension MealListViewController: MealListView {
 
 extension MealListViewController: PhoneFileTransferDelegate {
     func didReceive(file: String) {
-        print("################## didReceiveFile")
-        print(file)
-        print("################## didReceiveFile")
+        presenter.loadMeals()
     }
 }
