@@ -53,7 +53,7 @@ class MealListViewController: UITableViewController {
 
     @objc func refresh() {
         presenter.loadMeals()
-        fileTransfer.startSync()
+        fileTransfer.sync()
     }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {

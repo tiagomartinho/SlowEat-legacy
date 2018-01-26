@@ -7,7 +7,7 @@ class PhoneFileTransferTest: XCTestCase {
     func testActivateSessionBeforeSendingMessage() {
         session.setInactive()
 
-        fileTransfer.startSync()
+        fileTransfer.sync()
 
         XCTAssert(session.activateWasCalled)
         XCTAssertFalse(session.sendMessageWasCalled)
@@ -17,7 +17,7 @@ class PhoneFileTransferTest: XCTestCase {
         session.state = .active
         session.isReachable = false
 
-        fileTransfer.startSync()
+        fileTransfer.sync()
 
         XCTAssert(session.activateWasCalled)
         XCTAssertFalse(session.sendMessageWasCalled)
@@ -28,7 +28,7 @@ class PhoneFileTransferTest: XCTestCase {
         repository.date = date
         session.setActive()
 
-        fileTransfer.startSync()
+        fileTransfer.sync()
 
         XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
     }
