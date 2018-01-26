@@ -1,15 +1,18 @@
+import RealmSwift
 import UIKit
 
 class MealListViewController: UITableViewController {
 
     private var cells = [MealCell]()
 
+    private let repository = RealmMealRepository()
+
     lazy var fileTransfer: PhoneFileTransfer = {
         PhoneFileTransfer(session: WatchKitSession(), repository: DefaultsDateRepository(), delegate: self)
     }()
 
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self, repository: RealmMealRepository())
+        MealListPresenter(view: self, repository: repository)
     }()
 
     override func viewDidLoad() {
@@ -144,6 +147,19 @@ extension MealListViewController: MealListView {
 
 extension MealListViewController: PhoneFileTransferDelegate {
     func didReceive(file: String) {
-        presenter.loadMeals()
+        guard let fileURL = URL(string: file) else { return }
+        var configuration = Realm.Configuration()
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        let realmURL = documentsDirectory.appendingPathComponent("data.realm")
+        if FileManager.default.fileExists(atPath: realmURL.path) {
+            try? FileManager.default.removeItem(at: realmURL)
+        }
+        try? FileManager.default.copyItem(at: fileURL, to: realmURL)
+        configuration.fileURL = realmURL
+        DispatchQueue.main.async {
+            self.repository.set(configuration: configuration)
+            self.presenter.loadMeals()
+        }
     }
 }
