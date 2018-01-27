@@ -6,7 +6,7 @@ class EventDataTest: XCTestCase {
         let originalEventData = EventData(event: Event(type: .moving, date: Date()))
         let data = NSKeyedArchiver.archivedData(withRootObject: originalEventData)
         let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-        let eventData = (try? unarchiver.decodeObject(forKey: "root")) as? EventData
+        let eventData = unarchiver.decodeObject(forKey: "root") as? EventData
         XCTAssertEqual(originalEventData.event, eventData?.event)
     }
 
@@ -15,7 +15,7 @@ class EventDataTest: XCTestCase {
         let originalEvents = [originalEventData, originalEventData]
         let data = NSKeyedArchiver.archivedData(withRootObject: originalEvents)
         let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-        let events = (try? unarchiver.decodeObject(forKey: "root")) as? [EventData]
+        let events = unarchiver.decodeObject(forKey: "root") as? [EventData]
         XCTAssertEqual(originalEvents.first?.event, events?.first?.event)
     }
 }

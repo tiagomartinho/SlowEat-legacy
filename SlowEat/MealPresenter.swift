@@ -4,12 +4,18 @@ class MealPresenter {
     let tracker: Tracker
     let logger: Logger
     let repository: MealRepository
+    let mealTransfer: MealTransfer
 
-    init(view: MealView, tracker: Tracker, logger: Logger, repository: MealRepository) {
+    init(view: MealView,
+         tracker: Tracker,
+         logger: Logger,
+         repository: MealRepository,
+         mealTransfer: MealTransfer) {
         self.view = view
         self.tracker = tracker
         self.logger = logger
         self.repository = repository
+        self.mealTransfer = mealTransfer
     }
 
     func startMeal() {
@@ -28,6 +34,7 @@ class MealPresenter {
         let analysedMeal = MealAnalyser().analyse(meal: meal)
         if analysedMeal.bites > 0 && analysedMeal.timeInterval > 5.0 {
             repository.save(meal: meal)
+            mealTransfer.send(meal)
         }
         tracker.stop()
         logger.stop()

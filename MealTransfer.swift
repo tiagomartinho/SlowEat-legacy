@@ -5,7 +5,7 @@ class MealTransfer {
 
     private var meal: Meal?
 
-    init(session: Session, delegate: MealTransferDelegate) {
+    init(session: Session, delegate: MealTransferDelegate? = nil) {
         self.session = session
         self.delegate = delegate
         session.delegate = self

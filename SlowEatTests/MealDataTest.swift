@@ -6,7 +6,7 @@ class MealDataTest: XCTestCase {
         let originalMeal = MealData(identifier: "someID", events: [])
         let data = NSKeyedArchiver.archivedData(withRootObject: originalMeal)
         let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-        let meal = (try? unarchiver.decodeObject(forKey: "root")) as? MealData
+        let meal = unarchiver.decodeObject(forKey: "root") as? MealData
         XCTAssertEqual(originalMeal.identifier, meal?.identifier)
     }
 

@@ -18,7 +18,8 @@ class MealPresenterTest: XCTestCase {
         presenter = MealPresenter(view: view,
                                   tracker: tracker,
                                   logger: logger,
-                                  repository: repository)
+                                  repository: repository,
+                                  mealTransfer: MealTransfer(session: MockSession()))
     }
 
     func testIfUserHasNoAccountShowError() {
