@@ -78,6 +78,7 @@
 		4855317017AB495785C554A9 /* PhoneFileTransferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485534263F22328018A1F370 /* PhoneFileTransferDelegate.swift */; };
 		485531CD5305AE02EB3A9981 /* MealTransferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855341B50C6181B63D4E89C /* MealTransferDelegate.swift */; };
 		485531DACA3B4FEBCBCD2AED /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
+		4855329545F0AEE5C10E2FEC /* MealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553A741FED7D55247A27AF /* MealData.swift */; };
 		485532B4C95C876BB80C6568 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553EBBC27700485638C3DA /* MockSession.swift */; };
 		485532CA5B70058EFC7A20E8 /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855301EE078722B4C3D7915 /* MealsView.swift */; };
 		48553433E6BFE97B63F48C12 /* PhoneFileTransferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485534263F22328018A1F370 /* PhoneFileTransferDelegate.swift */; };
@@ -95,6 +96,7 @@
 		485539AEBAAD3B908C6A1192 /* WatchKitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553556246C82F6D6AD4B2C /* WatchKitSession.swift */; };
 		48553A0C1B4B84762BD2BFBF /* DateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485531806AAB499D780C7B7E /* DateRepository.swift */; };
 		48553A1A2C44C91E63B0F9E6 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553761BBBB5DC0DEB13FC2 /* SessionDelegate.swift */; };
+		48553A9A51C524F65248A426 /* MealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553A741FED7D55247A27AF /* MealData.swift */; };
 		48553AC1AC8385BB8C38B8D8 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855361C41E6096EF1C10A9B /* MealView.swift */; };
 		48553B37B443779DC88BD342 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553761BBBB5DC0DEB13FC2 /* SessionDelegate.swift */; };
 		48553B6C198A5432772EC990 /* MealListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855354B7B35D7538CC1E2D7 /* MealListPresenterTest.swift */; };
@@ -258,6 +260,7 @@
 		4855395EBC4FF554A51E85CB /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		4855399208A0B8CF17BFDBB6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		485539AACB6C8B4BDCAB6723 /* RealmMealRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmMealRepository.swift; path = ../RealmMealRepository.swift; sourceTree = "<group>"; };
+		48553A741FED7D55247A27AF /* MealData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealData.swift; sourceTree = "<group>"; };
 		48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		48553CC207F613506983EBD6 /* MealListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealListPresenter.swift; sourceTree = "<group>"; };
 		48553D8784BC93CD2DB107EA /* MealCellTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCellTest.swift; sourceTree = "<group>"; };
@@ -446,6 +449,7 @@
 				48553544871845E322C029D7 /* DefaultsDateRepository.swift */,
 				485530344F67D1E8B79AB53E /* MealTransfer.swift */,
 				4855341B50C6181B63D4E89C /* MealTransferDelegate.swift */,
+				48553A741FED7D55247A27AF /* MealData.swift */,
 			);
 			name = WatchFileTransfer;
 			sourceTree = "<group>";
@@ -1121,6 +1125,7 @@
 				485535B5DCCAB7ADE945A7AB /* DefaultsDateRepository.swift in Sources */,
 				4855346642C5A621C27A36CB /* MealTransfer.swift in Sources */,
 				485531CD5305AE02EB3A9981 /* MealTransferDelegate.swift in Sources */,
+				48553A9A51C524F65248A426 /* MealData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,6 +1207,7 @@
 				485534DE432AEF48795B4BC5 /* DefaultsDateRepository.swift in Sources */,
 				48553E96C121B82D93FB5DC9 /* MealTransfer.swift in Sources */,
 				48553F594558820329E02422 /* MealTransferDelegate.swift in Sources */,
+				4855329545F0AEE5C10E2FEC /* MealData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
