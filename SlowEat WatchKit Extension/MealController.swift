@@ -17,7 +17,6 @@ class MealController: WKInterfaceController {
     deinit {
         presenter.stopMeal()
         motionManager.stopUpdates()
-        DefaultsDateRepository().save(date: Date())
     }
 
     override func awake(withContext context: Any?) {
