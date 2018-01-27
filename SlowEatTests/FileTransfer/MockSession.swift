@@ -8,6 +8,12 @@ class MockSession: Session {
     var activateWasCalled = false
     var transferFileWasCalled = false
 
+    var mockOutstandingUserInfoTransfers: [[String: Any]] = []
+
+    var outstandingUserInfoTransfers: [[String: Any]] {
+        return mockOutstandingUserInfoTransfers
+    }
+
     func setInactive() {
         state = .inactive
     }

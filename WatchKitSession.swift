@@ -19,6 +19,14 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         }
     }
 
+    var outstandingUserInfoTransfers: [[String: Any]] {
+        return session.outstandingUserInfoTransfers.filter {
+            $0.isTransferring
+        }.map {
+            $0.userInfo
+        }
+    }
+
     func activate() {
         if WCSession.isSupported() {
             session.delegate = self

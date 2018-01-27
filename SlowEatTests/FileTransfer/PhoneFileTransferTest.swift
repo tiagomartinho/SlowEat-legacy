@@ -41,6 +41,17 @@ class PhoneFileTransferTest: XCTestCase {
         XCTAssertEqual(filename, spyDelegatee.filename)
     }
 
+    func testDoNotTransferInfoIfIsInTheListOfPendingTransfers() {
+        let date = Date()
+        repository.date = date
+        session.mockOutstandingUserInfoTransfers = [["LastUpdateDate": date] as [String: Any]]
+        session.setActive()
+
+        fileTransfer.sync()
+
+        XCTAssertFalse(session.transferUserInfoWasCalled)
+    }
+
     var session: MockSession!
     var repository: MockDateRepository!
     var spyDelegatee: SpyPhoneFileTransferDelegate!

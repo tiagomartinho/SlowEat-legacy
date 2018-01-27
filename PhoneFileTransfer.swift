@@ -21,8 +21,12 @@ class PhoneFileTransfer {
     }
 
     private func sendSyncMessage() {
+        let dateInfoTransfers = session.outstandingUserInfoTransfers.filter { $0.keys.contains(lastDateSyncKey) }
+        let alreadyInTransfer = !dateInfoTransfers.isEmpty
+        if alreadyInTransfer { return }
         let date = repository.load()
-        session.transfer(userInfo: [lastDateSyncKey: date])
+        let userInfo = [lastDateSyncKey: date] as [String: Any]
+        session.transfer(userInfo: userInfo)
     }
 }
 
