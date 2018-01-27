@@ -61,14 +61,14 @@ class WatchFileTransferTest: XCTestCase {
         session.setActive()
         repository.date = Date(timeIntervalSince1970: 0)
 
-        fileTransfer.didReceive(message: [:])
+        fileTransfer.didReceive(userInfo: [:])
 
         XCTAssertFalse(session.transferFileWasCalled)
     }
 
     private func send(with date: Date) {
         let message = ["LastUpdateDate": date]
-        fileTransfer.didReceive(message: message)
+        fileTransfer.didReceive(userInfo: message)
     }
 
     let filename = "filename"

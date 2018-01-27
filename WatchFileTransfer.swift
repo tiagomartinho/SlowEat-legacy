@@ -50,8 +50,8 @@ extension WatchFileTransfer: SessionDelegate {
         }
     }
 
-    func didReceive(message: [String: Any]) {
-        if let date = message[lastDateSyncKey] as? Date {
+    func didReceive(userInfo: [String: Any]) {
+        if let date = userInfo[lastDateSyncKey] as? Date {
             sync(date: date)
         }
     }

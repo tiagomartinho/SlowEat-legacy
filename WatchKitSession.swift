@@ -42,7 +42,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     }
 
     func session(_: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
-        delegate?.didReceive(message: userInfo)
+        delegate?.didReceive(userInfo: userInfo)
     }
 
     func session(_: WCSession, didReceive file: WCSessionFile) {

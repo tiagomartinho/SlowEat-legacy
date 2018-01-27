@@ -31,7 +31,7 @@ extension PhoneFileTransfer: SessionDelegate {
         sync()
     }
 
-    func didReceive(message _: [String: Any]) {
+    func didReceive(userInfo _: [String: Any]) {
     }
 
     func didReceive(file: String) {
