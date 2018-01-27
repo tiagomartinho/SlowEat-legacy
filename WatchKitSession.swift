@@ -11,10 +11,6 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         return isActive ? .active : .inactive
     }
 
-    var isReachable: Bool {
-        return session.isReachable
-    }
-
     var outstandingFileTransfers: [String] {
         return session.outstandingFileTransfers.filter {
             $0.isTransferring
@@ -41,13 +37,12 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     }
 
     func send(message: [String: Any]) {
-        guard isReachable else { return }
-        session.sendMessage(message,
-                            replyHandler: { _ in
-                                print("replyHandler")
-                            },
-                            errorHandler: { _ in
-                                print("error") })
+        guard isActive else { return }
+        session.transferUserInfo(message)
+    }
+
+    func session(_: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
+        delegate?.didReceive(message: userInfo)
     }
 
     func session(_: WCSession, didReceiveMessage message: [String: Any]) {

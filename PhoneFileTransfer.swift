@@ -13,14 +13,10 @@ class PhoneFileTransfer {
     }
 
     func sync() {
-        if session.isActiveAndReachable {
+        if session.isActive {
             sendMessage()
         } else {
-            if session.isActive {
-                delegate?.notReachable()
-            } else {
-                session.activate()
-            }
+            session.activate()
         }
     }
 
@@ -32,9 +28,7 @@ class PhoneFileTransfer {
 
 extension PhoneFileTransfer: SessionDelegate {
     func sessionUpdate(state _: SessionState) {
-        if session.isActiveAndReachable {
-            sync()
-        }
+        sync()
     }
 
     func didReceive(message _: [String: Any]) {
