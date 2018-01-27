@@ -91,6 +91,7 @@
 		485537BCC4EE796ACE12AB9F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553AE776F3E68CCAF923BF /* MealTableViewCell.swift */; };
 		485537C6CB2628F3AD025AA2 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855319DEA552226A8AF9BAE /* SessionState.swift */; };
 		485538A7F3C6A0B517DF51A1 /* MealListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553CC207F613506983EBD6 /* MealListPresenter.swift */; };
+		4855396F5C13E8A4732224F8 /* MealDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855310600457290F0180D9B /* MealDataTest.swift */; };
 		485539AEBAAD3B908C6A1192 /* WatchKitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553556246C82F6D6AD4B2C /* WatchKitSession.swift */; };
 		48553A0C1B4B84762BD2BFBF /* DateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485531806AAB499D780C7B7E /* DateRepository.swift */; };
 		48553A1A2C44C91E63B0F9E6 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553761BBBB5DC0DEB13FC2 /* SessionDelegate.swift */; };
@@ -237,6 +238,7 @@
 		4855301EE078722B4C3D7915 /* MealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		485530344F67D1E8B79AB53E /* MealTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTransfer.swift; sourceTree = "<group>"; };
 		48553093D7FFCFD6CE0C24A2 /* PhoneFileTransferTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneFileTransferTest.swift; sourceTree = "<group>"; };
+		4855310600457290F0180D9B /* MealDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDataTest.swift; sourceTree = "<group>"; };
 		485531806AAB499D780C7B7E /* DateRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRepository.swift; sourceTree = "<group>"; };
 		4855318A870F5802C87ED847 /* SpyMealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyMealView.swift; sourceTree = "<group>"; };
 		4855318F55E07B7EFF1DE26C /* PhoneFileTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneFileTransfer.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				48553D8784BC93CD2DB107EA /* MealCellTest.swift */,
 				4855318A870F5802C87ED847 /* SpyMealView.swift */,
 				48553A30C8151CDEB295DB12 /* FileTransfer */,
+				4855310600457290F0180D9B /* MealDataTest.swift */,
 			);
 			path = SlowEatTests;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				4855309A4EB963D184BFF21D /* MockDateRepository.swift in Sources */,
 				485532B4C95C876BB80C6568 /* MockSession.swift in Sources */,
 				485535C3A442E76D3AD37C65 /* MealTransferTest.swift in Sources */,
+				4855396F5C13E8A4732224F8 /* MealDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

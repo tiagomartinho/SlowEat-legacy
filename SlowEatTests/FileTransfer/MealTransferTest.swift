@@ -13,6 +13,16 @@ class MealTransferTest: XCTestCase {
         XCTAssertFalse(session.transferUserInfoWasCalled)
     }
 
+    func testTransferMealInData() {
+        let meal = Meal(identifier: "", events: [])
+        session.setInactive()
+        mealTransfer.send(meal)
+
+        session.setActive()
+
+        XCTAssertEqual(meal.data, session.userInfoSent["Add Meal"] as? Data)
+    }
+
     func testWhenSessionActivatesTransfer() {
         let meal = Meal(identifier: "", events: [])
         session.setInactive()
@@ -21,7 +31,6 @@ class MealTransferTest: XCTestCase {
         session.setActive()
 
         XCTAssert(session.transferUserInfoWasCalled)
-        XCTAssertEqual(meal, session.userInfoSent["Add Meal"] as? Meal)
     }
 
     func testSendMealIfActive() {
@@ -30,16 +39,16 @@ class MealTransferTest: XCTestCase {
 
         mealTransfer.send(meal)
 
-        XCTAssertEqual(meal, session.userInfoSent["Add Meal"] as? Meal)
+        XCTAssert(session.transferUserInfoWasCalled)
     }
 
     func testNotifyDelegateWhenMealIsReceived() {
         let meal = Meal(identifier: UUID().uuidString, events: [Event(type: .waiting, date: Date())])
-        let userInfo = ["Add Meal": meal] as [String: Any]
+        let userInfo = ["Add Meal": meal.data] as [String: Any]
 
         mealTransfer.didReceive(userInfo: userInfo)
 
-        XCTAssertEqual(meal, delegatee.meal)
+        XCTAssertEqual(meal.identifier, delegatee.meal.identifier)
     }
 
     var session: MockSession!
