@@ -53,6 +53,8 @@ class EventData: NSObject, NSCoding {
 extension Meal {
     var data: Data {
         let mealData = MealData(identifier: identifier, events: events.map(EventData.init))
+        NSKeyedArchiver.setClassName("MealData", for: MealData.self)
+        NSKeyedArchiver.setClassName("EventData", for: EventData.self)
         return NSKeyedArchiver.archivedData(withRootObject: mealData)
     }
 
@@ -61,6 +63,8 @@ extension Meal {
             return nil
         }
         let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+        NSKeyedUnarchiver.setClass(MealData.self, forClassName: "MealData")
+        NSKeyedUnarchiver.setClass(EventData.self, forClassName: "EventData")
         guard let mealData = unarchiver.decodeObject(forKey: "root") as? MealData,
             let identifier = mealData.identifier,
             let events = mealData.events else {
