@@ -8,10 +8,6 @@ class RealmMealRepository: MealRepository {
         return UUID().uuidString
     }
 
-    func set(configuration: Realm.Configuration) {
-        realm = try? Realm(configuration: configuration)
-    }
-
     func save(meal: Meal) {
         DispatchQueue.main.async {
             try? self.realm?.write {

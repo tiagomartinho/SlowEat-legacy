@@ -3,7 +3,7 @@ import Foundation
 class MealListPresenter {
 
     weak var view: MealListView?
-    let repository: MealRepository
+    var repository: MealRepository
 
     init(view: MealListView, repository: MealRepository) {
         self.view = view

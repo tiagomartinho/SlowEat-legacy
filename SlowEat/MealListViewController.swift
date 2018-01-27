@@ -5,14 +5,12 @@ class MealListViewController: UITableViewController {
 
     private var cells = [MealCell]()
 
-    private let repository = RealmMealRepository()
-
     lazy var fileTransfer: PhoneFileTransfer = {
         PhoneFileTransfer(session: WatchKitSession(), repository: DefaultsDateRepository(), delegate: self)
     }()
 
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self, repository: repository)
+        MealListPresenter(view: self, repository: RealmMealRepository())
     }()
 
     override func viewDidLoad() {
@@ -152,11 +150,16 @@ extension MealListViewController: PhoneFileTransferDelegate {
         guard let realmURL = Realm.Configuration.defaultConfiguration.fileURL else { return }
         if FileManager.default.fileExists(atPath: realmURL.path) {
             try? FileManager.default.removeItem(at: realmURL)
+            [
+                realmURL,
+                realmURL.appendingPathExtension("lock"),
+                realmURL.appendingPathExtension("note"),
+                realmURL.appendingPathExtension("management")
+            ].forEach { try? FileManager.default.removeItem(at: $0) }
             try? FileManager.default.copyItem(at: fileURL, to: realmURL)
         }
         DispatchQueue.main.async {
-            let configuration = Realm.Configuration(fileURL: realmURL)
-            self.repository.set(configuration: configuration)
+            self.presenter.repository = RealmMealRepository()
             self.presenter.loadMeals()
         }
     }
