@@ -49,6 +49,10 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         session.transferUserInfo(userInfo)
     }
 
+    func session(_: WCSession, didFinish _: WCSessionUserInfoTransfer, error: Error?) {
+        print(error)
+    }
+
     func session(_: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
         delegate?.didReceive(userInfo: userInfo)
     }
