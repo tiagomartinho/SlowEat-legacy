@@ -547,6 +547,7 @@
 				EA51A10F1DC2638300542924 /* InitialController.swift */,
 				EA4A57B11D81F7ED006935A9 /* MealController.swift */,
 				2455BB231E912AF20038C541 /* EndMealController.swift */,
+				EA4A57B31D81F7ED006935A9 /* ExtensionDelegate.swift */,
 				EA4A57E31D820CC1006935A9 /* Motion */,
 				EA4A57AF1D81F7ED006935A9 /* Supporting Files */,
 				EA51A1131DC2643100542924 /* Motivation.swift */,
@@ -557,7 +558,6 @@
 		EA4A57AF1D81F7ED006935A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EA4A57B31D81F7ED006935A9 /* ExtensionDelegate.swift */,
 				EA4A57B51D81F7ED006935A9 /* NotificationController.swift */,
 				EA4A57B71D81F7ED006935A9 /* ComplicationController.swift */,
 				EA4A57B91D81F7ED006935A9 /* Assets.xcassets */,

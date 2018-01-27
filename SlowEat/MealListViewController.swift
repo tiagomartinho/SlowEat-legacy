@@ -149,16 +149,13 @@ extension MealListViewController: PhoneFileTransferDelegate {
 
     func didReceive(file: String) {
         guard let fileURL = URL(string: file) else { return }
-        var configuration = Realm.Configuration()
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        let realmURL = documentsDirectory.appendingPathComponent("data.realm")
+        guard let realmURL = Realm.Configuration.defaultConfiguration.fileURL else { return }
         if FileManager.default.fileExists(atPath: realmURL.path) {
             try? FileManager.default.removeItem(at: realmURL)
+            try? FileManager.default.copyItem(at: fileURL, to: realmURL)
         }
-        try? FileManager.default.copyItem(at: fileURL, to: realmURL)
-        configuration.fileURL = realmURL
         DispatchQueue.main.async {
+            let configuration = Realm.Configuration(fileURL: realmURL)
             self.repository.set(configuration: configuration)
             self.presenter.loadMeals()
         }
