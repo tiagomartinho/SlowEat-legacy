@@ -17,9 +17,9 @@ class MockSession: Session {
         delegate?.sessionUpdate(state: .active)
     }
 
-    var sendMessageWasCalled = false
+    var transferUserInfoWasCalled = false
     var fileToTransfer = ""
-    var messageSent: [String: Any] = [:]
+    var userInfoSent: [String: Any] = [:]
     var lastDateSync: Date!
 
     var outstandingFileTransfers: [String] {
@@ -37,8 +37,8 @@ class MockSession: Session {
         fileToTransfer = file
     }
 
-    func send(message: [String: Any]) {
-        sendMessageWasCalled = true
-        messageSent = message
+    func transfer(userInfo: [String: Any]) {
+        transferUserInfoWasCalled = true
+        userInfoSent = userInfo
     }
 }

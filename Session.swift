@@ -5,7 +5,7 @@ protocol Session: class {
     var outstandingFileTransfers: [String] { get }
     func activate()
     func transfer(file: String)
-    func send(message: [String: Any])
+    func transfer(userInfo: [String: Any])
 }
 
 extension Session {

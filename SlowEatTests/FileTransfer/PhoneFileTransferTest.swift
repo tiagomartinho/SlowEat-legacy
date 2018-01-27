@@ -10,7 +10,7 @@ class PhoneFileTransferTest: XCTestCase {
         fileTransfer.sync()
 
         XCTAssert(session.activateWasCalled)
-        XCTAssertFalse(session.sendMessageWasCalled)
+        XCTAssertFalse(session.transferUserInfoWasCalled)
     }
 
     func testSendMessageWithLastDate() {
@@ -20,7 +20,7 @@ class PhoneFileTransferTest: XCTestCase {
 
         fileTransfer.sync()
 
-        XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
+        XCTAssertEqual(date, session.userInfoSent["LastUpdateDate"] as? Date)
     }
 
     func testWhenStateChangesSendMessage() {
@@ -29,7 +29,7 @@ class PhoneFileTransferTest: XCTestCase {
 
         session.setActive()
 
-        XCTAssertEqual(date, session.messageSent["LastUpdateDate"] as? Date)
+        XCTAssertEqual(date, session.userInfoSent["LastUpdateDate"] as? Date)
     }
 
     func testDelegatesWhenReceivesFile() {

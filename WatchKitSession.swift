@@ -36,17 +36,13 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         delegate?.sessionUpdate(state: state)
     }
 
-    func send(message: [String: Any]) {
+    func transfer(userInfo: [String: Any]) {
         guard isActive else { return }
-        session.transferUserInfo(message)
+        session.transferUserInfo(userInfo)
     }
 
     func session(_: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
         delegate?.didReceive(message: userInfo)
-    }
-
-    func session(_: WCSession, didReceiveMessage message: [String: Any]) {
-        delegate?.didReceive(message: message)
     }
 
     func session(_: WCSession, didReceive file: WCSessionFile) {
