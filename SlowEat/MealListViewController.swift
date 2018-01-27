@@ -4,16 +4,15 @@ class MealListViewController: UITableViewController {
 
     private var cells = [MealCell]()
 
-    lazy var fileTransfer: PhoneFileTransfer = {
-        PhoneFileTransfer(session: WatchKitSession(), repository: DefaultsDateRepository(), delegate: self)
-    }()
-
+    var mealTransfer: MealTransfer!
+    var repository = InMemoryMealRepository()
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self, repository: InMemoryMealRepository())
+        MealListPresenter(view: self, repository: repository)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mealTransfer = MealTransfer(session: WatchKitSession(), delegate: self)
         initTableView()
         title = "Meals"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
