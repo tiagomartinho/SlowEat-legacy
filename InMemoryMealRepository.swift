@@ -4,13 +4,7 @@ class InMemoryMealRepository: MealRepository {
 
     var uniqueID: String { return UUID().uuidString }
 
-    var meals: [Meal] = {
-        var meals = [Meal]()
-        for _ in 1 ... 100 {
-            meals.append(InMemoryMealRepository.randomMeal())
-        }
-        return meals
-    }()
+    var meals: [Meal] = []
 
     func hasValidAccount(completionHandler: @escaping (Bool) -> Void) {
         completionHandler(true)
