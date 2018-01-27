@@ -3,7 +3,7 @@ import Foundation
 class MealListPresenter {
 
     weak var view: MealListView?
-    var repository: MealRepository
+    let repository: MealRepository
 
     init(view: MealListView, repository: MealRepository) {
         self.view = view
@@ -42,6 +42,11 @@ class MealListPresenter {
                 self.view?.showMeals(cells: cells)
             }
         }
+    }
+
+    func deleteMeals() {
+        repository.deleteAll()
+        loadMeals()
     }
 
     func deleteMeal(from cell: MealCell) {

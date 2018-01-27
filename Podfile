@@ -4,7 +4,6 @@ target 'SlowEat' do
     platform :ios, '10.0'
     pod 'Sourcery'
     pod 'SnapKit'
-    pod 'RealmSwift'
     target 'SlowEatTests' do
         inherit! :search_paths
     end
@@ -12,7 +11,6 @@ end
 
 target 'SlowEat WatchKit Extension' do
     platform :watchos, '3.0'
-    pod 'RealmSwift'
 end
 
 post_install do |installer|

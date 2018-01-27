@@ -1,4 +1,3 @@
-import RealmSwift
 import UIKit
 
 class MealListViewController: UITableViewController {
@@ -10,7 +9,7 @@ class MealListViewController: UITableViewController {
     }()
 
     lazy var presenter: MealListPresenter = {
-        MealListPresenter(view: self, repository: RealmMealRepository())
+        MealListPresenter(view: self, repository: InMemoryMealRepository())
     }()
 
     override func viewDidLoad() {
@@ -29,8 +28,7 @@ class MealListViewController: UITableViewController {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_: UIAlertAction!) -> Void in
-            RealmMealRepository().deleteAll()
-            self.presenter.loadMeals()
+            self.presenter.deleteMeals()
         }))
         present(alert, animated: true, completion: nil)
     }
@@ -145,22 +143,6 @@ extension MealListViewController: MealListView {
 
 extension MealListViewController: PhoneFileTransferDelegate {
 
-    func didReceive(file: String) {
-        guard let fileURL = URL(string: file) else { return }
-        guard let realmURL = Realm.Configuration.defaultConfiguration.fileURL else { return }
-        if FileManager.default.fileExists(atPath: realmURL.path) {
-            try? FileManager.default.removeItem(at: realmURL)
-            [
-                realmURL,
-                realmURL.appendingPathExtension("lock"),
-                realmURL.appendingPathExtension("note"),
-                realmURL.appendingPathExtension("management")
-            ].forEach { try? FileManager.default.removeItem(at: $0) }
-            try? FileManager.default.copyItem(at: fileURL, to: realmURL)
-        }
-        DispatchQueue.main.async {
-            self.presenter.repository = RealmMealRepository()
-            self.presenter.loadMeals()
-        }
+    func didReceive(file _: String) {
     }
 }

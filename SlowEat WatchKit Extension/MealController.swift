@@ -25,7 +25,7 @@ class MealController: WKInterfaceController {
         presenter = MealPresenter(view: self,
                                   tracker: mealTracker,
                                   logger: MealLogger.build(),
-                                  repository: RealmMealRepository())
+                                  repository: InMemoryMealRepository())
         presenter.startMeal()
         motionManager.delegate = self
     }
