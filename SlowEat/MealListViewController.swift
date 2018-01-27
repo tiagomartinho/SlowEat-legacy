@@ -56,7 +56,7 @@ class MealListViewController: UITableViewController {
     }
 
     @objc func refresh() {
-        showLoading()
+        presenter.loadMeals()
         fileTransfer.sync()
     }
 
@@ -146,10 +146,6 @@ extension MealListViewController: MealListView {
 }
 
 extension MealListViewController: PhoneFileTransferDelegate {
-
-    func notReachable() {
-        presenter.loadMeals()
-    }
 
     func didReceive(file: String) {
         guard let fileURL = URL(string: file) else { return }
