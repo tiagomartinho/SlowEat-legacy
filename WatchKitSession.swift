@@ -53,10 +53,6 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
         delegate?.didReceive(userInfo: userInfo)
     }
 
-    func session(_: WCSession, didReceive file: WCSessionFile) {
-        delegate?.didReceive(file: file.fileURL.absoluteString)
-    }
-
     #if os(iOS)
         func sessionDidBecomeInactive(_: WCSession) {
             delegate?.sessionUpdate(state: state)
