@@ -27,7 +27,7 @@ class WatchKitSession: NSObject, Session, WCSessionDelegate {
     }
 
     func transfer(file: String) {
-        if session.activationState == .activated, let path = URL(string: file) {
+        if isActive, let path = URL(string: file) {
             session.transferFile(path, metadata: nil)
         }
     }
