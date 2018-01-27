@@ -32,7 +32,7 @@ extension MealTransfer: SessionDelegate {
     }
 
     func didReceive(userInfo: [String: Any]) {
-        if let meal = Meal(data: userInfo["Add Meal"]) {
+        if let meal = Meal(any: userInfo["Add Meal"]) {
             delegate?.didAddMeal(meal)
         }
     }

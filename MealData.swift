@@ -28,10 +28,10 @@ extension Meal {
         return NSKeyedArchiver.archivedData(withRootObject: mealData)
     }
 
-    init?(data: Any) {
-        guard let data = data as? Data else { return nil }
+    init?(any: Any?) {
+        guard let data = any as? Data else { return nil }
         let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-        guard let mealData = (try? unarchiver.decodeObject(forKey: "root")) as? MealData,
+        guard let mealData = unarchiver.decodeObject(forKey: "root") as? MealData,
             let identifier = mealData.identifier else { return nil }
         self.identifier = identifier
         events = []

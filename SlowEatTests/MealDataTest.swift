@@ -12,7 +12,7 @@ class MealDataTest: XCTestCase {
 
     func testMealSerialization() {
         let meal = Meal(identifier: "someID", events: [])
-        let otherMeal = Meal(data: meal.data)
+        let otherMeal = Meal(any: meal.data)
         XCTAssertEqual(meal, otherMeal)
     }
 }
