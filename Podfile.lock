@@ -1,15 +1,23 @@
 PODS:
+  - Realm (3.1.0):
+    - Realm/Headers (= 3.1.0)
+  - Realm/Headers (3.1.0)
+  - RealmSwift (3.1.0):
+    - Realm (= 3.1.0)
   - SnapKit (4.0.0)
   - Sourcery (0.10.1)
 
 DEPENDENCIES:
+  - RealmSwift
   - SnapKit
   - Sourcery
 
 SPEC CHECKSUMS:
+  Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
+  RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
 
-PODFILE CHECKSUM: 6c491f487b42d75a1752ac407a9a5452f471274c
+PODFILE CHECKSUM: 387f5b603d89cf375ab83f8fa45ea731f6bdcef6
 
 COCOAPODS: 1.4.0

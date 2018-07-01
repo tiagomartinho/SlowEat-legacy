@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MealPresenter.stopMeal():MealPresenter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "record">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhoneFileTransfer.sessionUpdate(state:):PhoneFileTransfer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "session.isActiveAndReachable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MealAnalyserTest.testGroupNearMovingEvents():MealAnalyserTest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fiveSecondPaceMeal.events.filter { $0.type == .moving }.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MealAnalyser.analyse(meal:):MealAnalyser.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lastMovingDate.timeIntervalSince1970 - event.date.timeIntervalSince1970">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MealAnalyserTest.testDoNotGroupNearMovingEventsIfUserDoesNotMoving():MealAnalyserTest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nonStopMeal.events.filter { $0.type == .moving }.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InitialController.willActivate():InitialController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UserDefaults.standard.value(forKey: &quot;WatchLastUpdateDate&quot;) as? Date">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GradedMeal.bpm.getter:GradedMeal.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "timeInterval">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

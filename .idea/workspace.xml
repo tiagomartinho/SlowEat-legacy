@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="076d9279-8eca-4bb0-969a-e070b6fe10b3" name="Default" comment="Make width of label fixed">
+      <change beforePath="$PROJECT_DIR$/Landing Page/Archive.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-acknowledgements.markdown" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-acknowledgements.plist" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-frameworks.sh" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension.debug.xcconfig" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension.release.xcconfig" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-acknowledgements.markdown" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-acknowledgements.plist" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-frameworks.sh" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.debug.xcconfig" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat.release.xcconfig" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.debug.xcconfig" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests.release.xcconfig" />
+      <change beforePath="$PROJECT_DIR$/SlowEat WatchKit Extension/MealController.swift" afterPath="$PROJECT_DIR$/SlowEat WatchKit Extension/MealController.swift" />
+      <change beforePath="$PROJECT_DIR$/SlowEat.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/SlowEat.xcodeproj/project.pbxproj" />
+      <change beforePath="$PROJECT_DIR$/SlowEat/MealListViewController.swift" afterPath="$PROJECT_DIR$/SlowEat/MealListViewController.swift" />
+    </list>
+    <ignored path="sloweat.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SlowEat" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MealTransfer.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealTransfer.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealData.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MealData.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEat/Event.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventDataTest.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEatTests/EventDataTest.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealDataTest.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEatTests/MealDataTest.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealCellTest.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEatTests/MealCellTest.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1216">
+              <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealTransferTest.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEatTests/FileTransfer/MealTransferTest.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealPresenterTest.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEatTests/MealPresenterTest.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealPresenter.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEat/MealPresenter.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1152">
+              <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Meal.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlowEat/Meal.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>child</find>
+      <find>8.0</find>
+      <find>bpm</find>
+      <find>GradedMeal</find>
+      <find>/</find>
+      <find>!</find>
+      <find>Int(</find>
+      <find>import CloudKit</find>
+      <find>MealRepository</find>
+      <find>saveCalled</find>
+      <find>Date()</find>
+      <find>randomMeal</find>
+      <find>required</find>
+      <find>optional</find>
+      <find>delegate</find>
+      <find>session = self</find>
+      <find>fileTransfer.sync(date:</find>
+      <find>with:</find>
+      <find>showLoading</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>with:</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SlowEatTests/SpyMealView.swift" />
+        <option value="$PROJECT_DIR$/SlowEat WatchKit Extension/MealView.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/MealsView.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/SpyLogger.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/Meal.swift" />
+        <option value="$PROJECT_DIR$/GradedMeal.swift" />
+        <option value="$PROJECT_DIR$/FilterMoving.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/MealCell.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealPresenterTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/FilterMovingTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealAnalyserTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealCellTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealGraderTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/MealRepository.swift" />
+        <option value="$PROJECT_DIR$/CKMealRepository.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/InMemoryMealRepository.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MockRepository.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealListPresenterTest.swift" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/MealGrader.swift" />
+        <option value="$PROJECT_DIR$/RealmMealRepository.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealSyncerTest.swift" />
+        <option value="$PROJECT_DIR$/SessionState.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealSyncTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEat WatchKit Extension/InitialController.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/WatchFileTransfer/WatchFileTransferTest.swift" />
+        <option value="$PROJECT_DIR$/DateRepository.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/FileTransfer/MockDateRepository.swift" />
+        <option value="$PROJECT_DIR$/DefaultsDateRepository.swift" />
+        <option value="$PROJECT_DIR$/PhoneFileTransferDelegate.swift" />
+        <option value="$PROJECT_DIR$/WatchFileTransfer.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/FileTransfer/WatchFileTransferTest.swift" />
+        <option value="$PROJECT_DIR$/Session.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/FileTransfer/MockSession.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/FileTransfer/PhoneFileTransferTest.swift" />
+        <option value="$PROJECT_DIR$/PhoneFileTransfer.swift" />
+        <option value="$PROJECT_DIR$/SlowEat WatchKit Extension/ExtensionDelegate.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/MealListPresenter.swift" />
+        <option value="$PROJECT_DIR$/SessionDelegate.swift" />
+        <option value="$PROJECT_DIR$/WatchKitSession.swift" />
+        <option value="$PROJECT_DIR$/MealTransferDelegate.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/MealListViewController.swift" />
+        <option value="$PROJECT_DIR$/SlowEat WatchKit Extension/MealController.swift" />
+        <option value="$PROJECT_DIR$/InMemoryMealRepository.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/FileTransfer/MealTransferTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEat/MealPresenter.swift" />
+        <option value="$PROJECT_DIR$/MealTransfer.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/EventDataTest.swift" />
+        <option value="$PROJECT_DIR$/SlowEatTests/MealDataTest.swift" />
+        <option value="$PROJECT_DIR$/MealData.swift" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Cidr.FilesView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="SlowEat" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="SlowEat" type="1d218c8b:XcodeProjectNode" />
+              <item name="Common" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="SlowEat" type="1d218c8b:XcodeProjectNode" />
+              <item name="Common" type="fcab9f18:XcodeViewNode" />
+              <item name="WatchFileTransfer" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="SlowEat" type="1d218c8b:XcodeProjectNode" />
+              <item name="SlowEatTests" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="SlowEatTests" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SlowEat" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.SlowEat WatchKit App">
+    <configuration default="false" name="SlowEat WatchKit App (Complication)" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEat WatchKit App" CONFIG_NAME="Debug" SCHEME_NAME="SlowEat WatchKit App (Complication)" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="SlowEat WatchKit App (Notification)" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEat WatchKit App" CONFIG_NAME="Debug" SCHEME_NAME="SlowEat WatchKit App (Notification)" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="SlowEat WatchKit App" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEat WatchKit App" CONFIG_NAME="Debug" SCHEME_NAME="SlowEat WatchKit App" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEat" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SlowEat" RUN_TARGET_NAME="SlowEat" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+    </configuration>
+    <configuration default="true" type="OCGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEat" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration name="EventDataTest" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEatTests" CONFIG_NAME="Debug" SCHEME_NAME="EventDataTest" TEST_CLASS="EventDataTest" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration name="EventDataTest.testSerialization" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEatTests" CONFIG_NAME="Debug" SCHEME_NAME="EventDataTest.testSerialization" TEST_CLASS="EventDataTest" TEST_METHOD="testSerialization" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration name="EventDataTest.testSerializationArray" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEatTests" CONFIG_NAME="Debug" SCHEME_NAME="EventDataTest.testSerializationArray" TEST_CLASS="EventDataTest" TEST_METHOD="testSerializationArray" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration name="MealDataTest" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEatTests" CONFIG_NAME="Debug" SCHEME_NAME="MealDataTest" TEST_CLASS="MealDataTest" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration name="MealTransferTest" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEatTests" CONFIG_NAME="Debug" SCHEME_NAME="MealTransferTest" TEST_CLASS="MealTransferTest" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SlowEat" TARGET_NAME="SlowEatTests" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <list size="10">
+      <item index="0" class="java.lang.String" itemvalue="Application.SlowEat" />
+      <item index="1" class="java.lang.String" itemvalue="Application.SlowEat WatchKit App" />
+      <item index="2" class="java.lang.String" itemvalue="Application.SlowEat WatchKit App (Notification)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SlowEat WatchKit App (Complication)" />
+      <item index="4" class="java.lang.String" itemvalue="XCTest/Kiwi.Tests" />
+      <item index="5" class="java.lang.String" itemvalue="XCTest/Kiwi.MealTransferTest" />
+      <item index="6" class="java.lang.String" itemvalue="XCTest/Kiwi.MealDataTest" />
+      <item index="7" class="java.lang.String" itemvalue="XCTest/Kiwi.EventDataTest.testSerialization" />
+      <item index="8" class="java.lang.String" itemvalue="XCTest/Kiwi.EventDataTest.testSerializationArray" />
+      <item index="9" class="java.lang.String" itemvalue="XCTest/Kiwi.EventDataTest" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="XCTest/Kiwi.MealDataTest" />
+        <item index="1" class="java.lang.String" itemvalue="XCTest/Kiwi.EventDataTest" />
+        <item index="2" class="java.lang.String" itemvalue="XCTest/Kiwi.EventDataTest.testSerializationArray" />
+        <item index="3" class="java.lang.String" itemvalue="XCTest/Kiwi.EventDataTest.testSerialization" />
+        <item index="4" class="java.lang.String" itemvalue="XCTest/Kiwi.MealTransferTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="076d9279-8eca-4bb0-969a-e070b6fe10b3" name="Default" comment="" />
+      <created>1480870800001</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1480870800001</updated>
+      <workItem from="1480870802399" duration="1095000" />
+      <workItem from="1481390054394" duration="4000" />
+      <workItem from="1515860559062" duration="182000" />
+      <workItem from="1515860752482" duration="142000" />
+      <workItem from="1515860927208" duration="236000" />
+      <workItem from="1515861194928" duration="740000" />
+      <workItem from="1515861985593" duration="346000" />
+      <workItem from="1515862342612" duration="8542000" />
+      <workItem from="1515871213708" duration="4777000" />
+      <workItem from="1515929875420" duration="11514000" />
+      <workItem from="1515948796549" duration="1822000" />
+      <workItem from="1515951159158" duration="264000" />
+      <workItem from="1515996111533" duration="62000" />
+      <workItem from="1516340781983" duration="191000" />
+      <workItem from="1516341932806" duration="4124000" />
+      <workItem from="1516430294446" duration="6570000" />
+      <workItem from="1516530580511" duration="143000" />
+      <workItem from="1516600655124" duration="6258000" />
+      <workItem from="1516686332212" duration="5726000" />
+      <workItem from="1516777410334" duration="2319000" />
+      <workItem from="1516860287295" duration="16000" />
+      <workItem from="1516862125727" duration="1861000" />
+      <workItem from="1516864015272" duration="3189000" />
+      <workItem from="1516944697581" duration="1901000" />
+      <workItem from="1516949451888" duration="1390000" />
+      <workItem from="1517031562697" duration="9470000" />
+      <workItem from="1517067031151" duration="6900000" />
+      <workItem from="1521012928651" duration="8000" />
+      <workItem from="1521012976298" duration="30000" />
+    </task>
+    <task id="LOCAL-00001" summary="Make width of label fixed">
+      <created>1515929359809</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515929359809</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="EventDataTest - 2018.01.27 at 18h 12m 28s.xml">
+      <configuration name="EventDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="EventDataTest_testSerialization - 2018.01.27 at 18h 10m 37s.xml">
+      <configuration name="EventDataTest.testSerialization" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="EventDataTest_testSerializationArray - 2018.01.27 at 18h 12m 21s.xml">
+      <configuration name="EventDataTest.testSerializationArray" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="MealDataTest - 2018.01.27 at 18h 02m 28s.xml">
+      <configuration name="MealDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="MealDataTest - 2018.01.27 at 18h 03m 31s.xml">
+      <configuration name="MealDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="MealDataTest - 2018.01.27 at 18h 08m 03s.xml">
+      <configuration name="MealDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="MealDataTest - 2018.01.27 at 18h 18m 09s.xml">
+      <configuration name="MealDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="MealDataTest - 2018.01.27 at 18h 24m 46s.xml">
+      <configuration name="MealDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="MealDataTest - 2018.01.27 at 18h 28m 17s.xml">
+      <configuration name="MealDataTest" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests - 2018.01.27 at 18h 28m 49s.xml">
+      <configuration name="Tests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="79822000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Key Promoter X" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25030527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.497558" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.502442" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39937106" sideWeight="0.4957265" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8993711" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7222222" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26519915" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="100" y="100" width="1480" height="850" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Key Promoter X" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.497558" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2657143" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.502442" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="100" y="100" width="1480" height="850" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.4957265" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8993711" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25030527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7222222" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Make width of label fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make width of label fixed" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="25" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="AppleRunConfiguration">
+        <watch expression="MealAnalyser().analyse(meal: meal)" language="Swift" />
+        <watch expression="try Realm()" language="Swift" />
+      </configuration>
+      <configuration name="OCUnitRunConfiguration">
+        <watch expression="analysedMeal.bites" language="Swift" />
+        <watch expression="analysedMeal.timeInterval" language="Swift" />
+        <watch expression="analysedMeal.startDate" language="Swift" />
+        <watch expression="analysedMeal.endDate" language="Swift" />
+        <watch expression="currentDate.addingTimeInterval(previousTime)" language="Swift" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>try Realm()</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>currentDate.addingTimeInterval(previousTime)</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>analysedMeal.endDate</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>analysedMeal.startDate</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>analysedMeal.timeInterval</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>analysedMeal.bites</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>try Realm()</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>currentDate.addingTimeInterval(previousTime)</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gradedMeal.timeInterval</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gradedMeal.bites</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gradedMeal.bpm</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>MealAnalyser().analyse(meal: meal)</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>arc4random_uniform(2) == 0</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>arc4random_uniform(1) == 0</expression-string>
+        <language-id>Swift</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FilterMoving.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="86" lean-forward="false" selection-start-line="3" selection-start-column="86" selection-end-line="3" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/MealCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/FilterMovingTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MealAnalyserTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MealGraderTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/InMemoryMealRepository.swift" />
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MockRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="appcode.project-settings://899542f4">
+      <provider selected="true" editor-type-id="AppCode.ProjectSettings">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/RealmSwift/RealmSwift/Object.swift" />
+    <entry file="file://$PROJECT_DIR$/SlowEat/MealRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CKMealRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/RealmSwift/RealmSwift/Realm.swift" />
+    <entry file="file://$PROJECT_DIR$/Pods/RealmSwift/RealmSwift/List.swift" />
+    <entry file="file://$PROJECT_DIR$/MealGrader.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SessionState.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat WatchKit Extension/InitialController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MealListPresenterTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/FileTransfer/MockDateRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DateRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DefaultsDateRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS.sdk/System/Library/Frameworks/WatchConnectivity.framework/Headers/WCSessionUserInfoTransfer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhoneFileTransferDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/FileTransfer/WatchFileTransferTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="57" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RealmMealRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat WatchKit Extension/ExtensionDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="12" column="51" lean-forward="false" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchFileTransfer.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/FileTransfer/PhoneFileTransferTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhoneFileTransfer.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SessionDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/MealListPresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealTransferDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/MealListViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat WatchKit Extension/EndMealController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat WatchKit Extension/MealController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InMemoryMealRepository.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/EventType.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchKitSession.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/FileTransfer/MockSession.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/Meal.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/MealPresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MealPresenterTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/FileTransfer/MealTransferTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MealCellTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealTransfer.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/EventDataTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEatTests/MealDataTest.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlowEat/Event.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealData.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -68,6 +68,8 @@
 		24B76B9E1FFF4BF30053466C /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B991FFF4BC90053466C /* Grade.swift */; };
 		24B76B9F1FFF4BF30053466C /* MealGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76B9B1FFF4BE00053466C /* MealGrader.swift */; };
 		24B76BA11FFF59040053466C /* MealAnalyserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B76BA01FFF59040053466C /* MealAnalyserTest.swift */; };
+		24BE1948201D058900B0D18E /* RealmMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE1947201D058900B0D18E /* RealmMealRepository.swift */; };
+		24BE1949201D058900B0D18E /* RealmMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE1947201D058900B0D18E /* RealmMealRepository.swift */; };
 		24D36EB61E97922400B0B439 /* TimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */; };
 		24EDD2391EB0F5A600724646 /* SpyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD2381EB0F5A600724646 /* SpyTracker.swift */; };
 		24EDD23B1EB0F5C300724646 /* SpyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDD23A1EB0F5C300724646 /* SpyLogger.swift */; };
@@ -229,6 +231,7 @@
 		24B76B991FFF4BC90053466C /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		24B76B9B1FFF4BE00053466C /* MealGrader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealGrader.swift; sourceTree = "<group>"; };
 		24B76BA01FFF59040053466C /* MealAnalyserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAnalyserTest.swift; sourceTree = "<group>"; };
+		24BE1947201D058900B0D18E /* RealmMealRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmMealRepository.swift; path = SlowEat/RealmMealRepository.swift; sourceTree = "<group>"; };
 		24CB68431DF49EC2000009D1 /* SlowEat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlowEat-Bridging-Header.h"; sourceTree = "<group>"; };
 		24D36EB51E97922400B0B439 /* TimeFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTest.swift; sourceTree = "<group>"; };
 		24DE10311EFC06D900D4A599 /* CKMealRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKMealRepository.swift; sourceTree = "<group>"; };
@@ -412,6 +415,7 @@
 				4855361C41E6096EF1C10A9B /* MealView.swift */,
 				48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */,
 				4855371D60287750595ACED9 /* WatchFileTransfer */,
+				24BE1947201D058900B0D18E /* RealmMealRepository.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1051,10 +1055,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1120,6 +1128,7 @@
 				485537C6CB2628F3AD025AA2 /* SessionState.swift in Sources */,
 				48553F5C33DC74C904F29518 /* WatchFileTransfer.swift in Sources */,
 				485539AEBAAD3B908C6A1192 /* WatchKitSession.swift in Sources */,
+				24BE1948201D058900B0D18E /* RealmMealRepository.swift in Sources */,
 				48553A1A2C44C91E63B0F9E6 /* SessionDelegate.swift in Sources */,
 				48553C0516D012A190E2B199 /* Session.swift in Sources */,
 				48553E35E6B9AE1F007198B5 /* DateRepository.swift in Sources */,
@@ -1167,6 +1176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				244CF5B51EFC04E100CF35C9 /* FoundationTimeTracker.swift in Sources */,
+				24BE1949201D058900B0D18E /* RealmMealRepository.swift in Sources */,
 				EA4A57B61D81F7ED006935A9 /* NotificationController.swift in Sources */,
 				244CF5AA1EFC04DB00CF35C9 /* MealLogger.swift in Sources */,
 				244CF5AE1EFC04DB00CF35C9 /* Tracker.swift in Sources */,

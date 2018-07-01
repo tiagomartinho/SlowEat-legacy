@@ -5,7 +5,7 @@ class MealListViewController: UITableViewController {
     private var cells = [MealCell]()
 
     var mealTransfer: MealTransfer!
-    var repository = InMemoryMealRepository()
+    var repository = RealmMealRepository()
     lazy var presenter: MealListPresenter = {
         MealListPresenter(view: self, repository: repository)
     }()
