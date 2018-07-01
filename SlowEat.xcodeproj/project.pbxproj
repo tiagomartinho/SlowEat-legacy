@@ -18,12 +18,6 @@
 		243EF50B201C60CA00327088 /* InMemoryMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553E2687FE11DD43E25E43 /* InMemoryMealRepository.swift */; };
 		24402C0E200A654100C018B3 /* MealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24402C0D200A654100C018B3 /* MealListViewController.swift */; };
 		244CF5711EFC022100CF35C9 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5701EFC022100CF35C9 /* MockRepository.swift */; };
-		244CF5781EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
-		244CF5791EFC031A00CF35C9 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 244CF5771EFC031A00CF35C9 /* Templates */; };
-		244CF5841EFC042000CF35C9 /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */; };
-		244CF5871EFC044A00CF35C9 /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */; };
-		244CF58A1EFC049800CF35C9 /* AutoEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5881EFC049800CF35C9 /* AutoEquatable.swift */; };
-		244CF58B1EFC049800CF35C9 /* AutoHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5891EFC049800CF35C9 /* AutoHashable.swift */; };
 		244CF5911EFC04A600CF35C9 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF58C1EFC04A600CF35C9 /* DateProvider.swift */; };
 		244CF5921EFC04A600CF35C9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF58D1EFC04A600CF35C9 /* Event.swift */; };
 		244CF5931EFC04A600CF35C9 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF58E1EFC04A600CF35C9 /* EventType.swift */; };
@@ -52,8 +46,6 @@
 		244CF5B31EFC04E100CF35C9 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF58C1EFC04A600CF35C9 /* DateProvider.swift */; };
 		244CF5B41EFC04E100CF35C9 /* FoundationDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF58F1EFC04A600CF35C9 /* FoundationDateProvider.swift */; };
 		244CF5B51EFC04E100CF35C9 /* FoundationTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5901EFC04A600CF35C9 /* FoundationTimeTracker.swift */; };
-		244CF5B61EFC04E600CF35C9 /* AutoEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5881EFC049800CF35C9 /* AutoEquatable.swift */; };
-		244CF5B71EFC04E600CF35C9 /* AutoHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244CF5891EFC049800CF35C9 /* AutoHashable.swift */; };
 		2453AE091E979D700069C7C3 /* TimeTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE081E979D700069C7C3 /* TimeTrackerTest.swift */; };
 		2453AE111E97A2030069C7C3 /* SpyTimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453AE101E97A2030069C7C3 /* SpyTimeTracker.swift */; };
 		2455BB241E912AF20038C541 /* EndMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455BB231E912AF20038C541 /* EndMealController.swift */; };
@@ -200,10 +192,6 @@
 		24309D9C1F06A0B700E32E6C /* FilterMovingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterMovingTest.swift; sourceTree = "<group>"; };
 		24402C0D200A654100C018B3 /* MealListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewController.swift; sourceTree = "<group>"; };
 		244CF5701EFC022100CF35C9 /* MockRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
-		244CF5771EFC031A00CF35C9 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
-		244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = CodeGenerated/AutoEquatable.generated.swift; sourceTree = "<group>"; };
-		244CF5881EFC049800CF35C9 /* AutoEquatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.swift; path = SlowEat/AutoEquatable.swift; sourceTree = "<group>"; };
-		244CF5891EFC049800CF35C9 /* AutoHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoHashable.swift; path = SlowEat/AutoHashable.swift; sourceTree = "<group>"; };
 		244CF58C1EFC04A600CF35C9 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateProvider.swift; path = SlowEat/DateProvider.swift; sourceTree = "<group>"; };
 		244CF58D1EFC04A600CF35C9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = SlowEat/Event.swift; sourceTree = "<group>"; };
 		244CF58E1EFC04A600CF35C9 /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventType.swift; path = SlowEat/EventType.swift; sourceTree = "<group>"; };
@@ -363,23 +351,6 @@
 			name = Legacy;
 			sourceTree = "<group>";
 		};
-		244CF57A1EFC035B00CF35C9 /* CodeGenerated */ = {
-			isa = PBXGroup;
-			children = (
-				244CF5821EFC041F00CF35C9 /* AutoEquatable.generated.swift */,
-			);
-			name = CodeGenerated;
-			sourceTree = "<group>";
-		};
-		244CF57B1EFC036600CF35C9 /* Sourcery */ = {
-			isa = PBXGroup;
-			children = (
-				244CF5881EFC049800CF35C9 /* AutoEquatable.swift */,
-				244CF5891EFC049800CF35C9 /* AutoHashable.swift */,
-			);
-			name = Sourcery;
-			sourceTree = "<group>";
-		};
 		247C37631E8FD1860003F10C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,9 +461,6 @@
 		EA4A576A1D81F7ED006935A9 = {
 			isa = PBXGroup;
 			children = (
-				244CF57A1EFC035B00CF35C9 /* CodeGenerated */,
-				244CF5771EFC031A00CF35C9 /* Templates */,
-				244CF57B1EFC036600CF35C9 /* Sourcery */,
 				24CB68421DF49E78000009D1 /* Common */,
 				EA4A57751D81F7ED006935A9 /* SlowEat */,
 				EA4A578A1D81F7ED006935A9 /* SlowEatTests */,
@@ -655,8 +623,6 @@
 				EA4A57711D81F7ED006935A9 /* Resources */,
 				EA4A57C51D81F7ED006935A9 /* Embed Watch Content */,
 				F7472063E0509FB52438ECBD /* [CP] Embed Pods Frameworks */,
-				5F183444A2B6713A9A5EE647 /* [CP] Copy Pods Resources */,
-				244CF5761EFC030300CF35C9 /* sourcery */,
 				24C65FC02000BEF300550D7F /* swiftformat */,
 				24C65FBF2000BEB800550D7F /* swiftlint autocorrect */,
 				24C65FBE2000BAB100550D7F /* swiftlint */,
@@ -679,8 +645,6 @@
 				EA4A57831D81F7ED006935A9 /* Sources */,
 				EA4A57841D81F7ED006935A9 /* Frameworks */,
 				EA4A57851D81F7ED006935A9 /* Resources */,
-				E1652D566F417614FFF41B80 /* [CP] Embed Pods Frameworks */,
-				FA15553E97ED982F4F1A34E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -719,7 +683,6 @@
 				EA4A57A71D81F7ED006935A9 /* Frameworks */,
 				EA4A57A81D81F7ED006935A9 /* Resources */,
 				E23136B22F376A4A628AC2CE /* [CP] Embed Pods Frameworks */,
-				4F3E3851F8F39085E37BEAC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -827,7 +790,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA4A57811D81F7ED006935A9 /* LaunchScreen.storyboard in Resources */,
-				244CF5781EFC031A00CF35C9 /* Templates in Resources */,
 				EA4A577E1D81F7ED006935A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,7 +814,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244CF5791EFC031A00CF35C9 /* Templates in Resources */,
 				EA4A57BA1D81F7ED006935A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,20 +821,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		244CF5761EFC030300CF35C9 /* sourcery */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = sourcery;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/Sourcery/bin/sourcery --sources \"${SRCROOT}/SlowEat\" --templates \"${SRCROOT}/Templates\" --output \"${SRCROOT}/CodeGenerated\"";
-		};
 		24C65FBE2000BAB100550D7F /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -934,21 +881,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4F3E3851F8F39085E37BEAC7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat WatchKit Extension/Pods-SlowEat WatchKit Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		54D44131C781F73A2315315E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -967,21 +899,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5F183444A2B6713A9A5EE647 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8000CB288BAD1C71DA75CEC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -998,34 +915,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1652D566F417614FFF41B80 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests-frameworks.sh",
-				"${PODS_ROOT}/Instabug/Instabug.framework",
-				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
-				"${PODS_ROOT}/Instabug/InstabugCore.framework",
-				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E23136B22F376A4A628AC2CE /* [CP] Embed Pods Frameworks */ = {
@@ -1070,21 +959,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEat/Pods-SlowEat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA15553E97ED982F4F1A34E6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlowEatTests/Pods-SlowEatTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1092,11 +966,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244CF5841EFC042000CF35C9 /* AutoEquatable.generated.swift in Sources */,
 				24B76B9C1FFF4BE00053466C /* MealGrader.swift in Sources */,
 				24B76B981FFF4BB50053466C /* GradedMeal.swift in Sources */,
 				244CF5981EFC04BD00CF35C9 /* TimeFormatter.swift in Sources */,
-				244CF58A1EFC049800CF35C9 /* AutoEquatable.swift in Sources */,
 				244CF5A21EFC04C600CF35C9 /* Meal.swift in Sources */,
 				244CF5951EFC04A600CF35C9 /* FoundationTimeTracker.swift in Sources */,
 				24402C0E200A654100C018B3 /* MealListViewController.swift in Sources */,
@@ -1110,7 +982,6 @@
 				244CF5A71EFC04C600CF35C9 /* Tracker.swift in Sources */,
 				EA4A57771D81F7ED006935A9 /* AppDelegate.swift in Sources */,
 				244CF5A41EFC04C600CF35C9 /* MealPresenter.swift in Sources */,
-				244CF58B1EFC049800CF35C9 /* AutoHashable.swift in Sources */,
 				242507ED1FFE033A002FB11B /* FilterMoving.swift in Sources */,
 				244CF5A61EFC04C600CF35C9 /* MealTracker.swift in Sources */,
 				244CF5911EFC04A600CF35C9 /* DateProvider.swift in Sources */,
@@ -1182,7 +1053,6 @@
 				244CF5AE1EFC04DB00CF35C9 /* Tracker.swift in Sources */,
 				EA4A57E21D82002E006935A9 /* RunningBuffer.swift in Sources */,
 				244CF5AF1EFC04DB00CF35C9 /* Event.swift in Sources */,
-				244CF5B71EFC04E600CF35C9 /* AutoHashable.swift in Sources */,
 				244CF5AD1EFC04DB00CF35C9 /* MealTracker.swift in Sources */,
 				24B76B9E1FFF4BF30053466C /* Grade.swift in Sources */,
 				244CF5A91EFC04DB00CF35C9 /* Meal.swift in Sources */,
@@ -1196,14 +1066,12 @@
 				EA4A57B81D81F7ED006935A9 /* ComplicationController.swift in Sources */,
 				24B76B9D1FFF4BF30053466C /* GradedMeal.swift in Sources */,
 				EA51A1101DC2638300542924 /* InitialController.swift in Sources */,
-				244CF5B61EFC04E600CF35C9 /* AutoEquatable.swift in Sources */,
 				EA4A57E01D81FFF0006935A9 /* MotionManager.swift in Sources */,
 				EA4A57B41D81F7ED006935A9 /* ExtensionDelegate.swift in Sources */,
 				244CF5A81EFC04DB00CF35C9 /* Logger.swift in Sources */,
 				244CF5B11EFC04E100CF35C9 /* TimeFormatter.swift in Sources */,
 				244CF5AC1EFC04DB00CF35C9 /* MealRepository.swift in Sources */,
 				EA4A57B21D81F7ED006935A9 /* MealController.swift in Sources */,
-				244CF5871EFC044A00CF35C9 /* AutoEquatable.generated.swift in Sources */,
 				2455BB241E912AF20038C541 /* EndMealController.swift in Sources */,
 				242507EE1FFE03BD002FB11B /* FilterMoving.swift in Sources */,
 				244CF5B31EFC04E100CF35C9 /* DateProvider.swift in Sources */,

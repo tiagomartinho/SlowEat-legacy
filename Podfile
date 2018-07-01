@@ -2,7 +2,6 @@ use_frameworks!
 
 target 'SlowEat' do
     platform :ios, '10.0'
-    pod 'Sourcery'
     pod 'SnapKit'
     pod 'RealmSwift'
     target 'SlowEatTests' do

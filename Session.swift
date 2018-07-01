@@ -1,5 +1,5 @@
 protocol Session: class {
-    weak var delegate: SessionDelegate? { get set }
+    var delegate: SessionDelegate? { get set }
     var state: SessionState { get }
     var isActive: Bool { get }
     var outstandingFileTransfers: [String] { get }
