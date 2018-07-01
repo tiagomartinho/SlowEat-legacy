@@ -71,6 +71,6 @@ extension Meal {
             return nil
         }
         self.identifier = identifier
-        self.events = events.flatMap { $0.event }
+        self.events = events.compactMap { $0.event }
     }
 }
