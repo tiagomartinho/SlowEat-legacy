@@ -505,9 +505,12 @@ Prohibited Jurisdiction, or otherwise in violation of any such restrictions or
 regulations.
 
 
-## SnapKit
+## TinyConstraints
 
-Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
+
+MIT License
+
+Copyright (c) 2017 Robert-Hein Hooijmans <rh.hooijmans@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -63,9 +63,7 @@ class MealListViewController: UITableViewController {
             return UITableViewCell()
         }
         let mealCell = cells[indexPath.row]
-        cell.set(bpm: mealCell.bpm)
         cell.set(date: mealCell.date)
-        cell.set(percentage: mealCell.change, color: mealCell.color.uiColor)
         return cell
     }
 
